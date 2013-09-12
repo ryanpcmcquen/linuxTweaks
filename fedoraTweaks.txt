@@ -1,0 +1,21 @@
+sudo yum install gstreamer gstreamer-*
+
+
+su
+
+yum install libdvdcss libdvdread libdvdnav lsdvd libdvbpsi gstreamer gstreamer-ffmpeg gstreamer-plugins-bad gstreamer-plugins-bad-free gstreamer-plugins-bad-free-extras gstreamer-plugins-bad-nonfree gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly
+
+
+In Fedora 17 I did the following to install flash plugin:
+
+32 bit:
+
+sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
+sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+64 bit:
+
+sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+and finally the flash plugin:
+
+sudo yum install flash-plugin -y

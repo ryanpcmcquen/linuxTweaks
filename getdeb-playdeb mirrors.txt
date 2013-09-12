@@ -1,0 +1,5 @@
+deb http://mirrors.dotsrc.org/getdeb/ubuntu quantal-getdeb apps
+deb-src http://mirrors.dotsrc.org/getdeb/ubuntu quantal-getdeb apps
+
+deb http://mirrors.dotsrc.org/getdeb/ubuntu quantal-getdeb games
+deb-src http://mirrors.dotsrc.org/getdeb/ubuntu quantal-getdeb games

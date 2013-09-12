@@ -1,0 +1,3 @@
+ip link set wlan0 up
+iw wlan0 connect <my network>
+dhcpcd wlan0

@@ -1,0 +1,17 @@
+after setting up /etc/wpa_supplicant.conf with wpa_passphrase mynetwork mynetworkpasscode
+
+you may have to chmod -x /etc/rc.d/rc.networkmanager
+
+My sidestep with my netbook with a WPA2 wireless connection to my router was to:
+
+'/etc/rc.d/rc.networkmanager stop' # Kill the networkmanager daemon.
+
+'pkill wpa_supplicant' # Kill remaining wpa_supplicant process
+
+'rfkill unblock 1' # Unblock wireless LAN interface at index 1 ('rfkill list' for details)
+
+'wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlan0 -D wext' # Connect using wpa_supplicant (/etc/wpa_supplicant.conf was already in place)
+
+'dhcpcd' # Get IP address via DHCP
+
+'sh /etc/rc.d/rc.firewall' # Put firewall rules in place
