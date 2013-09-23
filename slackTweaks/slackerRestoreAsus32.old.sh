@@ -18,4 +18,4 @@ cp ~/Dropbox/linuxTweaks/slackTweaks/51-synaptics.conf /etc/X11/xorg.conf.d/51-s
 cp ~/Dropbox/linuxTweaks/slackTweaks/slackDrive/.bashrc32 ~/.bashrc
 
 ln -s ~/Dropbox/subl/32/Sublime\ Text\ 2/sublime_text /sbin/subl
-ln -s ~/Dropbox/subl/32/Sublime\ Text\ 2/sublime_text /usr/bin/subl 
+ln -s ~/Dropbox/subl/32/Sublime\ Text\ 2/sublime_text /usr/bin/subl
