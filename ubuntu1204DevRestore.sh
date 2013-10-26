@@ -11,3 +11,5 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
 sudo apt-get update && sudo apt-get install libreoffice shutter gimp spotify-client
 
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
+
+wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_*_amd64.deb
