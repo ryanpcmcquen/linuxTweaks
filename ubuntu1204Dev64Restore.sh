@@ -14,4 +14,6 @@ sudo apt-get update && sudo apt-get install libreoffice shutter gimp spotify-cli
 
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
+cd ~/Downloads
 wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_*_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
