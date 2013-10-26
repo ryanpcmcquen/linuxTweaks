@@ -17,3 +17,4 @@ sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 cd ~/Downloads
 wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_*_amd64.deb
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-*_amd64.deb
