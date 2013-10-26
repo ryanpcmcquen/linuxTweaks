@@ -1,3 +1,5 @@
+#!/bin/sh
+
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 sudo apt-get install build-essential linux-generic git git-core curl htop vim ruby ruby-dev rubygems python-dev python-setuptools python-pip dkms virtualbox mc
