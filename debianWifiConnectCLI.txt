@@ -1,0 +1,10 @@
+## debian 7
+
+ifconfig wlan0 up
+
+wpa_passphrase ssid passphrase > /etc/foobar.conf
+
+wpa_supplicant -B -iwlan0 -Dwext -c/etc/foobar.conf
+
+dhclient wlan0
+
