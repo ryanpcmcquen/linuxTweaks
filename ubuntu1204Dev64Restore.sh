@@ -7,7 +7,8 @@ alias apti='sudo apt-get install '" >> ~/.bashrc
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
-sudo apt-get install build-essential linux-generic git git-core curl htop vim gksu dos2unix ruby ruby-dev rubygems python-dev python-setuptools python-pip python-apt dkms gftp mc
+sudo apt-get install build-essential linux-generic git git-core curl htop vim gksu dos2unix ruby ruby-dev rubygems \
+  python-dev python-setuptools python-pip python-apt dkms gftp filezilla mc
 
 sudo add-apt-repository -y ppa:libreoffice/ppa
 sudo add-apt-repository -y ppa:maarten-baert/simplescreenrecorder
