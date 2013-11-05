@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt-get install curl build-essential linux-headers-amd64 git-all htop dos2unix vim python-dev python-pip python-apt \
-  autoconf automake autotools-dev dh-make debhelper devscripts fakeroot xutils lintian pbuilder \
+  autoconf automake autotools-dev dh-make debhelper devscripts fakeroot xutils lintian pbuilder git-buildpackage \
   ruby-dev rubygems lftp gftp filezilla dkms mc syslinux nfs-common nfs-kernel-server rpcbind asciidoc
 
 ## grab google chrome, dropbox, sublime text, vagrant, skype
