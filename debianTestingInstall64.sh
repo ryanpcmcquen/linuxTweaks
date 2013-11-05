@@ -12,7 +12,7 @@ git config --global credential.helper cache
 sudo pip install ansible pip-tools
 
 
-echo "# my aliases
+echo "\n # my aliases
 alias aptu='sudo apt-get update && sudo apt-get dist-upgrade -y'
 alias aptc='sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y'
 alias apti='sudo apt-get install '" >> ~/.bashrc
