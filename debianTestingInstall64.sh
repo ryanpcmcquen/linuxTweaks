@@ -4,6 +4,7 @@ sudo apt-get install curl build-essential linux-headers-amd64 git-all htop dos2u
   ruby-dev rubygems lftp gftp filezilla dkms mc syslinux nfs-common nfs-kernel-server rpcbind asciidoc
 
 ## grab google chrome, dropbox, sublime text, vagrant, skype
+## add user with visudo
 
 git config --global user.name "Ryan P.C. McQuen"
 git config --global user.email "ryanpcmcquen@gmail.com"
