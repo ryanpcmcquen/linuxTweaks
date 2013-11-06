@@ -13,6 +13,7 @@ git config --global user.name "Ryan P.C. McQuen"
 git config --global user.email "ryanpcmcquen@gmail.com"
 git config --global credential.helper cache
 ssh-keygen -t rsa -C "ryanpcmcquen@gmail.com"
+ssh-add id_rsa
 
 sudo pip install ansible pip-tools
 
