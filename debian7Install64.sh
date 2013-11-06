@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt-get install curl build-essential linux-headers-amd64 git-all htop dos2unix vim python-dev python-pip \
-  autoconf automake autotools-dev dpkg-dev dh-make debhelper devscripts xutils lintian pbuilder git-buildpackage \
+  autoconf automake autotools-dev debhelper lintian pbuilder git-buildpackage \
   ruby-dev rubygems lftp gftp filezilla mc syslinux nfs-kernel-server asciidoc
 
 
