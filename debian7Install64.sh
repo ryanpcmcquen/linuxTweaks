@@ -12,7 +12,7 @@ sudo apt-get install curl build-essential linux-headers-amd64 git-all htop dos2u
 git config --global user.name "Ryan P.C. McQuen"
 git config --global user.email "ryanpcmcquen@gmail.com"
 git config --global credential.helper cache
-
+ssh-keygen -t rsa -C "ryanpcmcquen@gmail.com"
 
 sudo pip install ansible pip-tools
 
