@@ -6,8 +6,8 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 
 
 sudo apt-get install curl build-essential linux-headers-amd64 git htop dos2unix vim python-dev python-pip \
-  autoconf automake autotools-dev debhelper devscripts dh-make xutils lintian pbuilder git-buildpackage \
-  ruby-dev rubygems lftp gftp filezilla mc syslinux nfs-kernel-server asciidoc
+  devscripts lintian git-buildpackage ruby-dev rubygems lftp gftp filezilla mc \
+  syslinux nfs-kernel-server asciidoc
 
 
 git config --global user.name "Ryan P.C. McQuen"
