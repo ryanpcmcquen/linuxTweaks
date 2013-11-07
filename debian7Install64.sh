@@ -5,7 +5,7 @@
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 
-sudo apt-get install curl build-essential linux-headers-amd64 git git-core htop dos2unix vim python-dev python-pip \
+sudo apt-get install curl build-essential linux-headers-amd64 git htop dos2unix vim python-dev python-pip \
   autoconf automake autotools-dev debhelper dh-make devscripts xutils lintian pbuilder git-buildpackage \
   ruby-dev rubygems lftp gftp filezilla mc syslinux nfs-kernel-server asciidoc
 
@@ -13,8 +13,6 @@ sudo apt-get install curl build-essential linux-headers-amd64 git git-core htop 
 git config --global user.name "Ryan P.C. McQuen"
 git config --global user.email "ryanpcmcquen@gmail.com"
 git config --global credential.helper cache
-ssh-keygen -t rsa -C "ryanpcmcquen@gmail.com"
-ssh-add id_rsa
 
 
 sudo pip install ansible pip-tools
