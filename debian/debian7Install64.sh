@@ -4,6 +4,7 @@
 
 sudo dpkg --add-architecture i386
 
+## add wheezy-backports to sources.list, just copy wheezy-updates lines and change updates to backports
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
