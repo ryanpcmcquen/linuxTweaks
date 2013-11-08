@@ -1,1 +1,3 @@
 ffmpeg -f x11grab -r 30 -s 1366x768 -i :0 -f alsa -ac 2 -i pulse -vcodec libx264 -crf 0 -preset ultrafast -acodec libvorbis -ab 192k ryVideo1.mkv
+
+avconv -f pulse -i :0 -f x11grab -s 1366x768 -r 25 -i :2.0 -vcodec libx264 -acodec libvorbis -ab 192k vid_file.mkv
