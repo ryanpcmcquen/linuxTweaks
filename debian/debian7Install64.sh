@@ -8,8 +8,8 @@ sudo dpkg --add-architecture i386
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 
-sudo apt-get install curl build-essential linux-headers-amd64 git htop dos2unix vim python-dev python-pip \
-  devscripts lintian git-buildpackage ruby-dev rubygems lftp gftp filezilla mc syslinux nfs-kernel-server asciidoc
+sudo apt-get install curl build-essential linux-headers-amd64 git htop dos2unix vim python-dev python-pip devscripts \
+  ffmpeg lintian git-buildpackage ruby-dev rubygems lftp gftp filezilla mc syslinux nfs-kernel-server asciidoc
 
 
 ## sudo apt-get install fglrx-driver
