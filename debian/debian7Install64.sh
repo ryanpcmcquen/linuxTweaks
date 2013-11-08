@@ -9,6 +9,9 @@ sudo apt-get install curl build-essential linux-headers-amd64 git htop dos2unix 
   devscripts lintian git-buildpackage ruby-dev rubygems lftp gftp filezilla mc syslinux nfs-kernel-server asciidoc
 
 
+## sudo apt-get install fglrx-driver
+
+
 git config --global user.name "Ryan P.C. McQuen"
 git config --global user.email "ryanpcmcquen@gmail.com"
 git config --global credential.helper cache
@@ -32,6 +35,23 @@ alias apti='sudo apt-get install '" >> ~/.bashrc
 
 
 ## grab google chrome, dropbox, sublime text, vagrant, skype
+
+##########
+## for spotify ##
+# 1. Add this line to your list of repositories by
+#    editing your /etc/apt/sources.list
+# deb http://repository.spotify.com stable non-free
+
+# 2. If you want to verify the downloaded packages,
+#    you will need to add our public key
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+
+# 3. Run apt-get update
+# sudo apt-get update
+
+# 4. Install spotify!
+# sudo apt-get install spotify-client
+##########
 
 
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
