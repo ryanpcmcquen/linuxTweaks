@@ -2,12 +2,11 @@
 
 KNOW YOUR SYSTEM! This works on my 64-bit & 32-bit system.
 
--2013.08.01 arch iso, the torrent is best (you should be fine on any future ones until the process changes)
+-2013.11.01 arch iso, the torrent is best
 
 Start with wired internet (or not!). If not, do this:
 
- iw dev
- wifi-menu <your-network-interface>
+ wifi-menu
 
 -johndoe is a placeholder, as is /dev/sda1, /dev/sda2
 
@@ -17,10 +16,11 @@ Start with wired internet (or not!). If not, do this:
  swapon /dev/sda1
  mkfs.ext4 /dev/sda2
 
- vi /etc/pacman.d/mirrorlist  ##if you want to move the mirrors around
+ vi /etc/pacman.d/mirrorlist  ### if you want to move the mirrors around
 
  mount /dev/sda2 /mnt
- pacstrap /mnt base base-devel abs curl git wget
+ pacstrap /mnt base base-devel abs git wget
+ ### git has a hard dependency of curl
  genfstab -p /mnt >> /mnt/etc/fstab
  arch-chroot /mnt
 
@@ -37,7 +37,7 @@ Start with wired internet (or not!). If not, do this:
  ## (include multilib for 64-bit)
  pacman -Syy
 
- pacman -S wpa_supplicant wpa_actiond iw ifplugd dialog wireless_tools
+ pacman -S dhcpcd wpa_supplicant wpa_actiond iw ifplugd dialog wireless_tools
 
  passwd
  useradd -m -g users -G \
@@ -63,7 +63,8 @@ Start with wired internet (or not!). If not, do this:
 
  sudo wifi-menu
 
- sudo pacman -Syyu alsa-utils alsa-firmware pulseaudio-alsa
+ sudo pacman -Syyu alsa-utils alsa-firmware
+ ### pulseaudio-alsa
  sudo pacman -S xorg xorg-xinit xorg-server-utils mesa xorg-twm xorg-xclock xterm
  sudo pacman -S ttf-ubuntu-font-family ttf-droid ttf-liberation
  ## amd-ucode or intel-ucode
@@ -71,18 +72,15 @@ Start with wired internet (or not!). If not, do this:
  ## libtxc_dxtn, libjpeg-turbo, lib32-libtxc_dxtn, lib32-libjpeg-turbo
 
  ### then a de:
- sudo pacman -S gnome gnome-extra gnome-shell-extensions gksu chromium firefox midori vlc
- ## or for xmonad: sudo pacman -S xmonad-contrib dmenu scrot chromium firefox midori vlc
+ ## for xmonad: sudo pacman -S xmonad-contrib dmenu scrot chromium firefox midori vlc
  ## or for e17: sudo pacman -S enlightenment17 connman chromium firefox midori vlc
  ## later get econnman & terminology through AUR
 
  vi ~/.xinitrc
  ### and add:
- exec gnome-session
- ### or exec xmonad
+ ### exec xmonad
  ### or exec enlightenment_start
 
- ### or sudo systemctl enable gdm, then gdm will start automatically at boot
- ### also, sudo systemctl enable NetworkManager (if you wish)
+ sudo systemctl enable netctl
 
  startx
