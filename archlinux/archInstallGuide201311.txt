@@ -72,7 +72,7 @@ Start with wired internet (or not!). If not, do this:
  ## libtxc_dxtn, libjpeg-turbo, lib32-libtxc_dxtn, lib32-libjpeg-turbo
 
  ### then a de:
- ## for xmonad: sudo pacman -S xmonad-contrib dmenu scrot chromium firefox midori vlc
+ ## for xmonad: sudo pacman -S xmonad-contrib dmenu scrot mc chromium firefox midori vlc
  ## or for e17: sudo pacman -S enlightenment17 connman chromium firefox midori vlc
  ## later get econnman & terminology through AUR
 
