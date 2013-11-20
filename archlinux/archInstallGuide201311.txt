@@ -49,7 +49,6 @@ Start with wired internet (or not!). If not, do this:
  ### uncomment:
  %wheel ALL=(ALL) ALL
 
-
  pacman -S syslinux gptfdisk  ### or your preferred boot loader
  syslinux-install_update -i -a -m
  syslinux-install_update -u
@@ -60,6 +59,7 @@ Start with wired internet (or not!). If not, do this:
  exit
  umount /mnt
  reboot
+
 
  sudo wifi-menu
 
