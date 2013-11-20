@@ -17,24 +17,24 @@ Start with wired internet (or not!). If not, do this:
  swapon /dev/sda1
  mkfs.ext4 /dev/sda2
 
- nano /etc/pacman.d/mirrorlist  ##if you want to move the mirrors around
+ vi /etc/pacman.d/mirrorlist  ##if you want to move the mirrors around
 
  mount /dev/sda2 /mnt
- pacstrap /mnt base base-devel abs git wget
+ pacstrap /mnt base base-devel abs curl git wget
  genfstab -p /mnt >> /mnt/etc/fstab
  arch-chroot /mnt
 
- nano /etc/locale.gen
- ##uncomment your locale (the utf-8 one)
+ vi /etc/locale.gen
+ ### uncomment your locale (the utf-8 one)
  locale-gen
  locale > /etc/locale.conf
  ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
- ##or whatever your time zone is
+ ### or whatever your time zone is
  hwclock --systohc --utc
- ##nano /etc/hostname, if you wish
+ ## vi /etc/hostname, if you wish
 
- nano /etc/pacman.conf
- ##(include multilib for 64-bit)
+ vi /etc/pacman.conf
+ ## (include multilib for 64-bit)
  pacman -Syy
 
  pacman -S wpa_supplicant wpa_actiond iw ifplugd dialog wireless_tools
@@ -46,18 +46,16 @@ Start with wired internet (or not!). If not, do this:
  passwd johndoe
 
  visudo
- ##uncomment:
+ ### uncomment:
  %wheel ALL=(ALL) ALL
- ##and add:
- johndoe ALL=(ALL) ALL
 
 
- pacman -S syslinux gptfdisk  ##or your preferred boot loader
+ pacman -S syslinux gptfdisk  ### or your preferred boot loader
  syslinux-install_update -i -a -m
  syslinux-install_update -u
 
- #make sure root partition is set to boot
- nano /boot/syslinux/syslinux.cfg
+ ### make sure root partition is set to boot
+ vi /boot/syslinux/syslinux.cfg
 
  exit
  umount /mnt
@@ -68,23 +66,23 @@ Start with wired internet (or not!). If not, do this:
  sudo pacman -Syyu alsa-utils alsa-firmware pulseaudio-alsa
  sudo pacman -S xorg xorg-xinit xorg-server-utils mesa xorg-twm xorg-xclock xterm
  sudo pacman -S ttf-ubuntu-font-family ttf-droid ttf-liberation
- ##amd-ucode or intel-ucode
- ##lib32-ati-dri, lib32-intel-dri or lib32-nouveau-dri (for 64 bit)
- ##libtxc_dxtn, libjpeg-turbo, lib32-libtxc_dxtn, lib32-libjpeg-turbo
+ ## amd-ucode or intel-ucode
+ ## lib32-ati-dri, lib32-intel-dri or lib32-nouveau-dri (for 64 bit)
+ ## libtxc_dxtn, libjpeg-turbo, lib32-libtxc_dxtn, lib32-libjpeg-turbo
 
- ##then a de:
+ ### then a de:
  sudo pacman -S gnome gnome-extra gnome-shell-extensions gksu chromium firefox midori vlc
- ##or for xmonad: sudo pacman -S xmonad-contrib dmenu scrot chromium firefox midori vlc
- ##or for e17: sudo pacman -S enlightenment17 connman chromium firefox midori vlc
- ##later get econnman & terminology through AUR
+ ## or for xmonad: sudo pacman -S xmonad-contrib dmenu scrot chromium firefox midori vlc
+ ## or for e17: sudo pacman -S enlightenment17 connman chromium firefox midori vlc
+ ## later get econnman & terminology through AUR
 
- nano ~/.xinitrc
- ##and add:
+ vi ~/.xinitrc
+ ### and add:
  exec gnome-session
- ##or exec xmonad
- ##or exec enlightenment_start
+ ### or exec xmonad
+ ### or exec enlightenment_start
 
- ##or sudo systemctl enable gdm, then gdm will start automatically at boot
- ##also, sudo systemctl enable NetworkManager (if you wish)
+ ### or sudo systemctl enable gdm, then gdm will start automatically at boot
+ ### also, sudo systemctl enable NetworkManager (if you wish)
 
  startx
