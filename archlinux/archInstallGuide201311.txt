@@ -67,7 +67,7 @@ Start with wired internet (or not!). If not, do this:
  ### pulseaudio-alsa
  sudo pacman -S xorg xorg-xinit xorg-server-utils mesa xorg-twm xorg-xclock xterm
  sudo pacman -S ttf-ubuntu-font-family ttf-droid ttf-liberation
- ## amd-ucode or intel-ucode
+ ## intel-ucode
  ## lib32-ati-dri, lib32-intel-dri or lib32-nouveau-dri (for 64 bit)
  ## libtxc_dxtn, libjpeg-turbo, lib32-libtxc_dxtn, lib32-libjpeg-turbo
 
