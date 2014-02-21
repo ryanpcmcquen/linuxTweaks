@@ -1,3 +1,4 @@
+" plugins: NERDTree, browser, Wildmenu, Syntax highlighting, matchit
 
 set tabstop=2
 set shiftwidth=2
