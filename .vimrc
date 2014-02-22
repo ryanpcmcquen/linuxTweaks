@@ -1,4 +1,3 @@
-
 " plugins: NERDTree, browser
 
 set tabstop=2
@@ -7,6 +6,7 @@ set softtabstop=2
 set smarttab
 set expandtab
 
+set number
 syntax on
 
 "run mkdir -p ~/.vim/tmp/ for this to work
