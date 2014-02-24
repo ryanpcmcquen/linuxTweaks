@@ -5,6 +5,7 @@
 ""  mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
 
+""set 2 spaces for tab globally
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
