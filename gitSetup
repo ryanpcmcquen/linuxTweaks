@@ -1,0 +1,2 @@
+
+$ git config --global user.name "Ryan Q"; git config --global user.email "ryan.q@linux.com"; git config --global credential.helper cache; git config --global push.default simple
