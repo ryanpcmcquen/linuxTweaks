@@ -7,10 +7,13 @@
 ""  wget https://github.com/scrooloose/nerdtree/archive/master.zip; unzip master.zip -d ~/.vim/; mv ~/.vim/nerdtree-master/* ~/.vim/; rm -rf ~/.vim/nerdtree-master/
 ""
 
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
+"" uncomment if you want NERDTree open on startup
+"autocmd VimEnter * NERDTree
+"autocmd BufEnter * NERDTreeMirror
+"autocmd VimEnter * wincmd p
 
-autocmd VimEnter * wincmd p
+"" set default font size on gui
+"set guifont=Monaco:h12
 
 ""set 2 spaces for tab globally
 set tabstop=2
