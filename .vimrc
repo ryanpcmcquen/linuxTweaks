@@ -1,8 +1,10 @@
-""plugins: NERDTree
-
-""in ~/$ & ~/# run:
+"" in ~/$ & ~/# run:
 ""
 ""  mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
+""
+"" for NERDTree:
+""
+""  wget https://github.com/scrooloose/nerdtree/archive/master.zip; unzip master.zip -d ~/.vim/
 ""
 
 ""set 2 spaces for tab globally
