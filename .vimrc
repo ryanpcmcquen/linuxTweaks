@@ -1,4 +1,4 @@
-""plugins: NERDTree, browser
+""plugins: NERDTree
 
 ""in ~/$ & ~/# run:
 ""
