@@ -10,6 +10,8 @@
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 
+autocmd VimEnter * wincmd p
+
 ""set 2 spaces for tab globally
 set tabstop=2
 set shiftwidth=2
