@@ -7,6 +7,9 @@
 ""  wget https://github.com/scrooloose/nerdtree/archive/master.zip; unzip master.zip -d ~/.vim/; mv ~/.vim/nerdtree-master/* ~/.vim/; rm -rf ~/.vim/nerdtree-master/
 ""
 
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+
 ""set 2 spaces for tab globally
 set tabstop=2
 set shiftwidth=2
