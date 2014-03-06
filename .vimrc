@@ -15,7 +15,7 @@ set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
 set number
-syntax off
+syntax on
 set cursorline
 set backupdir=~/.vim/tmp/
 set directory=~/.vim/tmp/
