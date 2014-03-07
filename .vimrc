@@ -4,7 +4,7 @@
 ""
 "" for NERDTree:
 ""
-""  wget https://github.com/scrooloose/nerdtree/archive/master.zip; unzip master.zip -d ~/.vim/; mv ~/.vim/nerdtree-master/* ~/.vim/; rm -rf ~/.vim/nerdtree-master/
+""  wget https://github.com/scrooloose/nerdtree/archive/master.zip -P ~/; unzip master.zip -d ~/.vim/; mv ~/.vim/nerdtree-master/* ~/.vim/; rm -rf ~/.vim/nerdtree-master/; rm ~/master.zip
 ""
 
 "" uncomment if you want NERDTree open on startup
