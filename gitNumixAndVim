@@ -1,1 +1,5 @@
-  
+wget https://raw.github.com/numixproject/numix/gh-pages/resources/img/bg.png -P /usr/share/wallpapers/
+
+wget https://raw.github.com/ryanpcmcquen/slackpapers/master/slackware-makepkg-not-war-ryanpc.png -P /usr/share/wallpapers/
+wget  -P /usr/share/wallpapers/
+wget  -P /usr/share/wallpapers/
