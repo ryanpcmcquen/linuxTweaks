@@ -1,0 +1,23 @@
+#!/bin/sh
+##install without kde & xfce groups
+
+##network name: slackware.darks.tar
+
+###edit lilo.conf
+##add 'lba32'
+##add 'compact'
+##shorten timeout
+
+#download sbopkg & slackpkg+
+#set up slackpkg & slackpkg+
+
+#slackpkg install msb
+#slackpkg install chromium
+
+curl http://sbopkg.googlecode.com/files/sbopkg-0.37.0-noarch-1_cng.tgz | sudo /sbin/installpkg
+curl http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.0-noarch-2mt.txz | sudo /sbin/installpkg
+
+curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/gitNumixAndVim.sh | bash
+curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | bash
+
+

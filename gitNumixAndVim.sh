@@ -20,7 +20,7 @@ mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/mast
 wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/;
 
 sudo -s <<EOF;
-mkdir /root/.vim/; mkdir /root/.vim/tmp/;
+mkdir -p /root/.vim/tmp/;
 wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P /root/;
 wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P /root/;
 exit;
