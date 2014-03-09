@@ -14,9 +14,8 @@ sudo unzip ~/master.zip -d /usr/share/icons/; sudo mv /usr/share/icons/numix-ico
 sudo rm -rf /usr/share/icons/numix-icon-theme-shine-master/; rm ~/master.zip
 
 mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
-
 wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
 
-su; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/;
+su; mkdir -p ~/.vim/tmp; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/;
 wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
 
