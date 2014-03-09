@@ -1,10 +1,10 @@
 #
-#
+# wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
 
 [user]
-	name = Ryan Q
-	email = ryan.q@linux.com
+  name = Ryan Q
+  email = ryan.q@linux.com
 [credential]
-	helper = cache
+  helper = cache
 [push]
-	default = simple
+  default = simple
