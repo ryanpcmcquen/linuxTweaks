@@ -19,7 +19,8 @@ sudo unzip ~/master.zip -d /usr/share/themes/; rm ~/master.zip;
 mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/;
 wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/;
 
-sudo -s <<EOF; mkdir -p ~/.vim/tmp; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/;
-wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/;
-EOF
+sudo -s; mkdir -p /root/.vim/tmp; sudo -s;
+wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P /root/;
+wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P /root/;
+exit
 
