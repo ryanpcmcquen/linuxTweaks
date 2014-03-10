@@ -9,12 +9,12 @@ sudo wget https://raw.github.com/ryanpcmcquen/slackpapers/master/Think_White_sla
 
 sudo wget https://raw.github.com/ryanpcmcquen/googleNowWallpapers/master/seattle2.png -P /usr/share/wallpapers/;
 
-wget https://github.com/ryanpcmcquen/numix-icon-theme-shine/archive/master.zip -P ~/;
+sudo wget https://github.com/ryanpcmcquen/numix-icon-theme-shine/archive/master.zip -P ~/;
 sudo unzip ~/master.zip -df /usr/share/icons/; sudo mv /usr/share/icons/numix-icon-theme-shine-master/Numix-Shine/ /usr/share/icons/;
-sudo rm -rf /usr/share/icons/numix-icon-theme-shine-master/; rm ~/master.zip;
+sudo rm -rf /usr/share/icons/numix-icon-theme-shine-master/; sudo rm ~/master.zip;
 
-wget https://github.com/shimmerproject/Numix/archive/master.zip -P ~/;
-sudo unzip ~/master.zip -df /usr/share/themes/; rm ~/master.zip;
+sudo wget https://github.com/shimmerproject/Numix/archive/master.zip -P ~/;
+sudo unzip ~/master.zip -df /usr/share/themes/; sudo rm ~/master.zip;
 
 mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/;
 wget https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/;
