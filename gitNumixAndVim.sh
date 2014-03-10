@@ -12,7 +12,7 @@ sudo wget -N https://raw.github.com/ryanpcmcquen/slackpapers/master/Think_White_
 sudo wget -N https://raw.github.com/ryanpcmcquen/googleNowWallpapers/master/seattle2.png -P /usr/share/wallpapers/;
 
 ## doesn't work
-#sudo wget -N https://github.com/numixproject/numix-icon-theme-shine/archive/86572ae65b538d3da02688061b1f0abd2596643d.zip -P ~/;
+#sudo wget -N https://github.com/numixproject/numix-icon-theme-shine/archive/master.zip -P ~/;
 #sudo unzip ~/master.zip -df /usr/share/icons/;
 #sudo mv /usr/share/icons/numix-icon-theme-shine-master/Numix-Shine/ /usr/share/icons/;
 #sudo rm -rf /usr/share/icons/numix-icon-theme-shine-master/;
