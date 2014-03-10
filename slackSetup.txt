@@ -8,11 +8,19 @@
 ##add 'compact'
 ##shorten timeout
 
+##vi /etc/profile.d/lang.sh to switch default encoding to utf-8
+
+##adduser, append wheel group and activate it under visudo
+
 #download sbopkg & slackpkg+
 #set up slackpkg & slackpkg+
 
 #slackpkg install msb
 #slackpkg install chromium
+#slackpkg install wicd
+##clear out all network manager garbage
+#slackpkg remove NetworkManager
+make sure to chmod all the right stuff in /etc/rc.d
 
 curl http://sbopkg.googlecode.com/files/sbopkg-0.37.0-noarch-1_cng.tgz | sudo /sbin/installpkg
 curl http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.0-noarch-2mt.txz | sudo /sbin/installpkg
