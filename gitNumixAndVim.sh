@@ -1,6 +1,8 @@
 #!/bin/sh
 ## run this as a normal user
 
+# curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/gitNumixAndVim.sh | bash
+
 sudo wget -N https://raw.github.com/numixproject/numix/gh-pages/resources/img/bg.png -P /usr/share/wallpapers/;
 
 sudo wget -N https://raw.github.com/ryanpcmcquen/slackpapers/master/slackware-makepkg-not-war-ryanpc.png -P /usr/share/wallpapers/;
