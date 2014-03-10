@@ -1,3 +1,8 @@
+#!/bin/sh
+## run this as normal user
+
+# curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | bash
+
 dconf write /org/mate/peripherals-touchpad/scroll-method 2
 dconf write /org/mate/peripherals-touchpad/horiz-scroll-enabled true
 dconf write /org/mate/peripherals-touchpad/tap-to-click false
