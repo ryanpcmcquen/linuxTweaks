@@ -1,7 +1,7 @@
 {
   "always_show_minimap_viewport": true,
   "auto_complete_commit_on_tab": true,
-  "color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Bright.tmTheme",
+  "color_scheme": "Packages/User/plain.tmTheme",
   "default_line_ending": "unix",
   "font_face": "Ubuntu Mono",
   "font_size": 15,
