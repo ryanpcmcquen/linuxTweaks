@@ -3,8 +3,12 @@
   "auto_complete_commit_on_tab": true,
   "color_scheme": "Packages/User/plain.tmTheme",
   "default_line_ending": "unix",
-  "font_face": "Ubuntu Mono",
-  "font_size": 18,
+  "font_face": "Terminus",
+  "font_options":
+  [
+    "no_antialias"
+  ],
+  "font_size": 24,
   "ignored_packages":
   [
   ],
