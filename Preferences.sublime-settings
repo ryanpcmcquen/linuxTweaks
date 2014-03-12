@@ -1,6 +1,20 @@
 {
-  "margin": 2,
-  "tab_size": 2,
+  "always_show_minimap_viewport": true,
   "auto_complete_commit_on_tab": true,
+  "color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Bright.tmTheme",
+  "default_line_ending": "unix",
+  "font_face": "Ubuntu Mono",
+  "font_size": 15,
+  "ignored_packages":
+  [
+  ],
+  "margin": 2,
+  "numix_sidebar_tree_xsmall": true,
+  "numix_xsmall_tabs": true,
+  "show_encoding": true,
+  "show_full_path": true,
+  "show_line_endings": true,
+  "tab_size": 2,
+  "theme": "Numix.sublime-theme",
   "translate_tabs_to_spaces": true
 }
