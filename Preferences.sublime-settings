@@ -20,5 +20,6 @@
   "show_line_endings": true,
   "tab_size": 2,
   "theme": "Numix.sublime-theme",
-  "translate_tabs_to_spaces": true
+  "translate_tabs_to_spaces": true,
+  "vintageous_use_ctrl_keys": true
 }
