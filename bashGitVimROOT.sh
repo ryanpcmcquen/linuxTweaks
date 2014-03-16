@@ -1,4 +1,5 @@
 #!/bin/sh
+## as root
 
 # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimROOT.sh | bash
 
