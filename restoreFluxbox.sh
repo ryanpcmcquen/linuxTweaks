@@ -5,3 +5,6 @@
 
 ## terminator
 sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator --geometry 1100x700' ~/.fluxbox/keys
+
+
+sed -i 's/^# idesk &/\r superkey-launch & \r nm-applet & \r fbsetbg -l' ~/.fluxbox/startup
