@@ -13,4 +13,4 @@ sed -i 's/# idesk &/superkey-launch & nm-applet & fbsetbg -l/g' ~/.fluxbox/start
 
 
 sed -i 's/^session.screen0.workspaceNames: Workspace 1,Workspace 2,Workspace 3,Workspace 4,/session.screen0.workspaceNames: 1,2,3,4,/g' ~/.fluxbox/init
-echo "session.screen0.workspaceNames: 1,2,3,4," << ~/.fluxbox/init
+echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
