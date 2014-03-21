@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/slackFluxConfigNORMAL.sh | bash
 
 curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimNORMAL.sh | bash
 
