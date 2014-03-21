@@ -9,13 +9,14 @@
 sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator --geometry 1100x700/g' ~/.fluxbox/keys
 
 
-sed -i 's/# wmnd &/14isuperkey-launch & \
+sed -i '17isuperkey-launch & \
 ' ~/.fluxbox/startup
 
-sed -i '15inm-applet & \
+sed -i '18inm-applet & \
 ' ~/.fluxbox/startup
 
-sed -i '16ifbsetbg -l /g' ~/.fluxbox/startup
+sed -i '19ifbsetbg -l
+' ~/.fluxbox/startup
 
 
 #sed -i 's/^session.screen0.workspaceNames: Workspace 1,Workspace 2,Workspace 3,Workspace 4,/session.screen0.workspaceNames: 1,2,3,4,/g' ~/.fluxbox/init
