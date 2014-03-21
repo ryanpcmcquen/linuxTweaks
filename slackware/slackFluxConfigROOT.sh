@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/slackFluxConfigROOT.sh | bash
+
 ## adjust slackpkg blacklist
 sed -i 's/^aaa_elflibs/#aaa_elflibs/g' /etc/slackpkg/blacklist
 sed -i 's/^#[0-9]+_SBo/[0-9]+_SBo/g' /etc/slackpkg/blacklist
