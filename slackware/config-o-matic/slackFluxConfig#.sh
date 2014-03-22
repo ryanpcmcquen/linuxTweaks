@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfigROOT.sh | bash
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfig%23.sh | bash
 
 ## configure lilo
 sed -i 's/^#compact/lba32\
