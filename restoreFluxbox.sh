@@ -6,7 +6,7 @@
 sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -maximized' ~/.fluxbox/keys
 
 ## terminator (thinkpad reso)
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator --geometry 1100x700/g' ~/.fluxbox/keys
+#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m/g' ~/.fluxbox/keys
 
 
 sed -i '17isuperkey-launch & \
