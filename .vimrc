@@ -44,3 +44,5 @@ set cursorline
 set backupdir=~/.vim/tmp/
 set directory=~/.vim/tmp/
 
+set mouse=a
+
