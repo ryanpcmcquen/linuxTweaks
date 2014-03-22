@@ -18,6 +18,8 @@ sed -i 's/^#export LANG=en_US.UTF-8/export LANG=en_US.UTF-8/g' /etc/profile.d/la
 ## adjust slackpkg blacklist
 sed -i 's/^aaa_elflibs/#aaa_elflibs/g' /etc/slackpkg/blacklist
 
+sed -i '38isbopkg' /etc/slackpkg/blacklist
+
 ## doesn't work
 #sed -i 's/#[0-9]+_SBo/\
 #[0-9]+_SBo/g' /etc/slackpkg/blacklist
