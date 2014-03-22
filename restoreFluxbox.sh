@@ -3,7 +3,7 @@
 # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 140x40\
+sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 200x55\
 /g' ~/.fluxbox/keys
 
 ## terminator (thinkpad reso)
