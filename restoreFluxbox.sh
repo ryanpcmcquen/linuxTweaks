@@ -9,13 +9,13 @@ sed -i 's_^Mod1 F1 :Exec xterm_Mod1 F1 :Exec uxterm -rv -maximized_g' ~/.fluxbox
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m/g' ~/.fluxbox/keys
 
 
-sed -i '17isuperkey-launch & \
+sed -i '17isuperkey-launch &\
 ' ~/.fluxbox/startup
 
-sed -i '18inm-applet & \
+sed -i '18inm-applet &\
 ' ~/.fluxbox/startup
 
-sed -i '19ifbsetbg -l \
+sed -i '19ifbsetbg -l\
 ' ~/.fluxbox/startup
 
 
