@@ -17,7 +17,6 @@ lilo
 sed -i 's/^export LANG=en_US/#export LANG=en_US/g' /etc/profile.d/lang.sh
 sed -i 's/^#export LANG=en_US.UTF-8/export LANG=en_US.UTF-8/g' /etc/profile.d/lang.sh
 
-export LANG=en_US
 
 ## adjust slackpkg blacklist
 sed -i 's/^aaa_elflibs/#aaa_elflibs/g' /etc/slackpkg/blacklist
