@@ -3,7 +3,7 @@
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfig$.sh | bash
 
 curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimNORMAL.sh | bash
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
+curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 wget -N http://box-look.org/CONTENT/content-files/159716-numixpeg.tar.gz -P ~/
 tar xf ~/159716-numixpeg.tar.gz -C ~/.fluxbox/styles
