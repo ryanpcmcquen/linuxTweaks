@@ -9,8 +9,8 @@ sed -i "s|^Mod1 F1 :Exec xterm|Mod1 F1 :Exec uxterm -rv -geometry 140x40\
 ## terminator (thinkpad reso)
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m/g' ~/.fluxbox/keys
 
-sed -i "s|^# idesk &|superkey-launch &\
-nm-applet &\
+sed -i "s|^# idesk &|superkey-launch \&\
+nm-applet \&\
 fbsetbg -l\
 ||g" ~/.fluxbox/startup
 
