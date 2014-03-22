@@ -3,15 +3,15 @@
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
-sed --in-place "s|^Mod1\ F1\ \:Exec\ xterm|Mod1\ F1\ \:Exec\ uxterm\ -rv\ -geometry\ 140x40\
+sed --in-place "s|^Mod1 F1 :Exec xterm|Mod1 F1 :Exec uxterm -rv -geometry 140x40\
 ||g" ~/.fluxbox/keys
 
 ## terminator (thinkpad reso)
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m/g' ~/.fluxbox/keys
 
-sed --in-place "s|\#\ idesk\ \&|superkey-launch\ \&\
-nm-applet\ \&\
-fbsetbg\ -l\
+sed --in-place "s|^# idesk &|superkey-launch &\
+nm-applet &\
+fbsetbg -l\
 ||g" ~/.fluxbox/startup
 
 #sed -i '18inm-applet\ &\
