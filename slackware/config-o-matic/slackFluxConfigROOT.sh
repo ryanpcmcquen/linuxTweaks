@@ -3,10 +3,8 @@
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfigROOT.sh | bash
 
 ## configure lilo
-sed -i 's/^#compact/\
-lba32\
-compact\
-/g' /etc/lilo.conf
+sed -i 's/^#compact/lba32\
+compact/g' /etc/lilo.conf
 
 sed -i 's/^timeout = 50/timeout = 5/g' /etc/lilo.conf
 
