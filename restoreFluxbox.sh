@@ -15,7 +15,7 @@ sed -i '17isuperkey-launch & \
 sed -i '18inm-applet & \
 ' ~/.fluxbox/startup
 
-sed -i '19ifbsetbg -l
+sed -i '19ifbsetbg -l \
 ' ~/.fluxbox/startup
 
 
