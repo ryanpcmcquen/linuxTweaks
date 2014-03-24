@@ -26,8 +26,9 @@ sed -i '38isbopkg' /etc/slackpkg/blacklist
 
 sed -i '39i[0-9]+_SBo' /etc/slackpkg/blacklist
 
-## choose 64-current mirrorbrain mirror
+## choose 32 or 64-current mirrorbrain mirror
 sed -i 's_^# http://mirrors.slackware.com/slackware/slackware64-current/_http://mirrors.slackware.com/slackware/slackware64-current/_g' /etc/slackpkg/mirrors
+sed -i 's_^# http://mirrors.slackware.com/slackware/slackware-current/_http://mirrors.slackware.com/slackware/slackware-current/_g' /etc/slackpkg/mirrors
 
 curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimROOT.sh | bash
 
