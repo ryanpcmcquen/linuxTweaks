@@ -1,3 +1,5 @@
+# wget
+
 pcm.!default {
   type hw
   card 1
