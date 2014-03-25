@@ -6,6 +6,14 @@
 sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 200x55\
 /g' ~/.fluxbox/keys
 
+## fix audio key settings
+sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master,0 1+\
+/g' ~/.fluxbox/keys
+sed -i 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master,0 1-\
+/g' ~/.fluxbox/keys
+sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 toggle\
+/g' ~/.fluxbox/keys
+
 ## terminator (thinkpad reso)
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m/g' ~/.fluxbox/keys
 
