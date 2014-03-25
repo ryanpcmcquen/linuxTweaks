@@ -36,3 +36,7 @@ wget -N http://sbopkg.googlecode.com/files/sbopkg-0.37.0-noarch-1_cng.tgz -P ~/
 wget -N http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.0-noarch-2mt.txz -P ~/
 
 installpkg ~/*.t?z
+
+mv /etc/slackpkg/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf.old
+wget -N https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/slackpkgplus.conf -P /etc/slackpkg/
+
