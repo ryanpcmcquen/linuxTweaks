@@ -5,7 +5,7 @@ Slackware is easy to configure with config-o-matic!
 
 14.1:
 
-    #curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfig14.1ROOT.sh | bash
+    # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfig14.1ROOT.sh | bash
 
 current:
 
