@@ -11,6 +11,7 @@ sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 200x55\
 
 sed -i 's/^# idesk &/superkey-launch \&\
 nm-applet \&\
+CopyAgent \&\
 fbsetbg -l\
 /g' ~/.fluxbox/startup
 
