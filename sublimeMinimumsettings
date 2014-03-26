@@ -1,0 +1,11 @@
+{
+  "tab_size": 2,
+  "margin": 2,
+  "translate_tabs_to_spaces": true,
+  "default_encoding": "UTF-8",
+  "fallback_encoding": "UTF-8",
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": false,
+  "default_line_ending": "unix",
+  "show_full_path": true
+}
