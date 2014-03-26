@@ -8,7 +8,7 @@
   [
     "no_antialias"
   ],
-  "font_size": 24,
+  "font_size": 16,
   "ignored_packages":
   [
   ],
@@ -21,5 +21,9 @@
   "tab_size": 2,
   "theme": "Numix.sublime-theme",
   "translate_tabs_to_spaces": true,
-  "vintageous_use_ctrl_keys": true
+  "vintageous_use_ctrl_keys": true,
+  "trim_trailing_white_space_on_save": true,
+  "fallback_encoding": "UTF-8",
+  "default_encoding": "UTF-8",
+  "ensure_newline_at_eof_on_save": false
 }
