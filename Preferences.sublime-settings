@@ -25,5 +25,5 @@
   "trim_trailing_white_space_on_save": true,
   "fallback_encoding": "UTF-8",
   "default_encoding": "UTF-8",
-  "ensure_newline_at_eof_on_save": false
+  "ensure_newline_at_eof_on_save": true
 }
