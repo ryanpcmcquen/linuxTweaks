@@ -44,5 +44,8 @@ set cursorline
 set backupdir=~/.vim/tmp/
 set directory=~/.vim/tmp/
 
+""have gvim use X11 clipboard
+set clipboard=unnamedplus
+
 set mouse=a
 
