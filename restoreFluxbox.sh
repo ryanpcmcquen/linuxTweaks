@@ -30,3 +30,4 @@ echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
 
 echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
 
+echo "session.screen0.workspacewarping:	false" >> ~/.fluxbox/init
