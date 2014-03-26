@@ -29,7 +29,7 @@ if has("gui_running")
   endif
 endif
 
-""set 2 spaces for tab globally
+"" set 2 spaces for tab globally
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -44,7 +44,7 @@ set cursorline
 set backupdir=~/.vim/tmp/
 set directory=~/.vim/tmp/
 
-""have gvim use X11 clipboard
+"" have gvim use X11 clipboard
 set clipboard=unnamedplus
 
 set mouse=a
