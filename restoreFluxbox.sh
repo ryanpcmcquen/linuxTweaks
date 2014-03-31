@@ -3,8 +3,13 @@
 # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 200x50\
+#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 200x50\
+#/g' ~/.fluxbox/keys
+
+## terminator (maximizing actually works for terminator in fluxbox)
+sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
 /g' ~/.fluxbox/keys
+
 
 ## fix audio key settings
 sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master,0 1+\
@@ -14,8 +19,6 @@ sed -i 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master,0 1-\
 sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 toggle\
 /g' ~/.fluxbox/keys
 
-## terminator (thinkpad reso)
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m/g' ~/.fluxbox/keys
 
 sed -i 's/^# idesk &/superkey-launch \&\
 nm-applet \&\
