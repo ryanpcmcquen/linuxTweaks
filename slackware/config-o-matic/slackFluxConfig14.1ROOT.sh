@@ -25,15 +25,10 @@ lilo
 sed -i 's/^export LANG=en_US/#export LANG=en_US/g' /etc/profile.d/lang.sh
 sed -i 's/^#export LANG=en_US.UTF-8/export LANG=en_US.UTF-8/g' /etc/profile.d/lang.sh
 
+sed -i 's/#\[0-9]+_SBo/\
+\[0-9]+_SBo\
+sbopkg/g' /etc/slackpkg/blacklist
 
-
-sed -i '38isbopkg' /etc/slackpkg/blacklist
-
-## doesn't work
-#sed -i 's/#[0-9]+_SBo/\
-#[0-9]+_SBo/g' /etc/slackpkg/blacklist
-
-sed -i '39i[0-9]+_SBo' /etc/slackpkg/blacklist
 
 ## choose 64-14.1 or 32 mirrorbrain mirror
 sed -i 's_^# http://mirrors.slackware.com/slackware/slackware64-14.1/_http://mirrors.slackware.com/slackware/slackware64-14.1/_g' /etc/slackpkg/mirrors
