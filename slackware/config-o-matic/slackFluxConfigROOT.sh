@@ -2,6 +2,16 @@
 
 # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfigROOT.sh | bash
 
+if [ ! $UID = 0 ]; then
+  cat << EOF
+
+This script must be run as root.
+
+EOF
+  exit 1
+fi
+
+
 ## configure lilo
 sed -i 's/^#compact/lba32\
 compact/g' /etc/lilo.conf
