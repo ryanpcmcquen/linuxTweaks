@@ -54,6 +54,6 @@ PKGS_PRIORITY=( alienbob-current:.* restricted-current:.* )/g' /etc/slackpkg/sla
 sed -i 's_^#MIRRORPLUS['zerouno']=http://www.z01.eu/repo-slack/slackware64-current/_\
 #MIRRORPLUS['zerouno']=http://www.z01.eu/repo-slack/slackware64-current/\
 MIRRORPLUS['alienbob-current']=http://taper.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/\
-MIRRORPLUS['restricted-current']=http://taper.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/'
+MIRRORPLUS['restricted-current']=http://taper.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/_g'
 
 
