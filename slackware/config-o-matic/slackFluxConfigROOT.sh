@@ -63,3 +63,7 @@ MIRRORPLUS\['alienbob-current']=http://taper.alienbase.nl/mirrors/people/alien/s
 MIRRORPLUS\['restricted-current']=http://taper.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/|g" /etc/slackpkg/slackpkgplus.conf
 
 
+sed -i "s|^#MIRRORPLUS\['zerouno']=http://www.z01.eu/repo-slack/slackware64-current/\
+|MIRRORPLUS\['alienbob-current']=http://taper.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/\n&\
+MIRRORPLUS\['restricted-current']=http://taper.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/|g" /etc/slackpkg/slackpkgplus.conf
+
