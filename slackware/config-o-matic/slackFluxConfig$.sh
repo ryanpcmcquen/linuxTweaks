@@ -2,6 +2,15 @@
 
 # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/config-o-matic/slackFluxConfig$.sh | bash
 
+if [ ! $UID != 0 ]; then
+cat << EOF
+
+This script must not be run as root.
+
+EOF
+  exit 1
+fi
+
 curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimNORMAL.sh | bash
 curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
