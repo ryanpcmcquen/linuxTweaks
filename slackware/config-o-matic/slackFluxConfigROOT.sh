@@ -52,6 +52,7 @@ sed -i 's/^#PKGS_PRIORITY=( myrepo:.* )/\
 PKGS_PRIORITY=( alienbob-current:.* restricted-current:.* )/g' /etc/slackpkg/slackpkgplus.conf
 
 sed -i "s|^#MIRRORPLUS\['zerouno']=http://www.z01.eu/repo-slack/slackware64-current/|\
+\
 #MIRRORPLUS\['zerouno']=http://www.z01.eu/repo-slack/slackware64-current/\
 \
 MIRRORPLUS\['alienbob-current']=http://taper.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/\
