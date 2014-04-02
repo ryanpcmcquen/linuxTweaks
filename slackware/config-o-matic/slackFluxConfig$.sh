@@ -23,3 +23,5 @@ curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | 
 wget -N http://box-look.org/CONTENT/content-files/163116-Just.tgz -P ~/
 tar xf ~/163116-Just.tgz -C ~/.fluxbox/styles
 echo "session.styleFile: /home/ry/.fluxbox/styles/Just" >> ~/.fluxbox/init
+
+rm ~/163116-Just.tgz
