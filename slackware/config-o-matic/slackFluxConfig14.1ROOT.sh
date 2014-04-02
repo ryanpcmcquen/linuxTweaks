@@ -41,3 +41,5 @@ wget -N http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.0-noa
 
 installpkg ~/*.t?z
 
+rm ~/sbopkg-0.37.0-noarch-1_cng.tgz
+rm ~/slackpkg+-1.3.0-noarch-2mt.txz
