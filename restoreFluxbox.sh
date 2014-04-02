@@ -11,7 +11,7 @@ sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
 /g' ~/.fluxbox/keys
 
 
-## fix audio key settings
+## fix audio key settings, verify with xev
 sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master,0 1+\
 /g' ~/.fluxbox/keys
 sed -i 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master,0 1-\
