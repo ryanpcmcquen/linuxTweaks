@@ -48,6 +48,8 @@ installpkg ~/*.t?z
 mv /etc/slackpkg/slackpkgplus.conf /etc/slackpkg/slackpkgplus.conf.old
 wget -N https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/slackpkgplus.conf -P /etc/slackpkg/
 
+rm ~/sbopkg-0.37.0-noarch-1_cng.tgz
+rm ~/slackpkg+-1.3.0-noarch-2mt.txz
 
 ################
 ####DOESN'T WORK
