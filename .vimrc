@@ -27,6 +27,7 @@ if has("gui_running")
   else
     set guifont=Monospace:h11:cDEFAULT
   endif
+  set lines=40 columns=135
 endif
 
 "" set 2 spaces for tab globally
