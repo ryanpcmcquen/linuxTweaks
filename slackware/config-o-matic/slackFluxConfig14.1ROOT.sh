@@ -37,9 +37,9 @@ sed -i 's_^# http://mirrors.slackware.com/slackware/slackware-14.1/_http://mirro
 curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimROOT.sh | bash
 
 wget -N http://sbopkg.googlecode.com/files/sbopkg-0.37.0-noarch-1_cng.tgz -P ~/
-wget -N http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.0-noarch-2mt.txz -P ~/
+wget -N http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.1-noarch-1mt.txz -P ~/
 
 installpkg ~/*.t?z
 
 rm ~/sbopkg-0.37.0-noarch-1_cng.tgz
-rm ~/slackpkg+-1.3.0-noarch-2mt.txz
+rm ~/slackpkg+-1.3.1-noarch-1mt.txz
