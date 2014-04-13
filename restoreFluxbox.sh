@@ -20,10 +20,11 @@ sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 
 /g' ~/.fluxbox/keys
 
 
-sed -i 's/^# idesk &/superkey-launch \&\
-nm-applet \&\
-CopyAgent \&\
+sed -i 's/^# idesk &/nm-applet \&\
+superkey-launch \&\
+tilda \&\
 gkrellm \&\
+CopyAgent \&\
 fbsetbg -l\
 /g' ~/.fluxbox/startup
 
