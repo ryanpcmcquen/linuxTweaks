@@ -3,12 +3,12 @@
 # curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 200x50\
-#/g' ~/.fluxbox/keys
+sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
+/g' ~/.fluxbox/keys
 
 ## terminator (maximizing actually works for terminator in fluxbox)
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
-/g' ~/.fluxbox/keys
+#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
+#/g' ~/.fluxbox/keys
 
 
 ## fix audio key settings, verify with xev
