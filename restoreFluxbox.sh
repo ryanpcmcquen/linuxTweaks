@@ -22,6 +22,7 @@ sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 
 
 sed -i 's/^# idesk &/nm-applet \&\
 superkey-launch \&\
+compton \&\
 tilda \&\
 gkrellm \&\
 CopyAgent \&\
