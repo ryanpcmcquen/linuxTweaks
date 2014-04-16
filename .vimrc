@@ -1,6 +1,6 @@
 "" in ~/$ & ~/# run:
 ""
-""  mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
+""  wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
 
 "" set default font size on gui
@@ -32,8 +32,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 set number
 syntax off
-set backupdir=~/.vim/tmp/
-set directory=~/.vim/tmp/
 
 "" have gvim use X11 clipboard
 set clipboard=unnamedplus
