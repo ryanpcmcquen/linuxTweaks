@@ -1,6 +1,6 @@
 "" in ~/$ & ~/# run:
 ""
-""  wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
+""  wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
 
 "" set default font size on gui
