@@ -33,6 +33,10 @@ set fileencoding=utf-8
 set number
 syntax off
 
+set nobackup
+set nowritebackup
+set noswapfile
+
 "" have gvim use X11 clipboard
 set clipboard=unnamedplus
 
