@@ -2,15 +2,6 @@
 ""
 ""  mkdir -p ~/.vim/tmp/; wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
-"" for NERDTree:
-""
-""  wget https://github.com/scrooloose/nerdtree/archive/master.zip -P ~/; unzip master.zip -d ~/.vim/; mv ~/.vim/nerdtree-master/* ~/.vim/; rm -rf ~/.vim/nerdtree-master/; rm ~/master.zip
-""
-
-"" uncomment if you want NERDTree open on startup
-"autocmd VimEnter * NERDTree
-"autocmd BufEnter * NERDTreeMirror
-"autocmd VimEnter * wincmd p
 
 "" set default font size on gui
 if has("gui_running")
