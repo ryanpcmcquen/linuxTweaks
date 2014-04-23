@@ -29,14 +29,21 @@ CopyAgent \&\
 fbsetbg -l\
 /g' ~/.fluxbox/startup
 
+## dyne theme
+wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
+tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles
+
 
 ## idempotent, finally!
 if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
   echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
   echo "session.screen0.workspacewarping:	false" >> ~/.fluxbox/init
+  echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
 fi
 
+
+rm ~/61999-Dyne-fluxbox.tar.gz
 
 
 
