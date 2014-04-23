@@ -30,10 +30,23 @@ fbsetbg -l\
 /g' ~/.fluxbox/startup
 
 
+## idempotent, finally!
+if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
+  echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
+  echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
+  echo "session.screen0.workspacewarping:	false" >> ~/.fluxbox/init
+fi
+
+
+
+
+### makin' noise
 #sed -i 's/^session.screen0.workspaceNames: Workspace 1,Workspace 2,Workspace 3,Workspace 4,/session.screen0.workspaceNames: 1,2,3,4,/g' ~/.fluxbox/init
 
-echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
+#sed -i 's_\
+#session.menuFile: ~/.fluxbox/menu\
+#session.keyFile: ~/.fluxbox/keys\
+#_session.menuFile: ~/.fluxbox/menu\
+#session.keyFile: ~/.fluxbox/keys\
+#session.screen0.workspaceNames: 1,2,3,4,\
 
-echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
-
-echo "session.screen0.workspacewarping:	false" >> ~/.fluxbox/init
