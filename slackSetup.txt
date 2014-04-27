@@ -28,7 +28,7 @@ make sure to chmod all the right stuff in /etc/rc.d
 wget http://sbopkg.googlecode.com/files/sbopkg-0.37.0-noarch-1_cng.tgz
 wget http://sourceforge.net/projects/slackpkgplus/files/slackpkg%2B-1.3.0-noarch-2mt.txz
 
-curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/gitNumixAndVim.sh | bash
-curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | bash
+curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/gitNumixAndVim.sh | bash
+curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | bash
 
 
