@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
+# curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
 sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
