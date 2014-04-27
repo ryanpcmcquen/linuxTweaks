@@ -1,12 +1,12 @@
 #!/bin/sh
 ## as a normal user
 
-# curl https://raw.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimNORMAL.sh | bash
+# curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/bashGitVimNORMAL.sh | bash
 
-BASHRC="https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/normal/.bashrc"
-BASHPR="https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/normal/.bash_profile"
-GITCONF="https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig"
-VIMRC="https://raw.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc"
+BASHRC="https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/slackware/normal/.bashrc"
+BASHPR="https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/slackware/normal/.bash_profile"
+GITCONF="https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig"
+VIMRC="https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc"
 
 
 
