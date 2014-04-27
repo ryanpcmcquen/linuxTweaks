@@ -1,4 +1,4 @@
-# wget -N https://raw.github.com/ryanpcmcquen/linuxTweaks/master/slackware/.asoundrc -P ~/
+# wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/slackware/.asoundrc -P ~/
 
 pcm.!default {
   type hw
