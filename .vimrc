@@ -42,5 +42,6 @@ set noswapfile
 set clipboard=unnamedplus
 set mouse=a
 
+set ignorecase
 set smartcase
 
