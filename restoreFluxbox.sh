@@ -3,12 +3,12 @@
 # curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
-/g' ~/.fluxbox/keys
+#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
+#/g' ~/.fluxbox/keys
 
 ## lxterminal
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
-#/g' ~/.fluxbox/keys
+sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
+/g' ~/.fluxbox/keys
 
 ## terminator (maximizing actually works for terminator in fluxbox)
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
