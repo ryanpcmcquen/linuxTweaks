@@ -12,6 +12,9 @@ xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -n -t string -s /usr/bin/xfce4-terminal
 
 xfconf-query -c xfce4-panel -p /plugins/plugin-1/show-button-title -s false
+xfconf-query -c xfce4-panel -p /plugins/plugin-5/show-frame -s false
+xfconf-query -c xfce4-panel -p /plugins/plugin-5/mode -t int -s 3
+xfconf-query -c xfce4-panel -p /plugins/plugin-6/show-frame -s false
 
 xfconf-query -c xfce4-session -p /general/SaveOnExit -s false
 
