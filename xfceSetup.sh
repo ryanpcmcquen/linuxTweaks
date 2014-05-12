@@ -11,3 +11,5 @@ xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-
 
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -n -t string -s /usr/bin/xfce4-terminal
 
+xfconf-query -c xfce4-session -p /general/SaveOnExit -s false
+
