@@ -38,8 +38,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"" have gvim use X11 clipboard
-set clipboard=unnamedplus
 set mouse=a
 
 set ignorecase
