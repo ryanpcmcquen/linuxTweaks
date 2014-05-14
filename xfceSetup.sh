@@ -4,6 +4,7 @@ xfconf-query -c xfwm4 -p /general/snap_to_border -n -t bool -s true
 xfconf-query -c xfwm4 -p /general/snap_to_windows -n -t bool -s true
 xfconf-query -c xfwm4 -p /general/wrap_windows -n -t bool -s false
 xfconf-query -c xfwm4 -p /general/wrap_workspaces -n -t bool -s false
+xfconf-query -c xfwm4 -p /general/click_to_focus -n -t bool -s false
 
 xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge_Scrolling -n -t int -s 0 -t int -s 0 -t int -s 0
 xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Tap_Action -n -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0
