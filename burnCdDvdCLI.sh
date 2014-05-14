@@ -4,5 +4,5 @@ http://www.cyberciti.biz/faq/linux-find-out-the-name-of-dvd-cd-rom-writer-blu-ra
 
 dmesg | grep 'cdrom|dvd'
 
-cdrecord -v eject -speed=8 dev=/dev/sr0 /path/to/ISO
+cdrecord -v -eject -speed=8 dev=/dev/sr0 /path/to/ISO
 
