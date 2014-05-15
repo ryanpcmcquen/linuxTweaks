@@ -13,6 +13,7 @@ gsettings set org.mate.peripherals-touchpad tap-to-click false
 gsettings set org.mate.background show-desktop-icons false
 
 gsettings set org.mate.Marco.general side-by-side-tiling true
+gsettings set org.mate.Marco.general focus-mode "mouse"
 
 gsettings set org.mate.Marco.global-keybindings run-command-terminal "'<Ctrl><Alt>t'"
 
