@@ -1,0 +1,9 @@
+#!/bin/sh
+
+## to replace this file as lilo simply run:
+##
+## mv /sbin/lilo /sbin/lilo.orig
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/liloEFI -P /sbin/lilo
+
+ls --color=never /boot/vmlinuz* | tail -1 | xargs -i cp {} /boot/efi/EFI/boot/vmlinuz
+
