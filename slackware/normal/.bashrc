@@ -1,6 +1,6 @@
 
 export PS1='[\u@\h]:\w\$ '
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
