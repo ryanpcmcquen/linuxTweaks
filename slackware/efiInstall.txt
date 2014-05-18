@@ -1,0 +1,57 @@
+efi elilo slackware
+
+gdisk
+gpt with 1gb ef00, 8300 for the rest
+install slackware
+skip lilo
+boot from porteus
+
+install elilo
+grab latest version from sourceforge
+untar archive
+copy the .efi file for your architecture to /mnt/sda1/EFI/boot/bootx64.efi
+
+you may need to:
+
+# mkdir -p /mnt/sda1/EFI/boot
+
+(notice that we are renaming the file ;^) depending on your comp this may need to be different, like "bootia32.efi"
+
+write an elilo.conf like:
+
+BEGIN ---
+
+prompt
+timeout=5
+default=hugeSlack
+
+image=vmlinuz
+  label=hugeSlack
+  read-only
+  root=/dev/sda2
+  append=" vt.default_utf8=1"
+
+END ---
+
+# cp /mnt/sda2/boot/vmlinuz-huge-3.10.17 /mnt/sda1/EFI/boot/vmlinuz
+
+(or whatever the latest kernel is)
+
+reboot into mac os install dvd/usb (10.7 or greater)
+utilities > terminal
+
+$ diskutil list
+(to find your EFI disk partition, e.g. disk0s1)
+
+$ mkdir /Volumes/efi
+$ mount -t msdos /dev/disk0s1 /Volumes/efi
+
+
+$ bless --mount /Volumes/efi --setBoot --file /Volumes/efi/EFI/boot/bootx64.efi
+
+reboot
+
+party!
+
+check out my script to replace lilo for automatic kernel upgrades with slackpkg
+
