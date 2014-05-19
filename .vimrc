@@ -43,3 +43,9 @@ set mouse=a
 set ignorecase
 set smartcase
 
+"" set copy and paste to sane keybindings (that don't overwrite anything)
+nnoremap <M-y> "+y
+vnoremap <M-y> "+y
+nnoremap <M-p> "+gP
+vnoremap <M-p> "+gP
+
