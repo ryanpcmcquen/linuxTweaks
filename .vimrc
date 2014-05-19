@@ -43,6 +43,9 @@ set mouse=a
 set ignorecase
 set smartcase
 
+set wildmenu
+set wildmode=list:longest,full
+
 "" set copy and paste to sane keybindings (that don't overwrite anything)
 nnoremap <M-y> "+y
 vnoremap <M-y> "+y
