@@ -44,6 +44,8 @@ set mouse=a
 set ignorecase
 set smartcase
 
+set title
+set ruler
 set wildmenu
 set wildmode=list:longest,full
 
