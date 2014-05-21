@@ -35,8 +35,18 @@ fbsetbg -l\
 /g' ~/.fluxbox/startup
 
 ## dyne theme
-wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
-tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles
+#wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
+#tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles
+#rm ~/61999-Dyne-fluxbox.tar.gz
+
+
+## crunchy orange theme
+wget -N http://box-look.org/CONTENT/content-files/136162-Crunchy-themes.tar.gz -P ~/
+mkdir -p ~/crunchy-theme/
+tar xf ~/136162-Crunchy-themes.tar.gz -C ~/crunchy-theme/
+mv ~/crunchy-theme/fluxbox/styles/* ~/.fluxbox/styles/
+rm -rf ~/crunchy-theme/
+rm ~/136162-Crunchy-themes.tar.gz
 
 
 ## idempotent, finally!
@@ -46,11 +56,15 @@ if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   echo "session.screen0.workspacewarping: false" >> ~/.fluxbox/init
   echo "session.screen0.focusModel:	MouseFocus" >> ~/.fluxbox/init
   echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
-  echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
+  
+  ## dyne
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
+
+  ##crunchy orange
+  echo "session.styleFile: /home/ry/.fluxbox/styles/02-Crunchy-orange" >> ~/.fluxbox/init
+
 fi
 
-
-rm ~/61999-Dyne-fluxbox.tar.gz
 
 
 
