@@ -53,13 +53,13 @@ set wildmenu
 set wildmode=list:longest,full
 
 "" set copy and paste to sane keybindings (that don't overwrite anything)
-nnoremap <C-M-b> "+y
-vnoremap <C-M-b> "+y
-nnoremap <C-M-g> "+gP
-vnoremap <C-M-g> "+gP
+nnoremap <C-M-g> "+y
+vnoremap <C-M-g> "+y
+nnoremap <C-M-b> "+gP
+vnoremap <C-M-b> "+gP
 
-nnoremap <C-b> "*y
-vnoremap <C-b> "*y
-nnoremap <C-g> "*gP
-vnoremap <C-g> "*gP
+nnoremap <C-g> "*y
+vnoremap <C-g> "*y
+nnoremap <C-b> "*gP
+vnoremap <C-b> "*gP
 
