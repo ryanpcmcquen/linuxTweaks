@@ -49,6 +49,10 @@ rm -rf ~/crunchy-theme/
 rm ~/136162-Crunchy-themes.tar.gz
 
 
+#wget -N http://www.muhri.net/gkrellm/GKrellM-Skins.tar.gz -P ~/
+
+
+
 ## idempotent, finally!
 if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
