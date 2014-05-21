@@ -35,18 +35,18 @@ fbsetbg -l\
 /g' ~/.fluxbox/startup
 
 ## dyne theme
-#wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
-#tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles
-#rm ~/61999-Dyne-fluxbox.tar.gz
+wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
+tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles
+rm ~/61999-Dyne-fluxbox.tar.gz
 
 
 ## crunchy orange theme
-wget -N http://box-look.org/CONTENT/content-files/136162-Crunchy-themes.tar.gz -P ~/
-mkdir -p ~/crunchy-theme/
-tar xf ~/136162-Crunchy-themes.tar.gz -C ~/crunchy-theme/
-mv ~/crunchy-theme/fluxbox/styles/* ~/.fluxbox/styles/
-rm -rf ~/crunchy-theme/
-rm ~/136162-Crunchy-themes.tar.gz
+#wget -N http://box-look.org/CONTENT/content-files/136162-Crunchy-themes.tar.gz -P ~/
+#mkdir -p ~/crunchy-theme/
+#tar xf ~/136162-Crunchy-themes.tar.gz -C ~/crunchy-theme/
+#mv ~/crunchy-theme/fluxbox/styles/* ~/.fluxbox/styles/
+#rm -rf ~/crunchy-theme/
+#rm ~/136162-Crunchy-themes.tar.gz
 
 
 ## idempotent, finally!
