@@ -58,3 +58,8 @@ vnoremap <M-y> "+y
 nnoremap <M-p> "+gP
 vnoremap <M-p> "+gP
 
+nnoremap <S-M-y> "*y
+vnoremap <S-M-y> "*y
+nnoremap <S-M-p> "*gP
+vnoremap <S-M-p> "*gP
+
