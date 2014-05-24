@@ -63,3 +63,5 @@ vnoremap <C-f> "*y
 nnoremap <C-b> "*gP
 vnoremap <C-b> "*gP
 
+set clipboard=unnamedplus
+
