@@ -5,7 +5,10 @@ set nocompatible
 ""
 ""  wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
-
+""  mkdir -p ~/.vim/colors/
+""  wget -N https://raw.githubusercontent.com/flazz/vim-colorschemes/master/colors/c.vim -P ~/.vim/colors
+""
+""
 "" set default font size on gui
 if has("gui_running")
   if has("gui_gtk2")
@@ -36,7 +39,7 @@ set fileencoding=utf-8
 set number
 set wrap
 
-syntax off
+syntax on
 
 set nobackup
 set nowritebackup
@@ -63,9 +66,16 @@ vnoremap <F7> "*y
 nnoremap <F8> "*gP
 vnoremap <F8> "*gP
 
-set clipboard=unnamedplus
-
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+set showmatch
+
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
+
+colorscheme c
+
 
