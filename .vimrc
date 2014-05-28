@@ -39,7 +39,7 @@ set fileencoding=utf-8
 set number
 set wrap
 
-syntax on
+syntax off
 
 set nobackup
 set nowritebackup
@@ -76,6 +76,6 @@ if $TMUX == ''
   set clipboard+=unnamed
 endif
 
-colorscheme c
+""colorscheme c
 
 
