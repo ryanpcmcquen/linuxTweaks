@@ -5,9 +5,6 @@ set nocompatible
 ""
 ""  wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
-""  mkdir -p ~/.vim/colors/
-""  wget -N https://raw.githubusercontent.com/flazz/vim-colorschemes/master/colors/c.vim -P ~/.vim/colors
-""
 ""
 "" set default font size on gui
 if has("gui_running")
@@ -75,7 +72,4 @@ set showmatch
 if $TMUX == ''
   set clipboard+=unnamed
 endif
-
-""colorscheme c
-
 
