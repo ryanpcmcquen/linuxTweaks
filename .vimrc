@@ -72,8 +72,6 @@ set showmode
 
 set showmatch
 
-set clipboard=unnamed
-
 if $TMUX == ''
   set clipboard+=unnamed
 endif
