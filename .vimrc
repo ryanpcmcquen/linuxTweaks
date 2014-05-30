@@ -32,6 +32,8 @@ set softtabstop=2
 set smarttab
 set expandtab
 
+set autoindent
+
 set encoding=utf-8
 set fileencoding=utf-8
 set number
