@@ -1,11 +1,12 @@
 
 set nocompatible
 
+""
 "" in ~/$ & ~/# run:
 ""
 ""  wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
-""
+
 "" set default font size on gui
 if has("gui_running")
   if has("gui_gtk2")
@@ -44,8 +45,7 @@ set noswapfile
 
 set mouse=a
 
-set ignorecase
-set smartcase
+set ignorecase smartcase
 
 set title
 set ruler
@@ -69,7 +69,10 @@ set showmode
 
 set showmatch
 
+set clipboard=unnamed
+
 if $TMUX == ''
   set clipboard+=unnamed
 endif
+
 
