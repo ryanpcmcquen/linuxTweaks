@@ -66,7 +66,7 @@ vnoremap <F7> "*y
 nnoremap <F8> "*gP
 vnoremap <F8> "*gP
 
-nnoremap <F2> :set invpaste paste?<CR>
+set paste
 set pastetoggle=<F2>
 set showmode
 
