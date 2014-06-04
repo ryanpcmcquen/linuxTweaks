@@ -19,6 +19,7 @@
   umask 022
   ulimit -c unlimited
   ulimit -HSn 999999
+  ulimit -s 32768
   PATH=/bin:/sbin:/usr/bin:/usr/sbin
   export PATH
 
