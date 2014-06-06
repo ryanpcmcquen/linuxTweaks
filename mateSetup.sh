@@ -18,7 +18,5 @@ gsettings set org.mate.Marco.global-keybindings run-command-terminal "'<Ctrl><Al
 gsettings set org.mate.power-manager idle-dim-battery false
 gsettings set org.mate.power-manager backlight-battery-reduce false
 
-
-
-#gsettings set org.mate.background show-desktop-icons false
+gsettings set org.mate.background show-desktop-icons true
 
