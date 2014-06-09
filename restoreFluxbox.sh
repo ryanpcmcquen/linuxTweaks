@@ -58,10 +58,10 @@ if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
   
   ## dyne
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
+  echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
 
   ##crunchy orange
-  echo "session.styleFile: /home/ry/.fluxbox/styles/02-Crunchy-orange" >> ~/.fluxbox/init
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/02-Crunchy-orange" >> ~/.fluxbox/init
 
 fi
 
