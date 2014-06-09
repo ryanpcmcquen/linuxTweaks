@@ -44,6 +44,7 @@ kwriteconfig --file katerc --group "Kate Document Defaults" --key "Newline At EO
 kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding" UTF-8
 
 ## turns on global shortcut for konsole, ctrl + alt + t
+kwriteconfig --file khotkeysrc --group "Data_2" --key "Enabled" true
 kwriteconfig --file khotkeysrc --group "Data_2_3" --key "Enabled" true
 
 
