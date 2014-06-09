@@ -1,6 +1,6 @@
 #!/bin/sh
 
-##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
+##  curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
 
 kwriteconfig --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
@@ -10,6 +10,9 @@ kwriteconfig --file ksplashrc --group "KSplash" --key "Theme" Minimalistic
 
 
 kwriteconfig --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMouse
+kwriteconfig --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
+kwriteconfig --file kwinrc --group "Windows" --key "DelayFocusInterval" 500
+
 
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
