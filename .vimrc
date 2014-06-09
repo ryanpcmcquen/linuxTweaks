@@ -49,6 +49,8 @@ set noswapfile
 set mouse=a
 
 set ignorecase smartcase
+set incsearch
+set hlsearch
 
 set title
 set ruler
