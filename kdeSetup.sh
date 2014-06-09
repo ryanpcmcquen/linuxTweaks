@@ -4,7 +4,9 @@
 
 kwriteconfig --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
-kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
+#kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
+
+kwriteconfig --file ksplashrc --group "KSplash" --key "Theme" Minimalistic
 
 
 kwriteconfig --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMouse
@@ -15,4 +17,10 @@ kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" tr
 
 kwriteconfig --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
 
+kwriteconfig --file ksmserverrc --group "General" --key "confirmLogout" false
+kwriteconfig --file ksmserverrc --group "General" --key "shutdownType" 1
+kwriteconfig --file ksmserverrc --group "General" --key "loginMode" default
+
+
+#kwriteconfig --file ksmserverrc --group "General" --key "UnredirectFullscreen" true
 
