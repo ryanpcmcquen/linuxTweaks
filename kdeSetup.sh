@@ -29,3 +29,7 @@ kwriteconfig --file ksmserverrc --group "General" --key "loginMode" default
 
 #kwriteconfig --file ksmserverrc --group "General" --key "UnredirectFullscreen" true
 
+
+kwin --replace &
+
+
