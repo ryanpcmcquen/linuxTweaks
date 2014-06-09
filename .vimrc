@@ -72,6 +72,11 @@ set paste
 set pastetoggle=<F2>
 set showmode
 
+
+"" this unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
+
 set showmatch
 
 if $TMUX == ''
