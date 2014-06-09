@@ -21,13 +21,30 @@ kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" tr
 
 
 kwriteconfig --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
+kwriteconfig --file kwinrc --group "Compositing" --key "AnimationSpeed" 0
+
 
 kwriteconfig --file ksmserverrc --group "General" --key "confirmLogout" false
 kwriteconfig --file ksmserverrc --group "General" --key "shutdownType" 1
 kwriteconfig --file ksmserverrc --group "General" --key "loginMode" default
 
 
-#kwriteconfig --file ksmserverrc --group "General" --key "UnredirectFullscreen" true
+kwriteconfig --file katerc --group "TipOfDay" --key "RunOnStart" false
+
+kwriteconfig --file katerc --group "General" --key "Show Full Path in Title" true
+
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "Encoding" UTF-8
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "ReplaceTabsDyn" true
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "Tab Handling" 2
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "Tab Width" 2
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "Word Wrap" true
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "Indentation Width" 2
+kwriteconfig --file katerc --group "Kate Document Defaults" --key "Newline At EOF" true
+
+kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding" UTF-8
+
+## turns on global shortcut for konsole, ctrl + alt + t
+kwriteconfig --file khotkeysrc --group "Data_2_3" --key "Enabled" true
 
 
 kwin --replace &
