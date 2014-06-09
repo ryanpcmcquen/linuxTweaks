@@ -13,6 +13,7 @@ kwriteconfig --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMou
 kwriteconfig --file kwinrc --group "Windows" --key "AutoRaise" true
 kwriteconfig --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
 kwriteconfig --file kwinrc --group "Windows" --key "DelayFocusInterval" 500
+kwriteconfig --file kwinrc --group "Windows" --key "FocusStealingPreventionLevel" 2
 
 
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
