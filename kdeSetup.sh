@@ -47,6 +47,9 @@ kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding
 kwriteconfig --file khotkeysrc --group "Data_2" --key "Enabled" true
 kwriteconfig --file khotkeysrc --group "Data_2_3" --key "Enabled" true
 
+kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" --key "idleTime" false
+kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" false
+kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" false
 
 kwin --replace &
 
