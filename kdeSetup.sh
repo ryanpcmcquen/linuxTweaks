@@ -53,5 +53,5 @@ kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimD
 
 kwin --replace &
 
-sleep 1
+sleep 2
 
