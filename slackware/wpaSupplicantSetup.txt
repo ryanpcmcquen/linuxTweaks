@@ -1,8 +1,10 @@
-after setting up /etc/wpa_supplicant.conf with wpa_passphrase mynetwork mynetworkpasscode
+after setting up /etc/wpa_supplicant.conf with:
+
+wpa_passphrase mynetwork mynetworkpasscode
 
 you may have to chmod -x /etc/rc.d/rc.networkmanager
 
-My sidestep with my netbook with a WPA2 wireless connection to my router was to:
+then:
 
 '/etc/rc.d/rc.networkmanager stop' # Kill the networkmanager daemon.
 
