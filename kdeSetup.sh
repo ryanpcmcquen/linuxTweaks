@@ -51,7 +51,8 @@ kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" 
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" 600000
 
-kwin --replace &
 
-sleep 2
+## it is a bad idea to run this if you are not in kde
+#kwin --replace &
+#sleep 2
 
