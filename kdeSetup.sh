@@ -2,6 +2,11 @@
 
 ##  curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
 
+#if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
+#  sudo qdbus org.kde.* /kded reconfigure
+#fi
+
+
 kwriteconfig --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
 kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
@@ -54,7 +59,11 @@ kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisp
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" 600000
 
 
-## it is a bad idea to run this if you are not in kde
-#kwin --replace &
-#sleep 2
+if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
+  sudo qdbus org.kde.* reconfigure
+  kwin --replace &
+  sleep 3
+fi
+
+
 
