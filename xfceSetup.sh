@@ -18,4 +18,9 @@ xfconf-query -c xfce4-panel -p /plugins/plugin-5/mode -n -t int -s 3
 xfconf-query -c xfce4-panel -p /plugins/plugin-6/show-frame -n -t bool -s false
 
 xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false
+xfconf-query -c xfce4-session -p /splash/Engine -n -t string -s mice
+
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -n -t int -s 1
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -n -t int -s 1
+
 
