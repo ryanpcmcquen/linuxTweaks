@@ -60,7 +60,7 @@ kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimD
 
 
 if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
-  sudo qdbus org.kde.* reconfigure
+  qdbus org.kde.keyboard /modules/khotkeys reread_configuration
   kwin --replace &
   sleep 3
 fi
