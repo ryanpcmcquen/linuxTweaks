@@ -58,6 +58,14 @@ kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" 
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" 600000
 
+kwriteconfig --file powermanagementprofilesrc --group "AC" --group "SuspendSession" --key "idleTime" 600000
+kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "SuspendSession" --key "idleTime" 600000
+kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "SuspendSession" --key "idleTime" 600000
+
+kwriteconfig --file powermanagementprofilesrc --group "AC" --group "BrightnessControl" --key "value" 100
+kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "BrightnessControl" --key "value" 100
+kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
+
 
 if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
   qdbus org.kde.keyboard /modules/khotkeys reread_configuration
