@@ -58,6 +58,10 @@ kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" 
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" 600000
 
+kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DPMSControl" --key "idleTime" 600000
+kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DPMSControl" --key "idleTime" 600000
+kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DPMSControl" --key "idleTime" 600000
+
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "SuspendSession" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "SuspendSession" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "SuspendSession" --key "idleTime" 600000
