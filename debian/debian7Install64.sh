@@ -38,7 +38,7 @@ alias aptc='sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autorem
 alias apti='sudo apt-get install '" >> ~/.bashrc
 
 
-## grab google chrome, dropbox, sublime text, vagrant, skype
+## grab google chrome, vagrant
 
 ##########
 ## for spotify ##
