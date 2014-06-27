@@ -8,7 +8,7 @@ alias apti='sudo apt-get install '" >> ~/.bashrc
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 sudo apt-get install build-essential autoconf automake autotools-dev dh-make debhelper devscripts fakeroot xutils lintian \
-  pbuilder linux-generic git git-core curl lftp htop vim gksu dos2unix ruby ruby-dev rubygems \
+  pbuilder linux-generic git wget curl lftp htop vim gksu dos2unix ruby ruby-dev rubygems \
   python-dev python-setuptools python-pip python-apt dkms gftp filezilla mc git-buildpackage \
   nfs-common nfs-kernel-server rpcbind asciidoc
 
@@ -25,7 +25,7 @@ sudo apt-get update && sudo apt-get install skype ubuntu-restricted-extras libre
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
 git config --global user.name "Ryan P.C. McQuen"
-git config --global user.email "ryanpcmcquen@gmail.com"
+git config --global user.email "ryan.q@linux.com"
 git config --global credential.helper cache
 
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BB901940
@@ -39,8 +39,8 @@ git config --global credential.helper cache
 #  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F9CB8DB0
 
 cd ~/Downloads
-wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_*_amd64.deb
+#wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_*_amd64.deb
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-*_amd64.deb
+#wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-*_amd64.deb
 
 ## sed -i "/^# deb .*partner/ s/^# //" /etc/apt/sources.list && apt-get update
