@@ -26,7 +26,7 @@ kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" tr
 
 
 kwriteconfig --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
-kwriteconfig --file kwinrc --group "Compositing" --key "AnimationSpeed" 0
+kwriteconfig --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
 
 
 kwriteconfig --file ksmserverrc --group "General" --key "confirmLogout" false
