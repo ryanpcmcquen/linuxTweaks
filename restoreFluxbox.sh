@@ -24,7 +24,8 @@ sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 
 /g' ~/.fluxbox/keys
 
 
-sed -i 's/^# idesk &/#nm-applet \&\
+sed -i 's/^# idesk &/\
+nm-applet \&\
 wicd-client -t \&\
 superkey-launch \&\
 compton \&\
