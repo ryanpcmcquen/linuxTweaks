@@ -87,12 +87,14 @@ kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "Brig
 
 
 if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
+  qdbus org.kde.kded /kded unloadModule powerdevil
   qdbus org.kde.keyboard /modules/khotkeys reread_configuration
   qdbus org.kde.kded /kbuildsycoca recreate
   qdbus org.kde.kded /kded reconfigure
   qdbus org.kde.plasma-desktop /MainApplication reparseConfiguration
   #kwin --replace &
   qdbus org.kde.kwin /KWin reconfigure
+  qdbus org.kde.kded /kded loadModule powerdevil
   sleep 5
 fi
 
