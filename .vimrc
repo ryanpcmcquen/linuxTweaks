@@ -80,7 +80,7 @@ nnoremap <CR> :noh<CR><CR>
 set showmatch
 
 if $TMUX == ''
-  set clipboard+=unnamed
+  set clipboard+=
 endif
 
 
