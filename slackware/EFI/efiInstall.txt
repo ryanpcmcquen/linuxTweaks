@@ -4,21 +4,28 @@ gdisk
 gpt with 1gb ef00, 8300 for the rest
 install slackware
 skip lilo
-boot from porteus
 
-install elilo
-grab latest version from sourceforge
-untar archive
-copy the .efi file for your architecture to /mnt/sda1/EFI/boot/bootx64.efi
+here you have a choice, if you don't want to go through booting a live cd, go the purist way
 
-you may need to:
+THE PURIST WAY:
 
-# mkdir -p /mnt/sda1/EFI/boot
+you need 3 files inside of /boot/efi/EFI/boot/
+yes, that directory nesting is wacky, welcome to efi!
 
-(notice that we are renaming the file ;^) depending on your comp this may need to be different, like "bootia32.efi"
+you need:
 
-write an elilo.conf like:
+(the bootloader, depending on your arch the name may be different, e.g. "bootia32.efi")
+cp /boot/elilo-x86_64.efi /boot/efi/EFI/boot/bootx64.efi
+/boot/efi/EFI/boot/bootx64.efi
 
+(the kernel)
+ls --color=never /boot/vmlinuz* | tail -1 | xargs -i cp {} /boot/efi/EFI/boot/vmlinuz
+/boot/efi/EFI/boot/vmlinuz
+
+(the config)
+/boot/efi/EFI/boot/elilo.conf
+
+elilo.conf should contain (write it with vi)
 BEGIN ---
 
 prompt
@@ -32,6 +39,27 @@ image=vmlinuz
   append=" vt.default_utf8=1"
 
 END ---
+
+
+===
+
+
+THE I MAY NEED SOMETHING OTHER THAN ELILO WAY:
+
+boot from porteus
+
+install elilo/refind/whatever you prefer
+grab latest version from sourceforge
+untar archive
+copy the .efi file for your architecture to /mnt/sda1/EFI/boot/bootx64.efi
+
+you may need to:
+
+# mkdir -p /mnt/sda1/EFI/boot
+
+(notice that we are renaming the file ;^) depending on your comp this may need to be different, like "bootia32.efi"
+
+write an elilo.conf (elilo only, duh!) like above
 
 # cp /mnt/sda2/boot/vmlinuz-huge-3.10.17 /mnt/sda1/EFI/boot/vmlinuz
 
@@ -53,5 +81,7 @@ reboot
 
 party!
 
+
+p.s.
 check out my script to replace lilo for automatic kernel upgrades with slackpkg
 
