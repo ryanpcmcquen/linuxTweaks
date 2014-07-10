@@ -1,7 +1,7 @@
 efi elilo slackware
 
 if you want to format over all old data:
-mkfs.xfs /dev/sda
+mkfs.xfs /dev/sda -f
 
 gdisk
 gpt with 1gb ef00, 8300 for the rest
