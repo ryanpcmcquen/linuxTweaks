@@ -6,10 +6,6 @@ mkfs.xfs /dev/sda
 gdisk
 gpt with 1gb ef00, 8300 for the rest
 
-the installer will format partitions for you, but if you want to do it yourself:
-mkfs.fat -F32 /dev/sda1
-mkfs.xfs /dev/sda2
-
 install slackware
 skip lilo
 
