@@ -1,7 +1,12 @@
 efi elilo slackware
 
+if you want to format over all old data:
+mkfs.xfs /dev/sda
+
 gdisk
 gpt with 1gb ef00, 8300 for the rest
+mkfs.fat -F32 /dev/sda1
+mkfs.xfs /dev/sda2
 install slackware
 skip lilo
 
@@ -9,7 +14,7 @@ here you have a choice, if you don't want to go through booting a live cd, go th
 
 THE PURIST WAY:
 
-you need 3 files inside of /boot/efi/EFI/boot/
+you need 3 files inside of /boot/efi/EFI/boot/ (you may have to create the directory)
 yes, that directory nesting is wacky, welcome to efi!
 
 you need:
