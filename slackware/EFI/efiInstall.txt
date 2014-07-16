@@ -11,7 +11,7 @@ skip lilo
 
 here you have a choice, if you don't want to go through booting a live cd, go the purist way
 
-THE PURIST WAY:
+THE 'PURIST' WAY:
 
 you need 3 files inside of /boot/efi/EFI/boot/ (you may have to create the directory)
 yes, that directory nesting is wacky, welcome to efi!
@@ -48,7 +48,7 @@ END ---
 ===
 
 
-THE I MAY NEED SOMETHING OTHER THAN ELILO WAY:
+THE 'I MAY NEED SOMETHING OTHER THAN ELILO' WAY:
 
 boot from porteus
 
