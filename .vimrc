@@ -58,11 +58,6 @@ set wildmenu
 set wildmode=list:longest,full
 
 "" set cut, copy and paste to sane keybindings (that don't overwrite anything)
-nnoremap <F5> "+y
-vnoremap <F5> "+y
-nnoremap <F6> "+gP
-vnoremap <F6> "+gP
-
 nnoremap <F7> "*y
 vnoremap <F7> "*y
 nnoremap <F8> "*gP
