@@ -12,7 +12,7 @@ sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec roxterm --geometry=140x40\
 
 ## lxterminal
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
-/g' ~/.fluxbox/keys
+#/g' ~/.fluxbox/keys
 
 ## terminator (maximizing actually works for terminator in fluxbox)
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
