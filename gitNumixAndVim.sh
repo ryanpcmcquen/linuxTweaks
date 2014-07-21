@@ -22,14 +22,19 @@ sudo wget -N https://raw2.github.com/ryanpcmcquen/googleNowWallpapers/master/sea
 #sudo unzip ~/master.zip -df /usr/share/themes/;
 #sudo rm ~/master.zip;
 
-mkdir -p ~/.vim/tmp/;
+#mkdir -p ~/.vim/tmp/;
 wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/;
 wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/;
 
 sudo -s <<EOF;
-mkdir -p /root/.vim/tmp/;
 wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P /root/;
 wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P /root/;
 exit;
 EOF
 
+#sudo -s <<EOF;
+#mkdir -p /root/.vim/tmp/;
+#wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P /root/;
+#wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P /root/;
+#exit;
+#EOF
