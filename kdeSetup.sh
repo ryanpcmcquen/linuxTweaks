@@ -2,13 +2,8 @@
 
 ##  curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
 
-#if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
-#  sudo qdbus org.kde.* /kded reconfigure
-#fi
-
 
 kwriteconfig --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
-
 
 kwriteconfig --file kdeglobals --group "General" --key "desktopFont" "Terminus,9,-1,5,50,0,0,0,0,0"
 kwriteconfig --file kdeglobals --group "General" --key "fixed" "Terminus,9,-1,5,50,0,0,0,0,0"
