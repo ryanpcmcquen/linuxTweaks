@@ -26,6 +26,9 @@ kwriteconfig --file plasma-desktop-appletsrc --group "General" --key "fontTime" 
 
 kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
 
+## note that the theme depends on the engine setting,
+## it will not function otherwise
+kwriteconfig --file ksplashrc --group "KSplash" --key "Engine" KSplashQML
 kwriteconfig --file ksplashrc --group "KSplash" --key "Theme" Minimalistic
 
 
