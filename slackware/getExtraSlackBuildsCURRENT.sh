@@ -9,3 +9,6 @@ else
   wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware-current/extra/ -P ~/
 fi
 
+mv ~/mirrors.slackware.com/slackware/* ~/
+rm -rf ~/mirrors.slackware.com/
+
