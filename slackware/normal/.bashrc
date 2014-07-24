@@ -9,6 +9,6 @@ alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
 if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -u
 fi
 
