@@ -10,6 +10,6 @@ alias ls='ls --color=auto'
 LFS=/mnt/lfs
 
 if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -u
 fi
 
