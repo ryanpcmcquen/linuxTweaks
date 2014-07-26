@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/xfceSetup.sh | sh
+
 xfconf-query -c xfwm4 -p /general/snap_to_border -n -t bool -s true
 xfconf-query -c xfwm4 -p /general/snap_to_windows -n -t bool -s true
 xfconf-query -c xfwm4 -p /general/wrap_windows -n -t bool -s false
