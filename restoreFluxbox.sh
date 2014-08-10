@@ -3,9 +3,12 @@
 # curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
 
 ## uxterm
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
-/g' ~/.fluxbox/keys
+#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
+#/g' ~/.fluxbox/keys
 
+## tinyterm
+sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
+/g' ~/.fluxbox/keys
 
 ## roxterm
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec roxterm --geometry=140x40\
