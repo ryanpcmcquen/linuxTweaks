@@ -9,6 +9,10 @@ alias ls='ls --color=auto'
 
 LFS=/mnt/lfs
 
+## makes history work as expected in tmux
+export PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
+shopt -s histappend
+
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -u
 fi
