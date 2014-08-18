@@ -74,6 +74,5 @@ set showmatch
 
 "" nifty shortcut to go to middle of line
 "" instead of middle of screen
-map gm :exe 'normal '.(virtcol('$')/2).'|'
-
+map gm :call cursor(0, virtcol('$')/2)<CR>
 
