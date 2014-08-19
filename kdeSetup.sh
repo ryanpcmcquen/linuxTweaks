@@ -36,6 +36,7 @@ kwriteconfig --file kwinrc --group "Windows" --key "FocusStealingPreventionLevel
 
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
+kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
 
 
 kwriteconfig --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
