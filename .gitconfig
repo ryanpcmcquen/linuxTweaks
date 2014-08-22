@@ -1,7 +1,7 @@
 #
 # wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
 [user]
-	name = Ryan Q
+	name = Ryan P.C. McQuen
 	email = ryan.q@linux.com
 [credential]
 	helper = cache --timeout=3600
