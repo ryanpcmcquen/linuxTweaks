@@ -5,18 +5,18 @@
 
 /usr/share/mkinitrd/mkinitrd_command_generator.sh | sh
 
-if [ ! -z "$(ls ~/switchKernel.sh)" ]; then
-  cp ~/switchKernel.sh ~/switchKernel.sh.bak
+if [ ! -z "$(ls ~/liloGenericEntry.sh)" ]; then
+  cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
 fi
 
 ### works, but inefficient
-##ls --color=never /boot/vmlinuz-generic-* | tail -1 > ~/switchKernel.sh
-##echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(cat switchKernel.sh)" > ~/switchKernel.sh
+##ls --color=never /boot/vmlinuz-generic-* | tail -1 > ~/liloGenericEntry.sh
+##echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(cat liloGenericEntry.sh)" > ~/liloGenericEntry.sh
 
-echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(ls --color=never /boot/vmlinuz-generic-* | tail -1)" > ~/switchKernel.sh
+echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(ls --color=never /boot/vmlinuz-generic-* | tail -1)" > ~/liloGenericEntry.sh
 
-sh ~/switchKernel.sh >> /etc/lilo.conf
+sh ~/liloGenericEntry.sh >> /etc/lilo.conf
 
 lilo -v
 
-rm ~/switchKernel.sh
+rm ~/liloGenericEntry.sh
