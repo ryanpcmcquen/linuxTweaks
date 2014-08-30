@@ -5,8 +5,13 @@
 
 /usr/share/mkinitrd/mkinitrd_command_generator.sh | sh
 
-#ls --color=never /boot/vmlinuz-generic-* | tail -1 > ~/switchKernel.sh
-#echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(cat switchKernel.sh)" > ~/switchKernel.sh
+if [ ! -z "$(ls ~/switchKernel.sh)" ]; then
+  cp ~/switchKernel.sh ~/switchKernel.sh.bak
+fi
+
+### works, but inefficient
+##ls --color=never /boot/vmlinuz-generic-* | tail -1 > ~/switchKernel.sh
+##echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(cat switchKernel.sh)" > ~/switchKernel.sh
 
 echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(ls --color=never /boot/vmlinuz-generic-* | tail -1)" > ~/switchKernel.sh
 
