@@ -1,5 +1,5 @@
 #!/bin/sh
-## as a normal user
+## as normal or root user
 
 # curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMAL.sh | sh
 
