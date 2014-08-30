@@ -1,1 +1,11 @@
-git config --global user.name "Ryan Q"; git config --global user.email "ryan.q@linux.com"; git config --global credential.helper cache; git config --global push.default simple
+#!/bin/sh
+
+GITNAME="Ryan P.C. McQuen"
+GITEMAIL="ryan.q@linux.com"
+## git config
+git config --global user.name "$GITNAME"
+git config --global user.email "$GITEMAIL"
+git config --global credential.helper 'cache --timeout=3600'
+git config --global push.default simple
+git config --global core.pager "less -r"
+
