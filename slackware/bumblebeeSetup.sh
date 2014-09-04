@@ -1,5 +1,6 @@
 #!/bin/sh
 ## run as root
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/bumblebeeSetup.sh | sh
 
 cd
 git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
