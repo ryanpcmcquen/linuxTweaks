@@ -4,10 +4,10 @@
 
 
 if [ ! $UID = 0 ]; then
-cat << EOF
+  cat << EOF
 This script must be run as root.
 EOF
-exit 1
+  exit 1
 fi
 
 
