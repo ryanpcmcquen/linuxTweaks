@@ -2,6 +2,15 @@
 ## run as root
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/bumblebeeSetup.sh | sh
 
+
+if [ ! $UID = 0 ]; then
+cat << EOF
+This script must be run as root.
+EOF
+exit 1
+fi
+
+
 cd
 git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
 
