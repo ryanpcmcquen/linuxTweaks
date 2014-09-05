@@ -1,6 +1,6 @@
 #!/bin/sh
 ## run as root
-# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/bumblebeeSetup.sh | sh
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/bumblebeeMultilibSetup.sh | sh
 
 
 if [ ! $UID = 0 ]; then
