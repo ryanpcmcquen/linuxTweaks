@@ -47,10 +47,16 @@ upgradepkg --install-new /tmp/nvidia-bumblebee-*_bbsb.txz
 chmod +x /etc/rc.d/rc.bumblebeed
 /etc/rc.d/rc.bumblebeed start
 
-echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
-  /etc/rc.d/rc.bumblebeed start
-fi" >> /etc/rc.d/rc.local
-echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
-  /etc/rc.d/rc.bumblebeed stop
-fi" >> /etc/rc.d/rc.local_shutdown
+if [ -z "$( cat /etc/rc.d/rc.local | grep bumblebeed )" ]; then
+  echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
+    /etc/rc.d/rc.bumblebeed start
+  fi" >> /etc/rc.d/rc.local
+fi
+
+if [ -z "$( cat /etc/rc.d/rc.local_shutdown | grep bumblebeed )" ]; then
+  echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
+    /etc/rc.d/rc.bumblebeed stop
+  fi" >> /etc/rc.d/rc.local_shutdown
+fi
+
 
