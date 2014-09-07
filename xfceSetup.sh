@@ -12,6 +12,9 @@ xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge
 xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Tap_Action -n -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0
 xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-Finger_Scrolling -n -t int -s 1 -t int -s 1
 
+## enable font anti-aliasing
+xfconf-query -c xsettings -p /Xft/Antialias -n -t int -s 1
+
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -n -t string -s /usr/bin/xfce4-terminal
 
 xfconf-query -c xfce4-panel -p /plugins/plugin-1/show-button-title -n -t bool -s false
