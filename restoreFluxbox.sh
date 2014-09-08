@@ -45,6 +45,11 @@ fbsetbg -l\
 /g' ~/.fluxbox/startup
 
 
+## this directory may not exist,
+## doesn't hurt either way with -p
+mkdir -p ~/.fluxbox/styles/
+
+
 ## crunchy orange
 #wget -N http://box-look.org/CONTENT/content-files/136162-Crunchy-themes.tar.gz -P ~/
 #mkdir -p ~/crunchy-theme/
