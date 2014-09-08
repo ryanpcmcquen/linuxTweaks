@@ -15,13 +15,16 @@
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
 #/g' ~/.fluxbox/keys
 
-## tinyterm
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
-/g' ~/.fluxbox/keys
 
-## uxterm
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
-#/g' ~/.fluxbox/keys
+if [ ! -z "$( ls /var/log/packages | grep tinyterm )" ]; then
+  ## tinyterm
+  sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
+  /g' ~/.fluxbox/keys
+else
+  ## uxterm
+  sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
+  /g' ~/.fluxbox/keys
+fi
 
 
 ## fix audio key settings, verify with xev
