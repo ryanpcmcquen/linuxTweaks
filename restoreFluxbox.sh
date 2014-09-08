@@ -44,7 +44,7 @@ fbsetbg -l\
 /g' ~/.fluxbox/startup
 
 
-## crunchy orange theme
+## crunchy orange
 #wget -N http://box-look.org/CONTENT/content-files/136162-Crunchy-themes.tar.gz -P ~/
 #mkdir -p ~/crunchy-theme/
 #tar xf ~/136162-Crunchy-themes.tar.gz -C ~/crunchy-theme/
@@ -52,7 +52,7 @@ fbsetbg -l\
 #rm -rf ~/crunchy-theme/
 #rm ~/136162-Crunchy-themes.tar.gz
 
-## delorean theme
+## delorean
 #wget -N http://fc06.deviantart.net/fs71/f/2014/179/a/c/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip -P ~/
 #unzip ~/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip -d ~/.fluxbox/styles/
 #rm ~/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip
@@ -62,20 +62,30 @@ fbsetbg -l\
 #tar xf ~/164693-DustFlux-Mod.tar.gz -C ~/.fluxbox/styles/
 #rm ~/164693-DustFlux-Mod.tar.gz
 
-## dyne theme
+## dyne
 #wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
 #tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles/
 #rm ~/61999-Dyne-fluxbox.tar.gz
 
-## elberg theme
+## elberg
 #wget -N http://box-look.org/CONTENT/content-files/164846-Elberg.tar.gz -P ~/
 #tar xf ~/164846-Elberg.tar.gz -C ~/.fluxbox/styles/
 #rm ~/164846-Elberg.tar.gz
 
 ## elfin2
-wget -N http://files.customize.org/download/files/53359/Elfin2-fluxbox.tar.gz -P ~/
-tar xf ~/Elfin2-fluxbox.tar.gz -C ~/.fluxbox/styles/
-rm ~/Elfin2-fluxbox.tar.gz
+#wget -N http://files.customize.org/download/files/53359/Elfin2-fluxbox.tar.gz -P ~/
+#tar xf ~/Elfin2-fluxbox.tar.gz -C ~/.fluxbox/styles/
+#rm ~/Elfin2-fluxbox.tar.gz
+
+## minimal black
+wget -N http://files.customize.org/download/files/89763/18044/minimal_black.tar.gz -P ~/
+tar xf ~/minimal_black.tar.gz -C ~/.fluxbox/styles/
+rm ~/minimal_black.tar.gz
+
+## ubuntu
+#wget -N http://files.customize.org/download/files/85983/16545/ubuntu.tar.gz -P ~/
+#tar xf ~/ubuntu.tar.gz -C ~/.fluxbox/styles/
+#rm ~/ubuntu.tar.gz
 
 
 ## idempotent, finally!
@@ -100,8 +110,13 @@ if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   #echo "session.styleFile: /home/ry/.fluxbox/styles/Elberg" >> ~/.fluxbox/init
 
   ## elfin2
-  echo "session.styleFile: /home/ry/.fluxbox/styles/Elfin2 >> ~/.fluxbox/init"
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/Elfin2" >> ~/.fluxbox/init
 
+  ## minimal black
+  echo "session.styleFile: /home/ry/.fluxbox/styles/vic" >> ~/.fluxbox/init
+
+  ## ubuntu
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/ubuntu" >> ~/.fluxbox/init
 
 fi
 
