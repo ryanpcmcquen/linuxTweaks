@@ -18,7 +18,7 @@ sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
 #/g' ~/.fluxbox/keys
 
-## terminator (maximizing actually works for terminator in fluxbox)
+## terminator
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
 #/g' ~/.fluxbox/keys
 
@@ -77,6 +77,11 @@ fbsetbg -l\
 #tar xf ~/Elfin2-fluxbox.tar.gz -C ~/.fluxbox/styles/
 #rm ~/Elfin2-fluxbox.tar.gz
 
+## gsm
+#wget -N http://files.customize.org/download/files/49241/GSM.tar.gz -P ~/
+#tar xf ~/GSM.tar.gz -C ~/.fluxbox/styles/
+#rm ~/GSM.tar.gz
+
 ## minimal black
 wget -N http://files.customize.org/download/files/89763/18044/minimal_black.tar.gz -P ~/
 tar xf ~/minimal_black.tar.gz -C ~/.fluxbox/styles/
@@ -111,6 +116,9 @@ if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
 
   ## elfin2
   #echo "session.styleFile: /home/ry/.fluxbox/styles/Elfin2" >> ~/.fluxbox/init
+
+  ## gsm
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/GSM" >> ~/.fluxbox/init
 
   ## minimal black
   echo "session.styleFile: /home/ry/.fluxbox/styles/vic" >> ~/.fluxbox/init
