@@ -4,8 +4,8 @@
 
 
 ## lxterminal
-sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
-/g' ~/.fluxbox/keys
+#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
+#/g' ~/.fluxbox/keys
 
 ## roxterm
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec roxterm --geometry=140x40\
@@ -16,8 +16,8 @@ sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
 #/g' ~/.fluxbox/keys
 
 ## tinyterm
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
-#/g' ~/.fluxbox/keys
+sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
+/g' ~/.fluxbox/keys
 
 ## uxterm
 #sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
