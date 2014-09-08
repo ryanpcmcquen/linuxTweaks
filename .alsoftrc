@@ -1,0 +1,6 @@
+[general]
+drivers = alsa
+[alsa]
+device = default
+capture = default
+mmap = true
