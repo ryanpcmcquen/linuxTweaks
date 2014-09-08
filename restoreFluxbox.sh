@@ -145,6 +145,10 @@ if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
 fi
 
 
+## make the cursor beautiful
+mkdir -p ~/.icons/
+ln -sf /usr/share/icons/Adawita/ ~/.icons/default
+
 
 ### makin' noise
 #sed -i 's/^session.screen0.workspaceNames: Workspace 1,Workspace 2,Workspace 3,Workspace 4,/session.screen0.workspaceNames: 1,2,3,4,/g' ~/.fluxbox/init
