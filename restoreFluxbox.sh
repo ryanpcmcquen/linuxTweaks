@@ -43,29 +43,6 @@ CopyAgent \&\
 fbsetbg -l\
 /g' ~/.fluxbox/startup
 
-## dyne theme
-#wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
-#tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles/
-#rm ~/61999-Dyne-fluxbox.tar.gz
-
-
-## elberg theme
-#wget -N http://box-look.org/CONTENT/content-files/164846-Elberg.tar.gz -P ~/
-#tar xf ~/164846-Elberg.tar.gz -C ~/.fluxbox/styles/
-#rm ~/164846-Elberg.tar.gz
-
-
-## dustflux
-wget -N http://box-look.org/CONTENT/content-files/164693-DustFlux-Mod.tar.gz -P ~/
-tar xf ~/164693-DustFlux-Mod.tar.gz -C ~/.fluxbox/styles/
-rm ~/164693-DustFlux-Mod.tar.gz
-
-
-## delorean theme
-#wget -N http://fc06.deviantart.net/fs71/f/2014/179/a/c/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip -P ~/
-#unzip ~/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip -d ~/.fluxbox/styles/
-#rm ~/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip
-
 
 ## crunchy orange theme
 #wget -N http://box-look.org/CONTENT/content-files/136162-Crunchy-themes.tar.gz -P ~/
@@ -75,6 +52,31 @@ rm ~/164693-DustFlux-Mod.tar.gz
 #rm -rf ~/crunchy-theme/
 #rm ~/136162-Crunchy-themes.tar.gz
 
+## delorean theme
+#wget -N http://fc06.deviantart.net/fs71/f/2014/179/a/c/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip -P ~/
+#unzip ~/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip -d ~/.fluxbox/styles/
+#rm ~/fluxbox_delorean_3_6_g_by_son_link-d7ob75i.zip
+
+## dustflux
+#wget -N http://box-look.org/CONTENT/content-files/164693-DustFlux-Mod.tar.gz -P ~/
+#tar xf ~/164693-DustFlux-Mod.tar.gz -C ~/.fluxbox/styles/
+#rm ~/164693-DustFlux-Mod.tar.gz
+
+## dyne theme
+#wget -N http://box-look.org/CONTENT/content-files/61999-Dyne-fluxbox.tar.gz -P ~/
+#tar xf ~/61999-Dyne-fluxbox.tar.gz -C ~/.fluxbox/styles/
+#rm ~/61999-Dyne-fluxbox.tar.gz
+
+## elberg theme
+#wget -N http://box-look.org/CONTENT/content-files/164846-Elberg.tar.gz -P ~/
+#tar xf ~/164846-Elberg.tar.gz -C ~/.fluxbox/styles/
+#rm ~/164846-Elberg.tar.gz
+
+## elfin2
+wget -N http://files.customize.org/download/files/53359/Elfin2-fluxbox.tar.gz -P ~/
+tar xf ~/Elfin2-fluxbox.tar.gz -C ~/.fluxbox/styles/
+rm ~/Elfin2-fluxbox.tar.gz
+
 
 ## idempotent, finally!
 if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
@@ -83,25 +85,23 @@ if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   echo "session.screen0.workspacewarping: false" >> ~/.fluxbox/init
   echo "session.screen0.focusModel:	MouseFocus" >> ~/.fluxbox/init
   echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
-  
-  ## dyne
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
-
-
-  ## dustflux
-  echo "session.styleFile: /home/ry/.fluxbox/styles/DustFlux-Mod" >> ~/.fluxbox/init
-
-
-  ## elberg
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/Elberg" >> ~/.fluxbox/init
-
-
-  ## delorean
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/DeLorean-3.6-G" >> ~/.fluxbox/init
 
 
   ##crunchy orange
   #echo "session.styleFile: /home/ry/.fluxbox/styles/02-Crunchy-orange" >> ~/.fluxbox/init
+
+  ## dustflux
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/DustFlux-Mod" >> ~/.fluxbox/init
+
+  ## dyne
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
+
+  ## elberg
+  #echo "session.styleFile: /home/ry/.fluxbox/styles/Elberg" >> ~/.fluxbox/init
+
+  ## elfin2
+  echo "session.styleFile: /home/ry/.fluxbox/styles/Elfin2 >> ~/.fluxbox/init"
+
 
 fi
 
