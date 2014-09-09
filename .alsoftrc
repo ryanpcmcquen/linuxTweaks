@@ -1,6 +1,5 @@
 [general]
 drivers = alsa
 [alsa]
-device = default
-capture = default
+device = plug:dmix
 mmap = true
