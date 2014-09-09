@@ -1,0 +1,11 @@
+# wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.asoundrc -P ~/
+
+pcm.!default {
+  type hw
+  card 1
+}
+
+ctl.!default {
+  type hw
+  card 1
+}
