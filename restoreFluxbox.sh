@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | bash
+# curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | sh
 
 
 ## lxterminal
