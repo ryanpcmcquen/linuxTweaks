@@ -147,7 +147,7 @@ fi
 
 ## make the cursor beautiful
 mkdir -p ~/.icons/
-ln -sf /usr/share/icons/Adawita/ ~/.icons/default
+ln -sf /usr/share/icons/Adwaita/ ~/.icons/default
 
 
 ### makin' noise
