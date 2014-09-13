@@ -109,6 +109,10 @@ rm ~/minimal_black.tar.gz
 #rm ~/ubuntu.tar.gz
 
 
+## paint it black
+fbsetbg -b -solid black
+
+
 ## idempotent, finally!
 if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
