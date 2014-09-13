@@ -48,7 +48,6 @@ nm-applet \&\
 wicd-client -t \&\
 superkey-launch \&\
 compton \&\
-tilda \&\
 gkrellm \&\
 CopyAgent \&\
 fbsetbg -l\
