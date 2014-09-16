@@ -1,5 +1,6 @@
 #!/bin/sh
 
+##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/vimSetup.sh | sh
 
 wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 
