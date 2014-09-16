@@ -40,7 +40,9 @@ set fileencoding=utf-8
 set number
 set wrap
 
-syntax off
+"" this is almost like no syntax highlighting
+syntax on
+colorscheme elvis
 
 set nobackup
 set nowritebackup
