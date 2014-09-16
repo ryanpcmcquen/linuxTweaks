@@ -1,1 +1,3 @@
-syntax off
+set nocompatible
+syntax on
+colorscheme elvis
