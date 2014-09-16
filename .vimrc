@@ -57,11 +57,11 @@ set ruler
 set wildmenu
 set wildmode=list:longest,full
 
-"" set cut, copy and paste to sane keybindings (that don't overwrite anything)
-nnoremap <F7> "*y
-vnoremap <F7> "*y
-nnoremap <F8> "*gP
-vnoremap <F8> "*gP
+"" syntax toggler
+nnoremap <F7> :syntax off<CR>
+vnoremap <F7> :syntax off<CR>
+nnoremap <F8> :syntax on<CR>
+vnoremap <F8> :syntax on<CR>
 
 set paste
 set pastetoggle=<F2>
