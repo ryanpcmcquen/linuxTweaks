@@ -32,7 +32,7 @@ ls --color=never /boot/vmlinuz* | tail -1 | xargs -i cp {} /boot/efi/EFI/boot/vm
 (the config)
 /boot/efi/EFI/boot/elilo.conf
 
-elilo.conf should contain (write it with vi)
+elilo.conf should contain (write it with vi or nano or whatever)
 BEGIN ---
 
 prompt
