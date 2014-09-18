@@ -47,6 +47,8 @@ image=vmlinuz
 
 END ---
 
+exit
+reboot
 
 ===
 
