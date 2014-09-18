@@ -87,5 +87,6 @@ party!
 
 
 p.s.
-check out my script to replace lilo for automatic kernel upgrades with slackpkg
+check out my script to replace lilo for automatic kernel upgrades with slackpkg:
+https://github.com/ryanpcmcquen/linuxTweaks/blob/master/slackware/EFI/lilo
 
