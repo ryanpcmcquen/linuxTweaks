@@ -25,7 +25,7 @@ you need:
 cp /boot/elilo-x86_64.efi /boot/efi/EFI/boot/bootx64.efi
 /boot/efi/EFI/boot/bootx64.efi
 
-(the kernel)
+(the huge kernel)
 ls --color=never /boot/vmlinuz* | tail -1 | xargs -i cp {} /boot/efi/EFI/boot/vmlinuz
 /boot/efi/EFI/boot/vmlinuz
 
