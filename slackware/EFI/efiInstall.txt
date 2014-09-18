@@ -16,6 +16,9 @@ THE 'PURIST' WAY:
 you need 3 files inside of /boot/efi/EFI/boot/ (you may have to create the directory)
 yes, that directory nesting is wacky, welcome to efi!
 
+first:
+chroot /mnt/
+
 you need:
 
 (the bootloader, depending on your arch the name may be different, e.g. "bootia32.efi")
