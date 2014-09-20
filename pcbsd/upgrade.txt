@@ -1,0 +1,9 @@
+# pkg update –f
+# pkg upgrade pkg
+# pkg update –f
+# pkg upgrade
+# pc-extractoverlay ports
+# reboot
+
+# pkg upgrade –f
+
