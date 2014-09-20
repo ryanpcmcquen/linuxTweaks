@@ -1,0 +1,5 @@
+
+# awk '{print $0"/\n"}' myFile.txt
+
+Which adds a '/' at the end of each line, and a newline between each line.
+
