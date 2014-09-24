@@ -10,6 +10,9 @@ EOF
   exit 1
 fi
 
+if [ ! -z "$(ls /var/log/packages/ | grep compat32 )" ]; then
+  export COMPAT32=yes
+fi
 
 cd
 git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
@@ -29,7 +32,8 @@ cd ../bbswitch/
 ./bbswitch.SlackBuild
 ls --color=never /tmp/bbswitch-*_bbsb.txz | tail -1 | xargs -i upgradepkg --install-new {}
 cd ../primus/
-COMPAT32=yes ./primus.SlackBuild
+#COMPAT32=yes ./primus.SlackBuild
+./primus.SlackBuild
 ls --color=never /tmp/primus-*_bbsb.txz | tail -1 | xargs -i upgradepkg --install-new {}
 cd ../nouveau-blacklist/
 upgradepkg xf86-video-nouveau-blacklist-noarch-1.txz
@@ -43,10 +47,12 @@ cd ../libvdpau/
 ./libvdpau.SlackBuild
 ls --color=never /tmp/libvdpau-*_bbsb.txz | tail -1 | xargs -i upgradepkg --install-new {}
 cd ../nvidia-kernel/
-COMPAT32=yes ./nvidia-kernel.SlackBuild
+#COMPAT32=yes ./nvidia-kernel.SlackBuild
+./nvidia-kernel.SlackBuild
 ls --color=never /tmp/nvidia-kernel-*_bbsb.txz | tail -1 | xargs -i upgradepkg --install-new {}
 cd ../nvidia-bumblebee/
-COMPAT32=yes ./nvidia-bumblebee.SlackBuild
+#COMPAT32=yes ./nvidia-bumblebee.SlackBuild
+./nvidia-bumblebee.SlackBuild
 ls --color=never /tmp/nvidia-bumblebee-*_bbsb.txz | tail -1 | xargs -i upgradepkg --install-new {}
 chmod +x /etc/rc.d/rc.bumblebeed
 /etc/rc.d/rc.bumblebeed start
@@ -62,4 +68,7 @@ echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
   /etc/rc.d/rc.bumblebeed stop
 fi" >> /etc/rc.d/rc.local_shutdown
 fi
+
+echo "Please reboot to enjoy your new driver."
+
 
