@@ -81,3 +81,8 @@ map gm :call cursor(0, virtcol('$')/2)<CR>
 "" save as sudo if you are being forgetful
 cmap w!! %!sudo tee > /dev/null %
 
+if &term =~ '256color'
+  "" render properly when in 256-color tmux
+  set t_ut=
+endif
+
