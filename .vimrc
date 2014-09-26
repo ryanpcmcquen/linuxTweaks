@@ -78,3 +78,6 @@ set showmatch
 "" instead of middle of screen
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
+"" save as sudo if you are being forgetful
+cmap w!! %!sudo tee > /dev/null %
+
