@@ -4,7 +4,6 @@ parse_git_branch() {
 }
 
 export PS1='\u@\w:$(parse_git_branch)\$ '
-alias ls='ls --color=auto'
 alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
