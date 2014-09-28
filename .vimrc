@@ -40,7 +40,7 @@ set fileencoding=utf-8
 set number
 set wrap
 
-"" this is almost like no syntax highlighting
+"" almost like no syntax highlighting
 syntax on
 colorscheme elvis
 
@@ -69,12 +69,12 @@ set paste
 set pastetoggle=<F2>
 set showmode
 
-"" this unsets the "last search pattern" register by hitting return
+"" unsets "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
 set showmatch
 
-"" nifty shortcut to go to middle of line
+"" nifty shortcut for middle of line
 "" instead of middle of screen
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
