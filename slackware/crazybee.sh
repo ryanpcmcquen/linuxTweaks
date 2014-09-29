@@ -12,7 +12,7 @@ fi
 
 if [ ! -z "$( ls ~/Bumblebee-SlackBuilds/ )" ]; then
   cat << EOF
-You already have the bumblee directory,
+You already have the bumblebee directory,
 please rename to avoid changes you may have made.
 EOF
   exit 1
