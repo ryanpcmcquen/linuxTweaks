@@ -44,7 +44,11 @@ cd ../bbswitch/
 ls --color=never /tmp/bbswitch-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../primus/
-./primus.SlackBuild
+if [ "$COMPAT32" = yes ]; then
+  COMPAT32=yes ./primus.SlackBuild
+else
+  ./primus.SlackBuild
+fi
 ls --color=never /tmp/primus-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../nouveau-blacklist/
@@ -61,11 +65,19 @@ cd ../libvdpau/
 ls --color=never /tmp/libvdpau-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../nvidia-kernel/
-./nvidia-kernel.SlackBuild
+if [ "$COMPAT32" = yes ]; then
+  COMPAT32=yes ./nvidia-kernel.SlackBuild
+else
+  ./nvidia-kernel.SlackBuild
+fi
 ls --color=never /tmp/nvidia-kernel-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../nvidia-bumblebee/
-./nvidia-bumblebee.SlackBuild
+if [ "$COMPAT32" = yes ]; then
+  COMPAT32=yes ./nvidia-bumblebee.SlackBuild
+else
+  ./nvidia-bumblebee.SlackBuild
+fi
 ls --color=never /tmp/nvidia-bumblebee-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 chmod +x /etc/rc.d/rc.bumblebeed
