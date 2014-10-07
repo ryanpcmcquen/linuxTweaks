@@ -33,15 +33,15 @@ cat /etc/passwd | grep "/home" | cut -d: -f1 | xargs -i usermod -G bumblebee -a 
 
 cd libbsd/
 ./libbsd.SlackBuild
-ls --color=never /tmp/libbsd-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/libbsd-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../bumblebee/
 ./bumblebee.SlackBuild
-ls --color=never /tmp/bumblebee-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/bumblebee-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../bbswitch/
 ./bbswitch.SlackBuild
-ls --color=never /tmp/bbswitch-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/bbswitch-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../primus/
 if [ "$COMPAT32" = yes ]; then
@@ -49,7 +49,7 @@ if [ "$COMPAT32" = yes ]; then
 else
   ./primus.SlackBuild
 fi
-ls --color=never /tmp/primus-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/primus-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../nouveau-blacklist/
 upgradepkg --reinstall xf86-video-nouveau-blacklist-noarch-1.txz
@@ -62,7 +62,7 @@ fi
 
 cd ../libvdpau/
 ./libvdpau.SlackBuild
-ls --color=never /tmp/libvdpau-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/libvdpau-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../nvidia-kernel/
 if [ "$COMPAT32" = yes ]; then
@@ -70,7 +70,7 @@ if [ "$COMPAT32" = yes ]; then
 else
   ./nvidia-kernel.SlackBuild
 fi
-ls --color=never /tmp/nvidia-kernel-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/nvidia-kernel-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 cd ../nvidia-bumblebee/
 if [ "$COMPAT32" = yes ]; then
@@ -78,7 +78,7 @@ if [ "$COMPAT32" = yes ]; then
 else
   ./nvidia-bumblebee.SlackBuild
 fi
-ls --color=never /tmp/nvidia-bumblebee-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
+ls -t --color=never /tmp/nvidia-bumblebee-*_bbsb.txz | tail -1 | xargs -i upgradepkg --reinstall --install-new {}
 
 chmod +x /etc/rc.d/rc.bumblebeed
 /etc/rc.d/rc.bumblebeed start
