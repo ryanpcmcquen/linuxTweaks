@@ -5,10 +5,11 @@
 
 if [ "$( uname -m )" = "x86_64" ]; then
   wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware64-current/extra/ -P ~/
+  mv ~/mirrors.slackware.com/slackware/slackware64-current/* ~/
 else
   wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware-current/extra/ -P ~/
+  mv ~/mirrors.slackware.com/slackware/slackware-current/* ~/
 fi
 
-mv ~/mirrors.slackware.com/slackware/* ~/
 rm -rf ~/mirrors.slackware.com/
 
