@@ -10,6 +10,8 @@ EOF
   exit 1
 fi
 
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee-reinstall.sh -P ~/Bumblebee-SlackBuilds
+
 if [ ! -z "$( ls ~/Bumblebee-SlackBuilds/ )" ]; then
   cat << EOF
 You already have the bumblebee directory,
