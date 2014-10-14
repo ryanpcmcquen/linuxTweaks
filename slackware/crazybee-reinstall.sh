@@ -19,6 +19,9 @@ cd
 
 
 cd Bumblebee-SlackBuilds/
+
+git pull
+
 ./download.sh
 
 groupadd bumblebee
