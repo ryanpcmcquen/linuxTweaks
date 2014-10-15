@@ -7,7 +7,7 @@ ffmpeg -f x11grab -r 30 -s 1366x768 -i :0 -f alsa -ac 2 -i hw:1,0 -vcodec libx26
 
 sager np7338:
 
-ffmpeg -f x11grab -r 60 -s 1920x1080 -i :0 -f pulse -vcodec libx264 -crf 0 -preset ultrafast -acodec libvorbis -ab 192k vid1.mkv
+ffmpeg -f x11grab -r 60 -s 1920x1080 -i :0 -f alsa -i pulse -vcodec libx264 -crf 0 -preset ultrafast -acodec libvorbis -ab 192k vid1.mkv
 
 
 thinkpad t410:
