@@ -83,3 +83,6 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+"" display filename in vim
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
+
