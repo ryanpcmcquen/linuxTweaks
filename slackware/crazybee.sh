@@ -2,15 +2,12 @@
 ## run as root
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh | sh
 
-
 if [ ! $UID = 0 ]; then
   cat << EOF
 This script must be run as root.
 EOF
   exit 1
 fi
-
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee-reinstall.sh -P ~/Bumblebee-SlackBuilds
 
 if [ ! -z "$( ls ~/Bumblebee-SlackBuilds/ )" ]; then
   cat << EOF
@@ -26,6 +23,8 @@ fi
 
 cd
 git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
+
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee-reinstall.sh -P ~/Bumblebee-SlackBuilds
 
 cd Bumblebee-SlackBuilds/
 ./download.sh
