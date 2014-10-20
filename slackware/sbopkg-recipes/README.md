@@ -1,4 +1,4 @@
-### Scripts to install crazy apps with all dependencies, run as root.
+### Install crazy apps with all dependencies, run as root.
 
 
 inkscape:
