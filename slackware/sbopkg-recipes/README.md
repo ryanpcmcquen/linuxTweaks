@@ -3,9 +3,8 @@
 
 inkscape:
 
-    curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/sbopkg-recipes/inkscape | sh
+    sbopkg -i libsigc++ -i glibmm -i cairomm -i pangomm -i atkmm -i mm-common -i gtkmm -i gsl -i numpy -i BeautifulSoup -i lxml -i inkscape
 
 midori:
 
-    curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/sbopkg-recipes/midori | sh
-
+    sbopkg -i libwebp -i orc -i gstreamer1 -i gst1-plugins-base -i webkitgtk -i vala -i libunique -i midori
