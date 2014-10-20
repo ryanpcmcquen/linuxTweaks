@@ -1,5 +1,0 @@
-#!/bin/sh
-
-#  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/sbopkg-recipes/midori | sh
-
-sbopkg -i libwebp -i orc -i gstreamer1 -i gst1-plugins-base -i webkitgtk -i vala -i libunique -i midori
