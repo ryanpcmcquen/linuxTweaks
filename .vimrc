@@ -42,7 +42,7 @@ set wrap
 
 "" almost like no syntax highlighting
 syntax on
-colorscheme elvis
+colorscheme vi-clone
 
 set nobackup
 set nowritebackup
