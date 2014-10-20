@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#  curl
+
+sbopkg -i libwebp -i orc -i gstreamer1 -i gst1-plugins-base -i webkitgtk -i vala -i libunique -i midori
