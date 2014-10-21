@@ -44,9 +44,11 @@ set wrap
 syntax on
 colorscheme vi-clone
 
+"" clear out the cruft
 set nobackup
 set nowritebackup
 set noswapfile
+set noundofile
 
 set mouse=a
 
