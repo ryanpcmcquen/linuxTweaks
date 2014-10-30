@@ -1,16 +1,16 @@
 
-hp dv6:
+dv6:
 make sure to press space bar on capture in alsamixer to activate input
 
 ffmpeg -f x11grab -r 30 -s 1366x768 -i :0 -f alsa -ac 2 -i hw:1,0 -vcodec libx264 -crf 0 -preset ultrafast -acodec libvorbis -ab 192k vid1.mkv
 
 
-sager np7338:
+np7338:
 
 ffmpeg -f x11grab -r 60 -s 1920x1080 -i :0 -f alsa -i pulse -vcodec libx264 -crf 0 -preset ultrafast -acodec libvorbis -ab 192k vid1.mkv
 
 
-thinkpad t410:
+t410:
 
 ffmpeg -f x11grab -r 30 -s 1280x800 -i :0 -f alsa -ac 2 -i hw:0,0 -vcodec libx264 -crf 0 -preset ultrafast -acodec libvorbis -ab 192k vid1.mkv
 
