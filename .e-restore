@@ -1,8 +1,0 @@
-#!/bin/sh
-
-## restore e config
-
-wget -N https://github.com/ryanpcmcquen/linuxTweaks/raw/master/.e.tar.xz -P ~/
-tar xf ~/.e.tar.xz -C ~/
-rm ~/.e.tar.xz
-
