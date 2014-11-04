@@ -1,4 +1,4 @@
 [general]
-driver = alsa
+drivers = alsa
 [alsa]
 mmap = true
