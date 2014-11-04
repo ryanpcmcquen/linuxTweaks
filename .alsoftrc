@@ -1,5 +1,4 @@
 [general]
-drivers = alsa
+driver = alsa
 [alsa]
-device = plug:dmix
 mmap = true
