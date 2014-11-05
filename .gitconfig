@@ -1,5 +1,5 @@
 #
-# wget https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
+# wget https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
 [user]
 	name = Ryan P.C. McQuen
 	email = ryan.q@linux.com

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $ curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/gkrellmConfig.sh | sh
+# $ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gkrellmConfig.sh | sh
 
 #wget -N http://www.muhri.net/gkrellm/GKrellM-Skins.tar.gz -P ~/
 

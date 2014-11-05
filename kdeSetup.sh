@@ -1,6 +1,6 @@
 #!/bin/sh
 
-##  curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
+##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
 
 
 kwriteconfig --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0

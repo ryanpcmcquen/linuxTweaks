@@ -1,7 +1,7 @@
 #!/bin/sh
 ## run this as normal user
 
-# curl https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | sh
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | sh
 
 xdg-mime default caja-folder-handler.desktop inode/directory
 xdg-mime default caja-folder-handler.desktop application/x-directory

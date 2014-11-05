@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wget -N https://raw2.github.com/ryanpcmcquen/linuxTweaks/master/.asoundrc -P ~/
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.asoundrc -P ~/
 
 /etc/rc.d/rc.alsa restart
 
