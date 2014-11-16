@@ -1,0 +1,10 @@
+#!/bin/sh
+
+## create sbopkg directories
+mkdir -pv /var/lib/sbopkg/SBo/14.1/
+mkdir -pv /var/lib/sbopkg/SBo-git/
+mkdir -pv /var/lib/sbopkg/queues/
+mkdir -pv /var/log/sbopkg/
+mkdir -pv /var/cache/sbopkg/
+mkdir -pv /tmp/SBo/
+
