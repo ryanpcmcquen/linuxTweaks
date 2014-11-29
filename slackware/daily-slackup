@@ -1,0 +1,13 @@
+#!/bin/sh
+
+sed -i 's/^BATCH=off/BATCH=on/g' /etc/slackpkg/slackpkg.conf
+sed -i 's/^DEFAULT_ANSWER=n/DEFAULT_ANSWER=y/g' /etc/slackpkg/slackpkg.conf
+
+slackpkg update gpg
+slackpkg update
+slackpkg install-new
+slackpkg upgrade-all
+
+sed -i 's/^BATCH=on/BATCH=off/g' /etc/slackpkg/slackpkg.conf
+sed -i 's/^DEFAULT_ANSWER=y/DEFAULT_ANSWER=n/g' /etc/slackpkg/slackpkg.conf
+
