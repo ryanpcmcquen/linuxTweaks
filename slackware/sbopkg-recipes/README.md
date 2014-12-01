@@ -8,3 +8,8 @@ inkscape:
 midori:
 
     sbopkg -i libwebp -i orc -i gstreamer1 -i gst1-plugins-base -i webkitgtk -i vala -i libunique -i midori
+
+playonlinux:
+
+    sbopkg -i icoutils -i php-imagick -i cabextract -i p7zip -i fontforge -i webcore-fonts -i wine -i wxPython -i playonlinux
+
