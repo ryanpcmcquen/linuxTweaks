@@ -1,5 +1,7 @@
 #!/bin/sh
 
+## $ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.e-restore | sh
+
 ## restore e config
 
 wget -N https://github.com/ryanpcmcquen/linuxTweaks/raw/master/.e.tar.xz -P ~/
