@@ -96,6 +96,9 @@ echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
 fi" >> /etc/rc.d/rc.local_shutdown
 fi
 
-echo "Please reboot to enjoy your new driver."
-
+echo
+echo "+===========================================+"
+echo "+  Please reboot to enjoy your new driver.  +"
+echo "+===========================================+"
+echo
 
