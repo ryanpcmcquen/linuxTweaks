@@ -11,7 +11,7 @@ EOF
 fi
 
 
-if [ ! -z "$( ls /var/log/packages/ | grep compat32- )" ]; then
+if [ -e /var/log/packages/*compat32-* ]; then
   export COMPAT32=yes;
 fi
 
