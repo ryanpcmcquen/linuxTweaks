@@ -16,7 +16,7 @@
 #/g' ~/.fluxbox/keys
 
 
-if [ ! -z "$( ls /var/log/packages | grep tinyterm )" ]; then
+if [ -e /var/log/packages/tinyterm-* ]; then
   ## tinyterm
   sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
   /g' ~/.fluxbox/keys
@@ -113,7 +113,7 @@ fbsetbg -b -solid black
 
 
 ## idempotent, finally!
-if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
+if [ "$( tail -1 ~/.fluxbox/init )" == "session.configVersion:	13" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
   echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
   echo "session.screen0.workspacewarping: false" >> ~/.fluxbox/init
