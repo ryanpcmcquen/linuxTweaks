@@ -14,20 +14,20 @@
 #fi
 
 #if [ "$NEARFREE" != true ] && [ "$PULSECRAPIO" = true ]; then
-  if [ -z "$( ls /var/log/packages/ | grep json-c- )" ]; then
+  if [ ! -e /var/log/packages/json-c-* ]; then
     sbopkg -B -i json-c
   fi
 
-  if [ -z "$( ls /var/log/packages/ | grep speex- )" ]; then
+  if [ ! -e /var/log/packages/speex-* ]; then
     sbopkg -B -i speex
   fi
 
-  ## i hate pulseaudio, but sound doesn't work in some games without it
-  if [ -z "$( ls /var/log/packages/ | grep pulseaudio- )" ]; then
+  ## i hate pulseaudio, and it breaks sound in everything
+  if [ ! -e /var/log/packages/pulseaudio-* ]; then
     sbopkg -B -i pulseaudio
   fi
 
-  if [ -z "$( ls /var/log/packages/ | grep alsa-plugins- )" ]; then
+  if [ ! -e /var/log/packages/alsa-plugins-* ]; then
     sbopkg -B -i alsa-plugins
   fi
 #fi
