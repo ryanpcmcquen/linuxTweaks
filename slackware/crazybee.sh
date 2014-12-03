@@ -9,7 +9,7 @@ EOF
   exit 1
 fi
 
-if [ ! -z "$( ls ~/Bumblebee-SlackBuilds/ )" ]; then
+if [ -d ~/Bumblebee-SlackBuilds/ ]; then
   cat << EOF
 You already have the bumblebee directory,
 please rename to avoid changes you may have made.
@@ -17,7 +17,7 @@ EOF
   exit 1
 fi
 
-if [ ! -z "$( ls /var/log/packages/ | grep compat32- )" ]; then
+if [ -e /var/log/packages/*compat32-* ]; then
   export COMPAT32=yes;
 fi
 
