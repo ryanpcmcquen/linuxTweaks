@@ -5,7 +5,7 @@
 
 /usr/share/mkinitrd/mkinitrd_command_generator.sh | sh
 
-if [ ! -z "$(ls ~/liloGenericEntry.sh)" ]; then
+if [ -e ~/liloGenericEntry.sh ]; then
   cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
 fi
 
