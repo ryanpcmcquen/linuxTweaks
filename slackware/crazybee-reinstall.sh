@@ -11,7 +11,7 @@ EOF
 fi
 
 
-if [ -e /var/log/packages/*compat32-* ]; then
+if [ ! -z '$( find /var/log/packages/ -name "*compat32*" -print )' ]; then
   export COMPAT32=yes;
 fi
 
