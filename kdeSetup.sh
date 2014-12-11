@@ -5,18 +5,18 @@
 
 kwriteconfig --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
-kwriteconfig --file kdeglobals --group "General" --key "desktopFont" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "fixed" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "font" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "menuFont" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "smallestReadableFont" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "taskbarFont" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "toolBarFont" "Terminus,11,-1,5,50,0,0,0,0,0"
-kwriteconfig --file kdeglobals --group "General" --key "activeFont" "Terminus,11,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "desktopFont" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "fixed" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "font" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "menuFont" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "smallestReadableFont" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "taskbarFont" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "toolBarFont" "Terminus,9,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "General" --key "activeFont" "Terminus,9,-1,5,50,0,0,0,0,0"
 
-kwriteconfig --file kdeglobals --group "WM" --key "activeFont" "Terminus,11,-1,5,50,0,0,0,0,0"
+kwriteconfig --file kdeglobals --group "WM" --key "activeFont" "Terminus,9,-1,5,50,0,0,0,0,0"
 
-kwriteconfig --file plasma-desktop-appletsrc --group "General" --key "fontTime" "Terminus,11,-1,5,50,0,0,0,0,0"
+kwriteconfig --file plasma-desktop-appletsrc --group "General" --key "fontTime" "Terminus,9,-1,5,50,0,0,0,0,0"
 
 
 kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
