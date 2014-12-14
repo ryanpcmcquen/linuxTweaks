@@ -1,0 +1,6 @@
+#!/bin/sh
+## i put it in /usr/local/etc/
+
+sleep 2 &
+trayer --align right --width 16 --height 16 --SetPartialStrut true &
+CopyAgent &
