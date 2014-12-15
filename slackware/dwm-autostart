@@ -2,5 +2,5 @@
 ## i put it in /usr/local/etc/
 
 sleep 2 &
-trayer --align right --width 16 --height 16 --SetPartialStrut true &
+trayer --expand true --widthtype request --transparent true --edge top --align right --height 17 --margin 70 &
 CopyAgent &
