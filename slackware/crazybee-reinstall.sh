@@ -10,13 +10,11 @@ EOF
   exit 1
 fi
 
-
-if [ ! -z '$( find /var/log/packages/ -name "*compat32*" -print )' ]; then
+if [ "$( uname -m )" = "x86_64" ] && [ -e /lib/libc.so.6 ]; then
   export COMPAT32=yes;
 fi
 
 cd
-
 
 cd Bumblebee-SlackBuilds/
 
