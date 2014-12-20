@@ -30,7 +30,8 @@ cd Bumblebee-SlackBuilds/
 ./download.sh
 
 groupadd bumblebee
-cat /etc/passwd | grep "/home" | cut -d: -f1 | xargs -i usermod -G bumblebee -a {}
+## add all non-root users (except ftp) to bumblebee group
+cat /etc/passwd | grep "/home" | cut -d: -f1 | sed '/ftp/d' | xargs -i usermod -G bumblebee -a {}
 
 cd libbsd/
 ./libbsd.SlackBuild
