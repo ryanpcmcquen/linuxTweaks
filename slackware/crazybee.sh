@@ -28,12 +28,17 @@ install_latest_pkg() {
   ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
 
-no_prompt_sbo_pkg_install() {
-SBO_PACKAGE=$1
-if [ ! -e /var/log/packages/$SBO_PACKAGE-* ]; then
-echo p | sbopkg -B -e continue -i $SBO_PACKAGE
-fi
+install_latest_pkg_compat() {
+  PACKAGE=$1
+  cd $PACKAGE/
+  if [ "$COMPAT32" = yes ]; then
+    COMPAT32=yes ./$PACKAGE.SlackBuild
+  else
+    ./$PACKAGE.SlackBuild
+  fi
+  ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
+
 
 cd
 git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
@@ -49,23 +54,11 @@ cat /etc/passwd | grep "/home" | cut -d: -f1 | sed '/ftp/d' | xargs -i usermod -
 
 install_latest_pkg libbsd
 
-exit 1
+install_latest_pkg bumblebee
 
-cd ../bumblebee/
-./bumblebee.SlackBuild
-ls -t --color=never /tmp/bumblebee-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg bbswitch
 
-cd ../bbswitch/
-./bbswitch.SlackBuild
-ls -t --color=never /tmp/bbswitch-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
-
-cd ../primus/
-if [ "$COMPAT32" = yes ]; then
-  COMPAT32=yes ./primus.SlackBuild
-else
-  ./primus.SlackBuild
-fi
-ls -t --color=never /tmp/primus-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg_compat primus
 
 cd ../nouveau-blacklist/
 upgradepkg --reinstall xf86-video-nouveau-blacklist-noarch-1.txz
@@ -76,25 +69,9 @@ if [ -z "$( cat /etc/slackpkg/blacklist | grep _bbsb )" ]; then
   echo "[0-9]+_bbsb" >> /etc/slackpkg/blacklist
 fi
 
-cd ../libvdpau/
-./libvdpau.SlackBuild
-ls -t --color=never /tmp/libvdpau-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg_compat nvidia-kernel
 
-cd ../nvidia-kernel/
-if [ "$COMPAT32" = yes ]; then
-  COMPAT32=yes ./nvidia-kernel.SlackBuild
-else
-  ./nvidia-kernel.SlackBuild
-fi
-ls -t --color=never /tmp/nvidia-kernel-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
-
-cd ../nvidia-bumblebee/
-if [ "$COMPAT32" = yes ]; then
-  COMPAT32=yes ./nvidia-bumblebee.SlackBuild
-else
-  ./nvidia-bumblebee.SlackBuild
-fi
-ls -t --color=never /tmp/nvidia-bumblebee-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg_compat nvidia-bumblebee
 
 chmod +x /etc/rc.d/rc.bumblebeed
 /etc/rc.d/rc.bumblebeed start
