@@ -21,6 +21,20 @@ if [ "$( uname -m )" = "x86_64" ] && [ -e /lib/libc.so.6 ]; then
   export COMPAT32=yes;
 fi
 
+install_latest_pkg() {
+  PACKAGE=$1
+  cd $PACKAGE/
+  ./$PACKAGE.SlackBuild
+  ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+}
+
+no_prompt_sbo_pkg_install() {
+SBO_PACKAGE=$1
+if [ ! -e /var/log/packages/$SBO_PACKAGE-* ]; then
+echo p | sbopkg -B -e continue -i $SBO_PACKAGE
+fi
+}
+
 cd
 git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
 
@@ -33,9 +47,9 @@ groupadd bumblebee
 ## add all non-root users (except ftp) to bumblebee group
 cat /etc/passwd | grep "/home" | cut -d: -f1 | sed '/ftp/d' | xargs -i usermod -G bumblebee -a {}
 
-cd libbsd/
-./libbsd.SlackBuild
-ls -t --color=never /tmp/libbsd-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg libbsd
+
+exit 1
 
 cd ../bumblebee/
 ./bumblebee.SlackBuild
