@@ -1,5 +1,26 @@
 #!/bin/sh
 ## run as root
+
+# Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version, with the following exception:
+# the text of the GPL license may be omitted.
+
+# This program is distributed in the hope that it will be useful, but
+# without any warranty; without even the implied warranty of
+# merchantability or fitness for a particular purpose. Compiling,
+# interpreting, executing or merely reading the text of the program
+# may result in lapses of consciousness and/or very being, up to and
+# including the end of all existence and the Universe as we know it.
+# See the GNU General Public License for more details.
+
+# You may have received a copy of the GNU General Public License along
+# with this program (most likely, a file named COPYING).  If not, see
+# <http://www.gnu.org/licenses/>.
+
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee-reinstall.sh | sh
 
 
@@ -14,6 +35,25 @@ if [ "$( uname -m )" = "x86_64" ] && [ -e /lib/libc.so.6 ]; then
   export COMPAT32=yes;
 fi
 
+install_latest_pkg() {
+  PACKAGE=$1
+  cd $PACKAGE/
+  ./$PACKAGE.SlackBuild
+  ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+}
+
+install_latest_pkg_compat() {
+  PACKAGE=$1
+  cd $PACKAGE/
+  if [ "$COMPAT32" = yes ]; then
+    COMPAT32=yes ./$PACKAGE.SlackBuild
+  else
+    ./$PACKAGE.SlackBuild
+  fi
+  ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+}
+
+
 cd
 
 cd Bumblebee-SlackBuilds/
@@ -26,25 +66,13 @@ groupadd bumblebee
 ## add all non-root users (except ftp) to bumblebee group
 cat /etc/passwd | grep "/home" | cut -d: -f1 | sed '/ftp/d' | xargs -i usermod -G bumblebee -a {}
 
-cd libbsd/
-./libbsd.SlackBuild
-ls -t --color=never /tmp/libbsd-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg libbsd
 
-cd ../bumblebee/
-./bumblebee.SlackBuild
-ls -t --color=never /tmp/bumblebee-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg bumblebee
 
-cd ../bbswitch/
-./bbswitch.SlackBuild
-ls -t --color=never /tmp/bbswitch-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg bbswitch
 
-cd ../primus/
-if [ "$COMPAT32" = yes ]; then
-  COMPAT32=yes ./primus.SlackBuild
-else
-  ./primus.SlackBuild
-fi
-ls -t --color=never /tmp/primus-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg_compat primus
 
 cd ../nouveau-blacklist/
 upgradepkg --reinstall xf86-video-nouveau-blacklist-noarch-1.txz
@@ -55,25 +83,9 @@ if [ -z "$( cat /etc/slackpkg/blacklist | grep _bbsb )" ]; then
   echo "[0-9]+_bbsb" >> /etc/slackpkg/blacklist
 fi
 
-cd ../libvdpau/
-./libvdpau.SlackBuild
-ls -t --color=never /tmp/libvdpau-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg_compat nvidia-kernel
 
-cd ../nvidia-kernel/
-if [ "$COMPAT32" = yes ]; then
-  COMPAT32=yes ./nvidia-kernel.SlackBuild
-else
-  ./nvidia-kernel.SlackBuild
-fi
-ls -t --color=never /tmp/nvidia-kernel-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
-
-cd ../nvidia-bumblebee/
-if [ "$COMPAT32" = yes ]; then
-  COMPAT32=yes ./nvidia-bumblebee.SlackBuild
-else
-  ./nvidia-bumblebee.SlackBuild
-fi
-ls -t --color=never /tmp/nvidia-bumblebee-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
+install_latest_pkg_compat nvidia-bumblebee
 
 chmod +x /etc/rc.d/rc.bumblebeed
 /etc/rc.d/rc.bumblebeed start
