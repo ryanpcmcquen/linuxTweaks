@@ -37,14 +37,14 @@ fi
 
 install_latest_pkg() {
   PACKAGE=$1
-  cd $PACKAGE/
+  cd $PACKAGE/ || cd ../$PACKAGE/
   ./$PACKAGE.SlackBuild
   ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
 
 install_latest_pkg_compat() {
   PACKAGE=$1
-  cd $PACKAGE/
+  cd $PACKAGE/ || cd ../$PACKAGE/
   if [ "$COMPAT32" = yes ]; then
     COMPAT32=yes ./$PACKAGE.SlackBuild
   else
