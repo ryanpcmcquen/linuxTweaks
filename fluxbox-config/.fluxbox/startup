@@ -15,11 +15,6 @@ xmodmap "/home/ry/.Xmodmap"
 # wmsmixer -w &
 # idesk &
 
-superkey-launch &
-nm-applet &
-
-fbsetbg -l
-
 # Start DBUS session bus:
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
    eval $(dbus-launch --sh-syntax --exit-with-session)
