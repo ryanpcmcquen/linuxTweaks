@@ -42,7 +42,6 @@ if [ "$( tail -1 ~/.fluxbox/keys )" = "Control Mod4 F12 :TakeToWorkspace 12" ]; 
   echo "233 :Exec xbacklight -inc 10" >> ~/.fluxbox/keys
 fi
 
-
 sed -i 's@^# idesk &@\
 if [ -x /etc/rc.d/rc.networkmanager ]; then \
   nm-applet \&\
@@ -50,12 +49,15 @@ fi \
 if [ -x /etc/rc.d/rc.wicd ]; then \
   wicd-client -t \&\
 fi \
-compton \&\
+if [ -e /usr/bin/compton ]; then \
+  compton \&\
+fi \
 gkrellm \&\
-CopyAgent \&\
+if [ -e /usr/bin/CopyAgent ]; then \
+  CopyAgent \&\
+fi \
 fbsetbg -l\
 @g' ~/.fluxbox/startup
-
 
 ## this directory may not exist,
 ## doesn't hurt either way with -p
