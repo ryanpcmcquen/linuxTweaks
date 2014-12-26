@@ -43,15 +43,18 @@ if [ "$( tail -1 ~/.fluxbox/keys )" = "Control Mod4 F12 :TakeToWorkspace 12" ]; 
 fi
 
 
-sed -i 's/^# idesk &/\
-nm-applet \&\
-wicd-client -t \&\
-superkey-launch \&\
+sed -i 's@^# idesk &@\
+if [ -x /etc/rc.d/rc.networkmanager ]; then \
+  nm-applet \&\
+fi \
+if [ -x /etc/rc.d/rc.wicd ]; then \
+  wicd-client -t \&\
+fi \
 compton \&\
 gkrellm \&\
 CopyAgent \&\
 fbsetbg -l\
-/g' ~/.fluxbox/startup
+@g' ~/.fluxbox/startup
 
 
 ## this directory may not exist,
