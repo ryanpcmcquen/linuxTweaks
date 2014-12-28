@@ -4,12 +4,8 @@
 ## and SlackBuilds not in the main Slackware tree
 
 if [ "$( uname -m )" = "x86_64" ]; then
-  wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware64-current/extra/ -P ~/
-  mv ~/mirrors.slackware.com/slackware/slackware64-current/* ~/
+  rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware64-current/extra/ ~/extra/
 else
-  wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware-current/extra/ -P ~/
-  mv ~/mirrors.slackware.com/slackware/slackware-current/* ~/
+  rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware-current/extra/ ~/extra/
 fi
-
-rm -rf ~/mirrors.slackware.com/
 
