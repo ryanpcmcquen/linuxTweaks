@@ -4,11 +4,7 @@
 ## useful for updating stock packages
 
 if [ "$( uname -m )" = "x86_64" ]; then
-  wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware64-current/source/ -P ~/
-  mv ~/mirrors.slackware.com/slackware/slackware64-current/* ~/
+  rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware64-current/source/ ~/source/
 else
-  wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware-current/source/ -P ~/
-  mv ~/mirrors.slackware.com/slackware/slackware-current/* ~/
+  rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware-current/source/ ~/source/
 fi
-
-rm -rf ~/mirrors.slackware.com/
