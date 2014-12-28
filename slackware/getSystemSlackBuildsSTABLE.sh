@@ -3,8 +3,5 @@
 ## downloads the source directory
 ## useful for updating stock packages
 
+rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware_source/ ~/slackware_source/
 
-wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware_source/ -P ~/
-mv ~/mirrors.slackware.com/slackware/* ~/
-
-rm -rf ~/mirrors.slackware.com/
