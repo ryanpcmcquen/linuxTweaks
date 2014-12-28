@@ -3,12 +3,8 @@
 ## download Pat's awesome java SlackBuild
 
 if [ "$( uname -m )" = "x86_64" ]; then
-  wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware64-current/extra/java/ -P ~/
-  mv ~/mirrors.slackware.com/slackware/slackware64-current/extra/* ~/
+  rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware64-current/extra/java/ ~/java/
 else
-  wget -r -np -N -R "*.html*","*.sha*","*.meta4","*.mirrorlist" http://mirrors.slackware.com/slackware/slackware-current/extra/java/ -P ~/
-  mv ~/mirrors.slackware.com/slackware/slackware-current/extra/* ~/
+  rsync -avz rsync://slackware.cs.utah.edu/slackware/slackware-current/extra/java/ ~/java/
 fi
-
-rm -rf ~/mirrors.slackware.com/
 
