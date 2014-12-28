@@ -2,5 +2,10 @@
 ## i put it in /usr/local/etc/
 
 sleep 2 &
-trayer --expand true --widthtype request --transparent true --edge top --align right --height 17 --margin 70 &
-CopyAgent &
+if [ -e /usr/bin/trayer ]; then
+  trayer --expand true --widthtype request --transparent true --edge top --align right --height 17 --margin 70 &
+fi
+if [ -e /usr/bin/CopyAgent ]; then
+  CopyAgent &
+fi
+
