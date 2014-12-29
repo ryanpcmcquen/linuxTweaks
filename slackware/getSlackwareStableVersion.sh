@@ -2,7 +2,7 @@
 ## versions!
 cd
 ## get stable slackware version
-wget -N www.slackware.com -O ~/slackware-home-page.html
+wget www.slackware.com -O ~/slackware-home-page.html
 cat ~/slackware-home-page.html | grep "is released!" | head -1 | sed 's/Slackware//g' | \
   sed 's/is released!//g' | sed 's/ //g' > ~/slackwareStableVersion
 rm -v ~/slackware-home-page.html
