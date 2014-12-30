@@ -38,6 +38,5 @@ gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ bol
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ palette $palette
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ use-theme-colors false
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ bold-color-same-as-fg false
-gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ font "monospace 9"
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ cursor-shape ibeam
 
