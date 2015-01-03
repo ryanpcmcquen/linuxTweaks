@@ -8,7 +8,7 @@ alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
 ## check if tmux is running before running it
-if [ ! -z "$( ps -e | grep tmux )" ]; then
+if $( ps -e | grep -q tmux ); then
   exec tmux -u
   ## makes history work as expected in tmux
   export PROMPT_COMMAND="history -a"
