@@ -8,8 +8,9 @@ alias slu='slackpkg update gpg && slackpkg update && slackpkg install-new && sla
 
 LFS=/mnt/lfs
 
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -u
+## check if tmux is running before running it
+if [ ! -z "$( ps -e | grep tmux )" ]; then
+  exec tmux -u
   ## makes history work as expected in tmux
   export PROMPT_COMMAND="history -a"
   shopt -s histappend
