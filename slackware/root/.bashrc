@@ -9,7 +9,7 @@ alias slu='slackpkg update gpg && slackpkg update && slackpkg install-new && sla
 LFS=/mnt/lfs
 
 ## check if tmux is running before running it
-if [ ! -z "$( ps -e | grep tmux )" ]; then
+if $( ps -e | grep -q tmux ); then
   exec tmux -u
   ## makes history work as expected in tmux
   export PROMPT_COMMAND="history -a"
