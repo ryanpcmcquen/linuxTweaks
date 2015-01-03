@@ -7,10 +7,10 @@ export PS1='\u@\w:$(parse_git_branch)\$ '
 alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
-
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -u
-   ## makes history work as expected in tmux
+## check if tmux is running before running it
+if [ ! -z "$( ps -e | grep tmux )" ]; then
+  exec tmux -u
+  ## makes history work as expected in tmux
   export PROMPT_COMMAND="history -a"
   shopt -s histappend
 fi
