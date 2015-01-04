@@ -85,7 +85,7 @@ kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "Brightn
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
 
 
-if [ ! -z "$( env | grep XDG_CURRENT_DESKTOP=KDE )" ]; then
+if [ ! -z "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
   qdbus org.kde.kded /kded unloadModule powerdevil
   qdbus org.kde.keyboard /modules/khotkeys reread_configuration
   qdbus org.kde.kded /kbuildsycoca recreate
