@@ -38,7 +38,7 @@ EOF
   exit 1
 fi
 
-if [ "$( uname -m )" = "x86_64" ] && [ -e /lib/libc.so.6 ]; then
+if [ "$(uname -m)" = "x86_64" ] && [ -e /lib/libc.so.6 ]; then
   export COMPAT32=yes;
 fi
 
@@ -83,10 +83,10 @@ install_latest_pkg_compat primus
 
 cd ../nouveau-blacklist/
 upgradepkg --reinstall xf86-video-nouveau-blacklist-noarch-1.txz
-if [ -z "$( cat /etc/slackpkg/blacklist | grep xf86-video-nouveau )" ]; then
+if [ -z "$(cat /etc/slackpkg/blacklist | grep xf86-video-nouveau)" ]; then
   echo xf86-video-nouveau >> /etc/slackpkg/blacklist
 fi
-if [ -z "$( cat /etc/slackpkg/blacklist | grep _bbsb )" ]; then
+if [ -z "$(cat /etc/slackpkg/blacklist | grep _bbsb)" ]; then
   echo "[0-9]+_bbsb" >> /etc/slackpkg/blacklist
 fi
 
@@ -97,13 +97,13 @@ install_latest_pkg_compat nvidia-bumblebee
 chmod +x /etc/rc.d/rc.bumblebeed
 /etc/rc.d/rc.bumblebeed start
 
-if [ -z "$( cat /etc/rc.d/rc.local | grep bumblebeed )" ]; then
+if [ -z "$(cat /etc/rc.d/rc.local | grep bumblebeed)" ]; then
 echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
   /etc/rc.d/rc.bumblebeed start
 fi" >> /etc/rc.d/rc.local
 fi
 
-if [ -z "$( cat /etc/rc.d/rc.local_shutdown | grep bumblebeed )" ]; then
+if [ -z "$(cat /etc/rc.d/rc.local_shutdown | grep bumblebeed)" ]; then
 echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
   /etc/rc.d/rc.bumblebeed stop
 fi" >> /etc/rc.d/rc.local_shutdown
