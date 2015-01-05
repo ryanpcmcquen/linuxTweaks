@@ -1,0 +1,21 @@
+#!/bin/sh
+
+sed -i 's/^BATCH=off/BATCH=on/g' /etc/slackpkg/slackpkg.conf
+sed -i 's/^DEFAULT_ANSWER=n/DEFAULT_ANSWER=y/g' /etc/slackpkg/slackpkg.conf
+
+slackpkg update gpg
+slackpkg update
+slackpkg upgrade-all
+
+sed -i 's/^BATCH=on/BATCH=off/g' /etc/slackpkg/slackpkg.conf
+sed -i 's/^DEFAULT_ANSWER=y/DEFAULT_ANSWER=n/g' /etc/slackpkg/slackpkg.conf
+
+echo p | sbopkg -B -e continue -i jpegoptim
+echo p | sbopkg -B -e continue -i mozjpeg
+echo p | sbopkg -B -e continue -i optipng
+echo p | sbopkg -B -e continue -i pngquant
+echo p | sbopkg -B -e continue -i gifsicle
+echo p | sbopkg -B -e continue -i exiftool
+
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
+
