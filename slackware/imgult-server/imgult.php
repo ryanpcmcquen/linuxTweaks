@@ -1,4 +1,3 @@
-uploadfile.php 
 <?php
 $result=0;
 if (trim($_POST["action"]) == "Upload File") { //**** User Clicked the Upload File Button
@@ -14,14 +13,14 @@ if (trim($_POST["action"]) == "Upload File") { //**** User Clicked the Upload Fi
 </head>
 <body>
 
-<form method='POST' enctype='multipart/form-data' name='frmmain' action='uploadfile.php'>
+<form method='POST' enctype='multipart/form-data' name='frmmain' action='imgult.php'>
 Image: <input type="file" name="image_file">
 <br>
 <input type="submit" value="  Upload File  " name="action">
 </form>
 <br>
 <?php
-echo shell_exec("./imgult '.$imagename.' 2>&1");
+if ($result==1) echo shell_exec("./imgult ".$imagename." 2>&1");
 if ($result==1) echo("<img src='".$imagename."'>"); // display the uploaded file
 ?>
 </body>
