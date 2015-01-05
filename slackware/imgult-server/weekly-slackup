@@ -19,3 +19,5 @@ echo p | sbopkg -B -e continue -i exiftool
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
 
+chown apache /usr/local/bin/imgult
+
