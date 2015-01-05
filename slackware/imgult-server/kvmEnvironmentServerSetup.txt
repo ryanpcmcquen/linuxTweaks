@@ -1,4 +1,4 @@
-install lilo di VM Guest
+install lilo di VM Guest ('di' is indonesian for 'at')
 
 finish installation
 chroot /mnt
