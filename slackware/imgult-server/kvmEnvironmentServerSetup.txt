@@ -1,0 +1,25 @@
+install lilo di VM Guest
+
+finish installation
+chroot /mnt
+
+Create initrd for generic kernel
+mkinitrd -c -k 3.10.17-smp -f ext4 -r /dev/vda1 -m virtio:virtio_ring:virtio_blk:virtio_pci:virtio_balloon:virtio_net:mbcache:jbd2:ext4 -u -o /boot/initrd.gz
+
+edit /etc/lilo.conf:
+
+lba32 # Allow booting past 1024th cylinder with a recent BIOS
+compact
+boot=/dev/vda
+disk=/dev/vda bios = 0x80 max-partitions = 7
+
+image = /boot/vmlinuz
+  initrd = /boot/initrd.gz
+  root = /dev/vda1
+  label = Linux
+  read-only
+
+exit
+lilo -C /mnt/etc/lilo.conf
+
+reboot
