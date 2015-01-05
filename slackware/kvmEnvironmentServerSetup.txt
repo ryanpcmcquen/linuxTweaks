@@ -1,3 +1,5 @@
+thanks to willysr
+
 install lilo di VM Guest ('di' is indonesian for 'at')
 
 finish installation
