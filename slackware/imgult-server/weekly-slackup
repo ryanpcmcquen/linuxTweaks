@@ -10,14 +10,27 @@ slackpkg upgrade-all
 sed -i 's/^BATCH=on/BATCH=off/g' /etc/slackpkg/slackpkg.conf
 sed -i 's/^DEFAULT_ANSWER=y/DEFAULT_ANSWER=n/g' /etc/slackpkg/slackpkg.conf
 
-echo p | sbopkg -B -e continue -i jpegoptim
-echo p | sbopkg -B -e continue -i mozjpeg
-echo p | sbopkg -B -e continue -i optipng
-echo p | sbopkg -B -e continue -i pngquant
-echo p | sbopkg -B -e continue -i gifsicle
-echo p | sbopkg -B -e continue -i exiftool
+if [ ! -z $(sbopkg -c | grep jpegoptim) ]; then
+  echo p | sbopkg -B -e continue -i jpegoptim
+fi
+if [ ! -z $(sbopkg -c | grep mozjpeg) ]; then
+  echo p | sbopkg -B -e continue -i mozjpeg
+fi
+if [ ! -z $(sbopkg -c | grep optipng) ]; then
+  echo p | sbopkg -B -e continue -i optipng
+fi
+if [ ! -z $(sbopkg -c | grep pngquant) ]; then
+  echo p | sbopkg -B -e continue -i pngquant
+fi
+if [ ! -z $(sbopkg -c | grep gifsicle) ]; then
+  echo p | sbopkg -B -e continue -i gifsicle
+fi
+if [ ! -z $(sbopkg -c | grep exiftool) ]; then
+  echo p | sbopkg -B -e continue -i exiftool
+fi
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
 
 chown apache /usr/local/bin/imgult
+
 
