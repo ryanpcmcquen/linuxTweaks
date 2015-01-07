@@ -121,39 +121,21 @@ fbsetbg -b -solid black
 #fi
 
 ## idempotent, finally!
-if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
+if [ -z "$(cat ~/.fluxbox/init | grep workspaceNames)" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
   echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
   echo "session.screen0.workspacewarping: false" >> ~/.fluxbox/init
   echo "session.screen0.focusModel:	MouseFocus" >> ~/.fluxbox/init
   echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
-
-  ## crunchy orange
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/02-Crunchy-orange" >> ~/.fluxbox/init
-
-  ## dustflux
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/DustFlux-Mod" >> ~/.fluxbox/init
-
-  ## dyne
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/Dyne" >> ~/.fluxbox/init
-
-  ## elberg
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/Elberg" >> ~/.fluxbox/init
-
-  ## elfin2
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/Elfin2" >> ~/.fluxbox/init
-
-  ## gsm
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/GSM" >> ~/.fluxbox/init
-
-  ## minimal black
-  echo "session.styleFile: /home/ry/.fluxbox/styles/vic" >> ~/.fluxbox/init
-
-  ## ubuntu
-  #echo "session.styleFile: /home/ry/.fluxbox/styles/ubuntu" >> ~/.fluxbox/init
-
+else
+  sed -i "s@session.screen0.workspaceNames:.*@session.screen0.workspaceNames: 1,2,3,4,@g" ~/.fluxbox/init
+  sed -i "s@session.screen0.toolbar.widthPercent:.*@session.screen0.toolbar.widthPercent: 50@g" ~/.fluxbox/init
+  sed -i "s@session.screen0.workspacewarping:.*@session.screen0.workspacewarping: false@g" ~/.fluxbox/init
+  sed -i "s@session.screen0.focusModel:.*@session.screen0.focusModel:	MouseFocus@g" ~/.fluxbox/init
+  sed -i "s@session.autoRaiseDelay:.*@session.autoRaiseDelay: 500@g" ~/.fluxbox/init
 fi
 
+sed -i "s@session.styleFile:.*@session.styleFile: /home/ry/.fluxbox/styles/vic@g" ~/.fluxbox/init
 
 ## make the cursor beautiful, maybe icons too
 mkdir -pv ~/.icons/
