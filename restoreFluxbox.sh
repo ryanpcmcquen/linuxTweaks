@@ -36,8 +36,8 @@ sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 
 /g' ~/.fluxbox/keys
 
 ## fix brightness keys
-if [ "$(tail -1 ~/.fluxbox/keys)" = "Control Mod4 F12 :TakeToWorkspace 12" ]; then
-  echo
+if [ -z "$(cat ~/.fluxbox/keys | grep 'xbacklight -dec')" ]; then
+  echo >> ~/.fluxbox/keys
   echo "232 :Exec xbacklight -dec 10" >> ~/.fluxbox/keys
   echo "233 :Exec xbacklight -inc 10" >> ~/.fluxbox/keys
 fi
@@ -116,6 +116,9 @@ rm -v ~/minimal_black.tar.gz
 ## paint it black
 fbsetbg -b -solid black
 
+#if [ -z "$(cat ~/.lumina/fluxbox-init | grep zimek_darkblue)" ]; then
+#sed -i "s@/usr/share/fluxbox/styles/.*@/usr/share/fluxbox/styles/zimek_darkblue@g" ~/.lumina/fluxbox-init
+#fi
 
 ## idempotent, finally!
 if [ "$(tail -1 ~/.fluxbox/init)" == "session.configVersion:	13" ]; then
