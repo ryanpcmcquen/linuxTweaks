@@ -1,18 +1,6 @@
 #!/bin/sh
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | sh
 
-## lxterminal
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec lxterminal --geometry=140x40\
-#/g' ~/.fluxbox/keys
-
-## roxterm
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec roxterm --geometry=140x40\
-#/g' ~/.fluxbox/keys
-
-## terminator
-#sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec terminator -m\
-#/g' ~/.fluxbox/keys
-
 
 if [ -e /var/log/packages/tinyterm-* ]; then
   ## tinyterm
@@ -87,5 +75,9 @@ fi
 
 ## make the cursor beautiful, maybe icons too
 mkdir -pv ~/.icons/
-ln -sfv /usr/share/icons/Adwaita/ ~/.icons/default
+if [ -d "/usr/share/icons/Oxygen_White/" ]; then
+  ln -sfv /usr/share/icons/Oxygen_White/ ~/.icons/default
+else
+  ln -sfv /usr/share/icons/nuvola/ ~/.icons/default
+fi
 
