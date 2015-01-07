@@ -31,6 +31,6 @@ fi
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
 
+ln -sfv /usr/local/bin/imgult /var/www/htdocs/imgult-web/
 chown apache /usr/local/bin/imgult
-
 
