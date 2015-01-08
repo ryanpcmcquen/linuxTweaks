@@ -1,4 +1,10 @@
 #!/bin/sh
+no_prompt_sbo_pkg_install_upgrade() {
+  SBO_PACKAGE=$1
+  if [ ! -e /var/log/packages/$SBO_PACKAGE-* ] || [ ! -z $(sbopkg -c | grep $SBO_PACKAGE) ]; then
+    echo p | sbopkg -B -e continue -i $SBO_PACKAGE
+  fi
+}
 
 sed -i 's/^BATCH=off/BATCH=on/g' /etc/slackpkg/slackpkg.conf
 sed -i 's/^DEFAULT_ANSWER=n/DEFAULT_ANSWER=y/g' /etc/slackpkg/slackpkg.conf
@@ -10,24 +16,12 @@ slackpkg upgrade-all
 sed -i 's/^BATCH=on/BATCH=off/g' /etc/slackpkg/slackpkg.conf
 sed -i 's/^DEFAULT_ANSWER=y/DEFAULT_ANSWER=n/g' /etc/slackpkg/slackpkg.conf
 
-if [ ! -z $(sbopkg -c | grep jpegoptim) ]; then
-  echo p | sbopkg -B -e continue -i jpegoptim
-fi
-if [ ! -z $(sbopkg -c | grep mozjpeg) ]; then
-  echo p | sbopkg -B -e continue -i mozjpeg
-fi
-if [ ! -z $(sbopkg -c | grep optipng) ]; then
-  echo p | sbopkg -B -e continue -i optipng
-fi
-if [ ! -z $(sbopkg -c | grep pngquant) ]; then
-  echo p | sbopkg -B -e continue -i pngquant
-fi
-if [ ! -z $(sbopkg -c | grep gifsicle) ]; then
-  echo p | sbopkg -B -e continue -i gifsicle
-fi
-if [ ! -z $(sbopkg -c | grep exiftool) ]; then
-  echo p | sbopkg -B -e continue -i exiftool
-fi
+no_prompt_sbo_pkg_install_upgrade jpegoptim
+no_prompt_sbo_pkg_install_upgrade mozjpeg
+no_prompt_sbo_pkg_install_upgrade optipng
+no_prompt_sbo_pkg_install_upgrade pngquant
+no_prompt_sbo_pkg_install_upgrade gifsicle
+no_prompt_sbo_pkg_install_upgrade exiftool
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
 
