@@ -75,9 +75,11 @@ fi
 
 ## make the cursor beautiful, maybe icons too
 mkdir -pv ~/.icons/
-if [ -d "/usr/share/icons/Oxygen_White/" ]; then
-  ln -sfv /usr/share/icons/Oxygen_White/ ~/.icons/default
-else
-  ln -sfv /usr/share/icons/nuvola/ ~/.icons/default
+if [ ! -e ~/.icons/default ]; then
+  if [ -d "/usr/share/icons/Oxygen_White/" ]; then
+    ln -sfv /usr/share/icons/Oxygen_White/ ~/.icons/default
+  else
+    ln -sfv /usr/share/icons/nuvola/ ~/.icons/default
+  fi
 fi
 
