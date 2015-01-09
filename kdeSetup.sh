@@ -62,11 +62,8 @@ kwriteconfig --file katerc --group "Kate Document Defaults" --key "Newline At EO
 
 kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding" UTF-8
 
-## turns on global shortcut for konsole, ctrl + alt + t
-kwriteconfig --file khotkeysrc --group "Data_2" --key "Enabled" true
-kwriteconfig --file khotkeysrc --group "Data_2_3" --key "Enabled" true
-kwriteconfig --file khotkeysrc --group "Data_4" --key "Enabled" true
-kwriteconfig --file khotkeysrc --group "Data_4_3" --key "Enabled" true
+## turns on example shortcuts, including: konsole = ctrl + alt + t
+sed -i 's/Enabled=false/Enabled=true/g' ~/.kde/share/config/khotkeysrc
 
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
