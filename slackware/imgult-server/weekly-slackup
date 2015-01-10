@@ -5,7 +5,7 @@ make_sbo_pkg_upgrade_list() {
 }
 no_prompt_sbo_pkg_install_or_upgrade() {
   SBO_PACKAGE=$1
-  if [ ! -e /var/log/packages/$SBO_PACKAGE-* ] || [ ! -z $(cat ~/sbopkg-upgrade-list.txt | grep $SBO_PACKAGE) ]; then
+  if [ ! -e /var/log/packages/$SBO_PACKAGE-* ] || [ ! -z "$(cat ~/sbopkg-upgrade-list.txt | grep $SBO_PACKAGE)" ]; then
     echo p | sbopkg -B -e continue -i $SBO_PACKAGE
   fi
 }
