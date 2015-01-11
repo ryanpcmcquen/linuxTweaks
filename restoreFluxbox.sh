@@ -12,6 +12,10 @@ else
   /g' ~/.fluxbox/keys
 fi
 
+if [ -e /usr/share/applications/spacefm-folder-handler.desktop ]; then
+  xdg-mime default spacefm-folder-handler.desktop inode/directory
+  xdg-mime default spacefm-folder-handler.desktop application/x-directory
+fi
 
 ## fix audio key settings, verify with xev
 sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master,0 1+\
