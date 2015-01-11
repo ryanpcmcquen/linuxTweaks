@@ -37,18 +37,26 @@ fi
 
 install_latest_pkg() {
   PACKAGE=$1
-  cd $PACKAGE/ || cd ../$PACKAGE/
-  ./$PACKAGE.SlackBuild
+  if [[ -d $PACKAGE/ ]]; then
+    cd $PACKAGE/
+  else
+    cd ../$PACKAGE/
+  fi
+  sh $PACKAGE.SlackBuild
   ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
 
 install_latest_pkg_compat() {
   PACKAGE=$1
-  cd $PACKAGE/ || cd ../$PACKAGE/
-  if [ "$COMPAT32" = yes ]; then
-    COMPAT32=yes ./$PACKAGE.SlackBuild
+  if [[ -d $PACKAGE/ ]]; then
+    cd $PACKAGE/
   else
-    ./$PACKAGE.SlackBuild
+    cd ../$PACKAGE/
+  fi
+  if [ "$COMPAT32" = yes ]; then
+    COMPAT32=yes sh $PACKAGE.SlackBuild
+  else
+    sh $PACKAGE.SlackBuild
   fi
   ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
@@ -60,7 +68,7 @@ cd Bumblebee-SlackBuilds/
 
 git pull
 
-./download.sh
+sh download.sh
 
 groupadd bumblebee
 ## add all non-root users (except ftp) to bumblebee group
