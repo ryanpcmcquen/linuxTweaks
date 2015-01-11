@@ -68,7 +68,7 @@ if [ -d "/usr/share/fluxbox/styles/Greenish Fluxbox" ]; then
 else
   mkdir -pv ~/.fluxbox/styles/
   wget -N https://github.com/ryanpcmcquen/themes/raw/master/Greenish%20Fluxbox.zip -P ~/
-  unzip ~/Greenish\ Fluxbox.zip -d ~/.fluxbox/styles/
+  unzip -o ~/Greenish\ Fluxbox.zip -d ~/.fluxbox/styles/
   rm -v ~/Greenish\ Fluxbox.zip
   sed -i "s@session.styleFile:.*@session.styleFile: /home/ry/.fluxbox/styles/Greenish Fluxbox@g" ~/.fluxbox/init
 fi
