@@ -12,9 +12,13 @@ else
   /g' ~/.fluxbox/keys
 fi
 
+## dolphin is way too slow to start in fluxbox  :-)
 if [ -e /usr/share/applications/spacefm-folder-handler.desktop ]; then
   xdg-mime default spacefm-folder-handler.desktop inode/directory
   xdg-mime default spacefm-folder-handler.desktop application/x-directory
+else
+  xdg-mime default Thunar-folder-handler.desktop inode/directory
+  xdg-mime default Thunar-folder-handler.desktop application/x-directory
 fi
 
 ## fix audio key settings, verify with xev
