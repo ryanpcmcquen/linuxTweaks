@@ -13,13 +13,13 @@ sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/googleNowWallpapers/
 
 ## doesn't work
 #sudo wget -N https://github.com/numixproject/numix-icon-theme-shine/archive/master.zip -P ~/;
-#sudo unzip ~/master.zip -df /usr/share/icons/;
+#sudo unzip -o ~/master.zip -d /usr/share/icons/;
 #sudo mv /usr/share/icons/numix-icon-theme-shine-master/Numix-Shine/ /usr/share/icons/;
 #sudo rm -rf /usr/share/icons/numix-icon-theme-shine-master/;
 #sudo rm ~/master.zip;
 
 #sudo wget -N https://github.com/shimmerproject/Numix/archive/master.zip -P ~/;
-#sudo unzip ~/master.zip -df /usr/share/themes/;
+#sudo unzip -o ~/master.zip -d /usr/share/themes/;
 #sudo rm ~/master.zip;
 
 #mkdir -p ~/.vim/tmp/;
