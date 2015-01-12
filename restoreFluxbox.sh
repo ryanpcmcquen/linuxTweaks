@@ -71,14 +71,14 @@ else
   sed -i "s@session.autoRaiseDelay:.*@session.autoRaiseDelay: 500@g" ~/.fluxbox/init
 fi
 
-if [ -d "/usr/share/fluxbox/styles/Greenish Fluxbox" ]; then
-  sed -i "s@session.styleFile:.*@session.styleFile: /usr/share/fluxbox/styles/Greenish Fluxbox@g" ~/.fluxbox/init
+if [ -d "/usr/share/fluxbox/styles/Stealthy" ]; then
+  sed -i "s@session.styleFile:.*@session.styleFile: /usr/share/fluxbox/styles/Stealthy@g" ~/.fluxbox/init
 else
   mkdir -pv ~/.fluxbox/styles/
-  wget -N https://github.com/ryanpcmcquen/themes/raw/master/Greenish%20Fluxbox.zip -P ~/
-  unzip -o ~/Greenish\ Fluxbox.zip -d ~/.fluxbox/styles/
-  rm -v ~/Greenish\ Fluxbox.zip
-  sed -i "s@session.styleFile:.*@session.styleFile: /home/ry/.fluxbox/styles/Greenish Fluxbox@g" ~/.fluxbox/init
+  wget -N https://github.com/ryanpcmcquen/themes/raw/master/67966-Stealthy-1.1.tgz -P ~/
+  tar xvf ~/67966-Stealthy-1.1.tgz -C ~/.fluxbox/styles/
+  rm -v ~/67966-Stealthy-1.1.tgz
+  sed -i "s@session.styleFile:.*@session.styleFile: /home/ry/.fluxbox/styles/Stealthy@g" ~/.fluxbox/init
 fi
 
 ## make the cursor beautiful, maybe icons too
