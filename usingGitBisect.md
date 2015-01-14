@@ -1,4 +1,5 @@
 ### thanks to robby workman!
+http://www.linuxquestions.org/questions/slackware-14/valve-games-dota2-not-working-in-latest-current-4175529131/#post5290040
 
 If someone has some time to play with this stuff and wants to (try to) figure out where it broke:
 
