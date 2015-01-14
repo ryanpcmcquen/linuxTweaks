@@ -22,12 +22,15 @@ sed -i 's/^DEFAULT_ANSWER=y/DEFAULT_ANSWER=n/g' /etc/slackpkg/slackpkg.conf
 
 make_sbo_pkg_upgrade_list
 
+no_prompt_sbo_pkg_install_or_upgrade pysetuptools
+no_prompt_sbo_pkg_install_or_upgrade pip
 no_prompt_sbo_pkg_install_or_upgrade jpegoptim
 no_prompt_sbo_pkg_install_or_upgrade mozjpeg
 no_prompt_sbo_pkg_install_or_upgrade optipng
 no_prompt_sbo_pkg_install_or_upgrade pngquant
 no_prompt_sbo_pkg_install_or_upgrade gifsicle
 no_prompt_sbo_pkg_install_or_upgrade exiftool
+pip install --upgrade scour
 
 rm -v ~/sbopkg-upgrade-list.txt
 
