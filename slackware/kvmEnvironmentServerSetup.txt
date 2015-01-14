@@ -12,8 +12,11 @@ edit /etc/lilo.conf:
 
 lba32 # Allow booting past 1024th cylinder with a recent BIOS
 compact
-boot=/dev/vda
-disk=/dev/vda bios = 0x80 max-partitions = 7
+boot = /dev/vda
+disk = /dev/vda
+bios = 0x80
+max-partitions = 7
+
 
 image = /boot/vmlinuz
   initrd = /boot/initrd.gz
