@@ -6,7 +6,8 @@ finish installation
 chroot /mnt
 
 Create initrd for generic kernel
-mkinitrd -c -k 3.10.17-smp -f ext4 -r /dev/vda1 -m virtio:virtio_ring:virtio_blk:virtio_pci:virtio_balloon:virtio_net:mbcache:jbd2:ext4 -u -o /boot/initrd.gz
+/usr/share/mkinitrd/mkinitrd_command_generator.sh | sh
+
 
 edit /etc/lilo.conf:
 
