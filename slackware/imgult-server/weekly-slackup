@@ -41,3 +41,5 @@ chown apache /usr/local/bin/imgult
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/imgult-server/weekly-slackup \
   -P /etc/cron.weekly/
 
+chmod +x /etc/cron.weekly/weekly-slackup
+
