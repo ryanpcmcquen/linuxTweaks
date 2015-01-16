@@ -29,7 +29,6 @@ no_prompt_sbo_pkg_install_or_upgrade mozjpeg
 no_prompt_sbo_pkg_install_or_upgrade optipng
 no_prompt_sbo_pkg_install_or_upgrade pngquant
 no_prompt_sbo_pkg_install_or_upgrade gifsicle
-no_prompt_sbo_pkg_install_or_upgrade exiftool
 pip install --upgrade scour
 
 rm -v ~/sbopkg-upgrade-list.txt
