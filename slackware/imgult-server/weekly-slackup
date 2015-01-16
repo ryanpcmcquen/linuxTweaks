@@ -38,3 +38,6 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/im
 ln -sfv /usr/local/bin/imgult /var/www/htdocs/imgult-web/
 chown apache /usr/local/bin/imgult
 
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/imgult-server/weekly-slackup \
+  -P /etc/cron.weekly/
+
