@@ -37,7 +37,7 @@ fi
 
 install_latest_pkg() {
   PACKAGE=$1
-  if [[ -d $PACKAGE/ ]]; then
+  if [ -d "$PACKAGE/" ]; then
     cd $PACKAGE/
   else
     cd ../$PACKAGE/
@@ -48,7 +48,7 @@ install_latest_pkg() {
 
 install_latest_pkg_compat() {
   PACKAGE=$1
-  if [[ -d $PACKAGE/ ]]; then
+  if [ -d "$PACKAGE/" ]; then
     cd $PACKAGE/
   else
     cd ../$PACKAGE/
