@@ -5,7 +5,9 @@ sed -i 's/^DEFAULT_ANSWER=n/DEFAULT_ANSWER=y/g' /etc/slackpkg/slackpkg.conf
 
 slackpkg update gpg
 slackpkg update
-slackpkg install-new
+if [ -e /var/log/packages/xorg-* ]; then
+  slackpkg install-new
+fi
 slackpkg upgrade-all
 
 sed -i 's/^BATCH=on/BATCH=off/g' /etc/slackpkg/slackpkg.conf
