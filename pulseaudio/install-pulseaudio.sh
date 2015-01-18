@@ -14,20 +14,20 @@
 #fi
 
 #if [ "$NEARFREE" != true ] && [ "$PULSECRAPIO" = true ]; then
-  if [ ! -e /var/log/packages/json-c-* ]; then
+  if [ -z "`find /var/log/packages/ -name json-c-*`" ]; then
     sbopkg -B -i json-c
   fi
 
-  if [ ! -e /var/log/packages/speex-* ]; then
+  if [ -z "`find /var/log/packages/ -name speex-*`" ]; then
     sbopkg -B -i speex
   fi
 
   ## i hate pulseaudio, and it breaks sound in everything
-  if [ ! -e /var/log/packages/pulseaudio-* ]; then
+  if [ -z "`find /var/log/packages/ -name pulseaudio-*`" ]; then
     sbopkg -B -i pulseaudio
   fi
 
-  if [ ! -e /var/log/packages/alsa-plugins-* ]; then
+  if [ -z "`find /var/log/packages/ -name alsa-plugins-*`" ]; then
     sbopkg -B -i alsa-plugins
   fi
 #fi
