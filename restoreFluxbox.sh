@@ -2,7 +2,7 @@
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | sh
 
 
-if [ -e /var/log/packages/tinyterm-* ]; then
+if [ ! -z "`find /var/log/packages/ -name tinyterm-*`" ]; then
   ## tinyterm
   sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
   /g' ~/.fluxbox/keys
