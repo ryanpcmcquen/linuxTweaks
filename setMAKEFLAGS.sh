@@ -5,7 +5,7 @@
 ## make compiling faster  ;-)
 if [ -z "$(cat /etc/profile | grep 'MAKEFLAGS')" ]; then
   echo >> /etc/profile
-  echo 'if (( $(nproc) > 2 )); then' >> /etc/profile
+  echo 'if [ "$(nproc)" -gt 2 ]; then' >> /etc/profile
   ## cores--
   echo '  export MAKEFLAGS=" -j$(expr $(nproc) - 1) "' >> /etc/profile
   ## half the cores
@@ -19,7 +19,7 @@ fi
 ## otherwise all our new stuff won't load until we log in again  ;^)
 . /etc/profile
 
-if (( $(nproc) > 2 )); then
+if [ "$(nproc)" -gt 2 ]; then
   export MAKEFLAGS=" -j$(expr $(nproc) - 1) "
 else
   export MAKEFLAGS=" -j1 "
