@@ -90,7 +90,6 @@ if [ ! -z "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
   qdbus org.kde.plasma-desktop /MainApplication reparseConfiguration
   qdbus org.kde.kwin /KWin reconfigure
   qdbus org.kde.kded /kded loadModule powerdevil
-  sleep 5
 fi
 
 
