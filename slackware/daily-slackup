@@ -5,7 +5,7 @@ sed -i 's/^DEFAULT_ANSWER=n/DEFAULT_ANSWER=y/g' /etc/slackpkg/slackpkg.conf
 
 slackpkg update gpg
 slackpkg update
-if [ ! -z "`find /var/log/packages/ -name xorg-*`" ]; then
+if [ "`find /var/log/packages/ -name xorg-*`" ]; then
   slackpkg install-new
 fi
 slackpkg upgrade-all
