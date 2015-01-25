@@ -7,9 +7,9 @@
 
 ## grab the links and background them so they
 ## can both download at once  ;^)
-if [ "$DOWNLOAD" ]; then
+if [ "$DOWNLOAD" ] && [ "$DOWNLOAD" != "UNSUPPORTED" ] && [ "$DOWNLOAD" != "UNTESTED" ]; then
   wget $DOWNLOAD &
 fi
-if [ "$DOWNLOAD_x86_64" ]; then
+if [ "$DOWNLOAD_x86_64" ] && [ "$DOWNLOAD_x86_64" != "UNSUPPORTED" ] && [ "$DOWNLOAD_x86_64" != "UNTESTED" ]; then
   wget $DOWNLOAD_x86_64 &
 fi
