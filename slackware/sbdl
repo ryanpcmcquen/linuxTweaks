@@ -1,0 +1,15 @@
+#!/bin/sh
+## get the tarballs!
+## (i put this in /usr/local/bin/)
+
+## source the info files to get links
+. ./*.info
+
+## grab the links and background them so they
+## can both download at once  ;^)
+if [ "$DOWNLOAD" ]; then
+  wget $DOWNLOAD &
+fi
+if [ "$DOWNLOAD_x86_64" ]; then
+  wget $DOWNLOAD_x86_64 &
+fi
