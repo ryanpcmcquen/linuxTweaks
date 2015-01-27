@@ -88,3 +88,12 @@ endif
 "" display filename in vim
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
+"" clipboard-y stuff
+if has('unnamedplus')
+  set clipboard+=unnamedplus
+else
+  set clipboard+=unnamed
+endif
+"" copy visual blocks to clipboard
+set go+=a
+
