@@ -12,17 +12,15 @@ if has("gui_running")
   if has("gui_gtk2")
     set guifont=Monospace\ 10
   elseif has("gui_photon")
-    set guifont=Monospace:s11
+    set guifont=Monospace:s10
   elseif has("gui_kde")
-    set guifont=Monospace/11/-1/5/50/0/0/0/1/0
+    set guifont=Monospace/10/-1/5/50/0/0/0/1/0
   elseif has("x11")
     set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
-  elseif has("gui_macvim")
-    set guifont=Monaco:h12
   else
-    set guifont=Monospace:h11:cDEFAULT
+    set guifont=Monospace:h10:cDEFAULT
   endif
-  set lines=40 columns=135
+  set lines=40 columns=130
 endif
 
 "" set 2 spaces for tab globally
@@ -96,4 +94,67 @@ else
 endif
 "" copy visual blocks to clipboard
 set go+=a
+
+"""""""""""""""""""""""""""""""""""""""""""
+"" all of the below is thanks to B. Watson  ;^)
+"""""""""""""""""""""""""""""""""""""""""""
+" Map to F1, because I hate "F1=Help" (I like my hotkeys to be something
+" I'll use every day, and at this point in my Vim career, I don't need
+" to look at the help every day...)
+nmap <F1> :call ToggleComment()<CR>
+" In insert mode, too:
+inoremap <F1> :call ToggleComment()<CR>
+
+" Visual mode: comment out the selected  block. Will fail if the block
+" already contains /* */ comments (but // comments are OK).
+vmap <F1> :'<
+mzO/*:'>
+myo*/`z
+
+"" Highlight an entire block of code, from anywhere within it.
+"" Leaves me in Visual mode, with the cursor at the closing brace.
+nmap <F2> [{V]}
+
+" Visual mode: converts a block of comments like this:
+
+" // This is a
+" // multi-line
+" // comment
+
+" into this:
+
+" /* This is a
+"	multi-line
+"	comment
+" */
+
+" TODO: block_comment.pl is missing...
+vmap <F4> :!block_comment.pl
+V'>j='>
+
+nmap <F9> :make
+nmap <F10> :make test
+nmap <C-F10> :make clean all test
+
+" Show the ASCII code of the character under the cursor.
+" <C-@> is actually control-2 on my keyboard.
+nmap <C-@> :ascii<CR>
+
+" Tab completion in insert mode: VERY nice.
+" See ":help completion"; this function was copied from there. It makes
+" the Tab key act normally if there's only whitespace to the left of it,
+" but it does "tab completion" if there's anything else to the left.
+" This is a very "DWIW" (Do What I Want) kind of thing :)
+" Note that you can't insert a Tab in the middle of a line by pressing
+" Tab any more, but you can by pressing <C-V><Tab>.
+function! CleverTab()
+	if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+		return "\<Tab>"
+	else
+		return "\<C-N>"
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+
+" Copy buffered text to X11 clipboard
+nmap <A-c> :let @* = @"<CR>
 
