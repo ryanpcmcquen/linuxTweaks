@@ -10,7 +10,7 @@ set nocompatible
 "" set default font size on gui
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Monospace\ 11
+    set guifont=Monospace\ 10
   elseif has("gui_photon")
     set guifont=Monospace:s11
   elseif has("gui_kde")
