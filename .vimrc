@@ -107,9 +107,7 @@ inoremap <F1> :call ToggleComment()<CR>
 
 " Visual mode: comment out the selected  block. Will fail if the block
 " already contains /* */ comments (but // comments are OK).
-vmap <F1> :'<
-mzO/*:'>
-myo*/`z
+vmap <F1> :'< mzO/*:'> myo*/`z
 
 "" Highlight an entire block of code, from anywhere within it.
 "" Leaves me in Visual mode, with the cursor at the closing brace.
@@ -129,8 +127,7 @@ nmap <F2> [{V]}
 " */
 
 " TODO: block_comment.pl is missing...
-vmap <F4> :!block_comment.pl
-V'>j='>
+vmap <F4> :!block_comment.pl V'>j='>
 
 nmap <F9> :make
 nmap <F10> :make test
