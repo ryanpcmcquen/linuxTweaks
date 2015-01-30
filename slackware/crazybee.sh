@@ -32,7 +32,10 @@ EOF
   exit 1
 fi
 
-if [ -d ~/Bumblebee-SlackBuilds/ ]; then
+if [ -e ~/Bumblebee-SlackBuilds/crazybee.sh ]; then
+  echo "Reinstall!"
+  export REINSTALL=${REINSTALL:-yes}
+elif [ -d ~/Bumblebee-SlackBuilds/ ]; then
   cat << EOF
 You already have the bumblebee directory,
 please rename to avoid changes you may have made.
@@ -70,16 +73,19 @@ install_latest_pkg_compat() {
   ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
 
-
-cd
-git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
-
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee-reinstall.sh -P ~/Bumblebee-SlackBuilds
-
-cd Bumblebee-SlackBuilds/
+if [ "$REINSTALL" = "no" ]; then
+  cd
+  git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
+  cd Bumblebee-SlackBuilds/
+fi
 
 if [ "$STABLE" = "yes" ]; then
   git checkout 14.1
+fi
+
+## in case there are updates ;-)
+if [ "$REINSTALL" = "yes" ]; then
+  git pull
 fi
 
 ## let's get some tarballs!
@@ -128,6 +134,8 @@ echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
   /etc/rc.d/rc.bumblebeed stop
 fi" >> /etc/rc.d/rc.local_shutdown
 fi
+
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh -P ~/Bumblebee-SlackBuilds
 
 echo
 echo "+===========================================+"
