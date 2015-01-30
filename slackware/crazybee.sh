@@ -24,6 +24,7 @@
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh | sh
 
 STABLE=${STABLE:-no}
+REINSTALL=${REINSTALL:-no}
 
 if [ ! $UID = 0 ]; then
   cat << EOF
