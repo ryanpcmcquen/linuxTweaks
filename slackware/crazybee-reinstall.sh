@@ -23,6 +23,7 @@
 
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee-reinstall.sh | sh
 
+STABLE=${STABLE:-no}
 
 if [ ! $UID = 0 ]; then
   cat << EOF
@@ -66,8 +67,14 @@ cd
 
 cd Bumblebee-SlackBuilds/
 
+if [ "$STABLE" = "yes" ]; then
+  git checkout 14.1
+fi
+
+## in case there are updates  ;-)
 git pull
 
+## let's get some tarballs
 sh download.sh
 
 groupadd bumblebee
@@ -89,6 +96,10 @@ if [ -z "$(cat /etc/slackpkg/blacklist | grep xf86-video-nouveau)" ]; then
 fi
 if [ -z "$(cat /etc/slackpkg/blacklist | grep _bbsb)" ]; then
   echo "[0-9]+_bbsb" >> /etc/slackpkg/blacklist
+fi
+
+if [ "$STABLE" = "yes" ]; then
+  install_latest_pkg libvdpau
 fi
 
 install_latest_pkg_compat nvidia-kernel
