@@ -136,6 +136,10 @@ echo "if [ -x /etc/rc.d/rc.bumblebeed ]; then
 fi" >> /etc/rc.d/rc.local_shutdown
 fi
 
+## these have to be executable to work  :-)
+chmod 755 /etc/rc.d/rc.local
+chmod 755 /etc/rc.d/rc.local_shutdown
+
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh -P ~/Bumblebee-SlackBuilds
 
 echo
