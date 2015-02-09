@@ -15,4 +15,6 @@ sh ~/liloGenericEntry.sh >> /etc/lilo.conf
 
 lilo -v
 
-rm ~/liloGenericEntry.sh
+## clean up
+rm -v ~/liloGenericEntry.sh
+
