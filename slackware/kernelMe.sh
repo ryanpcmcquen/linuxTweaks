@@ -128,8 +128,18 @@ ln -s vmlinuz-$VERSION vmlinuz
 ln -s System.map-$VERSION System.map
 ln -s config-$VERSION config
 
-## make a lilo entry and whatnot
-~/switchToGenericKernel.sh
+## this is from generic kernel script
+/usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
+if [ -e ~/liloGenericEntry.sh ]; then
+  cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
+fi
+
+echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-*' | tail -1)" > ~/liloGenericEntry.sh
+sh ~/liloGenericEntry.sh >> /etc/lilo.conf
+lilo -v
+
+## clean up
+rm -v ~/liloGenericEntry.sh
 
 ## clean up
 rm -v ~/mainlineKernelVersion
