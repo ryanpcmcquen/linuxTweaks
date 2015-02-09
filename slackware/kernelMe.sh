@@ -1,0 +1,99 @@
+#!/bin/sh
+#
+# Script to automate kernel compilation
+#
+# Place this script in /usr/src, chmod +x it to make it executable
+# This script must be run as root
+#
+# Initial script by Robby Workman <http://rlworkman.net/>
+# Slightly modified by Willy Sudiarto Raharjo <willysr@gmail.com>
+#
+##
+## even further m0dz by Ryan P.C. McQuen  ;-)
+##
+if [ ! $UID = 0 ]; then
+  cat << EOF
+This script must be run as root.
+EOF
+  exit 1
+fi
+
+wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html 
+
+cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
+  | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
+    > ~/mainlineKernelVersion
+
+cat ~/linux-kernel-home-page.html | grep "stable" | head -3 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
+  > ~/stableKernelVersion
+
+cat ~/linux-kernel-home-page.html | grep "stable" | head -5 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
+  > ~/longtermKernelVersion
+
+export MAINLINEKERNEL=${MAINLINEKERNEL="$(tr -d '\n\r' < ~/mainlineKernelVersion)"} 
+export STABLEKERNEL=${STABLEKERNEL="$(tr -d '\n\r' < ~/stableKernelVersion)"} 
+export LONGTERMKERNEL=${LONGTERMKERNEL="$(tr -d '\n\r' < ~/longtermKernelVersion)"} 
+
+rm -v ~/linux-kernel-home-page.html
+
+read -p "Which kernel do you want (mainline, stable or longterm)?\
+  [m/s/l]: " response
+case $response in
+  [mM])
+    export VERSION=$MAINLINEKERNEL;
+    echo "Let's mainline this bizness!";
+    ;;
+  [sS])
+    export VERSION=$STABLEKERNEL;
+    echo "Oh so stable, and oh so sweet.";
+    ;;
+  [lL])
+    export VERSION=$LONGTERMKERNEL;
+    echo "In for the long haul.";
+esac
+
+wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz
+
+CWD='/usr/src' # /usr/src directory
+cd $CWD
+#
+# Remove /usr/src/linux symlink
+rm -f /usr/src/linux
+#
+# Symlink /usr/src/linux-$VERSION to /usr/src/linux
+ln -s /usr/src/linux-$VERSION /usr/src/linux
+#
+# Switch to the kernel source directory
+cd $CWD/linux-$VERSION
+#
+# Copy the old configuration from /boot
+cp /boot/config ./.config
+#
+# Make the kernel image, Compile, and Install The Modules
+make oldconfig && make bzImage && make modules && make modules_install
+#
+# Make symlink to fix some problems on NVidia/VMWare compilation
+ln -s /usr/src/linux-$VERSION/include/generated/uapi/linux/version.h /usr/src/linux-$VERSION/include/linux/version.h
+#
+# Remove old symlinks, copy new files into /boot, and make new symlinks
+cd /boot
+rm -f vmlinuz System.map config
+cp $CWD/linux-$VERSION/.config config-$VERSION
+cp $CWD/linux-$VERSION/System.map /boot/System.map-$VERSION
+cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
+ln -s vmlinuz-$VERSION vmlinuz
+ln -s System.map-$VERSION System.map
+ln -s config-$VERSION config
+
+## make a lilo entry and whatnot
+~/switchToGenericKernel.sh
+
+#
+# The last line above placed a copy of your kernel config file in /boot
+# (just in case)
+#
+# After you've verified that the kernel boots and works properly, you
+# can safely delete the /boot-old directory created by this script
+# (do rm -R /boot-old) --don't make a typo here, though! :-)
+#
+# Good luck!
