@@ -8,6 +8,7 @@
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version, with the following exception:
 # the text of the GPL license may be omitted.
+#
 # This program is distributed in the hope that it will be useful, but
 # without any warranty; without even the implied warranty of
 # merchantability or fitness for a particular purpose. Compiling,
@@ -15,11 +16,12 @@
 # may result in lapses of consciousness and/or very being, up to and
 # including the end of all existence and the Universe as we know it.
 # See the GNU General Public License for more details.
+#
 # You may have received a copy of the GNU General Public License
 # along with this program (most likely, a file named COPYING). If
 # not, see <http://www.gnu.org/licenses/>.
+#
 # Place this script in /usr/src, chmod +x it to make it executable
-# This script must be run as root
 #
 # Initial script by Robby Workman <http://rlworkman.net/>
 # Slightly modified by Willy Sudiarto Raharjo <willysr@gmail.com>
@@ -71,7 +73,21 @@ case $response in
   [lL])
     export VERSION=$LONGTERMKERNEL;
     echo "In for the long haul.";
+  *)
+    echo "You must choose."
+    exit 1
 esac
+echo
+echo
+read -p "Do you want 'menuconfig'?\
+  [y/N]: " response
+case $response in
+  [yY][eE][sS]|[yY])
+    export CONFIGOPTION=menuconfig;
+    echo "You'll get the menu.";
+  *)
+    export CONFIGOPTION=olddefconfig;
+    echo "Just build it already!";
 echo
 echo
 
@@ -97,7 +113,7 @@ cd $CWD/linux-$VERSION
 cp /boot/config ./.config
 #
 # Make the kernel image, Compile, and Install The Modules
-make oldconfig && make bzImage && make modules && make modules_install
+make $CONFIGOPTION && make bzImage && make modules && make modules_install
 #
 # Make symlink to fix some problems on NVidia/VMWare compilation
 ln -s /usr/src/linux-$VERSION/include/generated/uapi/linux/version.h /usr/src/linux-$VERSION/include/linux/version.h
