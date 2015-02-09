@@ -11,7 +11,10 @@ fi
 
 echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-generic-*' | tail -1)" > ~/liloGenericEntry.sh
 
-sh ~/liloGenericEntry.sh >> /etc/lilo.conf
+## check for duplicate entries
+if [ -z "grep '$(cat ~/liloGenericEntry.sh | cut -d- -f4)' /etc/lilo.conf" ]; then
+  sh ~/liloGenericEntry.sh >> /etc/lilo.conf
+fi
 
 lilo -v
 
