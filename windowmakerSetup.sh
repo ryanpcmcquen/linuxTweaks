@@ -21,3 +21,6 @@ fi
 ## typical alt + f4 close key
 sed -i 's/CloseKey = None;/CloseKey = "Mod1+F4";/g' ~/GNUstep/Defaults/WindowMaker
 
+## alt+m is minimize, may as well make alt+n maximize
+sed -i 's/MaximizeKey = None;/MaximizeKey = "Mod1+N";/g' ~/GNUstep/Defaults/WindowMaker
+
