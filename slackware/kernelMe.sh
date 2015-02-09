@@ -1,7 +1,23 @@
 #!/bin/sh
 #
 # Script to automate kernel compilation
+# Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 #
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version, with the following exception:
+# the text of the GPL license may be omitted.
+# This program is distributed in the hope that it will be useful, but
+# without any warranty; without even the implied warranty of
+# merchantability or fitness for a particular purpose. Compiling,
+# interpreting, executing or merely reading the text of the program
+# may result in lapses of consciousness and/or very being, up to and
+# including the end of all existence and the Universe as we know it.
+# See the GNU General Public License for more details.
+# You may have received a copy of the GNU General Public License
+# along with this program (most likely, a file named COPYING). If
+# not, see <http://www.gnu.org/licenses/>.
 # Place this script in /usr/src, chmod +x it to make it executable
 # This script must be run as root
 #
@@ -36,6 +52,11 @@ export LONGTERMKERNEL=${LONGTERMKERNEL="$(tr -d '\n\r' < ~/longtermKernelVersion
 
 rm -v ~/linux-kernel-home-page.html
 
+echo
+echo "-_-****************-_-"
+echo "*** KERNEL TIME!!! ***"
+echo "-_-****************-_-"
+echo
 read -p "Which kernel do you want (mainline, stable or longterm)?\
   [m/s/l]: " response
 case $response in
@@ -51,11 +72,17 @@ case $response in
     export VERSION=$LONGTERMKERNEL;
     echo "In for the long haul.";
 esac
+echo
+echo
 
 wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz
 
 CWD='/usr/src' # /usr/src directory
 cd $CWD
+
+## un tar dat thing
+tar xvf $CWD/linux-$VERSION.tar.xz -C /usr/src/
+
 #
 # Remove /usr/src/linux symlink
 rm -f /usr/src/linux
@@ -88,8 +115,13 @@ ln -s config-$VERSION config
 ## make a lilo entry and whatnot
 ~/switchToGenericKernel.sh
 
+## clean up
+rm -v ~/mainlineKernelVersion
+rm -v ~/stableKernelVersion
+rm -v ~/longtermKernelVersion
+
 #
-# The last line above placed a copy of your kernel config file in /boot
+# The last `ln` line above placed a copy of your kernel config file in /boot
 # (just in case)
 #
 # After you've verified that the kernel boots and works properly, you
