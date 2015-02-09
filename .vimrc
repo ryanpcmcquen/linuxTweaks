@@ -88,7 +88,7 @@ set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servernam
 
 "" clipboard-y stuff
 if has('unnamedplus')
-  set clipboard+=unnamedplus
+  set clipboard+=unnamed,unnamedplus
 else
   set clipboard+=unnamed
 endif
