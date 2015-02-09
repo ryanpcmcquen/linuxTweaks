@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+## utf8 stuff
+#
+if echo "$LANG" | grep -q -i utf8; then
+  # Enable multibyte input
+  kbd_mode -u
+  # Load the keymap in unicode mode
+  /usr/bin/dumpkeys | /usr/bin/loadkeys --unicode
+fi
+
+setfont -v ter-v16n
