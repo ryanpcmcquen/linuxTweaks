@@ -10,3 +10,4 @@ if echo "$LANG" | grep -q -i utf8; then
 fi
 
 setfont -v ter-v16n
+
