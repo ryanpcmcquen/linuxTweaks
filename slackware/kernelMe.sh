@@ -28,6 +28,7 @@
 #
 ##
 ## even further m0dz by Ryan P.C. McQuen  ;-)
+## with lots of help from Thorn Inurcide
 ##
 if [ ! $UID = 0 ]; then
   cat << EOF
@@ -103,32 +104,30 @@ tar xvf $CWD/linux-$VERSION.tar.xz -C /usr/src/
 # Remove /usr/src/linux symlink
 rm -f /usr/src/linux
 #
-# Symlink /usr/src/linux-$VERSION to /usr/src/linux
-ln -s /usr/src/linux-$VERSION /usr/src/linux
-#
+
 # Switch to the kernel source directory
 cd $CWD/linux-$VERSION
 #
-# Copy the old configuration from /boot
-cp /boot/config ./.config
-#
+make mrproper
+# Grab config from the running kernel
+zcat /proc/config.gz > /usr/src/linux-$VERSION
+
 # Make the kernel image, Compile, and Install The Modules
 make $CONFIGOPTION && make bzImage && make modules && make modules_install
-#
-# Make symlink to fix some problems on NVidia/VMWare compilation
-ln -s /usr/src/linux-$VERSION/include/generated/uapi/linux/version.h /usr/src/linux-$VERSION/include/linux/version.h
-#
-# Remove old symlinks, copy new files into /boot, and make new symlinks
-cd /boot
-rm -f vmlinuz System.map config
-cp $CWD/linux-$VERSION/.config config-$VERSION
+
+# copy new files into /boot, remove old symlinks, and make new symlinks
+cp $CWD/linux-$VERSION/.config /boot/config-$VERSION
 cp $CWD/linux-$VERSION/System.map /boot/System.map-$VERSION
 cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
+
+cd /boot
+rm -f vmlinuz System.map config
+
 ln -s vmlinuz-$VERSION vmlinuz
 ln -s System.map-$VERSION System.map
 ln -s config-$VERSION config
 
-## this is from generic kernel script
+## this is from my generic kernel script
 /usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
 if [ -e ~/liloGenericEntry.sh ]; then
   cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
