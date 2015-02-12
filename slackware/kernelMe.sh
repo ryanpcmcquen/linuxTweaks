@@ -74,9 +74,11 @@ case $response in
   [lL])
     export VERSION=$LONGTERMKERNEL;
     echo "In for the long haul.";
+    ;;
   *)
     echo "You must choose."
     exit 1
+    ;;
 esac
 echo
 echo
@@ -86,9 +88,12 @@ case $response in
   [yY][eE][sS]|[yY])
     export CONFIGOPTION=menuconfig;
     echo "You'll get the menu.";
+    ;;
   *)
     export CONFIGOPTION=olddefconfig;
     echo "Just build it already!";
+    ;;
+esac
 echo
 echo
 
