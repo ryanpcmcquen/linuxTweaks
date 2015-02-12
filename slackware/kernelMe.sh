@@ -138,7 +138,7 @@ if [ -e ~/liloGenericEntry.sh ]; then
   cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
 fi
 
-echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-*' | tail -1)" > ~/liloGenericEntry.sh
+echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-*' | head -1)" > ~/liloGenericEntry.sh
 
 ## check for duplicate entries
 if [ -z "grep '$(cat ~/liloGenericEntry.sh | cut -d- -f3)' /etc/lilo.conf" ]; then
