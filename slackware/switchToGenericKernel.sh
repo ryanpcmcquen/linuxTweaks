@@ -6,7 +6,7 @@
 /usr/share/mkinitrd/mkinitrd_command_generator.sh | sh
 
 if [ -e ~/liloGenericEntry.sh ]; then
-  cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
+  rm -v ~/liloGenericEntry.sh
 fi
 
 echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-generic-*' | tail -1)" > ~/liloGenericEntry.sh
