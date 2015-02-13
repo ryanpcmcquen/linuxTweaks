@@ -115,7 +115,7 @@ cd $CWD/linux-$VERSION
 #
 make mrproper
 # Grab config from the running kernel
-zcat /proc/config.gz > /usr/src/linux-$VERSION
+zcat /proc/config.gz > /usr/src/linux-$VERSION/.config
 
 # Make the kernel image, Compile, and Install The Modules
 make $CONFIGOPTION && make bzImage && make modules && make modules_install
