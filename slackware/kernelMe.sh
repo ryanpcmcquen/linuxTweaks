@@ -99,7 +99,7 @@ echo
 
 wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz
 
-CWD='/usr/src' # /usr/src directory
+CWD='/usr/src'
 cd $CWD
 
 ## un tar dat thing
@@ -125,9 +125,9 @@ cp $CWD/linux-$VERSION/.config /boot/config-$VERSION
 cp $CWD/linux-$VERSION/System.map /boot/System.map-$VERSION
 cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
 
-## i don't like removing a working kernel,
-## this script already adds the new one as the second lilo entry,
-## and does so by version name
+## i don't like removing a working kernel, 
+## this script already adds the new one as a 
+## separate lilo entry, and does so by version name
 ##
 ##cd /boot
 ##rm -f vmlinuz System.map config
@@ -142,10 +142,10 @@ if [ -e ~/liloGenericEntry.sh ]; then
   rm -v ~/liloGenericEntry.sh
 fi
 
-echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-[0-9]*' | tail -1)" > ~/liloGenericEntry.sh
+echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l vmlinuz-$VERSION" > ~/liloGenericEntry.sh
 
 ## check for duplicate entries
-if [ -z "`grep $(cat ~/liloGenericEntry.sh | cut -d- -f3) /etc/lilo.conf`" ]; then
+if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
   sh ~/liloGenericEntry.sh >> /etc/lilo.conf
 fi
 
