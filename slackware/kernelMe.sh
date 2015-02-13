@@ -135,7 +135,7 @@ ln -s config-$VERSION config
 ## this is from my generic kernel script
 /usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
 if [ -e ~/liloGenericEntry.sh ]; then
-  cp ~/liloGenericEntry.sh ~/liloGenericEntry.sh.bak
+  rm -v ~/liloGenericEntry.sh
 fi
 
 echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-[0-9]*' | tail -1)" > ~/liloGenericEntry.sh
