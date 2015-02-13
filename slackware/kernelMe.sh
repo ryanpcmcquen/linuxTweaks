@@ -120,17 +120,21 @@ zcat /proc/config.gz > /usr/src/linux-$VERSION
 # Make the kernel image, Compile, and Install The Modules
 make $CONFIGOPTION && make bzImage && make modules && make modules_install
 
-# copy new files into /boot, remove old symlinks, and make new symlinks
+# copy new files into /boot
 cp $CWD/linux-$VERSION/.config /boot/config-$VERSION
 cp $CWD/linux-$VERSION/System.map /boot/System.map-$VERSION
 cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
 
-cd /boot
-rm -f vmlinuz System.map config
-
-ln -s vmlinuz-$VERSION vmlinuz
-ln -s System.map-$VERSION System.map
-ln -s config-$VERSION config
+## i don't like removing a working kernel,
+## this script already adds the new one as the second lilo entry,
+## and does so by version name
+##
+##cd /boot
+##rm -f vmlinuz System.map config
+##
+##ln -s vmlinuz-$VERSION vmlinuz
+##ln -s System.map-$VERSION System.map
+##ln -s config-$VERSION config
 
 ## this is from my generic kernel script
 /usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
@@ -141,7 +145,7 @@ fi
 echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l $(find /boot/ -name 'vmlinuz-[0-9]*' | tail -1)" > ~/liloGenericEntry.sh
 
 ## check for duplicate entries
-if [ -z "grep '$(cat ~/liloGenericEntry.sh | cut -d- -f3)' /etc/lilo.conf" ]; then
+if [ -z "`grep $(cat ~/liloGenericEntry.sh | cut -d- -f3) /etc/lilo.conf`" ]; then
   sh ~/liloGenericEntry.sh >> /etc/lilo.conf
 fi
 
