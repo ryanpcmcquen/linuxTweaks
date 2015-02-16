@@ -1,0 +1,20 @@
+#!/bin/sh
+## simple script to update version numbers for SBo
+## run as:
+##
+## sbup 1.1.1
+##
+## to change current version to `1.1.1`, et cetera
+
+## source the info file
+. $PWD/*.info
+
+## set the old version and prepare new var
+OLDVER=${VERSION}
+NEWVER=${1}
+
+## replace old version with new
+if [ "$NEWVER" ]; then
+  sed -i "s/$OLDVER/$NEWVER/g" ./*.info ./*.SlackBuild
+fi
+
