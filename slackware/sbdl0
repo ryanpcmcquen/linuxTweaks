@@ -1,0 +1,14 @@
+#!/bin/sh
+## get the tarballs!
+## (i put this in /usr/local/bin/)
+
+## source the info files to get links
+. ./*.info
+
+## check vars, then download  ;^)
+if [ "$(uname -m)" = "x86_64" ] && [ "$DOWNLOAD_x86_64" ] && [ "$DOWNLOAD_x86_64" != "UNSUPPORTED" ] && [ "$DOWNLOAD_x86_64" != "UNTESTED" ]; then
+  wget -N $DOWNLOAD_x86_64
+else
+  wget -N $DOWNLOAD
+fi
+
