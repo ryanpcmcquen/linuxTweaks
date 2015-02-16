@@ -37,50 +37,63 @@ EOF
   exit 1
 fi
 
-wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html 
+if [ -z "$1" ]; then
+  ## grab kernel homepage to get version numbers
+  wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html 
 
-cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
-  | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
-    > ~/mainlineKernelVersion
+  ## mainline version
+  cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
+    | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
+      > ~/mainlineKernelVersion
 
-cat ~/linux-kernel-home-page.html | grep "stable" | head -3 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
-  > ~/stableKernelVersion
+  ## stable version
+  cat ~/linux-kernel-home-page.html | grep "stable" | head -3 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
+    > ~/stableKernelVersion
 
-cat ~/linux-kernel-home-page.html | grep "stable" | head -5 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
-  > ~/longtermKernelVersion
+  ## longterm version
+  cat ~/linux-kernel-home-page.html | grep "stable" | head -5 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
+    > ~/longtermKernelVersion
 
-export MAINLINEKERNEL=${MAINLINEKERNEL="$(tr -d '\n\r' < ~/mainlineKernelVersion)"} 
-export STABLEKERNEL=${STABLEKERNEL="$(tr -d '\n\r' < ~/stableKernelVersion)"} 
-export LONGTERMKERNEL=${LONGTERMKERNEL="$(tr -d '\n\r' < ~/longtermKernelVersion)"} 
+  ## set VERSION
+  export MAINLINEKERNEL=${MAINLINEKERNEL="$(tr -d '\n\r' < ~/mainlineKernelVersion)"} 
+  export STABLEKERNEL=${STABLEKERNEL="$(tr -d '\n\r' < ~/stableKernelVersion)"} 
+  export LONGTERMKERNEL=${LONGTERMKERNEL="$(tr -d '\n\r' < ~/longtermKernelVersion)"} 
 
-rm -v ~/linux-kernel-home-page.html
+  ## clean up
+  rm -v ~/linux-kernel-home-page.html
+
+  echo
+  echo "-_-****************-_-"
+  echo "*** KERNEL TIME!!! ***"
+  echo "-_-****************-_-"
+  echo
+  read -p "Which kernel do you want (mainline, stable or longterm)?\
+    [m/s/l]: " response
+  case $response in
+    [mM])
+      export VERSION=$MAINLINEKERNEL;
+      echo "Let's mainline this bizness!";
+      ;;
+    [sS])
+      export VERSION=$STABLEKERNEL;
+      echo "Oh so stable, and oh so sweet.";
+      ;;
+    [lL])
+      export VERSION=$LONGTERMKERNEL;
+      echo "In for the long haul.";
+      ;;
+    *)
+      echo "You must choose."
+      exit 1
+      ;;
+  esac
+  echo
+else
+  VERSION=${1}
+fi
 
 echo
-echo "-_-****************-_-"
-echo "*** KERNEL TIME!!! ***"
-echo "-_-****************-_-"
-echo
-read -p "Which kernel do you want (mainline, stable or longterm)?\
-  [m/s/l]: " response
-case $response in
-  [mM])
-    export VERSION=$MAINLINEKERNEL;
-    echo "Let's mainline this bizness!";
-    ;;
-  [sS])
-    export VERSION=$STABLEKERNEL;
-    echo "Oh so stable, and oh so sweet.";
-    ;;
-  [lL])
-    export VERSION=$LONGTERMKERNEL;
-    echo "In for the long haul.";
-    ;;
-  *)
-    echo "You must choose."
-    exit 1
-    ;;
-esac
-echo
+echo "You are building Linux $VERSION."
 echo
 read -p "Do you want 'menuconfig'?\
   [y/N]: " response
@@ -97,7 +110,15 @@ esac
 echo
 echo
 
+## grab the kernel
 wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz
+
+## check if wget failed
+if [ $? -ne 0 ]; then
+  echo "Version number is bunk, try again."
+  exit 1
+fi
+
 
 CWD='/usr/src'
 cd $CWD
