@@ -136,35 +136,40 @@ cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
 ##ln -s System.map-$VERSION System.map
 ##ln -s config-$VERSION config
 
-## this is from my generic kernel script
+## this is a m0d of my generic kernel script
 /usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
-if [ -e ~/liloGenericEntry.sh ]; then
+
+## check for lilo, otherwise running this stuff is a waste
+if [ -e /etc/lilo.conf ]; then
+  if [ -e ~/liloGenericEntry.sh ]; then
+    rm -v ~/liloGenericEntry.sh
+  fi
+  
+  echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l vmlinuz-$VERSION" > ~/liloGenericEntry.sh
+  
+  ## check for duplicate entries
+  if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
+    sh ~/liloGenericEntry.sh >> /etc/lilo.conf
+  fi
+  
+  lilo -v
+  
+  ## clean up
   rm -v ~/liloGenericEntry.sh
+else
+  echo "You aren't using lilo, update your bootloader."
 fi
 
-echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l vmlinuz-$VERSION" > ~/liloGenericEntry.sh
-
-## check for duplicate entries
-if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
-  sh ~/liloGenericEntry.sh >> /etc/lilo.conf
-fi
-
-lilo -v
-
-## clean up
-rm -v ~/liloGenericEntry.sh
-
-## clean up
+## more clean up
 rm -v ~/mainlineKernelVersion
 rm -v ~/stableKernelVersion
 rm -v ~/longtermKernelVersion
 
-#
-# The last `ln` line above placed a copy of your kernel config file in /boot
-# (just in case)
-#
-# After you've verified that the kernel boots and works properly, you
-# can safely delete the /boot-old directory created by this script
-# (do rm -R /boot-old) --don't make a typo here, though! :-)
-#
+echo
+echo "If you have lilo your new kernel is ready, just reboot."
+echo "If you don't have lilo you'll have to update your bootloader first."
+echo
+echo "ENJOY!"
+
 # Good luck!
+
