@@ -166,7 +166,7 @@ if [ -e /etc/lilo.conf ]; then
     rm -v ~/liloGenericEntry.sh
   fi
   
-  echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l vmlinuz-$VERSION" > ~/liloGenericEntry.sh
+  echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-$VERSION" > ~/liloGenericEntry.sh
   
   ## check for duplicate entries
   if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
