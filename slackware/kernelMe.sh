@@ -135,8 +135,12 @@ tar xvf $CWD/linux-$VERSION.tar.xz -C /usr/src/
 cd $CWD/linux-$VERSION
 #
 make mrproper
-# Grab config from the running kernel
-zcat /proc/config.gz > /usr/src/linux-$VERSION/.config
+
+## set this to the running config, override if needed
+KERNELCONFIG=${KERNELCONFIG:-/proc/config.gz}
+
+## get the config, do the 'or cat' in case someone feeds a non-gzipped config
+zcat ${KERNELCONFIG} > /usr/src/linux-$VERSION/.config || cat ${KERNELCONFIG} > /usr/src/linux-$VERSION/.config
 
 # Make the kernel image, Compile, and Install The Modules
 make $CONFIGOPTION && make bzImage && make modules && make modules_install
