@@ -106,8 +106,8 @@ cd $CWD
 tar xvf $CWD/linux-$VERSION.tar.xz -C /usr/src/
 
 #
-# Remove /usr/src/linux symlink
-rm -f /usr/src/linux
+## i don't use this symlink, so i'll keep it
+##rm -f /usr/src/linux
 #
 
 # Switch to the kernel source directory
