@@ -1,0 +1,15 @@
+#!/bin/sh
+## put md5sums into the info file
+## for easy updating
+
+for ITEM in *tar*; do
+  md5sum $ITEM >> $(find *.info)
+done
+for ITEM in *zip*; do
+  md5sum $ITEM >> $(find *.info)
+done
+for ITEM in *t?z*; do
+  md5sum $ITEM >> $(find *.info)
+done
+
+
