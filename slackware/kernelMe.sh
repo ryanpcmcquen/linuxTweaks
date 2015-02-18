@@ -4,7 +4,7 @@
 # Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 #
 ################################
-### TO INSTALL/USE:
+### TO INSTALL/USE (MAKE SURE YOU ARE ROOT!):
 ### wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/kernelMe.sh -P /usr/src/
 ### cd /usr/src/
 ### sh kernelMe.sh
@@ -189,7 +189,7 @@ if [ -e /etc/lilo.conf ]; then
   ## clean up
   rm -v ~/liloGenericEntry.sh
 else
-  echo "You aren't using lilo, update your bootloader."
+  echo "You aren't using LILO, update your bootloader."
 fi
 
 ## more clean up
@@ -198,8 +198,9 @@ rm -v ~/stableKernelVersion
 rm -v ~/longtermKernelVersion
 
 echo
-echo "If you have lilo your new kernel is ready, just reboot."
-echo "If you don't have lilo you'll have to update your bootloader first."
+echo "If you have LILO your new kernel is ready (as a new entry), so you can happily reboot."
+echo
+echo "If you don't have LILO, you'll need to bring your bootloader up to speed!"
 echo
 echo "ENJOY!"
 
