@@ -3,6 +3,13 @@
 # Script to automate kernel compilation
 # Ryan P.C. McQuen | Everett, WA | ryan.q@linux.com
 #
+################################
+### TO INSTALL/USE:
+### wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/kernelMe.sh -P /usr/src/
+### cd /usr/src/
+### sh kernelMe.sh
+################################
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
