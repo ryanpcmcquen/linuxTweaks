@@ -117,18 +117,18 @@ esac
 echo
 echo
 
+## get to the right place
+CWD='/usr/src'
+cd $CWD
+
 ## grab the kernel
-wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz
+wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz -P /usr/src/
 
 ## check if wget failed
 if [ $? -ne 0 ]; then
   echo "Version number is bunk, try again."
   exit 1
 fi
-
-
-CWD='/usr/src'
-cd $CWD
 
 ## un tar dat thing
 tar xvf $CWD/linux-$VERSION.tar.xz -C /usr/src/
