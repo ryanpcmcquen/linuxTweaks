@@ -191,20 +191,23 @@ if [ "$HUGE" = n ]; then
     
     ## clean up
     rm -v ~/liloGenericEntry.sh
+  fi
 elif [ "$HUGE" = y ]; then
-  if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
-    export ROOTMOUNT=$(lsblk | grep -E '/$' | cut -c3-8)
-
-    echo >> /etc/lilo.conf
-    echo "## kernelMe config start" >> /etc/lilo.conf
-    echo "image = /boot/vmlinuz-$VERSION" >> /etc/lilo.conf
-    echo "  root = /dev/$ROOTMOUNT" >> /etc/lilo.conf
-    echo "  label = $VERSION" >> /etc/lilo.conf
-    echo "  read-only" >> /etc/lilo.conf
-    echo "## kernelMe config end" >> /etc/lilo.conf
-    echo >> /etc/lilo.conf
-
-    lilo -v
+  if [ -e /etc/lilo.conf ]; then
+    if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
+      export ROOTMOUNT=$(lsblk | grep -E '/$' | cut -c3-8)
+  
+      echo >> /etc/lilo.conf
+      echo "## kernelMe config start" >> /etc/lilo.conf
+      echo "image = /boot/vmlinuz-$VERSION" >> /etc/lilo.conf
+      echo "  root = /dev/$ROOTMOUNT" >> /etc/lilo.conf
+      echo "  label = $VERSION" >> /etc/lilo.conf
+      echo "  read-only" >> /etc/lilo.conf
+      echo "## kernelMe config end" >> /etc/lilo.conf
+      echo >> /etc/lilo.conf
+  
+      lilo -v
+    fi
   fi
 else
   echo "You aren't using LILO, update your bootloader."
