@@ -168,26 +168,44 @@ cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
 ##ln -s System.map-$VERSION System.map
 ##ln -s config-$VERSION config
 
-## this is a m0d of my generic kernel script
-/usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
+HUGE=${HUGE:-n}
 
-## check for lilo, otherwise running this stuff is a waste
-if [ -e /etc/lilo.conf ]; then
-  if [ -e ~/liloGenericEntry.sh ]; then
+if [ "$HUGE" = n ]; then
+  ## this is a m0d of my generic kernel script
+  /usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
+  
+  ## check for lilo, otherwise running this stuff is a waste
+  if [ -e /etc/lilo.conf ]; then
+    if [ -e ~/liloGenericEntry.sh ]; then
+      rm -v ~/liloGenericEntry.sh
+    fi
+    
+    echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-$VERSION" > ~/liloGenericEntry.sh
+    
+    ## check for duplicate entries
+    if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
+      sh ~/liloGenericEntry.sh >> /etc/lilo.conf
+    fi
+    
+    lilo -v
+    
+    ## clean up
     rm -v ~/liloGenericEntry.sh
-  fi
-  
-  echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-$VERSION" > ~/liloGenericEntry.sh
-  
-  ## check for duplicate entries
+elif [ "$HUGE" = y ]; then
   if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
-    sh ~/liloGenericEntry.sh >> /etc/lilo.conf
+    export ROOTMOUNT=$(lsblk | grep -E '/$' | cut -c3-8)
+
+    echo >> /etc/lilo.conf
+    echo "## kernelMe config start" >> /etc/lilo.conf
+    echo "image = /boot/vmlinuz-$VERSION" >> /etc/lilo.conf
+    echo "  root = /dev/$ROOTMOUNT" >> /etc/lilo.conf
+    echo "  label = $VERSION" >> /etc/lilo.conf
+    echo "  read-only" >> /etc/lilo.conf
+    echo "## kernelMe config end" >> /etc/lilo.conf
+    echo >> /etc/lilo.conf
+
+    lilo -v
   fi
-  
-  lilo -v
-  
-  ## clean up
-  rm -v ~/liloGenericEntry.sh
 else
   echo "You aren't using LILO, update your bootloader."
 fi
