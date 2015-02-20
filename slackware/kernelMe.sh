@@ -195,8 +195,8 @@ if [ "$HUGE" = n ]; then
 elif [ "$HUGE" = y ]; then
   if [ -e /etc/lilo.conf ]; then
     if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
-      export ROOTMOUNT=$(lsblk | grep -E '/$' | cut -c3-8)
-  
+      export ROOTMOUNT=$(lsblk -l | grep -E '/$' | cut -d' ' -f1)
+
       echo >> /etc/lilo.conf
       echo "## kernelMe config start" >> /etc/lilo.conf
       echo "image = /boot/vmlinuz-$VERSION" >> /etc/lilo.conf
@@ -205,7 +205,7 @@ elif [ "$HUGE" = y ]; then
       echo "  read-only" >> /etc/lilo.conf
       echo "## kernelMe config end" >> /etc/lilo.conf
       echo >> /etc/lilo.conf
-  
+
       lilo -v
     fi
   fi
