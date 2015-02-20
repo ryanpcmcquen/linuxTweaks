@@ -13,8 +13,12 @@
 OLDVER=${VERSION}
 NEWVER=${1}
 
-## replace old version with new
+## (replace old version with new)
+## replacing in the SlackBuild has to be a little 
+## more specific, because SlackBuilds tend to 
+## have lots of crazy numbers in them  ;-)
 if [ "$NEWVER" ]; then
-  sed -i "s/$OLDVER/$NEWVER/g" ./*.info ./*.SlackBuild
+  sed -i "s/$OLDVER/$NEWVER/g" ./*.info
+  sed -i "s/VERSION=.*/VERSION=\${VERSION:-$NEWVER}/g" ./*.SlackBuild
 fi
 
