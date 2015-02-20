@@ -209,7 +209,9 @@ elif [ "$HUGE" = y ]; then
       lilo -v
     fi
   fi
-else
+fi
+
+if [ ! -e /etc/lilo.conf ]; then
   echo "You aren't using LILO, update your bootloader."
 fi
 
