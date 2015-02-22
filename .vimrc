@@ -33,6 +33,7 @@ set expandtab
 set autoindent
 filetype plugin indent on
 
+"" utf-8!
 set encoding=utf-8
 set fileencoding=utf-8
 set number
@@ -48,8 +49,7 @@ set nowritebackup
 set noswapfile
 set noundofile
 
-set mouse=a
-
+"" make searching easy, and case insensitive
 set ignorecase smartcase
 set incsearch
 set hlsearch
@@ -86,14 +86,6 @@ endif
 "" display filename in vim
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
-"" clipboard-y stuff
-if has('unnamedplus')
-  set clipboard+=unnamed,unnamedplus
-else
-  set clipboard+=unnamed
-endif
-"" copy visual blocks to clipboard
-set go+=a
 
 """""""""""""""""""""""""""""""""""""""""""
 "" all of the below is thanks to B. Watson  ;^)
