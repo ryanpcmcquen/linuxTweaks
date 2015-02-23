@@ -2,7 +2,7 @@
 set nocompatible
 
 ""
-"" in ~/$ & ~/# run:
+"" in '$ ~/' & '# ~/' run:
 ""
 ""  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
@@ -23,13 +23,13 @@ if has("gui_running")
   set lines=40 columns=130
 endif
 
-"" set 2 spaces for tab globally
+"" set 2 spaces for tab globally, 
+"" make indenting sane
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set smarttab
 set expandtab
-
 set autoindent
 filetype plugin indent on
 
@@ -54,10 +54,12 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 
+"" gives you a little jazzy info on the bottom
 set title
 set ruler
+
+"" turn on the wildmenu, get wild!
 set wildmenu
-set wildmode=list:longest,full
 
 "" syntax toggler
 nnoremap <F7> :syntax off<CR>
@@ -65,14 +67,13 @@ vnoremap <F7> :syntax off<CR>
 nnoremap <F8> :syntax on<CR>
 vnoremap <F8> :syntax on<CR>
 
+"" make pasting not ruin indentation, 
+"" and show the mode so you know it is on
 set paste
-set pastetoggle=<F2>
 set showmode
 
 "" unsets "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
-
-set showmatch
 
 "" nifty shortcut for middle of line
 "" instead of middle of screen
