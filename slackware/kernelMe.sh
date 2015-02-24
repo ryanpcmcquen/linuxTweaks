@@ -51,11 +51,11 @@ if [ -z "$1" ]; then
   ## mainline version
   ## check if testing is in the line, if so, increment cut field
   if [ "$(cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | grep testing)" ]; then
-    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
+    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f7 \
       | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
         > ~/mainlineKernelVersion
   else
-    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f7 \
+    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
       | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
         > ~/mainlineKernelVersion
   fi
