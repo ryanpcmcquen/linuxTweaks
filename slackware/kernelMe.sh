@@ -49,9 +49,16 @@ if [ -z "$1" ]; then
   wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html 
 
   ## mainline version
-  cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
-    | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
-      > ~/mainlineKernelVersion
+  ## check if testing is in the line, if so, increment cut field
+  if [ "$(cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | grep testing)" ]; then
+    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
+      | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
+        > ~/mainlineKernelVersion
+  else
+    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f7 \
+      | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
+        > ~/mainlineKernelVersion
+  fi
 
   ## stable version
   cat ~/linux-kernel-home-page.html | grep "stable" | head -3 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
@@ -122,7 +129,9 @@ CWD='/usr/src'
 cd $CWD
 
 ## grab the kernel
-wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz -P /usr/src/
+wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz -P /usr/src/ \
+  || wget -N https://www.kernel.org/pub/linux/kernel/v4.x/linux-$VERSION.tar.xz -P /usr/src/ \
+  || wget -N https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-$VERSION.tar.xz -P /usr/src/
 
 ## check if wget failed
 if [ $? -ne 0 ]; then
