@@ -117,7 +117,7 @@ if [ "$STABLE" = "yes" ]; then
   install_latest_pkg libvdpau
 fi
 
-install_latest_pkg_compat nvidia-kernel
+install_latest_pkg nvidia-kernel
 
 install_latest_pkg_compat nvidia-bumblebee
 
