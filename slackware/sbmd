@@ -8,10 +8,7 @@
 ##
 ## this is what we call leaning toothpick syndrome
 find "$@" -type f -a \( -iname '*.tar*' -o -iname '*.zip*' \
-  -o -iname '*.t?z*' -o -iname '*.?z*' \) \
-    > sourceFiles.txt
-
-cat sourceFiles.txt | \
+  -o -iname '*.t?z*' -o -iname '*.?z*' \) | \
 while read SOURCE_FILE; do
   md5sum $SOURCE_FILE >> $(find *.info)
 done
