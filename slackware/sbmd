@@ -2,13 +2,20 @@
 ## put md5sums into the info file
 ## for easy updating
 
-for ITEM in *tar*; do
+## standard tarballs
+for ITEM in *.tar*; do
   md5sum $ITEM >> $(find *.info)
 done
-for ITEM in *zip*; do
+## ziperoonis
+for ITEM in *.zip*; do
   md5sum $ITEM >> $(find *.info)
 done
-for ITEM in *t?z*; do
+## those other tarballs
+for ITEM in *.t?z*; do
+  md5sum $ITEM >> $(find *.info)
+done
+## xzipped, gzipped, et cetera
+for ITEM in *.?z*; do
   md5sum $ITEM >> $(find *.info)
 done
 
