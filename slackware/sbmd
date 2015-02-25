@@ -2,21 +2,17 @@
 ## put md5sums into the info file
 ## for easy updating
 
-## standard tarballs
-for ITEM in *.tar*; do
-  md5sum $ITEM >> $(find *.info)
-done
-## ziperoonis
-for ITEM in *.zip*; do
-  md5sum $ITEM >> $(find *.info)
-done
-## those other tarballs
-for ITEM in *.t?z*; do
-  md5sum $ITEM >> $(find *.info)
-done
-## xzipped, gzipped, et cetera
-for ITEM in *.?z*; do
-  md5sum $ITEM >> $(find *.info)
-done
+##
+## get the standard tarballs, ziperoonis, 
+## those other tarballs, xzipped, gzipped and more
+##
+## this is what we call leaning toothpick syndrome
+find "$@" -type f -a \( -iname '*.tar*' -o -iname '*.zip*' \
+  -o -iname '*.t?z*' -o -iname '*.?z*' \) \
+    > sourceFiles.txt
 
+cat sourceFiles.txt | \
+while read SOURCE_FILE; do
+  md5sum $SOURCE_FILE >> $(find *.info)
+done
 
