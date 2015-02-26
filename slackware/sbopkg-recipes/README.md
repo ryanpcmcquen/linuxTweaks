@@ -17,3 +17,7 @@ gbrainy:
 
     sbopkg -i mono -i gtk-sharp -i mono-addins -i gnome-mime-data -i ORBit2 -i libbonobo -i gnome-vfs -i libgnome -i libgnomecanvas -i libbonoboui -i libgnomeui -i gnome-sharp -i gbrainy
 
+terminology/enlightenment:
+
+    sbopkg -i "lua eina eet evas ecore eio embryo edje efreet e_dbus ethumb enlightenment elementary emotion terminology"
+
