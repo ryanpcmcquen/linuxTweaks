@@ -4,7 +4,7 @@
 TESTING=${TESTING:-no}
 
 ## blacklist all msb packages so they are not overwritten/removed
-if [ -z "$(cat /etc/slackpkg/blacklist | grep [0-9]+_msb)" ]; then
+if [ -z "$(cat /etc/slackpkg/blacklist | grep _msb)" ]; then
   echo [0-9]+_msb >> /etc/slackpkg/blacklist
   echo >> /etc/slackpkg/blacklist
 fi
