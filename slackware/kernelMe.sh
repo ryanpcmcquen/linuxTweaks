@@ -46,26 +46,18 @@ fi
 
 if [ -z "$1" ]; then
   ## grab kernel homepage to get version numbers
-  wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html 
+  wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html
 
   ## mainline version
-  ## check if testing is in the line, if so, increment cut field
-  if [ "$(cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | grep testing)" ]; then
-    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f7 \
-      | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
-        > ~/mainlineKernelVersion
-  else
-    cat ~/linux-kernel-home-page.html | grep "mainline" | grep -A1 ".xz" | head -1 | cut -d/ -f6 \
-      | cut -d'"' -f1 | sed 's/patch//' | sed 's/-//' | sed 's/.xz//' \
-        > ~/mainlineKernelVersion
-  fi
+  cat ~/linux-kernel-home-page.html  | grep -A1 mainline: | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
+    > ~/mainlineKernelVersion
 
   ## stable version
-  cat ~/linux-kernel-home-page.html | grep "stable" | head -3 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
+  cat ~/linux-kernel-home-page.html  | grep -A1 stable: | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
     > ~/stableKernelVersion
 
   ## longterm version
-  cat ~/linux-kernel-home-page.html | grep "stable" | head -5 | tail -1 | cut -d'"' -f2 | cut -d/ -f13 | sed 's/v//' \
+  cat ~/linux-kernel-home-page.html  | grep -A1 longterm: | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
     > ~/longtermKernelVersion
 
   ## set VERSION
