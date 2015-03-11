@@ -3,22 +3,38 @@
 
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/mateSetup.sh | sh
 
+## make caja open stuff
 xdg-mime default caja-folder-handler.desktop inode/directory
 xdg-mime default caja-folder-handler.desktop application/x-directory
 
+## these should be defaults, but who am i?
 gsettings set org.mate.peripherals-touchpad scroll-method 2
 gsettings set org.mate.peripherals-touchpad horiz-scroll-enabled true
 gsettings set org.mate.peripherals-touchpad tap-to-click false
 
+## focus follows mouse!
 gsettings set org.mate.Marco.general side-by-side-tiling true
 gsettings set org.mate.Marco.general focus-mode "mouse"
 
+## all slackers need quick terminal access
 gsettings set org.mate.Marco.global-keybindings run-command-terminal "'<Ctrl><Alt>t'"
 
+## needless dimming is needless
 gsettings set org.mate.power-manager idle-dim-battery false
 gsettings set org.mate.power-manager backlight-battery-reduce false
 
+## old school, set to false to keep it tidy
 gsettings set org.mate.background show-desktop-icons true
+
+## set up pluma to be even nicer
+gsettings set org.mate.pluma auto-indent true
+gsettings set org.mate.pluma bracket-matching true
+gsettings set org.mate.pluma display-line-numbers true
+gsettings set org.mate.pluma display-right-margin true
+gsettings set org.mate.pluma highlight-current-line true
+gsettings set org.mate.pluma editor-font "Monospace 10"
+gsettings set org.mate.pluma insert-spaces true
+gsettings set org.mate.pluma tabs-size 2
 
 ## terminal settings
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ default-size-columns 140
@@ -32,6 +48,7 @@ BD_COLOR="#F8F8F8F8F2F2"
 FG_COLOR="#F8F8F8F8F2F2"
 BG_COLOR="#272728282222"
 
+## makin' it beautiful
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ background-color $BG_COLOR
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ foreground-color $FG_COLOR
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ bold-color $BD_COLOR
