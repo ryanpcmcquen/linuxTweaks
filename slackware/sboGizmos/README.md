@@ -17,3 +17,7 @@
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/sboGizmos/sbmd \
       -P /usr/local/bin/
     chmod 755 /usr/local/bin/sbmd
+
+
+These are all installed as part of config-o-matic!
+https://github.com/ryanpcmcquen/config-o-matic
