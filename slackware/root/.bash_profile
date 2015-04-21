@@ -8,3 +8,7 @@ alias slu='slackpkg update gpg && slackpkg update && slackpkg install-new && sla
 
 LFS=/mnt/lfs
 
+## usage: spru FILENAME(s)
+spru() {
+  cat "$@" | curl -F 'sprunge=<-' http://sprunge.us
+}
