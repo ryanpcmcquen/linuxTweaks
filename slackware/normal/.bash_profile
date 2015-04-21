@@ -7,3 +7,7 @@ export PS1='\u@\w:$(parse_git_branch)\$ '
 alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
+## usage: spru FILENAME(s)
+spru() {
+  cat "$@" | curl -F 'sprunge=<-' http://sprunge.us
+}
