@@ -184,7 +184,7 @@ if [ "$HUGE" = n ]; then
     echo "/usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-$VERSION" > ~/liloGenericEntry.sh
     
     ## check for duplicate entries
-    if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
+    if [ -z "`grep vmlinuz-$VERSION /etc/lilo.conf`" ]; then
       sh ~/liloGenericEntry.sh >> /etc/lilo.conf
     fi
     
@@ -195,7 +195,7 @@ if [ "$HUGE" = n ]; then
   fi
 elif [ "$HUGE" = y ]; then
   if [ -e /etc/lilo.conf ]; then
-    if [ -z "`grep $VERSION /etc/lilo.conf`" ]; then
+    if [ -z "`grep vmlinuz-$VERSION /etc/lilo.conf`" ]; then
       export ROOTMOUNT=$(lsblk -l | grep -E '/$' | cut -d' ' -f1)
 
       echo >> /etc/lilo.conf
