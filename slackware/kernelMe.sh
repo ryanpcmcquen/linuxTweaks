@@ -169,11 +169,11 @@ cp $CWD/linux-$VERSION/arch/x86/boot/bzImage /boot/vmlinuz-$VERSION
 ##ln -s System.map-$VERSION System.map
 ##ln -s config-$VERSION config
 
-HUGE=${HUGE:-n}
+HUGE=${HUGE:-y}
 
 if [ "$HUGE" = n ]; then
   ## this is a m0d of my generic kernel script
-  /usr/share/mkinitrd/mkinitrd_command_generator.sh /boot/vmlinuz-$VERSION | sh
+  /usr/share/mkinitrd/mkinitrd_command_generator.sh -r /boot/vmlinuz-$VERSION | sh
   
   ## check for lilo, otherwise running this stuff is a waste
   if [ -e /etc/lilo.conf ]; then
