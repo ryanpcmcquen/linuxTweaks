@@ -94,7 +94,7 @@ sh download.sh
 
 groupadd bumblebee
 ## add all non-root users (except ftp) to bumblebee group
-cat /etc/passwd | grep "/home" | cut -d: -f1 | sed '/ftp/d' | xargs -i usermod -G bumblebee -a {}
+getent passwd | grep "/home" | cut -d: -f1 | sed '/ftp/d' | xargs -i usermod -G bumblebee -a {}
 
 install_latest_pkg libbsd
 
