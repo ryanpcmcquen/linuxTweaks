@@ -153,20 +153,3 @@ inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " Copy buffered text to X11 clipboard
 nmap <A-c> :let @* = @"<CR>
-
-"" fix caps lock
-"" thanks to: http://vim.wikia.com/wiki/Insert-mode_only_Caps_Lock
-" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
-for c in range(char2nr('A'), char2nr('Z'))
-  execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
-  execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
-endfor
-" Kill the capslock when leaving insert mode.
-autocmd InsertLeave * set iminsert=0
-" Set following to show "<CAPS>" in the status line when "Caps Lock" is on.
-let b:keymap_name = "CAPS"
-" Show b:keymap_name in status line.
-:set statusline^=%k
-noremap  <F5> :let &l:imi = !&l:imi<CR>
-inoremap <F5> <C-O>:let &l:imi = !&l:imi<CR>
-cnoremap <F5> <C-^>
