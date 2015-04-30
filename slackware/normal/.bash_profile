@@ -11,3 +11,8 @@ alias shutdown='sudo /sbin/shutdown -h now'
 spru() {
   cat "$@" | curl -F 'sprunge=<-' http://sprunge.us
 }
+
+## make .bash_history work in tmux /
+## across multiple terminals
+shopt -s histappend
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
