@@ -1,4 +1,3 @@
-
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
@@ -16,3 +15,4 @@ spru() {
 ## across multiple terminals
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
