@@ -16,3 +16,4 @@ alias shutdown='sudo /sbin/shutdown -h now'
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PS1='\u@\w:$(parse_git_branch)\$ '
+
