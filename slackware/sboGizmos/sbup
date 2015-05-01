@@ -18,7 +18,7 @@ NEWVER=${1}
 ## more specific, because SlackBuilds tend to 
 ## have lots of crazy numbers in them  ;-)
 if [ "$NEWVER" ]; then
-  sed -i "s/$OLDVER/$NEWVER/g" ./*.info
-  sed -i "s/VERSION=.*/VERSION=\${VERSION:-$NEWVER}/g" ./*.SlackBuild
+  sed -i "s@$OLDVER@$NEWVER@g" ./*.info
+  sed -i "s@^VERSION=.*@VERSION=\${VERSION:-$NEWVER}@g" ./*.SlackBuild
 fi
 
