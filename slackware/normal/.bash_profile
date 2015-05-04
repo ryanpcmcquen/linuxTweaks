@@ -3,6 +3,11 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+## usage: ix FILENAME(s)
+ix() {
+  cat "$@" | curl -F 'f:1=<-' ix.io
+}
+
 ## usage: spru FILENAME(s)
 spru() {
   cat "$@" | curl -F 'sprunge=<-' http://sprunge.us
