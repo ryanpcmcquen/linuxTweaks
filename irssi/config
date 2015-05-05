@@ -125,6 +125,7 @@ channels = (
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
   { name = "##slackware"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "##slackware-offtopic"; chatnet = "freenode"; autojoin = "yes"; }
   { name = "#slackbuilds"; chatnet = "freenode"; autojoin = "yes"; },
 );
 
