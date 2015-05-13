@@ -7,9 +7,9 @@
 ## those other tarballs, xzipped, gzipped and more
 ##
 ## this is what we call leaning toothpick syndrome
-find "$@" -type f -a \( -iname '*.tar*' -o -iname '*.zip*' \
-  -o -iname '*.t?z*' -o -iname '*.?z*' -o -iname '*.jar*' \
-  -o -iname '*.deb*' -o -iname '*.rpm*' \) | \
+find "$@" -type f -a \( -iname '*.tar*' -o -iname '*.zip*' -o -iname '*.Z*' \
+  -o -iname '*.t?z*' -o -iname '*.?z*' -o -iname '*.jar*' -o -iname '*.run*' \
+  -o -iname '*.gem*' -o -iname '*.pk*' -o -iname '*.deb*' -o -iname '*.rpm*' \) | \
 while read SOURCE_FILE; do
   md5sum $SOURCE_FILE >> $(find *.info)
 done
