@@ -10,6 +10,9 @@ fi
 if [ -x /etc/rc.d/rc.wicd ]; then
   wicd-client -t &
 fi
+if [ -e /usr/bin/xbindkeys ]; then
+  xbindkeys &
+fi
 if [ -e /usr/bin/CopyAgent ]; then
   CopyAgent &
 fi
