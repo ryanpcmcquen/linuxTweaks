@@ -53,8 +53,8 @@ fi \
 fbsetbg -l\
 @g' ~/.fluxbox/startup
 
-## grey is the new pink
-fbsetbg -b -solid grey
+## grey is the new pink, uncomment to set bg
+#fbsetbg -b -solid grey
 
 ## idempotent, finally!
 if [ -z "$(cat ~/.fluxbox/init | grep workspaceNames)" ]; then
