@@ -38,19 +38,22 @@
 #keystate_scrolllock= enable
 
 ## my commands
+
+## video!
 "xbacklight -inc 10"
   XF86MonBrightnessUp
 
 "xbacklight -dec 10"
   XF86MonBrightnessDown
 
-"amixer set Master 5%+"
+## audio!
+"amixer -c 1 set Master 5%+; amixer set Master 5%+"
   XF86AudioRaiseVolume
 
-"amixer set Master 5%-"
+"amixer -c 1 set Master 5%-; amixer set Master 5%-"
   XF86AudioLowerVolume
 
-"amixer set Master toggle"
+"amixer -c 1 set Master toggle; amixer set Master toggle"
   XF86AudioMute
 
 ## end of my commands
