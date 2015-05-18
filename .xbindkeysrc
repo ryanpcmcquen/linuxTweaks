@@ -38,8 +38,8 @@
 #keystate_scrolllock= enable
 
 # Examples of commands:
-"xbindkeys_show"
-  control+shift + q
+#"xbindkeys_show"
+#  control+shift + q
 
 ## my commands
 "xbacklight -inc 10"
