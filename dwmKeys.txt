@@ -1,28 +1,28 @@
 M+p           spawn dmenu
-M+S+Return	  spawn a terminal
-M+Space		    toggle layout
+M+S+Return    spawn a terminal
+M+Space       toggle layout
 M+t           toggle tiling mode
 M+f           toggle floating mode
-M+m		        toggle maximization (monocle mode)
-M+b		        toggle status bar visibility
-M+j		        focus next client
-M+k		        focus previous client
-M+h		        decrease main window/stack ratio
-M+l		        increase main window/stack ratio
-M+C+y		      add new workspace
-M+C+r		      remove current workspace (push current windows to stack)
-M+Return	    zoom window
-M+Tab		      focus next window
-M+S+Tab		    focus previous window
-M+S+c		      kill window
+M+m           toggle maximization (monocle mode)
+M+b           toggle status bar visibility
+M+j           focus next client
+M+k           focus previous client
+M+h           decrease main window/stack ratio
+M+l           increase main window/stack ratio
+M+C+y         add new workspace
+M+C+r         remove current workspace (push current windows to stack)
+M+Return      zoom window
+M+Tab         focus next window
+M+S+Tab       focus previous window
+M+S+c         kill window
 M+S+q         kill dwm
-M+i		        add windows to tags
-M+d		        remove windows from tags
-M+1		        view workspace 1
-M+2		        view workspace 2
+M+i           add windows to tags
+M+d           remove windows from tags
+M+1           view workspace 1
+M+2           view workspace 2
 [...]
-M+0		        view workspace 10
-M+S+1		      move window to workspace 1
-M+S+2		      move window to workspace 2
+M+0           view workspace 10
+M+S+1         move window to workspace 1
+M+S+2         move window to workspace 2
 [...]
-M+S+0		      move window to workspace 10
+M+S+0         move window to workspace 10
