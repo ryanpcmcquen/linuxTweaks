@@ -22,11 +22,11 @@ else
 fi
 
 ## fix audio key settings, verify with xev
-sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master,0 1+\
+sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master 1+; amixer -c 1 sset Master 1+\
 /g' ~/.fluxbox/keys
-sed -i 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master,0 1-\
+sed -i 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master 1-; amixer -c 1 sset Master 1-\
 /g' ~/.fluxbox/keys
-sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master,0 toggle\
+sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master toggle; amixer -c 1 sset Master toggle\
 /g' ~/.fluxbox/keys
 
 ## fix brightness keys
