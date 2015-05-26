@@ -4,5 +4,5 @@
 ## convertpkg-compat32 -i PACKAGE
 
 . /etc/profile.d/32dev.sh
-export ARCH=i486
+export ARCH=i686
 
