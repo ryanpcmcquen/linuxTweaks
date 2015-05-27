@@ -1,3 +1,1 @@
-set nocompatible
 syntax off
-
