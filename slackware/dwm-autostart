@@ -2,7 +2,7 @@
 ## i put it in /usr/local/etc/
 
 if [ -e /usr/bin/trayer ]; then
-  trayer --expand true --widthtype request --transparent true --edge top --align right --height 17 --margin 70 &
+  trayer --expand true --widthtype request --transparent true --edge top --align right --height 16 --margin 70 &
 fi
 if [ -x /etc/rc.d/rc.networkmanager ]; then
   nm-applet &
