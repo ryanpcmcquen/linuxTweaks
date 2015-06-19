@@ -56,6 +56,11 @@
 "amixer -c 1 set Master toggle; amixer set Master toggle"
   XF86AudioMute
 
+## screenshots!
+## -m works for single or multi display setups
+"scrot -m"
+  Print
+
 ## end of my commands
 
 ## Examples of commands:
