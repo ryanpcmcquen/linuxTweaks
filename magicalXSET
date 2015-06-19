@@ -1,6 +1,7 @@
 #!/bin/sh
-## run as:
-## sh magicalXSET file names
+## set old and new values,
+## then run as:
+## sh magicalXSET filenames
 
 XSETKEYDELAYOLD=
 XSETKEYRATEOLD=
@@ -9,3 +10,4 @@ XSETKEYDELAYNEW=
 XSETKEYRATENEW=
 
 sed -i "s@xset r rate $XSETKEYDELAYOLD $XSETKEYRATEOLD@xset r rate $XSETKEYDELAYNEW $XSETKEYRATENEW@g" "$@"
+
