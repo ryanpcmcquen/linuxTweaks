@@ -11,6 +11,9 @@ gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH command 'gnome-terminal'
 gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH binding '<Control><Alt>t'
 gsettings set $KEYS_SCHEMA custom-keybindings "[\"$CUSTOM_PATH\"]"
 
+## retrieve git and vim settings
+curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
+
 ## pretty sure the first 3 are included, but it can't hurt
 ESSENTIALPKGS="curl wget make vim vim-X11 gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel"
 
