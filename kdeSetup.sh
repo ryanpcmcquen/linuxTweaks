@@ -18,7 +18,7 @@ kwriteconfig --file kdeglobals --group "WM" --key "activeFont" "Terminus,9,-1,5,
 
 kwriteconfig --file plasma-desktop-appletsrc --group "General" --key "fontTime" "Terminus,9,-1,5,50,0,0,0,0,0"
 
-
+## minimalist splash
 kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
 
 ## note that the theme depends on the engine setting,
@@ -64,6 +64,9 @@ kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding
 
 ## turns on example shortcuts, including: konsole = ctrl + alt + t
 sed -i 's/Enabled=false/Enabled=true/g' ~/.kde/share/config/khotkeysrc
+
+## make folder view the default
+sed -i 's/plugin=desktop/plugin=folderview/g' ~/.kde/share/config/plasma-desktop-appletsrc
 
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
