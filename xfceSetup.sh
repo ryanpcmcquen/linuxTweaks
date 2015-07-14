@@ -39,4 +39,6 @@ xfconf-query -c xfce4-session -p /splash/Engine -n -t string -s mice
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -n -t int -s 1
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -n -t int -s 1
 
+## disable screensaver
+xfconf-query -c xfce4-session -n -t bool -p /startup/screensaver/enabled -s false
 
