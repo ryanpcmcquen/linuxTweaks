@@ -14,6 +14,10 @@ xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge
 xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Tap_Action -n -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0
 xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-Finger_Scrolling -n -t int -s 1 -t int -s 1
 
+## become the flash
+xfconf-query -c keyboards -p /Default/KeyRepeat/Delay -n -t int -s 150
+xfconf-query -c keyboards -p /Default/KeyRepeat/Rate -n -t int -s 80
+
 ## enable font anti-aliasing
 xfconf-query -c xsettings -p /Xft/Antialias -n -t int -s 1
 
@@ -75,10 +79,18 @@ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-batter
 xfconf-query -c xfce4-session -p /startup/screensaver/enabled -n -t bool -s false
 
 ## make the terminal groovier
-if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'MiscDefaultGeometry\=140x40')" ]; then
-  sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=140x40@g' ~/.config/xfce4/terminal/terminalrc
+if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
+  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'FontName\=Terminus\ 9')" ]; then
+    sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 9@g' ~/.config/xfce4/terminal/terminalrc
+  fi
+  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'MiscDefaultGeometry\=140x40')" ]; then
+    sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=140x40@g' ~/.config/xfce4/terminal/terminalrc
+  fi
+else
+  mkdir -pv ~/.config/xfce4/terminal/
+  echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
+  echo "FontName=Terminus 9" >> ~/.config/xfce4/terminal/terminalrc
+  echo "MiscDefaultGeometry=140x40" >> ~/.config/xfce4/terminal/terminalrc
 fi
-if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'FontName\=Terminus\ 9')" ]; then
-  sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 9@g' ~/.config/xfce4/terminal/terminalrc
-fi
+
 
