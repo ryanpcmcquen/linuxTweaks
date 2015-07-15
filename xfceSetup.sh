@@ -98,13 +98,13 @@ if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
     sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 9@g' ~/.config/xfce4/terminal/terminalrc
   fi
   if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'MiscDefaultGeometry\=140x40')" ]; then
-    sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=160x60@g' ~/.config/xfce4/terminal/terminalrc
+    sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=200x60@g' ~/.config/xfce4/terminal/terminalrc
   fi
 else
   mkdir -pv ~/.config/xfce4/terminal/
   echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
   echo "FontName=Terminus 9" >> ~/.config/xfce4/terminal/terminalrc
-  echo "MiscDefaultGeometry=160x60" >> ~/.config/xfce4/terminal/terminalrc
+  echo "MiscDefaultGeometry=200x60" >> ~/.config/xfce4/terminal/terminalrc
 fi
 
 ## restart for good measure
