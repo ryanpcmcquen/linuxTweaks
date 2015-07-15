@@ -1,2 +1,2 @@
-sed -i '$d' /opt/google/chrome/google-chrome
+sed -i.bak '$d' /opt/google/chrome/google-chrome
 echo -n exec -a "$0" "$HERE/chrome"  "$@" --user-data-dir >> /opt/google/chrome/google-chrome
