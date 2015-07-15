@@ -63,10 +63,10 @@ kwriteconfig --file katerc --group "Kate Document Defaults" --key "Newline At EO
 kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding" UTF-8
 
 ## turns on example shortcuts, including: konsole = ctrl + alt + t
-sed -i 's/Enabled=false/Enabled=true/g' ~/.kde/share/config/khotkeysrc
+sed -i.bak 's/Enabled=false/Enabled=true/g' ~/.kde/share/config/khotkeysrc
 
 ## make folder view the default
-sed -i 's/plugin=desktop/plugin=folderview/g' ~/.kde/share/config/plasma-desktop-appletsrc
+sed -i.bak 's/plugin=desktop/plugin=folderview/g' ~/.kde/share/config/plasma-desktop-appletsrc
 
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
