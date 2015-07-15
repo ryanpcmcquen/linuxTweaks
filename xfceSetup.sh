@@ -1,82 +1,96 @@
 #!/bin/sh
 
-#  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/xfceSetup.sh | sh
+## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/xfceSetup.sh | sh
+
+## thanks to @bfanning
+## only one panel!
+xfconf-query -n -a -c xfce4-panel -p /panels -t int -s 0
+xfconf-query --channel xfce4-panel --create --property /panels/panel-0/plugin-ids \
+  --type int --type int --type int --type int --type int --type int --type int \
+  --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7
+xfconf-query -n -c xfce4-panel -p /panels/panel-0/length -t int -s 100
+xfconf-query -n -c xfce4-panel -p /panels/panel-0/size -t int -s 24
+xfconf-query -n -c xfce4-panel -p /panels/panel-0/position -t string -s "p=6;x=0;y=0"
+xfconf-query -n -c xfce4-panel -p /panels/panel-0/position-locked -t bool -s true
 
 ## make window management awesome
-xfconf-query -c xfwm4 -p /general/snap_to_border -n -t bool -s true
-xfconf-query -c xfwm4 -p /general/snap_to_windows -n -t bool -s true
-xfconf-query -c xfwm4 -p /general/wrap_windows -n -t bool -s false
-xfconf-query -c xfwm4 -p /general/wrap_workspaces -n -t bool -s false
-xfconf-query -c xfwm4 -p /general/click_to_focus -n -t bool -s false
+xfconf-query -n -c xfwm4 -p /general/snap_to_border -t bool -s true
+xfconf-query -n -c xfwm4 -p /general/snap_to_windows -t bool -s true
+xfconf-query -n -c xfwm4 -p /general/wrap_windows -t bool -s false
+xfconf-query -n -c xfwm4 -p /general/wrap_workspaces -t bool -s false
+xfconf-query -n -c xfwm4 -p /general/click_to_focus -t bool -s false
 
 ## make touchpad awesome
-xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge_Scrolling -n -t int -s 0 -t int -s 0 -t int -s 0
-xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Tap_Action -n -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0
-xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-Finger_Scrolling -n -t int -s 1 -t int -s 1
+xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge_Scrolling -t int -s 0 -t int -s 0 -t int -s 0
+xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Tap_Action -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0
+xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-Finger_Scrolling -t int -s 1 -t int -s 1
 
 ## become the flash
-xfconf-query -c keyboards -p /Default/KeyRepeat/Delay -n -t int -s 150
-xfconf-query -c keyboards -p /Default/KeyRepeat/Rate -n -t int -s 80
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 150
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s 80
 
 ## enable font anti-aliasing
-xfconf-query -c xsettings -p /Xft/Antialias -n -t int -s 1
+xfconf-query -n -c xsettings -p /Xft/Antialias -t int -s 1
 
 ## i love terminus!
-xfconf-query -c xsettings -p /Gtk/FontName -n -t string -s "Terminus 9"
+xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 9"
 
 ## we need the terminal quickly!
-xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -n -t string -s /usr/bin/xfce4-terminal
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -s /usr/bin/xfce4-terminal
 
 ## bring back the audio control
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -n -t string -s "amixer set Master toggle; amixer set -c 1 Master toggle"
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioLowerVolume -n -t string -s "amixer set Master 5%- unmute; amixer set -c 1 Master 5%- unmute"
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioRaiseVolume -n -t string -s "amixer set Master 5%+ unmute; amixer set -c 1 Master 5%+ unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -t string -s "amixer set Master toggle; amixer set -c 1 Master toggle"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioLowerVolume -t string -s "amixer set Master 5%- unmute; amixer set -c 1 Master 5%- unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioRaiseVolume -t string -s "amixer set Master 5%+ unmute; amixer set -c 1 Master 5%+ unmute"
 
 ## thanks to @bmaupin
 ## configure keyboard shortcuts for moving windows to different workspaces
-xfconf-query -c xfce4-keyboard-shortcuts --create -p "/xfwm4/custom/<Primary><Shift><Alt>Down" -t string -s "move_window_down_workspace_key"
-xfconf-query -c xfce4-keyboard-shortcuts --create -p "/xfwm4/custom/<Primary><Shift><Alt>Left" -t string -s "move_window_left_workspace_key"
-xfconf-query -c xfce4-keyboard-shortcuts --create -p "/xfwm4/custom/<Primary><Shift><Alt>Right" -t string -s "move_window_right_workspace_key"
-xfconf-query -c xfce4-keyboard-shortcuts --create -p "/xfwm4/custom/<Primary><Shift><Alt>Up" -t string -s "move_window_up_workspace_key"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Shift><Alt>Down" -t string -s "move_window_down_workspace_key"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Shift><Alt>Left" -t string -s "move_window_left_workspace_key"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Shift><Alt>Right" -t string -s "move_window_right_workspace_key"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Primary><Shift><Alt>Up" -t string -s "move_window_up_workspace_key"
 
-## verify top panel layout, these should be the defaults
-xfconf-query -c xfce4-panel -p /plugins/plugin-1 -n -t string -s applicationsmenu
-xfconf-query -c xfce4-panel -p /plugins/plugin-2 -n -t string -s tasklist
-xfconf-query -c xfce4-panel -p /plugins/plugin-3 -n -t string -s separator
-xfconf-query -c xfce4-panel -p /plugins/plugin-4 -n -t string -s pager
-xfconf-query -c xfce4-panel -p /plugins/plugin-5 -n -t string -s clock
-xfconf-query -c xfce4-panel -p /plugins/plugin-6 -n -t string -s systray
-xfconf-query -c xfce4-panel -p /plugins/plugin-7 -n -t string -s actions
+## pretty much xfce defaults
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-1 -t string -s applicationsmenu
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-2 -t string -s tasklist
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-3 -t string -s separator
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-4 -t string -s pager
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-5 -t string -s clock
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-6 -t string -s systray
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-7 -t string -s actions
 
 ## make the top panel beautiful
 ## applications menu
-xfconf-query -c xfce4-panel -p /plugins/plugin-1/show-button-title -n -t bool -s false
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/show-button-title -t bool -s false
+## separator
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/style -t int -s 0
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/expand -t bool -s true
 ## workspace pager,
 ## i call this the "Theodore Ts'o" layout
-xfconf-query -c xfce4-panel -p /plugins/plugin-4/rows -n -t int -s 3
-xfconf-query -c xfce4-panel -p /plugins/plugin-4/miniature-view -n -t bool -s true
-xfconf-query -c xfwm4 -p /general/workspace_count -n -t int -s 9
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/rows -t int -s 3
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/miniature-view -t bool -s true
+xfconf-query -n -c xfwm4 -p /general/workspace_count -t int -s 9
 ## clock (fuzzy mode)
-xfconf-query -c xfce4-panel -p /plugins/plugin-5/show-frame -n -t bool -s false
-xfconf-query -c xfce4-panel -p /plugins/plugin-5/mode -n -t int -s 3
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-5/show-frame -t bool -s false
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-5/mode -t int -s 3
 ## systray
-xfconf-query -c xfce4-panel -p /plugins/plugin-6/show-frame -n -t bool -s false
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-6/show-frame -t bool -s false
 
 ## make the desktop tidy
-xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -n -t bool -s false
-xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-home -n -t bool -s false
-xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -n -t bool -s false
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -t bool -s false
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-home -t bool -s false
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -t bool -s false
 
 ## remove annoying defaults
-xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false
-xfconf-query -c xfce4-session -p /splash/Engine -n -t string -s mice
+xfconf-query -n -c xfce4-session -p /general/SaveOnExit -t bool -s false
+xfconf-query -n -c xfce4-session -p /splash/Engine -t string -s mice
 
 ## ooh, the power!
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -n -t int -s 1
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -n -t int -s 1
+xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -t int -s 1
+xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -t int -s 1
 
 ## disable screensaver
-xfconf-query -c xfce4-session -p /startup/screensaver/enabled -n -t bool -s false
+xfconf-query -n -c xfce4-session -p /startup/screensaver/enabled -t bool -s false
 
 ## make the terminal groovier
 if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
@@ -84,13 +98,16 @@ if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
     sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 9@g' ~/.config/xfce4/terminal/terminalrc
   fi
   if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'MiscDefaultGeometry\=140x40')" ]; then
-    sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=140x40@g' ~/.config/xfce4/terminal/terminalrc
+    sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=160x60@g' ~/.config/xfce4/terminal/terminalrc
   fi
 else
   mkdir -pv ~/.config/xfce4/terminal/
   echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
   echo "FontName=Terminus 9" >> ~/.config/xfce4/terminal/terminalrc
-  echo "MiscDefaultGeometry=140x40" >> ~/.config/xfce4/terminal/terminalrc
+  echo "MiscDefaultGeometry=160x60" >> ~/.config/xfce4/terminal/terminalrc
 fi
 
+## restart for good measure
+xfce4-panel --restart
+xfdesktop --reload
 
