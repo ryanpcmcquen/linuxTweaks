@@ -9,7 +9,7 @@ xfconf-query --channel xfce4-panel --create --property /panels/panel-0/plugin-id
   --type int --type int --type int --type int --type int --type int --type int \
   --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/length -t int -s 100
-xfconf-query -n -c xfce4-panel -p /panels/panel-0/size -t int -s 24
+xfconf-query -n -c xfce4-panel -p /panels/panel-0/size -t int -s 32
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/position -t string -s "p=6;x=0;y=0"
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/position-locked -t bool -s true
 
@@ -65,6 +65,8 @@ xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/show-button-title -t bool -s
 ## separator
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/style -t int -s 0
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/expand -t bool -s true
+## window/task list
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-2/show-labels -t bool -s false
 ## workspace pager,
 ## i call this the "Theodore Ts'o" layout
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/rows -t int -s 3
