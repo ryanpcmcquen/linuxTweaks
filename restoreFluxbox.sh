@@ -4,11 +4,11 @@
 
 if [ "`find /var/log/packages/ -name tinyterm-*`" ]; then
   ## tinyterm
-  sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
+  sed -i.bak 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
   /g' ~/.fluxbox/keys
 else
   ## uxterm
-  sed -i 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
+  sed -i.bak 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
   /g' ~/.fluxbox/keys
 fi
 
@@ -22,11 +22,11 @@ else
 fi
 
 ## fix audio key settings, verify with xev
-sed -i 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master 1+; amixer -c 1 sset Master 1+\
+sed -i.bak 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer sset Master 1+; amixer -c 1 sset Master 1+\
 /g' ~/.fluxbox/keys
-sed -i 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master 1-; amixer -c 1 sset Master 1-\
+sed -i.bak 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer sset Master 1-; amixer -c 1 sset Master 1-\
 /g' ~/.fluxbox/keys
-sed -i 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master toggle; amixer -c 1 sset Master toggle\
+sed -i.bak 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer sset Master toggle; amixer -c 1 sset Master toggle\
 /g' ~/.fluxbox/keys
 
 ## fix brightness keys
@@ -36,7 +36,7 @@ if [ -z "$(cat ~/.fluxbox/keys | grep 'xbacklight -dec')" ]; then
   echo "233 :Exec xbacklight -inc 10" >> ~/.fluxbox/keys
 fi
 
-sed -i 's@^# idesk &@\
+sed -i.bak 's@^# idesk &@\
 if [ -x /etc/rc.d/rc.networkmanager ]; then \
   nm-applet \&\
 fi \
@@ -64,21 +64,21 @@ if [ -z "$(cat ~/.fluxbox/init | grep workspaceNames)" ]; then
   echo "session.screen0.focusModel:	MouseFocus" >> ~/.fluxbox/init
   echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
 else
-  sed -i "s@session.screen0.workspaceNames:.*@session.screen0.workspaceNames: 1,2,3,4,@g" ~/.fluxbox/init
-  sed -i "s@session.screen0.toolbar.widthPercent:.*@session.screen0.toolbar.widthPercent: 50@g" ~/.fluxbox/init
-  sed -i "s@session.screen0.workspacewarping:.*@session.screen0.workspacewarping: false@g" ~/.fluxbox/init
-  sed -i "s@session.screen0.focusModel:.*@session.screen0.focusModel:	MouseFocus@g" ~/.fluxbox/init
-  sed -i "s@session.autoRaiseDelay:.*@session.autoRaiseDelay: 500@g" ~/.fluxbox/init
+  sed -i.bak "s@session.screen0.workspaceNames:.*@session.screen0.workspaceNames: 1,2,3,4,@g" ~/.fluxbox/init
+  sed -i.bak "s@session.screen0.toolbar.widthPercent:.*@session.screen0.toolbar.widthPercent: 50@g" ~/.fluxbox/init
+  sed -i.bak "s@session.screen0.workspacewarping:.*@session.screen0.workspacewarping: false@g" ~/.fluxbox/init
+  sed -i.bak "s@session.screen0.focusModel:.*@session.screen0.focusModel:	MouseFocus@g" ~/.fluxbox/init
+  sed -i.bak "s@session.autoRaiseDelay:.*@session.autoRaiseDelay: 500@g" ~/.fluxbox/init
 fi
 
 if [ -d "/usr/share/fluxbox/styles/Stealthy" ]; then
-  sed -i "s@session.styleFile:.*@session.styleFile: /usr/share/fluxbox/styles/Stealthy@g" ~/.fluxbox/init
+  sed -i.bak "s@session.styleFile:.*@session.styleFile: /usr/share/fluxbox/styles/Stealthy@g" ~/.fluxbox/init
 else
   mkdir -pv ~/.fluxbox/styles/
   wget -N https://github.com/ryanpcmcquen/themes/raw/master/67966-Stealthy-1.1.tgz -P ~/
   tar xvf ~/67966-Stealthy-1.1.tgz -C ~/.fluxbox/styles/
   rm -v ~/67966-Stealthy-1.1.tgz
-  sed -i "s@session.styleFile:.*@session.styleFile: /home/ry/.fluxbox/styles/Stealthy@g" ~/.fluxbox/init
+  sed -i.bak "s@session.styleFile:.*@session.styleFile: /home/ry/.fluxbox/styles/Stealthy@g" ~/.fluxbox/init
 fi
 
 ## make the cursor beautiful, maybe icons too
