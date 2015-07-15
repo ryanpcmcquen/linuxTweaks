@@ -18,7 +18,7 @@ xfconf-query -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-
 xfconf-query -c xsettings -p /Xft/Antialias -n -t int -s 1
 
 ## i love terminus!
-xfconf-query -c xsettings -p /Gtk/FontName -n -t string -s "Terminus 10"
+xfconf-query -c xsettings -p /Gtk/FontName -n -t string -s "Terminus 9"
 
 ## we need the terminal quickly!
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -n -t string -s /usr/bin/xfce4-terminal
