@@ -39,9 +39,12 @@ xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 9"
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -s /usr/bin/xfce4-terminal
 
 ## bring back the audio control
-xfconf-query -n -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -t string -s "amixer set Master toggle; amixer set -c 1 Master toggle"
-xfconf-query -n -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioLowerVolume -t string -s "amixer set Master 5%- unmute; amixer set -c 1 Master 5%- unmute"
-xfconf-query -n -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioRaiseVolume -t string -s "amixer set Master 5%+ unmute; amixer set -c 1 Master 5%+ unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "amixer set Master toggle; amixer set -c 1 Master toggle"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioLowerVolume" -t string -s "amixer set Master 5%- unmute; amixer set -c 1 Master 5%- unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioRaiseVolume" -t string -s "amixer set Master 5%+ unmute; amixer set -c 1 Master 5%+ unmute"
+
+## i thought this was enabled by default, but just in case:
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print" -t string -s "xfce4-screenshooter"
 
 ## thanks to @bmaupin
 ## configure keyboard shortcuts for moving windows to different workspaces
