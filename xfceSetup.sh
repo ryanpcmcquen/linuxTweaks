@@ -110,6 +110,6 @@ else
 fi
 
 ## restart for good measure
-xfce4-panel --restart
-xfdesktop --reload
+xfce4-panel --restart &
+
 
