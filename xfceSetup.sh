@@ -109,7 +109,3 @@ else
   echo "MiscDefaultGeometry=200x50" >> ~/.config/xfce4/terminal/terminalrc
 fi
 
-## restart for good measure
-xfce4-panel --restart &
-
-
