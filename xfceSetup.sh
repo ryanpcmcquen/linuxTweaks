@@ -102,10 +102,18 @@ if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
   if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'MiscDefaultGeometry\=200x50')" ]; then
     sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=200x50@g' ~/.config/xfce4/terminal/terminalrc
   fi
+  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'BackgroundMode\=TERMINAL_BACKGROUND_TRANSPARENT')" ]; then
+    sed -i.bak 's@BackgroundMode\=.*@BackgroundMode\=TERMINAL_BACKGROUND_TRANSPARENT@g' ~/.config/xfce4/terminal/terminalrc
+  fi
+  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'BackgroundDarkness\=0.800000')" ]; then
+    sed -i.bak 's@BackgroundDarkness\=.*@BackgroundDarkness\=0.800000@g' ~/.config/xfce4/terminal/terminalrc
+  fi
 else
   mkdir -pv ~/.config/xfce4/terminal/
   echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
   echo "FontName=Terminus 9" >> ~/.config/xfce4/terminal/terminalrc
   echo "MiscDefaultGeometry=200x50" >> ~/.config/xfce4/terminal/terminalrc
+  echo "BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT" >> ~/.config/xfce4/terminal/terminalrc
+  echo "BackgroundDarkness=0.800000" >> ~/.config/xfce4/terminal/terminalrc
 fi
 
