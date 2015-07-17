@@ -39,9 +39,9 @@ xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 9"
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -s /usr/bin/xfce4-terminal
 
 ## bring back the audio control
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "amixer set Master toggle; amixer set -c 1 Master toggle"
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioLowerVolume" -t string -s "amixer set Master 5%- unmute; amixer set -c 1 Master 5%- unmute"
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioRaiseVolume" -t string -s "amixer set Master 5%+ unmute; amixer set -c 1 Master 5%+ unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "amixer set Master toggle && amixer set -c 1 Master toggle"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioLowerVolume" -t string -s "amixer set Master 5%- unmute && amixer set -c 1 Master 5%- unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioRaiseVolume" -t string -s "amixer set Master 5%+ unmute && amixer set -c 1 Master 5%+ unmute"
 
 ## screenshots for all!
 ## grab my screenshot save script:
