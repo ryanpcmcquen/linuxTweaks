@@ -40,8 +40,8 @@ xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t
 
 ## bring back the audio control
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "amixer set Master toggle && amixer set -c 1 Master toggle"
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>O" -t string -s "amixer set Master 5%- unmute && amixer set -c 1 Master 5%- unmute"
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>P" -t string -s "amixer set Master 5%+ unmute && amixer set -c 1 Master 5%+ unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>O" -t string -s "amixer set Master 5%- unmute && amixer set -c 1 Master 5%- unmute"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>P" -t string -s "amixer set Master 5%+ unmute && amixer set -c 1 Master 5%+ unmute"
 
 ## screenshots for all!
 ## grab my screenshot save script:
