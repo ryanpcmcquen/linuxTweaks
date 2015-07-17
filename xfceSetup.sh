@@ -43,8 +43,19 @@ xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" 
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioLowerVolume" -t string -s "amixer set Master 5%- unmute; amixer set -c 1 Master 5%- unmute"
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioRaiseVolume" -t string -s "amixer set Master 5%+ unmute; amixer set -c 1 Master 5%+ unmute"
 
-## i thought this was enabled by default, but just in case:
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print" -t string -s "xfce4-screenshooter"
+## screenshots for all!
+## grab my screenshot save script:
+## https://github.com/ryanpcmcquen/linuxTweaks/blob/master/xfceScreenshotSaver
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print" -t string -s "xfce4-screenshooter -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>Print" -t string -s "xfce4-screenshooter -w -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary>Print" -t string -s "xfce4-screenshooter -r -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print1" -t string -s "xfce4-screenshooter -d 1 -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print2" -t string -s "xfce4-screenshooter -d 2 -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print3" -t string -s "xfce4-screenshooter -d 3 -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print4" -t string -s "xfce4-screenshooter -d 4 -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print5" -t string -s "xfce4-screenshooter -d 5 -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print6" -t string -s "xfce4-screenshooter -d 6 -f -m -o xfceScreenshotSaver"
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print7" -t string -s "xfce4-screenshooter -d 7 -f -m -o xfceScreenshotSaver"
 
 ## thanks to @bmaupin
 ## configure keyboard shortcuts for moving windows to different workspaces
@@ -119,4 +130,5 @@ else
   echo "BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT" >> ~/.config/xfce4/terminal/terminalrc
   echo "BackgroundDarkness=0.800000" >> ~/.config/xfce4/terminal/terminalrc
 fi
+
 
