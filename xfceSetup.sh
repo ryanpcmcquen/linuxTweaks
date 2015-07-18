@@ -107,6 +107,7 @@ xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-bat
 
 ## disable screensaver
 xfconf-query -n -c xfce4-session -p /startup/screensaver/enabled -t bool -s false
+xfconf-query -n -c xfce4-session -p /startup/xscreensaver/enabled -t bool -s false
 
 ## make the terminal groovier
 if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
