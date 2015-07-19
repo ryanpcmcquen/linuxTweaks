@@ -115,7 +115,7 @@ if [ "`which xscreensaver-command`" ]; then
 cat <<EOT > $HOME/.config/autostart/xscreensaverANNIHILATOR.desktop
   [Desktop Entry]
   Name=xscreensaverANNIHILATOR
-  Exec=xscreensaver-command -exit
+  Exec=sleep 45 && xscreensaver-command -exit
 EOT
 fi
 
