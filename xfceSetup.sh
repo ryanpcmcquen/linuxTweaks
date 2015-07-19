@@ -5,7 +5,7 @@
 ## thanks to @bfanning
 ## only one panel!
 xfconf-query -n -a -c xfce4-panel -p /panels -t int -s 0
-xfconf-query --channel xfce4-panel --create --property /panels/panel-0/plugin-ids \
+xfconf-query --create --channel xfce4-panel --property /panels/panel-0/plugin-ids \
   --type int --type int --type int --type int --type int --type int --type int \
   --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/length -t int -s 100
@@ -112,6 +112,7 @@ xfconf-query -n -c xfce4-session -p /startup/xscreensaver/enabled -t bool -s fal
 ## since the above commands don't actually work,
 ## we call in the ANNIHILATOR
 if [ "`which xscreensaver-command`" ]; then
+  ## this is absurd i know
 cat <<EOT > $HOME/.config/autostart/xscreensaverANNIHILATOR.desktop
   [Desktop Entry]
   Name=xscreensaverANNIHILATOR
