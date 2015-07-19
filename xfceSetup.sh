@@ -117,6 +117,7 @@ cat <<EOT > $HOME/.config/autostart/xscreensaverANNIHILATOR.desktop
   Name=xscreensaverANNIHILATOR
   Exec=sleep 45 && xscreensaver-command -exit
 EOT
+  xscreensaver-command -exit
 fi
 
 ## make the terminal groovier
