@@ -111,11 +111,13 @@ xfconf-query -n -c xfce4-session -p /startup/xscreensaver/enabled -t bool -s fal
 
 ## since the above commands don't actually work,
 ## we call in the ANNIHILATOR
+if [ "`which xscreensaver-command`" ]; then
 cat <<EOT > $HOME/.config/autostart/xscreensaverANNIHILATOR.desktop
-[Desktop Entry]
-Name=xscreensaverANNIHILATOR
-Exec=xscreensaver-command -exit
+  [Desktop Entry]
+  Name=xscreensaverANNIHILATOR
+  Exec=xscreensaver-command -exit
 EOT
+fi
 
 ## make the terminal groovier
 if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
