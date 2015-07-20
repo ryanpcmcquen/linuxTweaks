@@ -106,18 +106,17 @@ xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac 
 xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -t int -s 1
 
 ## disable screensaver
+## this command does not work, but it looks good:
 xfconf-query -n -c xfce4-session -p /startup/screensaver/enabled -t bool -s false
-xfconf-query -n -c xfce4-session -p /startup/xscreensaver/enabled -t bool -s false
-
-## since the above commands don't actually work,
-## we call in the ANNIHILATOR
-if [ "`which xscreensaver-command`" ]; then
-  ## this is absurd i know
-cat <<EOT > $HOME/.config/autostart/xscreensaverANNIHILATOR.desktop
-  [Desktop Entry]
-  Name=xscreensaverANNIHILATOR
-  Exec=sleep 45 && xscreensaver-command -exit
+## this is what actually disables the screensaver
+mkdir -pv ~/.config/autostart/
+cat <<EOT > $HOME/.config/autostart/xscreensaver.desktop
+[Desktop Entry]
+Hidden=true
 EOT
+
+## and we'll kill it for the current session as well
+if [ "`which xscreensaver-command`" ]; then
   xscreensaver-command -exit
 fi
 
