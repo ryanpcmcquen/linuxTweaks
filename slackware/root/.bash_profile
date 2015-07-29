@@ -46,3 +46,11 @@ shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PS1='\u@\w:$(parse_git_branch)\$ '
 
+## i add this in /etc/profile,
+## only here for reference
+###if [ -z "$SSH_AUTH_SOCK" ]; then
+###  eval `ssh-agent`
+###  ssh-add
+###fi
+
+

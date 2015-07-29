@@ -1,7 +1,0 @@
-/dev/sda1        /                ext4        defaults         1   1
-/dev/sda2        /mnt/hd          ext4        defaults         1   2
-#/dev/cdrom      /mnt/cdrom       auto        noauto,owner,ro,comment=x-gvfs-show 0   0
-/dev/fd0         /mnt/floppy      auto        noauto,owner     0   0
-devpts           /dev/pts         devpts      gid=5,mode=620   0   0
-proc             /proc            proc        defaults         0   0
-tmpfs            /dev/shm         tmpfs       defaults         0   0

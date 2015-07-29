@@ -1,6 +1,0 @@
-# 
-# /etc/fstab: static file system information
-#
-# <file system>	<dir>	<type>	<options>	<dump>	<pass>
-/dev/sda2  /        ext4  defaults  1 1
-/dev/sda1  /mnt/hd  ext4  defaults  1 2
