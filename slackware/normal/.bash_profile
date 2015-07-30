@@ -1,4 +1,24 @@
 
+## added in /etc/profile,
+## only here for reference
+###
+###export EDITOR=vim
+###export VISUAL=vim
+###
+###alias ls='ls --color=auto'
+###
+###if [ "$(nproc)" -gt 2 ]; then
+###  export MAKEFLAGS=" -j$(expr $(nproc) - 1) "
+###else
+###  export MAKEFLAGS=" -j1 "
+###fi
+###
+###if [ -z "$SSH_AUTH_SOCK" ]; then
+###  eval `ssh-agent`
+###  ssh-add
+###fi
+###
+
 ## so i know where i am in repos
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -41,11 +61,4 @@ alias shutdown='sudo /sbin/shutdown -h now'
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PS1='\u@\w:$(parse_git_branch)\$ '
-
-## i add this in /etc/profile,
-## only here for reference
-###if [ -z "$SSH_AUTH_SOCK" ]; then
-###  eval `ssh-agent`
-###  ssh-add
-###fi
 
