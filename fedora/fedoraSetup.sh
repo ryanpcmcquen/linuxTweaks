@@ -1,6 +1,7 @@
 #!/bin/sh
 ## run as a normal user
 
+## thanks to @fmuellner
 ## variables for gsettings
 KEYS_SCHEMA=org.gnome.settings-daemon.plugins.media-keys
 CUSTOM_SCHEMA=${KEYS_SCHEMA}.custom-keybinding
