@@ -25,5 +25,7 @@ if [ `which unity` ]; then
   gsettings set com.canonical.indicator.datetime show-date true
   ## sleep screen after half an hour
   gsettings set org.gnome.desktop.session idle-delay 1800
+  ## fix gvim so it shows up in unity
+  sudo cp /usr/share/app-install/desktop/vim-gui-common\:gvim.desktop /usr/share/applications/
 fi
 
