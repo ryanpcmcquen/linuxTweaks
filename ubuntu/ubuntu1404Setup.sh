@@ -8,12 +8,14 @@ sudo apt-get install $ESSENTIALPKGS
 ## retrieve git and vim settings
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
 
-## set vim as the default editor (taken from config-o-matic)
-if [ -z "$(cat /etc/profile | grep 'export EDITOR' && cat /etc/profile | grep 'export VISUAL')" ]; then
-  sudo echo >> /etc/profile
-  sudo echo "export EDITOR=vim" >> /etc/profile
-  sudo echo "export VISUAL=vim" >> /etc/profile
-  sudo echo >> /etc/profile
+## set vim as the default editor
+if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
+  if [ ! -e /etc/profile.d/vimDefault ]; then
+    sudo echo >> /etc/profile.d/vimDefault
+    sudo echo "export EDITOR=vim" >> /etc/profile.d/vimDefault
+    sudo echo "export VISUAL=vim" >> /etc/profile.d/vimDefault
+    sudo echo >> /etc/profile.d/vimDefault
+  fi
 fi
 
 if [ `which unity` ]; then
@@ -27,8 +29,8 @@ if [ `which unity` ]; then
   gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
   ## make the keyboard blazingly fast
   gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat true
-  gsettings set org.gnome.settings-daemon.peripherals.keyboard delay "uint32 150"
-  gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval "uint32 80"
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 150
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 80
   ## show day and date
   gsettings set com.canonical.indicator.datetime show-day true
   gsettings set com.canonical.indicator.datetime show-date true
