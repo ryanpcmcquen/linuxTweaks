@@ -27,8 +27,8 @@ if [ `which unity` ]; then
   gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
   ## make the keyboard blazingly fast
   gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat true
-  gsettings set org.gnome.settings-daemon.peripherals.keyboard delay uint32 150
-  gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval uint32 80
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard delay "uint32 150"
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval "uint32 80"
   ## show day and date
   gsettings set com.canonical.indicator.datetime show-day true
   gsettings set com.canonical.indicator.datetime show-date true
