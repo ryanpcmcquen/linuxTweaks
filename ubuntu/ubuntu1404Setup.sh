@@ -7,6 +7,14 @@ sudo apt-get install $ESSENTIALPKGS
 ## retrieve git and vim settings
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
 
+## set vim as the default editor (taken from config-o-matic)
+if [ -z "$(cat /etc/profile | grep 'export EDITOR' && cat /etc/profile | grep 'export VISUAL')" ]; then
+  echo >> /etc/profile
+  echo "export EDITOR=vim" >> /etc/profile
+  echo "export VISUAL=vim" >> /etc/profile
+  echo >> /etc/profile
+fi
+
 if [ `which unity` ]; then
   ## autohide the dock and set the icons to a smaller, more reasonable size
   gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
@@ -27,5 +35,9 @@ if [ `which unity` ]; then
   gsettings set org.gnome.desktop.session idle-delay 1800
   ## fix gvim so it shows up in unity
   sudo cp /usr/share/app-install/desktop/vim-gui-common\:gvim.desktop /usr/share/applications/
+  ## make gvim take all of gedit's defaults
+  sudo sed -i.bak 's@gedit@gvim@g' /etc/gnome/defaults.list
 fi
+
+
 
