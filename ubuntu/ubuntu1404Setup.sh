@@ -30,10 +30,6 @@ if [ `which unity` ]; then
   sudo cp /usr/share/app-install/desktop/vim-gui-common\:gvim.desktop /usr/share/applications/
   ## make gvim take all of gedit's defaults
   sudo sed -i.bak 's@gedit@gvim@g' /etc/gnome/defaults.list
-  ## restart unity so all our settings take effect
-  if [ "$(pgrep unity)" ]; then
-    unity --replace
-  fi
 fi
 
 ## set vim as the default editor
@@ -44,5 +40,10 @@ if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]
     sudo sh -c 'echo "export VISUAL=vim" >> /etc/profile.d/vimDefault'
     sudo sh -c 'echo >> /etc/profile.d/vimDefault'
   fi
+fi
+
+## restart unity so all our settings take effect
+if [ "$(pgrep unity)" ]; then
+  unity --replace
 fi
 
