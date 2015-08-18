@@ -23,5 +23,7 @@ if [ `which unity` ]; then
   ## show day and date
   gsettings set com.canonical.indicator.datetime show-day true
   gsettings set com.canonical.indicator.datetime show-date true
+  ## sleep screen after half an hour
+  gsettings set org.gnome.desktop.session idle-delay 1800
 fi
 
