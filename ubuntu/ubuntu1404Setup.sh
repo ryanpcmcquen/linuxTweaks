@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNOR
 if [ `which unity` ]; then
   ## autohide the dock and set the icons to a smaller, more reasonable size
   gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
-  gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 24
+  gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 32
   ## focus follows mouse!
   gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ click-to-focus false
   ## 3x3 workspaces
@@ -30,6 +30,10 @@ if [ `which unity` ]; then
   sudo cp /usr/share/app-install/desktop/vim-gui-common\:gvim.desktop /usr/share/applications/
   ## make gvim take all of gedit's defaults
   sudo sed -i.bak 's@gedit@gvim@g' /etc/gnome/defaults.list
+  ## restart unity so all our settings take effect
+  if [ "$(pgrep unity)" ]; then
+    unity --replace
+  fi
 fi
 
 ## set vim as the default editor
