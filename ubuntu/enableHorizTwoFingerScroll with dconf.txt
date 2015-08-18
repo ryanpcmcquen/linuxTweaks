@@ -1,2 +1,0 @@
-dconf write /org/gnome/settings-daemon/peripherals/touchpad/horiz-scroll-enabled true
-
