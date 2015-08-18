@@ -6,3 +6,19 @@ sudo apt-get install $ESSENTIALPKGS
 
 ## retrieve git and vim settings
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
+
+if [ `which unity` ]; then
+  ## autohide the dock and set the icons to a smaller, more reasonable size
+  gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
+  gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 32
+  ## focus follows mouse!
+  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ click-to-focus false
+  ## 3x3 workspaces
+  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
+  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
+  ## make the keyboard blazingly fast
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat true
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard delay uint32 150
+  gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval uint32 80
+fi
+
