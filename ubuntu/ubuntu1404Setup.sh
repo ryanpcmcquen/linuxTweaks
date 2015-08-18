@@ -8,16 +8,6 @@ sudo apt-get install $ESSENTIALPKGS
 ## retrieve git and vim settings
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
 
-## set vim as the default editor
-if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
-  if [ ! -e /etc/profile.d/vimDefault ]; then
-    sudo echo >> /etc/profile.d/vimDefault
-    sudo echo "export EDITOR=vim" >> /etc/profile.d/vimDefault
-    sudo echo "export VISUAL=vim" >> /etc/profile.d/vimDefault
-    sudo echo >> /etc/profile.d/vimDefault
-  fi
-fi
-
 if [ `which unity` ]; then
   ## autohide the dock and set the icons to a smaller, more reasonable size
   gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
@@ -42,5 +32,13 @@ if [ `which unity` ]; then
   sudo sed -i.bak 's@gedit@gvim@g' /etc/gnome/defaults.list
 fi
 
-
+## set vim as the default editor
+if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
+  if [ ! -e /etc/profile.d/vimDefault ]; then
+    sudo sh -c 'echo >> /etc/profile.d/vimDefault'
+    sudo sh -c 'echo "export EDITOR=vim" >> /etc/profile.d/vimDefault'
+    sudo sh -c 'echo "export VISUAL=vim" >> /etc/profile.d/vimDefault'
+    sudo sh -c 'echo >> /etc/profile.d/vimDefault'
+  fi
+fi
 
