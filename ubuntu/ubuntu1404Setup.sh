@@ -10,10 +10,10 @@ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNOR
 
 ## set vim as the default editor (taken from config-o-matic)
 if [ -z "$(cat /etc/profile | grep 'export EDITOR' && cat /etc/profile | grep 'export VISUAL')" ]; then
-  echo >> /etc/profile
-  echo "export EDITOR=vim" >> /etc/profile
-  echo "export VISUAL=vim" >> /etc/profile
-  echo >> /etc/profile
+  sudo echo >> /etc/profile
+  sudo echo "export EDITOR=vim" >> /etc/profile
+  sudo echo "export VISUAL=vim" >> /etc/profile
+  sudo echo >> /etc/profile
 fi
 
 if [ `which unity` ]; then
@@ -33,7 +33,7 @@ if [ `which unity` ]; then
   gsettings set com.canonical.indicator.datetime show-day true
   gsettings set com.canonical.indicator.datetime show-date true
   ## sleep screen after half an hour
-  gsettings set org.gnome.desktop.session idle-delay 1800
+  gsettings set org.gnome.desktop.session idle-delay 900
   ## fix gvim so it shows up in unity
   sudo cp /usr/share/app-install/desktop/vim-gui-common\:gvim.desktop /usr/share/applications/
   ## make gvim take all of gedit's defaults
