@@ -1,5 +1,8 @@
 #!/bin/sh
-## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/ubuntu1404Setup.sh | bash
+## run as a normal user:
+##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/ubuntu1404Setup.sh | bash
+
+sudo apt-get update && sudo apt-get dist-upgrade -y
 
 ESSENTIALPKGS="git vim vim-gnome build-essential zlib1g-dev libsndfile1-dev libsdl1.2-dev"
 
