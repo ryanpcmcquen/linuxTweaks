@@ -1,7 +1,7 @@
 #!/bin/sh
 ## run as a normal user
 
-##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/fedoraSetup.sh | sh
+## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/fedoraSetup.sh | sh
 
 ## always good to start with an update
 sudo dnf -y upgrade || sudo yum -y update
