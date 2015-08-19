@@ -1,6 +1,6 @@
 #!/bin/bash
 ## run as a normal user:
-## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/ubuntu1404Setup.sh -P ~/; bash ~/ubuntu1404Setup.sh; rm ~/ubuntu1404Setup.sh
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.ubuntu1404Setup.sh -P ~/; bash ~/.ubuntu1404Setup.sh
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
@@ -59,9 +59,35 @@ if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]
 fi
 
 ## restart unity so all our settings take effect
-#if [ "$(pgrep unity)" ]; then
-  #unity --replace
-#fi
+##if [ "$(pgrep unity)" ]; then
+  ##unity --replace
+##fi
+
+echo "                    ..- - . "
+echo "                   '        '. "
+echo "                  '.- .  .--. . "
+echo "                 |: _ | :  _ :| "
+echo "                 |'(@)--'.(@) | "
+echo "                 : .'     '-, : "
+echo "                 :(_____.-'.' ' "
+echo "                 : '-.__.-'   : "
+echo "                 '  _.    _.   . "
+echo "                /  /  '_ '  \    . "
+echo "               .  :          \\   \ "
+echo "              .  : _      __  .\   . "
+echo "             .  /             : '.  \ "
+echo "            :  /      '        : '.  . "
+echo "           '  '      :          : :  '. "
+echo "         .'_ :       :          / '   | "
+echo "         :' \ .      :           '__  : "
+echo "      .--'   \'-._    .      .' :    '). "
+echo "    ..|       \   )          :   '._.'  : "
+echo "   ;           \-'.        ..:         / "
+echo "   '.           \  - ....-   |        ' "
+echo "      -.         :   _____   |      .' "
+echo "        ' -.    .'--       --'.   .' "
+echo "            '--                -- "
 
 echo "Reboot for all settings to take effect."
+echo
 
