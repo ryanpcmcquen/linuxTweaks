@@ -19,8 +19,8 @@ gsettings set $KEYS_SCHEMA custom-keybindings "[\"$CUSTOM_PATH\"]"
 
 ## make the keyboard crazy fast
 gsettings set org.gnome.desktop.peripherals.keyboard repeat true
-gsettings set org.gnome.desktop.peripherals.keyboard delay uint32 150
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval uint32 80
+gsettings set org.gnome.desktop.peripherals.keyboard delay 150
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 80
 ## sensible touchpad defaults [these may already be set, but it cannot hurt]
 gsettings set org.gnome.desktop.peripherals.touchpad scroll-method 2
 gsettings set org.gnome.desktop.peripherals.touchpad horiz-scroll-enabled true
