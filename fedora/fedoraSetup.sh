@@ -1,6 +1,11 @@
 #!/bin/sh
 ## run as a normal user
 
+##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/fedoraSetup.sh | sh
+
+## always good to start with an update
+sudo dnf -y upgrade || sudo yum -y update
+
 ## thanks to @fmuellner
 ## variables for gsettings
 KEYS_SCHEMA=org.gnome.settings-daemon.plugins.media-keys
