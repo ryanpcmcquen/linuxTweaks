@@ -34,7 +34,7 @@ if [ `which unity` ]; then
   gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 150
   gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 80
   ## touchpad settings
-  gsettings set org.gnome.settings-daemon.peripherals.touchpad scroll-method 2
+  gsettings set org.gnome.settings-daemon.peripherals.touchpad scroll-method 'two-finger-scrolling'
   gsettings set org.gnome.settings-daemon.peripherals.touchpad horiz-scroll-enabled true
   gsettings set org.gnome.settings-daemon.peripherals.touchpad tap-to-click false
   ## show day and date
