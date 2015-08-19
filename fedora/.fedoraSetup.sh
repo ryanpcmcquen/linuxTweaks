@@ -1,7 +1,6 @@
 #!/bin/sh
-## run as a normal user
-
-## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/fedoraSetup.sh | sh
+## run as a normal user:
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/.fedoraSetup.sh -P ~/; sh ~/.fedoraSetup.sh
 
 ## always good to start with an update
 sudo dnf -y upgrade || sudo yum -y update
@@ -46,4 +45,16 @@ else
   sudo dnf -y install ~/Downloads/google-chrome-stable_current_i386.rpm \
     || sudo yum -y install ~/Downloads/google-chrome-stable_current_i386.rpm
 fi
+
+echo
+echo "    .--. "
+echo "   |o_o | "
+echo "   |:_/ | "
+echo "  //   \ \ "
+echo " (|     | ) "
+echo "/'\_   _/`\ "
+echo "\___)=(___/ "
+echo
+echo "Reboot for all settings to take effect."
+echo
 
