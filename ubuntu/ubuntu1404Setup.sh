@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 ## run as a normal user:
-##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/ubuntu1404Setup.sh | bash
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/ubuntu1404Setup.sh -P ~/; bash ~/ubuntu1404Setup.sh; rm ~/ubuntu1404Setup.sh
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
