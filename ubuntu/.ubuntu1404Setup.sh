@@ -64,30 +64,14 @@ fi
   ##unity --replace
 ##fi
 
-echo "                    ..- - . "
-echo "                   '        '. "
-echo "                  '.- .  .--. . "
-echo "                 |: _ | :  _ :| "
-echo "                 |'(@)--'.(@) | "
-echo "                 : .'     '-, : "
-echo "                 :(_____.-'.' ' "
-echo "                 : '-.__.-'   : "
-echo "                 '  _.    _.   . "
-echo "                /  /  '_ '  \    . "
-echo "               .  :          \\   \ "
-echo "              .  : _      __  .\   . "
-echo "             .  /             : '.  \ "
-echo "            :  /      '        : '.  . "
-echo "           '  '      :          : :  '. "
-echo "         .'_ :       :          / '   | "
-echo "         :' \ .      :           '__  : "
-echo "      .--'   \'-._    .      .' :    '). "
-echo "    ..|       \   )          :   '._.'  : "
-echo "   ;           \-'.        ..:         / "
-echo "   '.           \  - ....-   |        ' "
-echo "      -.         :   _____   |      .' "
-echo "        ' -.    .'--       --'.   .' "
-echo "            '--                -- "
+
+echo "    .--. "
+echo "   |o_o | "
+echo "   |:_/ | "
+echo "  //   \ \ "
+echo " (|     | ) "
+echo "/'\_   _/`\ "
+echo "\___)=(___/ "
 
 echo "Reboot for all settings to take effect."
 echo
