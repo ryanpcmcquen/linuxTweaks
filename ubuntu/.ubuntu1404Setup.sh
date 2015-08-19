@@ -70,9 +70,9 @@ echo "   |o_o | "
 echo "   |:_/ | "
 echo "  //   \ \ "
 echo " (|     | ) "
-echo "/'\_   _/`\ "
+echo "/'\_   _/'\ "
 echo "\___)=(___/ "
 echo
-echo "Reboot for all settings to take effect."
+echo "A reboot may be necessary."
 echo
 
