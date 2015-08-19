@@ -59,7 +59,9 @@ if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]
 fi
 
 ## restart unity so all our settings take effect
-if [ "$(pgrep unity)" ]; then
-  unity --replace
-fi
+#if [ "$(pgrep unity)" ]; then
+  #unity --replace
+#fi
+
+echo "Reboot for all settings to take effect."
 
