@@ -4,6 +4,13 @@
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
+if [ -z "$(cat ~/.bash_aliases | grep 'alias apt')" ]; then
+  echo "## my aliases" >> ~/.bash_aliases
+  echo "alias aptu='sudo apt-get update && sudo apt-get dist-upgrade -y'" >> ~/.bash_aliases
+  echo "alias aptc='sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y'" >> ~/.bash_aliases
+  echo "alias apti='sudo apt-get install -y '" >> ~/.bash_aliases
+fi
+
 ESSENTIALPKGS="git vim vim-gnome build-essential zlib1g-dev libsndfile1-dev libsdl1.2-dev"
 
 sudo apt-get install -y $ESSENTIALPKGS
