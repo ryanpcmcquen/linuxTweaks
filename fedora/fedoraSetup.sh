@@ -23,7 +23,8 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay 150
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 80
 ## sensible touchpad defaults [these may already be set, but it cannot hurt]
 gsettings set org.gnome.desktop.peripherals.touchpad scroll-method 2
-gsettings set org.gnome.desktop.peripherals.touchpad horiz-scroll-enabled true
+## apparently this key was removed at some point
+#gsettings set org.gnome.desktop.peripherals.touchpad horiz-scroll-enabled true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false
 
 ## retrieve git and vim settings
