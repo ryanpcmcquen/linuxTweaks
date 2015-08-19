@@ -6,7 +6,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 
 ESSENTIALPKGS="git vim vim-gnome build-essential zlib1g-dev libsndfile1-dev libsdl1.2-dev"
 
-sudo apt-get install $ESSENTIALPKGS
+sudo apt-get install -y $ESSENTIALPKGS
 
 ## retrieve git and vim settings
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
