@@ -18,13 +18,13 @@ gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH binding '<Control><Alt>t'
 gsettings set $KEYS_SCHEMA custom-keybindings "[\"$CUSTOM_PATH\"]"
 
 ## make the keyboard crazy fast
-gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat true
-gsettings set org.gnome.settings-daemon.peripherals.keyboard delay uint32 150
-gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval uint32 80
+gsettings set org.gnome.desktop.peripherals.keyboard repeat true
+gsettings set org.gnome.desktop.peripherals.keyboard delay uint32 150
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval uint32 80
 ## sensible touchpad defaults [these may already be set, but it cannot hurt]
-gsettings set org.gnome.settings-daemon.peripherals.touchpad scroll-method 2
-gsettings set org.gnome.settings-daemon.peripherals.touchpad horiz-scroll-enabled true
-gsettings set org.gnome.settings-daemon.peripherals.touchpad tap-to-click false
+gsettings set org.gnome.desktop.peripherals.touchpad scroll-method 2
+gsettings set org.gnome.desktop.peripherals.touchpad horiz-scroll-enabled true
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false
 
 ## retrieve git and vim settings
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
