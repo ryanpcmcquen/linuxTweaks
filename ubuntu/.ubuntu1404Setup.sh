@@ -64,7 +64,7 @@ fi
   ##unity --replace
 ##fi
 
-
+echo
 echo "    .--. "
 echo "   |o_o | "
 echo "   |:_/ | "
@@ -72,7 +72,7 @@ echo "  //   \ \ "
 echo " (|     | ) "
 echo "/'\_   _/`\ "
 echo "\___)=(___/ "
-
+echo
 echo "Reboot for all settings to take effect."
 echo
 
