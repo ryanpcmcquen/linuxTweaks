@@ -18,8 +18,8 @@ sudo apt-get install -y $ESSENTIALPKGS
 ## properly add google chrome repo, and install the beta
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 ## check for this so we don't keep adding the same line on re-runs
-if [ -z "$(grep 'dl.google.com' /etc/apt/sources.list.d/google-chrome.list)" ]; then
-  sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && chmod 644 /etc/apt/sources.list.d/google-chrome.list'
+if [ -z "$(find /etc/apt/sources.list.d/ -name 'google-*')" ]; then
+  sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/google-chrome-beta.list -P /etc/apt/sources.list.d/
 fi
 sudo apt-get update
 sudo apt-get install -y google-chrome-beta
