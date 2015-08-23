@@ -62,3 +62,13 @@ shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PS1='\u@\w:$(parse_git_branch)\$ '
 
+## extend path with any /opt/ programs
+for DIR in /opt/*/bin
+  do PATH="$DIR:$PATH"
+done
+
+## extend path with any /usr/local/ stuff, like heroku
+for DIR in /usr/local/*/bin
+  do PATH="$DIR:$PATH"
+done
+
