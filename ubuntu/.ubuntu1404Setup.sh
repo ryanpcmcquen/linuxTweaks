@@ -55,6 +55,11 @@ if [ `which unity` ]; then
   sudo sed -i.bak 's@gedit@gvim@g' /etc/gnome/defaults.list
 fi
 
+## configure kde if present (kubuntu)
+if [ `which startkde` ]; then
+  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | bash
+fi
+
 ## set vim as the default editor
 if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
   if [ ! -e /etc/profile.d/vimDefault ]; then
