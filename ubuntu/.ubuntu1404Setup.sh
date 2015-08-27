@@ -11,7 +11,7 @@ if [ -z "$(cat ~/.bash_aliases | grep 'alias apt')" ]; then
   echo "alias apti='sudo apt-get install -y '" >> ~/.bash_aliases
 fi
 
-ESSENTIALPKGS="git vim vim-gnome build-essential zlib1g-dev libsndfile1-dev libsdl1.2-dev"
+ESSENTIALPKGS="curl wget git vim vim-gnome build-essential zlib1g-dev libsndfile1-dev libsdl1.2-dev"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
