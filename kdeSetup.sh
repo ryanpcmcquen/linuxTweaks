@@ -25,32 +25,25 @@ kwriteconfig --file startupconfig --group "ksplashrc KSplash Theme Default" --ke
 kwriteconfig --file ksplashrc --group "KSplash" --key "Engine" KSplashQML
 kwriteconfig --file ksplashrc --group "KSplash" --key "Theme" Minimalistic
 
-
+## mostly make kwin faster, but also add wobbly windows
 kwriteconfig --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMouse
 kwriteconfig --file kwinrc --group "Windows" --key "AutoRaise" true
 kwriteconfig --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
 kwriteconfig --file kwinrc --group "Windows" --key "DelayFocusInterval" 500
 kwriteconfig --file kwinrc --group "Windows" --key "FocusStealingPreventionLevel" 2
-
-
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
 kwriteconfig --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
-
-
 kwriteconfig --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
 kwriteconfig --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
-
 
 kwriteconfig --file ksmserverrc --group "General" --key "confirmLogout" false
 kwriteconfig --file ksmserverrc --group "General" --key "shutdownType" 1
 kwriteconfig --file ksmserverrc --group "General" --key "loginMode" default
 
-
+## make the kate editor a little nicer for me
 kwriteconfig --file katerc --group "TipOfDay" --key "RunOnStart" false
-
 kwriteconfig --file katerc --group "General" --key "Show Full Path in Title" true
-
 kwriteconfig --file katerc --group "Kate Document Defaults" --key "Encoding" UTF-8
 kwriteconfig --file katerc --group "Kate Document Defaults" --key "ReplaceTabsDyn" true
 kwriteconfig --file katerc --group "Kate Document Defaults" --key "Tab Handling" 2
@@ -58,27 +51,30 @@ kwriteconfig --file katerc --group "Kate Document Defaults" --key "Tab Width" 2
 kwriteconfig --file katerc --group "Kate Document Defaults" --key "Word Wrap" true
 kwriteconfig --file katerc --group "Kate Document Defaults" --key "Indentation Width" 2
 kwriteconfig --file katerc --group "Kate Document Defaults" --key "Newline At EOF" true
-
 kwriteconfig --file katerc --group "Kate Part Defaults" --key "Fallback Encoding" UTF-8
 
-## turns on example shortcuts, including: konsole = ctrl + alt + t
-sed -i.bak 's/Enabled=false/Enabled=true/g' ~/.kde/share/config/khotkeysrc
+if [ "`ls /usr/bin/kde*5`" ]; then
+  ## turns on example shortcuts, including: konsole = ctrl + alt + t
+  sed -i.bak 's/Enabled=false/Enabled=true/g' ~/.config/khotkeysrc
+  ## make folder view the default
+  sed -i.bak 's/plugin=desktop/plugin=folderview/g' ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+else
+  ## turns on example shortcuts, including: konsole = ctrl + alt + t
+  sed -i.bak 's/Enabled=false/Enabled=true/g' ~/.kde/share/config/khotkeysrc
+  ## make folder view the default
+  sed -i.bak 's/plugin=desktop/plugin=folderview/g' ~/.kde/share/config/plasma-desktop-appletsrc
+fi
 
-## make folder view the default
-sed -i.bak 's/plugin=desktop/plugin=folderview/g' ~/.kde/share/config/plasma-desktop-appletsrc
-
+## make the power settings a little more sane
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" 600000
-
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "DPMSControl" --key "idleTime" 600
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "DPMSControl" --key "idleTime" 600
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "DPMSControl" --key "idleTime" 600
-
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "SuspendSession" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "SuspendSession" --key "idleTime" 600000
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "SuspendSession" --key "idleTime" 600000
-
 kwriteconfig --file powermanagementprofilesrc --group "AC" --group "BrightnessControl" --key "value" 100
 kwriteconfig --file powermanagementprofilesrc --group "Battery" --group "BrightnessControl" --key "value" 100
 kwriteconfig --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
