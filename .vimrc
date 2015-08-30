@@ -40,9 +40,9 @@ set number
 set wrap
 
 "" almost like no syntax highlighting
-if filereadable(expand("$HOME/.vim/colors/vi-clone.vim"))
+if filereadable(expand("$HOME/.vim/colors/true-monochrome.vim"))
   syntax on
-  colorscheme vi-clone
+  colorscheme true-monochrome
 else
   syntax off
 endif
