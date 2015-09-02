@@ -15,6 +15,11 @@ else
   KDEVER=4
 fi
 
+## kwallet is annoying, and also makes connecting
+## to wireless networks take multiple attempts -- no thanks
+$KWRITECONF --file kwalletrc --group Wallet --key "Enabled" false
+$KWRITECONF --file kwalletrc --group Wallet --key "First Use" false
+
 ## make kde faster, effects are for people who have leisure time
 $KWRITECONF --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
