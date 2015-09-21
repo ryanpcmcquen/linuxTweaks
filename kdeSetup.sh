@@ -54,6 +54,8 @@ $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" tru
 $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
 $KWRITECONF --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
 $KWRITECONF --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
+## actually disable compositing, i know this renders wobbly windows useless
+$KWRITECONF --file kwinrc --group "Compositing" --key "Enabled" false
 
 ## give less notifications
 $KWRITECONF --file ksmserverrc --group "General" --key "confirmLogout" false
