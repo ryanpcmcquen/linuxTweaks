@@ -91,6 +91,11 @@ $KWRITECONF --file powermanagementprofilesrc --group "AC" --group "BrightnessCon
 $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "BrightnessControl" --key "value" 100
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
 
+## disable compositing, as it breaks some things ... and i am not fancy
+if [ "`qdbus org.kde.kwin /KWin org.kde.KWin.compositingActive`" = true ]; then
+  qdbus org.kde.kwin /KWin org.kde.KWin.toggleCompositing
+fi
+
 ## restart services so that new settings take effect
 if [ "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
   qdbus org.kde.kded /kded unloadModule powerdevil
