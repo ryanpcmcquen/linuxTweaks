@@ -1,3 +1,4 @@
 {
-  "spaceUnits": 2
+  "spaceUnits": 2,
+  "me.drewh.jsbeautify.on_save": true
 }
