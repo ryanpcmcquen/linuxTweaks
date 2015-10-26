@@ -1,0 +1,6 @@
+{
+  preferences: {
+    tabSize: 2,
+    trimWhitespaceOnSave: true
+  }
+}
