@@ -1,0 +1,8 @@
+## get into copy mode
+Ctrl + B + [
+Ctrl + Space
+## highlight whatevs
+## this actuall copies
+Ctrl + W
+## then to paste
+Ctrl + B + ]
