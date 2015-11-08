@@ -1,9 +1,9 @@
 {
-  preferences: {
-    tabSize: 2,
-    trimWhitespaceOnSave: true,
-    enableAnalytics: true,
-    showMenus: false,
-    persistentTree: false
+  "preferences": {
+    "tabSize": 2,
+    "trimWhitespaceOnSave": true,
+    "enableAnalytics": true,
+    "showMenus": false,
+    "persistentTree": false
   }
 }
