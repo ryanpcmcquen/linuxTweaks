@@ -1,6 +1,9 @@
 {
   preferences: {
     tabSize: 2,
-    trimWhitespaceOnSave: true
+    trimWhitespaceOnSave: true,
+    enableAnalytics: true,
+    showMenus: false,
+    persistentTree: false
   }
 }
