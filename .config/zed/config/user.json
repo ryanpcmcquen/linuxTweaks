@@ -1,9 +1,17 @@
 {
+  "imports": [
+    "/default.json"],
   "preferences": {
     "tabSize": 2,
     "trimWhitespaceOnSave": true,
     "enableAnalytics": true,
     "showMenus": false,
     "persistentTree": false
-  }
+  },
+  "modes": {},
+  "keys": {},
+  "commands": {},
+  "handlers": {},
+  "themes": {},
+  "packages": []
 }
