@@ -4,6 +4,10 @@
 ##
 ## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/.mass_compat32ConvertAndInstall_CURRENT.sh | sh
 
+## create a directory so we don't pollute the home folder
+mkdir -pv ~/compat32/
+cd ~/compat32/
+
 massconvert32.sh -u http://slackware.cs.utah.edu/pub/slackware/slackware-current/slackware/
 
 if [ -z "$(cat /etc/slackpkg/blacklist | grep _compat32)" ]; then
@@ -12,3 +16,7 @@ fi
 
 ## now install everything!
 upgradepkg --reinstall --install-new ~/compat32/*/*
+
+## update script
+wget -N https://raw.guthubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/.mass_compat32ConvertAndInstall_CURRENT.sh -P ~/compat32/
+
