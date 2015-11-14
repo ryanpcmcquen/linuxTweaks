@@ -18,5 +18,5 @@ fi
 upgradepkg --reinstall --install-new ~/compat32/*/*
 
 ## update script
-wget -N https://raw.guthubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/.mass_compat32ConvertAndInstall_CURRENT.sh -P ~/compat32/
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/.mass_compat32ConvertAndInstall_CURRENT.sh -P ~/compat32/
 
