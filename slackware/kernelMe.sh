@@ -26,7 +26,7 @@
 #
 # You may have received a copy of the GNU General Public License
 # along with this program (most likely, a file named COPYING). If
-# not, see <http://www.gnu.org/licenses/>.
+# not, see <https://www.gnu.org/licenses/>.
 #
 # Place this script in /usr/src, chmod +x it to make it executable
 #
