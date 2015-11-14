@@ -1,7 +1,7 @@
 #!/bin/sh
 ## run as root
 
-# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/switchToGenericKernel.sh | sh
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/.switchToGenericKernel.sh | sh
 
 /usr/share/mkinitrd/mkinitrd_command_generator.sh | sh
 
