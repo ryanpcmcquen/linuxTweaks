@@ -1,4 +1,0 @@
-# wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.asoundrc -P ~/
-
-defaults.pcm.card 1
-ctl.pcm.card 1
