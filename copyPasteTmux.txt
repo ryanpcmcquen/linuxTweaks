@@ -1,9 +1,9 @@
 ## get into copy mode
 Ctrl + B + [
-Ctrl + Space
+Space
 ## highlight whatevs with keyboard
 ##
 ## then to copy:
-Ctrl + W
+Enter
 ## then to paste:
 Ctrl + B + ]
