@@ -1,9 +1,0 @@
-## get into copy mode
-Ctrl + B + [
-Space
-## highlight whatevs with keyboard
-##
-## then to copy:
-Enter
-## then to paste:
-Ctrl + B + ]
