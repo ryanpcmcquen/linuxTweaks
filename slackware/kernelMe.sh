@@ -49,15 +49,15 @@ if [ -z "$1" ]; then
   wget https://www.kernel.org/ -O ~/linux-kernel-home-page.html
 
   ## mainline version
-  cat ~/linux-kernel-home-page.html  | grep -A1 mainline: | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
+  grep -A1 mainline: ~/linux-kernel-home-page.html | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
     > ~/mainlineKernelVersion
 
   ## stable version
-  cat ~/linux-kernel-home-page.html  | grep -A1 stable: | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
+  grep -A1 stable: ~/linux-kernel-home-page.html | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
     > ~/stableKernelVersion
 
   ## longterm version
-  cat ~/linux-kernel-home-page.html  | grep -A1 longterm: | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
+  grep -A1 longterm: ~/linux-kernel-home-page.html | head -2 | tail -1 | cut -d'>' -f3 | cut -d'<' -f1 \
     > ~/longtermKernelVersion
 
   ## set VERSION
