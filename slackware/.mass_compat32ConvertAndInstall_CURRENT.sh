@@ -10,7 +10,7 @@ cd ~/compat32/
 
 massconvert32.sh -u http://slackware.cs.utah.edu/pub/slackware/slackware-current/slackware/
 
-if [ -z "$(cat /etc/slackpkg/blacklist | grep _compat32)" ]; then
+if [ -z "$(grep compat32 /etc/slackpkg/blacklist)" ]; then
   echo "[0-9]+compat32" >> /etc/slackpkg/blacklist
 fi
 
