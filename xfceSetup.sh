@@ -122,16 +122,16 @@ fi
 
 ## make the terminal groovier
 if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
-  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'FontName\=Terminus\ 9')" ]; then
+  if [ -z "$(grep 'FontName\=Terminus\ 9' ~/.config/xfce4/terminal/terminalrc)" ]; then
     sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 9@g' ~/.config/xfce4/terminal/terminalrc
   fi
-  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'MiscDefaultGeometry\=200x50')" ]; then
+  if [ -z "$(grep 'MiscDefaultGeometry\=200x50' ~/.config/xfce4/terminal/terminalrc)" ]; then
     sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=200x50@g' ~/.config/xfce4/terminal/terminalrc
   fi
-  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'BackgroundMode\=TERMINAL_BACKGROUND_TRANSPARENT')" ]; then
+  if [ -z "$(grep 'BackgroundMode\=TERMINAL_BACKGROUND_TRANSPARENT' ~/.config/xfce4/terminal/terminalrc)" ]; then
     sed -i.bak 's@BackgroundMode\=.*@BackgroundMode\=TERMINAL_BACKGROUND_TRANSPARENT@g' ~/.config/xfce4/terminal/terminalrc
   fi
-  if [ -z "$(cat ~/.config/xfce4/terminal/terminalrc | grep 'BackgroundDarkness\=0.800000')" ]; then
+  if [ -z "$(grep 'BackgroundDarkness\=0.800000' ~/.config/xfce4/terminal/terminalrc)" ]; then
     sed -i.bak 's@BackgroundDarkness\=.*@BackgroundDarkness\=0.800000@g' ~/.config/xfce4/terminal/terminalrc
   fi
 else
