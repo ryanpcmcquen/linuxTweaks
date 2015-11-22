@@ -3,7 +3,7 @@
 
 
 ## make compiling faster  ;-)
-if [ -z "$(cat /etc/profile | grep 'MAKEFLAGS')" ]; then
+if [ -z "$(grep 'MAKEFLAGS' /etc/profile)" ]; then
   echo >> /etc/profile
   echo 'if [ "$(nproc)" -gt 2 ]; then' >> /etc/profile
   ## cores--
