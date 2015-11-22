@@ -3,7 +3,7 @@
 ## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/windowmakerSetup.sh | sh
 
 ## everyone loves the terminal, says the unix nerd
-if [ -z "$(cat ~/GNUstep/Defaults/WMRootMenu | grep 'Mod1+F1')" ]; then
+if [ -z "$(grep 'Mod1+F1' ~/GNUstep/Defaults/WMRootMenu)" ]; then
   sed -i.bak 's@(Konsole, EXEC, konsole)@\
   (Konsole, EXEC, konsole),\
   (uxterm, SHORTCUT, "Mod1+F1", EXEC, "uxterm")\
@@ -11,7 +11,7 @@ if [ -z "$(cat ~/GNUstep/Defaults/WMRootMenu | grep 'Mod1+F1')" ]; then
 fi
 
 ## kind of doing a fluxbox thing here
-if [ -z "$(cat ~/GNUstep/Defaults/WMRootMenu | grep 'Mod1+F2')" ]; then
+if [ -z "$(grep 'Mod1+F2' ~/GNUstep/Defaults/WMRootMenu)" ]; then
   sed -i.bak 's@(Run..., SHEXEC, "%A(Run, Type command:)"),@\
   (Run..., SHEXEC, "%A(Run, Type command:)"),\
   (Run..., SHORTCUT, "Mod1+F2", EXEC, "%A(Run, Type command:)"),\
