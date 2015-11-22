@@ -11,7 +11,7 @@ BUILDALL=${BUILDALL:-no}
 export GTKVERSION=${GTKVERSION:-gtk`find /var/log/packages/ -name gtk\+3* | sort | tail -1 | cut -d/ -f5 | cut -d- -f2 | cut -d. -f1-2`}
 
 ## blacklist all msb packages so they are not overwritten/removed
-if [ -z "$(cat /etc/slackpkg/blacklist | grep _msb)" ]; then
+if [ -z "$(grep _msb /etc/slackpkg/blacklist)" ]; then
   echo [0-9]+_msb >> /etc/slackpkg/blacklist
   echo >> /etc/slackpkg/blacklist
 fi
