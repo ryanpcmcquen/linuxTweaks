@@ -3,8 +3,8 @@
 
 ## run with TESTING=yes for testing pkgs
 TESTING=${TESTING:-no}
-## run with EXTRA=yes for extra pkgs
-EXTRA=${EXTRA:-no}
+## run with EXTRA=no to skip 'extra' pkgs
+EXTRA=${EXTRA:-yes}
 ## build TESTING and EXTRA by using BUILDALL=yes
 BUILDALL=${BUILDALL:-no}
 ## detect gtk version for mate-themes package
