@@ -30,7 +30,7 @@ sed -i.bak 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer set Master
 160 :Exec amixer set Master toggle; amixer -c 1 set Master toggle/g' ~/.fluxbox/keys
 
 ## fix brightness keys
-if [ -z "$(cat ~/.fluxbox/keys | grep 'xbacklight -dec')" ]; then
+if [ -z "$(grep 'xbacklight -dec' ~/.fluxbox/keys)" ]; then
   echo >> ~/.fluxbox/keys
   echo "232 :Exec xbacklight -dec 10" >> ~/.fluxbox/keys
   echo "233 :Exec xbacklight -inc 10" >> ~/.fluxbox/keys
@@ -57,7 +57,7 @@ fbsetbg -l\
 #fbsetbg -b -solid grey
 
 ## idempotent, finally!
-if [ -z "$(cat ~/.fluxbox/init | grep workspaceNames)" ]; then
+if [ -z "$(grep workspaceNames ~/.fluxbox/init)" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
   echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
   echo "session.screen0.workspacewarping: false" >> ~/.fluxbox/init
