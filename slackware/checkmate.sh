@@ -5,7 +5,7 @@
 TESTING=${TESTING:-no}
 ## run with EXTRA=no to skip 'extra' pkgs
 EXTRA=${EXTRA:-yes}
-## build TESTING and EXTRA by using BUILDALL=yes
+## ensure all packages are built with BUILDALL=yes
 BUILDALL=${BUILDALL:-no}
 ## detect gtk version for mate-themes package
 export GTKVERSION=${GTKVERSION:-gtk`find /var/log/packages/ -name gtk\+3* | sort | tail -1 | cut -d/ -f5 | cut -d- -f2 | cut -d. -f1-2`}
