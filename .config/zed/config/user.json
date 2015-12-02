@@ -9,7 +9,9 @@
     "persistentTree": false
   },
   "modes": {},
-  "keys": {},
+  "keys": {
+    "Find:Find Case Insensitive": "Ctrl-I"
+  },
   "commands": {},
   "handlers": {},
   "themes": {},
