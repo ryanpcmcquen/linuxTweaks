@@ -10,7 +10,7 @@
   },
   "modes": {},
   "keys": {
-    "Find:Find Case Insensitive": "Ctrl-I"
+    "Find:Find Case Insensitive": "Ctrl-I|Command-I"
   },
   "commands": {},
   "handlers": {},
