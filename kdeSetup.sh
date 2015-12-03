@@ -90,9 +90,10 @@ $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "DimDi
 $KWRITECONF --file powermanagementprofilesrc --group "AC" --group "DPMSControl" --key "idleTime" 600
 $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "DPMSControl" --key "idleTime" 600
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "DPMSControl" --key "idleTime" 600
-$KWRITECONF --file powermanagementprofilesrc --group "AC" --group "SuspendSession" --key "idleTime" 600000
-$KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "SuspendSession" --key "idleTime" 600000
-$KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "SuspendSession" --key "idleTime" 600000
+## i don't like forcing suspend of the session, let the user decide this
+##$KWRITECONF --file powermanagementprofilesrc --group "AC" --group "SuspendSession" --key "idleTime" 600000
+##$KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "SuspendSession" --key "idleTime" 600000
+##$KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "SuspendSession" --key "idleTime" 600000
 $KWRITECONF --file powermanagementprofilesrc --group "AC" --group "BrightnessControl" --key "value" 100
 $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "BrightnessControl" --key "value" 100
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
