@@ -1,19 +1,20 @@
 {
-  "imports": [
-    "/default.json"],
-  "preferences": {
-    "tabSize": 2,
-    "trimWhitespaceOnSave": true,
-    "enableAnalytics": true,
-    "showMenus": false,
-    "persistentTree": false
+  imports: [
+    "/default.json"
+  ],
+  preferences: {
+    tabSize: 2,
+    trimWhitespaceOnSave: true,
+    enableAnalytics: true,
+    showMenus: false,
+    persistentTree: false
   },
-  "modes": {},
-  "keys": {
-    "Find:Find Case Insensitive": "Ctrl-I|Command-I"
+  modes: {},
+  keys: {
+    "Find: Find Case Insensitive": "Ctrl-I|Command-I"
   },
-  "commands": {},
-  "handlers": {},
-  "themes": {},
-  "packages": []
+  commands: {},
+  handlers: {},
+  themes: {},
+  packages: []
 }
