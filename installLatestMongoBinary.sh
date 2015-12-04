@@ -1,4 +1,5 @@
 #!/bin/sh
+## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/installLatestMongoBinary.sh | sh
 ## grabs the latest mongo binary version,
 ## because compiling mongo takes a lifetime
 if [ `getconf LONG_BIT` = "32" ]; then
