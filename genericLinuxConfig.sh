@@ -17,12 +17,14 @@ fi
 
 ## make ssh less annoying
 if [ -z "$(grep 'SSH_AUTH_SOCK' /etc/profile)" ]; then
-  sudo echo >> /etc/profile
-  sudo echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile
-  sudo echo '  eval `ssh-agent`' >> /etc/profile
-  sudo echo '  ssh-add' >> /etc/profile
-  sudo echo 'fi' >> /etc/profile
-  sudo echo >> /etc/profile
+  if [ ! -e /etc/profile.d/START_SSH_AGENT ]; then
+    sudo sh -c "echo >> /etc/profile.d/START_SSH_AGENT"
+    sudo sh -c "echo 'if [ -z \"\$SSH_AUTH_SOCK\" ]; then' >> /etc/profile.d/START_SSH_AGENT"
+    sudo sh -c "echo '  eval \`ssh-agent\`' >> /etc/profile.d/START_SSH_AGENT"
+    sudo sh -c "echo '  ssh-add' >> /etc/profile.d/START_SSH_AGENT"
+    sudo sh -c "echo 'fi' >> /etc/profile.d/START_SSH_AGENT"
+    sudo sh -c "echo >> /etc/profile.d/START_SSH_AGENT"
+  fi
 fi
 
 ## start the ssh-agent so we can clone away without
