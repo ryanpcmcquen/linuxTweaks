@@ -2,6 +2,9 @@
 ## sets up ssh stuff, some bash goodies,
 ## and a vimrc w/ theme, should work on any linux
 
+## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/genericLinuxConfig.sh | sh
+
+
 ## my ssh key
 cd
 if [ ! -d ~/.ssh/ ]; then
@@ -14,12 +17,12 @@ fi
 
 ## make ssh less annoying
 if [ -z "$(grep 'SSH_AUTH_SOCK' /etc/profile)" ]; then
-  echo >> /etc/profile
-  echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile
-  echo '  eval `ssh-agent`' >> /etc/profile
-  echo '  ssh-add' >> /etc/profile
-  echo 'fi' >> /etc/profile
-  echo >> /etc/profile
+  sudo echo >> /etc/profile
+  sudo echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile
+  sudo echo '  eval `ssh-agent`' >> /etc/profile
+  sudo echo '  ssh-add' >> /etc/profile
+  sudo echo 'fi' >> /etc/profile
+  sudo echo >> /etc/profile
 fi
 
 ## start the ssh-agent so we can clone away without
