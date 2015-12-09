@@ -25,13 +25,16 @@ endif
 
 "" set 2 spaces for tab globally, 
 "" make indenting sane
-set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 set autoindent
 filetype plugin indent on
+"" setting tab stop will insert tabs in some spots,
+"" if you only set softtabstop you get spaces everywhere!
+"" thanks to: http://tedlogan.com/techblog3.html
+""set tabstop=2
 
 "" utf-8!
 set encoding=utf-8
