@@ -3,7 +3,7 @@
 ## grabs the latest mongo binary version,
 ## because compiling mongo takes a lifetime
 if [ `getconf LONG_BIT` = "32" ]; then
-  MONGOARCH=x86
+  MONGOARCH=i686
 elif [ `getconf LONG_BIT` = "64" ]; then
   MONGOARCH=x86_64
 else
