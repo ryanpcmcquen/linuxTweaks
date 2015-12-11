@@ -23,24 +23,15 @@ if has("gui_running")
   set lines=40 columns=130
 endif
 
-"" set 2 spaces for tab globally, 
-"" make indenting sane
-set softtabstop=2
-set shiftwidth=2
-set smarttab
-set expandtab
-set autoindent
-filetype plugin indent on
-"" setting tab stop will insert tabs in some spots,
-"" if you only set softtabstop you get spaces everywhere!
-"" thanks to: http://tedlogan.com/techblog3.html
-""set tabstop=2
+"" set 2 spaces for tab globally & make indenting sane
+"" ... note that 'set paste' destroys indentation
+set softtabstop=2 shiftwidth=2 smarttab expandtab autoindent
 
 "" utf-8!
-set encoding=utf-8
-set fileencoding=utf-8
-set number
-set wrap
+set encoding=utf-8 fileencoding=utf-8
+
+"" show line numbers and wrap code
+set number wrap
 
 "" almost like no syntax highlighting
 if filereadable(expand("$HOME/.vim/colors/true-monochrome.vim"))
@@ -52,39 +43,24 @@ endif
 
 
 "" clear out the cruft
-set nobackup
-set nowritebackup
-set noswapfile
-set noundofile
+set nobackup nowritebackup noswapfile noundofile
 
 "" make searching easy, and case insensitive
-set ignorecase smartcase
-set incsearch
-set hlsearch
+set ignorecase smartcase incsearch hlsearch
 
 "" gives you a little jazzy info on the bottom
-set title
-set ruler
+set title ruler
 
 "" turn on the wildmenu, get wild!
 set wildmenu
 
-"" syntax toggler
-nnoremap <F7> :syntax off<CR>
-vnoremap <F7> :syntax off<CR>
-nnoremap <F8> :syntax on<CR>
-vnoremap <F8> :syntax on<CR>
-
-"" make pasting not ruin indentation, 
-"" and show the mode so you know it is on
-set paste
+"" always show mode so you know what is up
 set showmode
 
 "" unsets "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
-"" nifty shortcut for middle of line
-"" instead of middle of screen
+"" nifty shortcut for middle of line instead of middle of screen
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
 if &term =~ '256color'
@@ -95,64 +71,61 @@ endif
 "" display filename in vim
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
+""
+"" end of my stuff
+""
 
-"""""""""""""""""""""""""""""""""""""""""""
-"" all of the below is thanks to B. Watson  ;^)
-"""""""""""""""""""""""""""""""""""""""""""
-" Map to F1, because I hate "F1=Help" (I like my hotkeys to be something
-" I'll use every day, and at this point in my Vim career, I don't need
-" to look at the help every day...)
-nmap <F1> :call ToggleComment()<CR>
-" In insert mode, too:
-inoremap <F1> :call ToggleComment()<CR>
+""
+"" fixes pasting in vim, so paste mode is automatically set when you
+"" paste and then turned off after paste (even works in tmux!)
+"" this is the full plugin from:
+"" https://github.com/ConradIrwin/vim-bracketed-paste
+"" version 20150102
+""
+" Code from:
+" http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x
+" then https://coderwall.com/p/if9mda
+" and then https://github.com/aaronjensen/vimfiles/blob/59a7019b1f2d08c70c28a41ef4e2612470ea0549/plugin/terminaltweaks.vim
+" to fix the escape time problem with insert mode.
+"
+" Docs on bracketed paste mode:
+" http://www.xfree86.org/current/ctlseqs.html
+" Docs on mapping fast escape codes in vim
+" http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
 
-" Visual mode: comment out the selected  block. Will fail if the block
-" already contains /* */ comments (but // comments are OK).
-vmap <F1> :'< mzO/*:'> myo*/`z
+if !exists("g:bracketed_paste_tmux_wrap")
+  let g:bracketed_paste_tmux_wrap = 1
+endif
 
-"" Highlight an entire block of code, from anywhere within it.
-"" Leaves me in Visual mode, with the cursor at the closing brace.
-nmap <F2> [{V]}
+function! WrapForTmux(s)
+  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
+    return a:s
+  endif
 
-" Visual mode: converts a block of comments like this:
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
 
-" // This is a
-" // multi-line
-" // comment
-
-" into this:
-
-" /* This is a
-"	multi-line
-"	comment
-" */
-
-" TODO: block_comment.pl is missing...
-vmap <F4> :!block_comment.pl V'>j='>
-
-nmap <F9> :make
-nmap <F10> :make test
-nmap <C-F10> :make clean all test
-
-" Show the ASCII code of the character under the cursor.
-" <C-@> is actually control-2 on my keyboard.
-nmap <C-@> :ascii<CR>
-
-" Tab completion in insert mode: VERY nice.
-" See ":help completion"; this function was copied from there. It makes
-" the Tab key act normally if there's only whitespace to the left of it,
-" but it does "tab completion" if there's anything else to the left.
-" This is a very "DWIW" (Do What I Want) kind of thing :)
-" Note that you can't insert a Tab in the middle of a line by pressing
-" Tab any more, but you can by pressing <C-V><Tab>.
-function! CleverTab()
-  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    return "\<C-N>"
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 
-inoremap <Tab> <C-R>=CleverTab()<CR>
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
-" Copy buffered text to X11 clipboard
-nmap <A-c> :let @* = @"<CR>
+function! XTermPasteBegin(ret)
+  set pastetoggle=<f29>
+  set paste
+  return a:ret
+endfunction
+
+execute "set <f28>=\<Esc>[200~"
+execute "set <f29>=\<Esc>[201~"
+map <expr> <f28> XTermPasteBegin("i")
+imap <expr> <f28> XTermPasteBegin("")
+vmap <expr> <f28> XTermPasteBegin("c")
+cmap <f28> <nop>
+cmap <f29> <nop>
+
+""
+"" fin
+""
+
