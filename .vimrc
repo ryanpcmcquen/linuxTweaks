@@ -25,6 +25,14 @@ endif
 
 "" set 2 spaces for tab globally & make indenting sane
 "" ... note that 'set paste' destroys indentation
+""
+"" also, setting 'tabstop' is probelmatic, it only affects
+"" how vim renders tabs, but it will still insert a tab
+"" character, you can see this by outputting the file
+"" with `cat` or a similar tool
+""
+"" long story short, if you want *only* spaces,
+"" only set softtabstop
 set softtabstop=2 shiftwidth=2 smarttab expandtab autoindent
 
 "" utf-8!
