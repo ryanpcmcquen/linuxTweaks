@@ -37,9 +37,10 @@ fi
 ## get vimrc, and set up git config
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
 
+## NOW INCLUDED IN ~/.vimrc
 ## set up my vim theme
-mkdir -p ~/.vim/colors/
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/true-monochrome_vim/master/colors/true-monochrome.vim -P ~/.vim/colors/
+#mkdir -p ~/.vim/colors/
+#wget -N https://raw.githubusercontent.com/ryanpcmcquen/true-monochrome_vim/master/colors/true-monochrome.vim -P ~/.vim/colors/
 
 if [ -e $HOME/.bashrc ]; then
   if [ -e $HOME/.bash_profile ]; then
