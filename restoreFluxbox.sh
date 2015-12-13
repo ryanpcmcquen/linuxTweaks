@@ -22,12 +22,12 @@ else
 fi
 
 ## add additional audio keys, verify with xev
-sed -i.bak 's/^176 :Exec amixer sset Master,0 1+/123 :Exec amixer set Master 1+; amixer -c 1 set Master 1+\
-176 :Exec amixer set Master 1+; amixer -c 1 set Master 1+/g' ~/.fluxbox/keys
-sed -i.bak 's/^174 :Exec amixer sset Master,0 1-/122 :Exec amixer set Master 1-; amixer -c 1 set Master 1-\
-174 :Exec amixer set Master 1-; amixer -c 1 set Master 1-/g' ~/.fluxbox/keys
-sed -i.bak 's/^160 :Exec amixer sset Master,0 toggle/121 :Exec amixer set Master toggle; amixer -c 1 set Master toggle\
-160 :Exec amixer set Master toggle; amixer -c 1 set Master toggle/g' ~/.fluxbox/keys
+sed -i.bak 's@^176 :Exec amixer sset.*@123 :Exec sh -c '"'"'export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed \"s/card //g\"\`; amixer set -c \${ALSACARDNUMBER} Master 5%+ unmute'"'"'\
+176 :Exec sh -c '"'"'export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed \"s/card //g\"\`; amixer set -c \${ALSACARDNUMBER} Master 5%+ unmute'"'"'@g' ~/.fluxbox/keys
+sed -i.bak 's@^174 :Exec amixer sset.*@122 :Exec sh -c '"'"'export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed \"s/card //g\"\`; amixer set -c \${ALSACARDNUMBER} Master 5%- unmute'"'"'\
+174 :Exec sh -c '"'"'export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed \"s/card //g\"\`; amixer set -c \${ALSACARDNUMBER} Master 5%- unmute'"'"'@g' ~/.fluxbox/keys
+sed -i.bak 's@^160 :Exec amixer sset.*@121 :Exec sh -c '"'"'export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed \"s/card //g\"\`; amixer set -c \${ALSACARDNUMBER} Master toggle'"'"'\
+160 :Exec sh -c '"'"'export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed \"s/card //g\"\`; amixer set -c \${ALSACARDNUMBER} Master toggle'"'"'@g' ~/.fluxbox/keys
 
 ## fix brightness keys
 if [ -z "$(grep 'xbacklight -dec' ~/.fluxbox/keys)" ]; then
