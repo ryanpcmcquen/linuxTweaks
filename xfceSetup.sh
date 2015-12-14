@@ -39,9 +39,9 @@ xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 9"
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -s /usr/bin/xfce4-terminal
 
 ## bring back the audio control
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "sh -c \"export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'\` && amixer set -c \${ALSACARDNUMBER} Master toggle\""
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>O" -t string -s "sh -c \"export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'\` && amixer set -c \${ALSACARDNUMBER} Master 5%- unmute\""
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>P" -t string -s "sh -c \"export ALSACARDNUMBER=\`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'\` && amixer set -c \${ALSACARDNUMBER} Master 5%+ unmute\""
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "sh -c \"amixer set -c \`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'\` Master toggle\""
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>O" -t string -s "sh -c \"amixer set -c \`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'\` Master 5%- unmute\""
+xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>P" -t string -s "sh -c \"amixer set -c \`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'\` Master 5%+ unmute\""
 
 ## screenshots for all!
 ## grab my screenshot save script:
