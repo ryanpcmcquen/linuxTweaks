@@ -47,13 +47,13 @@
   XF86MonBrightnessDown
 
 ## audio!
-"export ALSACARDNUMBER=`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` && amixer set -c ${ALSACARDNUMBER} Master 5%+ unmute"
+"amixer set -c `aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` Master 5%+ unmute"
   XF86AudioRaiseVolume
 
-"export ALSACARDNUMBER=`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` && amixer set -c ${ALSACARDNUMBER} Master 5%- unmute"
+"amixer set -c `aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` Master 5%- unmute"
   XF86AudioLowerVolume
 
-"export ALSACARDNUMBER=`aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` && amixer set -c ${ALSACARDNUMBER} Master toggle"
+"amixer set -c `aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` Master toggle"
   XF86AudioMute
 
 ## screenshots!
