@@ -70,13 +70,8 @@ endif
 "" display filename in vim
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
-"" make gvim use the system clipboard
-"" if support is available
-if has('unnamedplus')
-  set clipboard+=unnamedplus
-else
-  set clipboard+=unnamed
-endif
+"" make vim use the system clipboard
+set clipboard^=unnamed,unnamedplus
 
 "" delete to the blackhole register,
 "" keeps you from pasting deleted text
