@@ -70,6 +70,22 @@ endif
 "" display filename in vim
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
+"" make gvim use the system clipboard
+"" if support is available
+if has('unnamedplus')
+  set clipboard+=unnamedplus
+else
+  set clipboard+=unnamed
+endif
+
+"" delete to the blackhole register,
+"" keeps you from pasting deleted text
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
+
+"" enable mouse usage
+set mouse=a
+
 "" i just include my theme below,
 "" rather than having to download
 "" anything else  ;^)
