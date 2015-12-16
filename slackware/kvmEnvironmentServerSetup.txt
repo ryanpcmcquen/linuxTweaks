@@ -2,6 +2,9 @@ thanks to willysr
 
 install lilo di VM Guest ('di' is indonesian for 'at')
 
+run the 'simple' lilo install in the installer, which will set up a lilo.conf for you,
+but it will fail, don't worry ... we'll fix it post-install
+
 finish installation
 chroot /mnt
 
