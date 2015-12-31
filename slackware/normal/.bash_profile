@@ -56,6 +56,11 @@ spru() {
 alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown -h now'
 
+## fix elvis in tmux
+alias elvis='TERM=xterm elvis'
+alias vi='TERM=xterm elvis'
+alias ex='TERM=xterm elvis'
+
 ## make .bash_history work in tmux /
 ## across multiple terminals
 shopt -s histappend
