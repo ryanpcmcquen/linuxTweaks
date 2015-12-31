@@ -60,6 +60,15 @@ slu() {
 
 LFS=/mnt/lfs
 
+###############
+##  aliases  ##
+###############
+
+## fix elvis in tmux
+alias elvis='TERM=xterm elvis'
+alias vi='TERM=xterm elvis'
+alias ex='TERM=xterm elvis'
+
 ## make .bash_history work in tmux /
 ## across multiple terminals
 shopt -s histappend
