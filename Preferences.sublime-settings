@@ -1,27 +1,13 @@
 {
   "always_show_minimap_viewport": true,
   "auto_complete_commit_on_tab": true,
-  "color_scheme": "Packages/User/plain.tmTheme",
   "default_line_ending": "unix",
-  "font_face": "Terminus",
-  "font_options":
-  [
-    "no_antialias"
-  ],
-  "font_size": 16,
-  "ignored_packages":
-  [
-  ],
   "margin": 2,
-  "numix_sidebar_tree_xsmall": true,
-  "numix_xsmall_tabs": true,
   "show_encoding": true,
   "show_full_path": true,
   "show_line_endings": true,
   "tab_size": 2,
-  "theme": "Numix.sublime-theme",
   "translate_tabs_to_spaces": true,
-  "vintageous_use_ctrl_keys": true,
   "trim_trailing_white_space_on_save": true,
   "fallback_encoding": "UTF-8",
   "default_encoding": "UTF-8",
