@@ -47,13 +47,13 @@
   XF86MonBrightnessDown
 
 ## audio!
-"amixer set -c `aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` Master 5%+ unmute"
+"pamixer -i 5"
   XF86AudioRaiseVolume
 
-"amixer set -c `aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` Master 5%- unmute"
+"pamixer -d 5"
   XF86AudioLowerVolume
 
-"amixer set -c `aplay -l | grep Analog | head -1 | cut -d: -f1 | sed 's/card //g'` Master toggle"
+"pamixer -t"
   XF86AudioMute
 
 ## screenshots!
