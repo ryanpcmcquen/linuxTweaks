@@ -40,9 +40,6 @@ sed -i.bak 's@^# idesk &@\
 if [ -x /etc/rc.d/rc.networkmanager ]; then \
   nm-applet \&\
 fi \
-if [ -x /etc/rc.d/rc.wicd ]; then \
-  wicd-client -t \&\
-fi \
 if [ -e /usr/bin/compton ]; then \
   compton \&\
 fi \
