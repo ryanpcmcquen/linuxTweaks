@@ -77,3 +77,5 @@ for DIR in /usr/local/*/bin
   do PATH="$DIR:$PATH"
 done
 
+## add ~/bin/ to PATH only if it exists, and isn't already in $PATH
+[ -d $HOME/bin/ ] && [ -z "$(echo $PATH | grep $HOME)" ] && PATH=$HOME/bin:"$PATH"
