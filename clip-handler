@@ -1,0 +1,17 @@
+#!/bin/sh
+## REQUIRES xclip
+##
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/clip-handler -P /usr/local/bin; chmod 755 /usr/local/bin/clip-handler
+##
+## work around for annoying xdg defaults
+##
+## i use this for a mailto: handler,
+## but it should be able to process any url
+## and will remove spaces from mailto:
+## links *only*
+
+CLIPSTORE="$@"
+if [ "`echo -n $CLIPSTORE | egrep -s '^mailto:'`" ]; then
+  CLIPSTORE="`echo -n $CLIPSTORE | sed 's/%20/ /g'`"
+fi
+echo -n "$CLIPSTORE" | xclip -selection c
