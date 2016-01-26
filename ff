@@ -1,3 +1,3 @@
 #!/bin/sh
-## make firefox less annoying
-/usr/bin/firefox -setDefaultBrowser "$@"
+## fast fox!
+/usr/bin/firefox "$@"
