@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/windowmakerSetup.sh | sh
+## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.windowmakerSetup.sh | sh
 
 ## everyone loves the terminal, says the unix nerd
 if [ -z "$(grep 'Mod1+F1' ~/GNUstep/Defaults/WMRootMenu)" ]; then
