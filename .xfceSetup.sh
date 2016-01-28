@@ -5,9 +5,10 @@
 ## thanks to @bfanning
 ## only one panel!
 xfconf-query -n -a -c xfce4-panel -p /panels -t int -s 0
+## this has to match the number of plugins below
 xfconf-query --create --channel xfce4-panel --property /panels/panel-0/plugin-ids \
-  --type int --type int --type int --type int --type int --type int --type int \
-  --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7
+  --type int --type int --type int --type int --type int --type int --type int --type int \
+  --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7 --set 8
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/length -t int -s 100
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/size -t int -s 32
 xfconf-query -n -c xfce4-panel -p /panels/panel-0/position -t string -s "p=6;x=0;y=0"
