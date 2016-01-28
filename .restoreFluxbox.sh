@@ -1,5 +1,5 @@
 #!/bin/sh
-# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/restoreFluxbox.sh | sh
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.restoreFluxbox.sh | sh
 
 
 if [ "`find /var/log/packages/ -name tinyterm-*`" ]; then
