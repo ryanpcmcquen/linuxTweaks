@@ -38,11 +38,6 @@ xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 9"
 ## we need the terminal quickly!
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -s /usr/bin/xfce4-terminal
 
-## bring back the audio control
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>P" -t string -s "sh -c \"pamixer -i 5\""
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt><Shift>O" -t string -s "sh -c \"pamixer -d 5\""
-xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/XF86AudioMute" -t string -s "sh -c \"pamixer -t\""
-
 ## screenshots for all!
 ## grab my screenshot save script:
 ## https://github.com/ryanpcmcquen/linuxTweaks/blob/master/xfceScreenshotSaver
@@ -71,7 +66,8 @@ xfconf-query -n -c xfce4-panel -p /plugins/plugin-3 -t string -s separator
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-4 -t string -s pager
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-5 -t string -s clock
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-6 -t string -s systray
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-7 -t string -s actions
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-7 -t string -s pulseaudio
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-8 -t string -s actions
 
 ## make the top panel beautiful
 ## applications menu
