@@ -1,6 +1,6 @@
 #!/bin/sh
 
-##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | sh
+##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh | sh
 
 ## determine kde version and configure based on that
 if [ "`which kwriteconfig5`" ]; then
