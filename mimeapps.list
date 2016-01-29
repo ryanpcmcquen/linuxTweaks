@@ -1,5 +1,8 @@
 [Default Applications]
+application/pdf=mozilla-firefox.desktop
 x-scheme-handler/mailto=clip-handler.desktop
+inode/directory=Thunar-folder-handler.desktop
+application/x-directory=Thunar-folder-handler.desktop
 text/css=gvim.desktop
 text/csv=gvim.desktop
 text/plain=gvim.desktop
