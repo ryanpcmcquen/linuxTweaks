@@ -12,15 +12,6 @@ else
   /g' ~/.fluxbox/keys
 fi
 
-## dolphin is way too slow to start in fluxbox  :-)
-if [ -e /usr/share/applications/spacefm-folder-handler.desktop ]; then
-  xdg-mime default spacefm-folder-handler.desktop inode/directory
-  xdg-mime default spacefm-folder-handler.desktop application/x-directory
-else
-  xdg-mime default Thunar-folder-handler.desktop inode/directory
-  xdg-mime default Thunar-folder-handler.desktop application/x-directory
-fi
-
 ## add additional audio keys, verify with xev
 sed -i.bak 's@^176 :Exec amixer sset.*@123 :Exec pamixer -i 5\
 176 :Exec pamixer -i 5@g' ~/.fluxbox/keys
