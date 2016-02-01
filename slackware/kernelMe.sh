@@ -121,13 +121,14 @@ CWD='/usr/src'
 cd $CWD
 
 ## grab the kernel
-wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz -P /usr/src/ \
-  || wget -N https://www.kernel.org/pub/linux/kernel/v4.x/linux-$VERSION.tar.xz -P /usr/src/ \
-  || wget -N https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-$VERSION.tar.xz -P /usr/src/
+wget -N https://www.kernel.org/pub/linux/kernel/v4.x/linux-$VERSION.tar.xz -P /usr/src/ \
+  || wget -N https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-$VERSION.tar.xz -P /usr/src/ \
+  || wget -N https://www.kernel.org/pub/linux/kernel/v3.x/linux-$VERSION.tar.xz -P /usr/src/
 
 ## check if wget failed
 if [ $? -ne 0 ]; then
   echo "Version number is bunk, try again."
+  echo
   exit 1
 fi
 
