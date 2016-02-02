@@ -10,7 +10,4 @@ fi
 if [ -e /usr/bin/xbindkeys ]; then
   xbindkeys &
 fi
-if [ -e /usr/bin/CopyAgent ]; then
-  CopyAgent &
-fi
 
