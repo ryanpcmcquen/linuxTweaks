@@ -35,9 +35,6 @@ if [ -e /usr/bin/compton ]; then \
   compton \&\
 fi \
 gkrellm \&\
-if [ -e /usr/bin/CopyAgent ]; then \
-  CopyAgent \&\
-fi \
 fbsetbg -l\
 @g' ~/.fluxbox/startup
 
