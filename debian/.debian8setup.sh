@@ -1,5 +1,5 @@
 #!/bin/sh
-## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/.debian8setup.sh | sh
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/.debian8setup.sh -P ~/; sh ~/.debian8setup.sh
 ## basically just gnome and git/vim stuff
 
 ## thanks to @fmuellner
