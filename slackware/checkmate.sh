@@ -1,10 +1,10 @@
 #!/bin/sh
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/checkmate.sh -P ~/msb/
 
-## run with TESTING=yes for testing pkgs
-TESTING=${TESTING:-no}
 ## run with EXTRA=no to skip 'extra' pkgs
 EXTRA=${EXTRA:-yes}
+## run with TESTING=yes for testing pkgs
+TESTING=${TESTING:-no}
 ## ensure all packages are built with BUILDALL=yes
 BUILDALL=${BUILDALL:-no}
 ## detect gtk version for mate-themes package
