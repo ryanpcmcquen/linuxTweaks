@@ -18,13 +18,13 @@ sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
 
 ## google chrome
 if [ "`uname -m`" = "x86_64" ]; then
-  wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -P ~/Downloads/
-  sudo dnf -y install ~/Downloads/google-chrome-stable_current_x86_64.rpm \
-    || sudo yum -y install ~/Downloads/google-chrome-stable_current_x86_64.rpm
+  wget -N https://dl.google.com/linux/direct/google-chrome-beta_current_x86_64.rpm -P ~/Downloads/
+  sudo dnf -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm \
+    || sudo yum -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm
 else
-  wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_i386.rpm -P ~/Downloads/
-  sudo dnf -y install ~/Downloads/google-chrome-stable_current_i386.rpm \
-    || sudo yum -y install ~/Downloads/google-chrome-stable_current_i386.rpm
+  wget -N https://dl.google.com/linux/direct/google-chrome-beta_current_i386.rpm -P ~/Downloads/
+  sudo dnf -y install ~/Downloads/google-chrome-beta_current_i386.rpm \
+    || sudo yum -y install ~/Downloads/google-chrome-beta_current_i386.rpm
 fi
 
 echo
