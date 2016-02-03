@@ -2,7 +2,7 @@
 ## sets up ssh stuff, some bash goodies,
 ## and a vimrc w/ theme, should work on any linux
 
-## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/genericLinuxConfig.sh | sh
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
 
 
 ## my ssh key
@@ -59,6 +59,10 @@ if [ -e $HOME/.bashrc ]; then
     echo 'for DIR in /usr/local/*/bin' >> ~/${BASHFILE}
     echo '  do PATH="$DIR:$PATH"' >> ~/${BASHFILE}
     echo 'done' >> ~/${BASHFILE}
+    echo >> ~/${BASHFILE}
+    echo '## add ~/bin/ to PATH only if it exists, and is not already in $PATH' >> ~/${BASHFILE}
+    echo '[ -d $HOME/bin/ ] && [ -z "$(echo $PATH | grep $HOME)" ] && PATH=$HOME/bin:"$PATH"' >> ~/${BASHFILE}
+    echo >> ~/${BASHFILE}
     echo
     echo "Enjoy your new PATH goodies!"
     echo
