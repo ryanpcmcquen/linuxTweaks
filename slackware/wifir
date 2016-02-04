@@ -8,7 +8,7 @@
 ## put it in /usr/local/bin/ and chmod +x it,
 ## it will be your new best friend
 ##
-## run like so:
+## run it like so:
 ##   wifir SSID PASSPHRASE
 ##
 
@@ -33,6 +33,8 @@ if [ -z "${1}" ]; then
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
     wpa_wifir_connect_bot ${NETWORK}
   done
+elif [ "${1}" = "-s" ]; then
+  iwlist wlan0 scan | grep ESSID
 elif [ "${1}" ] && [ -z "${2}" ]; then
   wpa_wifir_connect_bot ${WIFIRCONF}
 elif [ "${2}" ]; then
