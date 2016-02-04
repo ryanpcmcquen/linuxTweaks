@@ -1,0 +1,11 @@
+#!/bin/sh
+## wifir
+## pronounced wifi-er
+WIFICONF="$HOME/.wifir/.${1}.conf"
+
+[ -x /etc/rc.d/rc.networkmanager ] && echo "NetworkManager is executable, please disable it and stop the service."
+mkdir -p $HOME/.wifir/
+pkill wpa_supplicant
+wpa_passphrase "${1}" "${2}" > ${WIFICONF}
+wpa_supplicant -B -c ${WIFICONF} -i wlan0 -D wext
+dhclient
