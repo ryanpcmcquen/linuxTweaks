@@ -12,7 +12,7 @@
 ##   wifir SSID PASSPHRASE
 ##
 
-WIFICONF="$HOME/.wifir/${1}.conf"
+WIFIRCONF="$HOME/.wifir/${1}.conf"
 
 wpa_wifir_connect_bot () {
   echo "Connecting to ${1} ... "
@@ -33,9 +33,11 @@ if [ -z "${1}" ]; then
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
     wpa_wifir_connect_bot ${NETWORK}
   done
+elif [ "${1}" ] && [ -z "${2}" ]; then
+  wpa_wifir_connect_bot ${WIFIRCONF}
 elif [ "${2}" ]; then
-  wpa_passphrase "${1}" "${2}" > ${WIFICONF}
-  wpa_wifir_connect_bot ${WIFICONF}
+  wpa_passphrase "${1}" "${2}" > ${WIFIRCONF}
+  wpa_wifir_connect_bot ${WIFIRCONF}
 else
   echo "Please check the source, you have supplied an invalid argument."
   exit 1
