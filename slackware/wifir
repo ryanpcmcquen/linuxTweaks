@@ -59,13 +59,16 @@ elif [ "${1}" = "-h" ]; then
   echo "To connect to a network, run:"
   echo "  wifir ESSID PASSPHRASE"
   echo
-  echo "For instance, if you network was called 'foo', and your passphrase was 'bar':"
+  echo "For instance, if you network was called 'foo',"
+  echo "and your passphrase was 'bar':"
   echo "  wifir foo bar"
   echo
-  echo "This will connect you to 'foo', and store the configuration for foo in '\$HOME/.wifir/foo.conf'."
+  echo "This will connect you to 'foo', and store the"
+  echo "configuration for foo in '\$HOME/.wifir/foo.conf'."
   echo
-  echo "If you have previously used wifir, you may just run \`wifir\`, and it will attempt"
-  echo "to connect to any stored configurations in '\$HOME/.wifir/'."
+  echo "If you have previously used wifir, you may"
+  echo "just run \`wifir\`, and it will attempt to connect"
+  echo "to any stored configurations in '\$HOME/.wifir/'."
   echo
   echo
   exit 0
