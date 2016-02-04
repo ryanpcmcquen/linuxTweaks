@@ -2,6 +2,9 @@
 ## wifir
 ## pronounced wifi-er
 ##
+## DOWNLOAD/INSTALL:
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/wifir -P /usr/local/bin && chmod +x /usr/local/bin/wifir
+##
 ## put it in /usr/local/bin/ and chmod +x it,
 ## it will be your new best friend
 ##
