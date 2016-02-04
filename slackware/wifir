@@ -1,11 +1,39 @@
 #!/bin/sh
 ## wifir
 ## pronounced wifi-er
-WIFICONF="$HOME/.wifir/.${1}.conf"
+##
+## put it in /usr/local/bin/ and chmod +x it,
+## it will be your new best friend
+##
+## run like so:
+##   wifir SSID PASSPHRASE
+##
 
-[ -x /etc/rc.d/rc.networkmanager ] && echo "NetworkManager is executable, please disable it and stop the service."
+WIFICONF="$HOME/.wifir/${1}.conf"
+
+wpa_wifir_connect_bot () {
+  echo "Connecting to ${1} ... "
+  wpa_supplicant -B -c "${1}" -i wlan0 -D wext
+  dhclient
+}
+
+## check for networkmanager so we don't
+## have a conflict of interest
+[ -x /etc/rc.d/rc.networkmanager ] \
+  && echo "NetworkManager is executable, please disable it and stop the service." \
+  && exit 1
+
 mkdir -p $HOME/.wifir/
 pkill wpa_supplicant
-wpa_passphrase "${1}" "${2}" > ${WIFICONF}
-wpa_supplicant -B -c ${WIFICONF} -i wlan0 -D wext
-dhclient
+rfkill unblock all
+if [ -z "${1}" ]; then
+  for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
+    wpa_wifir_connect_bot ${NETWORK}
+  done
+elif [ "${2}" ]; then
+  wpa_passphrase "${1}" "${2}" > ${WIFICONF}
+  wpa_wifir_connect_bot ${WIFICONF}
+else
+  echo "Please check the source, you have supplied an invalid argument."
+  exit 1
+fi
