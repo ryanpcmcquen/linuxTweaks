@@ -12,6 +12,14 @@
 ##   wifir -h
 ##
 
+## make sure we are root!
+if [ ! $UID = 0 ]; then
+  cat << EOF
+This script must be run as root.
+EOF
+  exit 1
+fi
+
 WIFIRCONF="$HOME/.wifir/${1}.conf"
 
 wpa_wifir_connect_bot () {
@@ -30,6 +38,16 @@ wpa_wifir_connect_bot () {
 
 mkdir -p $HOME/.wifir/
 
+
+
+echo "           _    __   _       "
+echo " __ __ __ (_)  / _| (_)  _ _ "
+echo " \ V  V / | | |  _| | | | '_|"
+echo "  \_/\_/  |_| |_|   |_| |_|  "
+echo "                             "
+
+
+
 if [ -z "${1}" ]; then
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
     wpa_wifir_connect_bot ${NETWORK}
@@ -46,19 +64,19 @@ elif [ "${1}" = "-h" ]; then
   echo
   echo "This will connect you to 'foo', and store the configuration for foo in '\$HOME/.wifir/foo.conf'."
   echo
-  echo "If you have previously used wifir, you may just run `wifir`, and it will attempt"
+  echo "If you have previously used wifir, you may just run \`wifir\`, and it will attempt"
   echo "to connect to any stored configurations in '\$HOME/.wifir/'."
   echo
   echo
   exit 0
-elif [ "${1}" = "-s" ] && [ ! "${1}" = "-h" ]; then
+elif [ "${1}" = "-s" ]; then
   iwlist wlan0 scan | grep ESSID
-elif [ "${1}" ] && [ -z "${2}" ] && [ ! "${1}" = "-h" ]; then
+elif [ "${1}" ] && [ -z "${2}" ]; then
   wpa_wifir_connect_bot ${WIFIRCONF} &
 elif [ "${2}" ]; then
   wpa_passphrase "${1}" "${2}" > ${WIFIRCONF}
   wpa_wifir_connect_bot ${WIFIRCONF} &
 else
-  echo "You have supplied an invalid argument. Run `wifir -h` for help."
+  echo "You have supplied an invalid argument. Run \`wifir -h\` for help."
   exit 1
 fi
