@@ -1,5 +1,5 @@
 #!/bin/sh
-## wifir
+## wifir, an easy way to WPA
 ## pronounced wifi-er
 ##
 ## DOWNLOAD/INSTALL:
@@ -8,13 +8,15 @@
 ## put it in /usr/local/bin/ and chmod +x it,
 ## it will be your new best friend
 ##
-## run it like so:
-##   wifir SSID PASSPHRASE
+## for help on how to use it run:
+##   wifir -h
 ##
 
 WIFIRCONF="$HOME/.wifir/${1}.conf"
 
 wpa_wifir_connect_bot () {
+  pkill wpa_supplicant
+  rfkill unblock all
   echo "Connecting to ${1} ... "
   wpa_supplicant -B -c "${1}" -i wlan0 -D wext
   dhclient
@@ -27,12 +29,27 @@ wpa_wifir_connect_bot () {
   && exit 1
 
 mkdir -p $HOME/.wifir/
-pkill wpa_supplicant
-rfkill unblock all
+
 if [ -z "${1}" ]; then
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
     wpa_wifir_connect_bot ${NETWORK}
   done
+elif [ "${1}" = "-h" ]; then
+  echo
+  echo "Thank you for choosing wifir!"
+  echo
+  echo "To connect to a network, run:"
+  echo "  wifir ESSID PASSPHRASE"
+  echo
+  echo "For instance, if you network was called 'foo', and your passphrase was 'bar':"
+  echo "  wifir foo bar"
+  echo
+  echo "This will connect you to 'foo', and store the configuration for foo in '\$HOME/.wifir/foo.conf'."
+  echo
+  echo "If you have previously used wifir, you may just run `wifir`, and it will attempt"
+  echo "to connect to any stored configurations in '\$HOME/.wifir/'."
+  echo
+  echo
 elif [ "${1}" = "-s" ]; then
   iwlist wlan0 scan | grep ESSID
 elif [ "${1}" ] && [ -z "${2}" ]; then
@@ -41,6 +58,6 @@ elif [ "${2}" ]; then
   wpa_passphrase "${1}" "${2}" > ${WIFIRCONF}
   wpa_wifir_connect_bot ${WIFIRCONF}
 else
-  echo "Please check the source, you have supplied an invalid argument."
+  echo "You have supplied an invalid argument. Run `wifir -h` for help."
   exit 1
 fi
