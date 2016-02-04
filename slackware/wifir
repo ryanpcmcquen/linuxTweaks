@@ -50,7 +50,7 @@ echo "                             "
 
 if [ -z "${1}" ]; then
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
-    wpa_wifir_connect_bot ${NETWORK}
+    wpa_wifir_connect_bot ${NETWORK} && exit 0
   done
 elif [ "${1}" = "-h" ]; then
   echo
