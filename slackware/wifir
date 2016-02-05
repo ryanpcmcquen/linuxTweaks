@@ -27,8 +27,7 @@ wpa_wifir_connect_bot () {
   rfkill unblock all
   echo "Connecting to ${1} ... "
   wpa_supplicant -B -c "${1}" -i wlan0 -D wext
-  dhcpcd
-  dhclient
+  dhclient wlan0 || dhcpcd
 }
 
 ## check for networkmanager so we don't
