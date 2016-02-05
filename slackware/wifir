@@ -49,6 +49,9 @@ echo "                             "
 
 
 if [ -z "${1}" ]; then
+  ## attempt to connect to any previously stored configurations
+  ## we tie an exit to it so if the connection is successful,
+  ## it won't keep looping through all your .conf's
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
     wpa_wifir_connect_bot ${NETWORK} && exit 0
   done
@@ -69,12 +72,35 @@ elif [ "${1}" = "-h" ]; then
   echo "just run \`wifir\`, and it will attempt to connect"
   echo "to any stored configurations in '\$HOME/.wifir/'."
   echo
+  echo "You may also specify a network by name,"
+  echo "if the configuration is already stored, \`wifir\`"
+  echo "will try to connect to it."
+  echo
+  echo "If you want to connect to an open network, just run"
+  echo "\`wifir\` like so:"
+  echo "  wifir OPENNETWORKSSID"
+  echo
+  echo "You may also run:"
+  echo "  wifir -s"
+  echo "To generate a list of wireless networks."
   echo
   exit 0
 elif [ "${1}" = "-s" ]; then
+  ## generate a list of networks
   iwlist wlan0 scan | grep ESSID
 elif [ "${1}" ] && [ -z "${2}" ]; then
-  wpa_wifir_connect_bot ${WIFIRCONF} &
+  ## if the configuration does not exist,
+  ## assume it is an open network and generate
+  ## the necessary .conf
+  if [ -e ${WIFIRCONF} ]; then
+    wpa_wifir_connect_bot ${WIFIRCONF} &
+  else
+    echo "network={" >> $HOME/.wifir/"${1}".conf
+    echo "        ssid=\"${1}\"" >> $HOME/.wifir/"${1}".conf
+    echo "        key_mgmt=NONE" >> $HOME/.wifir/"${1}".conf
+    echo "}" >> $HOME/.wifir/"${1}".conf
+    wpa_wifir_connect_bot ${WIFIRCONF} &
+  fi
 elif [ "${2}" ]; then
   wpa_passphrase "${1}" "${2}" > ${WIFIRCONF}
   wpa_wifir_connect_bot ${WIFIRCONF} &
