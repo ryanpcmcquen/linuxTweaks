@@ -93,17 +93,17 @@ elif [ "${1}" ] && [ -z "${2}" ]; then
   ## assume it is an open network and generate
   ## the necessary .conf
   if [ -e ${WIFIRCONF} ]; then
-    wpa_wifir_connect_bot ${WIFIRCONF} &
+    wpa_wifir_connect_bot ${WIFIRCONF}
   else
     echo "network={" >> $HOME/.wifir/"${1}".conf
     echo "        ssid=\"${1}\"" >> $HOME/.wifir/"${1}".conf
     echo "        key_mgmt=NONE" >> $HOME/.wifir/"${1}".conf
     echo "}" >> $HOME/.wifir/"${1}".conf
-    wpa_wifir_connect_bot ${WIFIRCONF} &
+    wpa_wifir_connect_bot ${WIFIRCONF}
   fi
 elif [ "${2}" ]; then
   wpa_passphrase "${1}" "${2}" > ${WIFIRCONF}
-  wpa_wifir_connect_bot ${WIFIRCONF} &
+  wpa_wifir_connect_bot ${WIFIRCONF}
 else
   echo "You have supplied an invalid argument. Run \`wifir -h\` for help."
   exit 1
