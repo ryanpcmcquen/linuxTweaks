@@ -26,8 +26,23 @@ wpa_wifir_connect_bot () {
   pkill wpa_supplicant
   rfkill unblock all
   echo "Connecting to ${1} ... "
+  echo
   wpa_supplicant -B -c "${1}" -i wlan0 -D wext
-  dhclient wlan0 || dhcpcd
+  echo
+  dhclient -1 -v wlan0
+  ## this will terminate the script,
+  ## and keep it from trying to connect
+  ## to another network after making a
+  ## successful connection
+  if [ $? -eq 0 ]; then
+    echo "************"
+    echo "*          *"
+    echo "* SUCCESS! *"
+    echo "*          *"
+    echo "************"
+    exit 0
+  fi
+  echo
 }
 
 ## check for networkmanager so we don't
@@ -39,7 +54,7 @@ wpa_wifir_connect_bot () {
 mkdir -p $HOME/.wifir/
 
 
-
+## give it some character
 echo "           _    __   _       "
 echo " __ __ __ (_)  / _| (_)  _ _ "
 echo " \ V  V / | | |  _| | | | '_|"
@@ -47,13 +62,10 @@ echo "  \_/\_/  |_| |_|   |_| |_|  "
 echo "                             "
 
 
-
 if [ -z "${1}" ]; then
   ## attempt to connect to any previously stored configurations
-  ## we tie an exit to it so if the connection is successful,
-  ## it won't keep looping through all your .conf's
   for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
-    wpa_wifir_connect_bot ${NETWORK} && exit 0
+    wpa_wifir_connect_bot ${NETWORK}
   done
 elif [ "${1}" = "-h" ]; then
   echo
