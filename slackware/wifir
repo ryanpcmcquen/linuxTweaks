@@ -37,10 +37,26 @@ wpa_wifir_connect_bot () {
   if [ $? -eq 0 ]; then
     echo "************"
     echo "*          *"
-    echo "* SUCCESS! *"
+    echo "*  EUREKA  *"
+    echo "*          *"
+    echo "*   @  @   *"
+    echo "*          *"
+    echo "*  \    /  *"
+    echo "*   \__/   *"
     echo "*          *"
     echo "************"
     exit 0
+  else
+    echo "************"
+    echo "*          *"
+    echo "*  FAILED  *"
+    echo "*          *"
+    echo "*   @  @   *"
+    echo "*    __    *"
+    echo "*   /  \   *"
+    echo "*  /    \  *"
+    echo "*          *"
+    echo "************"
   fi
   echo
 }
