@@ -60,11 +60,11 @@ elif [ "${1}" = "-h" ]; then
   echo "Thank you for choosing wifir!"
   echo
   echo "To connect to a network, run:"
-  echo "  wifir ESSID PASSPHRASE"
+  echo "  wifir \"ESSID\" \"PASSPHRASE\""
   echo
   echo "For instance, if you network was called 'foo',"
   echo "and your passphrase was 'bar', the command:"
-  echo "  wifir foo bar"
+  echo "  wifir \"foo\" \"bar\""
   echo "would connect you to 'foo', and store the"
   echo "configuration for foo in '\$HOME/.wifir/foo.conf'."
   echo
@@ -78,7 +78,7 @@ elif [ "${1}" = "-h" ]; then
   echo
   echo "If you want to connect to an open network, just run"
   echo "\`wifir\` like so:"
-  echo "  wifir OPENNETWORKSSID"
+  echo "  wifir \"OPENNETWORKSSID\""
   echo
   echo "You may also run:"
   echo "  wifir -s"
