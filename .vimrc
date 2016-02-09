@@ -187,8 +187,9 @@ hi String          guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=bl
 "" paste and then turned off after paste (even works in tmux!)
 "" this is the full plugin from:
 "" https://github.com/ConradIrwin/vim-bracketed-paste
-"" (v20150102)
+"" (v20160208)
 ""
+
 " Code from:
 " http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x
 " then https://coderwall.com/p/if9mda
@@ -215,8 +216,8 @@ function! WrapForTmux(s)
   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+let &t_ti .= WrapForTmux("\<Esc>[?2004h")
+let &t_te .= WrapForTmux("\<Esc>[?2004l")
 
 function! XTermPasteBegin(ret)
   set pastetoggle=<f29>
