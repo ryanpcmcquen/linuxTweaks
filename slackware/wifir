@@ -20,7 +20,7 @@ EOF
   exit 1
 fi
 
-WIFIRCONF="$HOME/.wifir/${1}.conf"
+WIFIRCONF="/etc/wifir/${1}.conf"
 
 wpa_wifir_connect_bot () {
   pkill wpa_supplicant
@@ -67,7 +67,7 @@ wpa_wifir_connect_bot () {
   && echo "NetworkManager is executable, please disable it and stop the service." \
   && exit 1
 
-mkdir -p $HOME/.wifir/
+mkdir -p /etc/wifir/
 
 
 ## give it some character
@@ -80,7 +80,7 @@ echo "                             "
 
 if [ -z "${1}" ]; then
   ## attempt to connect to any previously stored configurations
-  for NETWORK in `find $HOME/.wifir/ -name *.conf`; do
+  for NETWORK in `find /etc/wifir/ -name *.conf`; do
     wpa_wifir_connect_bot ${NETWORK}
   done
 elif [ "${1}" = "-h" ]; then
@@ -94,11 +94,11 @@ elif [ "${1}" = "-h" ]; then
   echo "and your passphrase was 'bar', the command:"
   echo "  wifir \"foo\" \"bar\""
   echo "would connect you to 'foo', and store the"
-  echo "configuration for foo in '\$HOME/.wifir/foo.conf'."
+  echo "configuration for foo in '/etc/wifir/foo.conf'."
   echo
   echo "If you have previously used wifir, you may"
   echo "just run \`wifir\`, and it will attempt to connect"
-  echo "to any stored configurations in '\$HOME/.wifir/'."
+  echo "to any stored configurations in '/etc/wifir/'."
   echo
   echo "You may also specify a network by name,"
   echo "if the configuration is already stored, \`wifir\`"
@@ -123,10 +123,10 @@ elif [ "${1}" ] && [ -z "${2}" ]; then
   if [ -e ${WIFIRCONF} ]; then
     wpa_wifir_connect_bot ${WIFIRCONF}
   else
-    echo "network={" >> $HOME/.wifir/"${1}".conf
-    echo "        ssid=\"${1}\"" >> $HOME/.wifir/"${1}".conf
-    echo "        key_mgmt=NONE" >> $HOME/.wifir/"${1}".conf
-    echo "}" >> $HOME/.wifir/"${1}".conf
+    echo "network={" >> /etc/wifir/"${1}".conf
+    echo "        ssid=\"${1}\"" >> /etc/wifir/"${1}".conf
+    echo "        key_mgmt=NONE" >> /etc/wifir/"${1}".conf
+    echo "}" >> /etc/wifir/"${1}".conf
     wpa_wifir_connect_bot ${WIFIRCONF}
   fi
 elif [ "${2}" ]; then
