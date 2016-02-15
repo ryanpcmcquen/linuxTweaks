@@ -20,6 +20,12 @@ EOF
   exit 1
 fi
 
+## 9 times out of 10
+## this is 'wlan0', but when it is not
+## just run `wifir` like:
+##   WIFIRMACHINE=eth1 wifir
+##
+WIFIRMACHINE=${WIFIRMACHINE:-wlan0}
 WIFIRCONF="/etc/wifir/${1}.conf"
 
 wpa_wifir_connect_bot () {
@@ -27,9 +33,9 @@ wpa_wifir_connect_bot () {
   rfkill unblock all
   echo "Connecting to ${1} ... "
   echo
-  wpa_supplicant -B -c "${1}" -i wlan0 -D wext
+  wpa_supplicant -B -c "${1}" -i ${WIFIRMACHINE} -D wext
   echo
-  dhclient -1 -v wlan0
+  dhclient -1 -v ${WIFIRMACHINE}
   ## this will terminate the script,
   ## and keep it from trying to connect
   ## to another network after making a
@@ -116,10 +122,15 @@ elif [ "${1}" = "-h" ]; then
   echo "  wifir -s"
   echo "To generate a list of wireless networks."
   echo
+  echo "If you happen to have a strange wireless setup, you"
+  echo "may specify a device other than the default (wlan0),"
+  echo "like so:"
+  echo "  WIFIRMACHINE=eth1 wifir"
+  echo
   exit 0
 elif [ "${1}" = "-s" ]; then
   ## generate a list of networks
-  iwlist wlan0 scan | grep ESSID
+  iwlist ${WIFIRMACHINE} scan | grep ESSID
 elif [ "${1}" ] && [ -z "${2}" ]; then
   ## if the configuration does not exist,
   ## assume it is an open network and generate
