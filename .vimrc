@@ -187,8 +187,9 @@ hi String          guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=bl
 "" paste and then turned off after paste (even works in tmux!)
 "" this is the full plugin from:
 "" https://github.com/ConradIrwin/vim-bracketed-paste
-"" (v20160208)
+"" (v20160216)
 ""
+
 
 " Code from:
 " http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x
@@ -206,7 +207,7 @@ if !exists("g:bracketed_paste_tmux_wrap")
 endif
 
 function! WrapForTmux(s)
-  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
+  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX') || system('tmux -V')[5] >= '2'
     return a:s
   endif
 
@@ -233,7 +234,7 @@ vmap <expr> <f28> XTermPasteBegin("c")
 cmap <f28> <nop>
 cmap <f29> <nop>
 
+
 ""
 "" fin
 ""
-
