@@ -20,6 +20,14 @@ EOF
   exit 1
 fi
 
+## check for networkmanager so we don't
+## have a conflict of interest
+[ -x /etc/rc.d/rc.networkmanager ] \
+  && echo \
+  && echo "NetworkManager conflicts with wifir, please disable it." \
+  && echo \
+  && exit 1
+
 ## 9 times out of 10
 ## this is 'wlan0', but when it is not
 ## just run `wifir` like:
@@ -70,12 +78,6 @@ wpa_wifir_connect_bot () {
   fi
   echo
 }
-
-## check for networkmanager so we don't
-## have a conflict of interest
-[ -x /etc/rc.d/rc.networkmanager ] \
-  && echo "NetworkManager is executable, please disable it and stop the service." \
-  && exit 1
 
 mkdir -p /etc/wifir/
 
