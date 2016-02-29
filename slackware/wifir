@@ -1,5 +1,5 @@
 #!/bin/sh
-## wifir v1.0.1 by ryanpcmcquen
+## wifir v1.0.2 by ryanpcmcquen
 ##
 ## wifir, an easy way to WPA
 ## pronounced wifi-er
@@ -10,7 +10,16 @@
 ## put it in /sbin/ and chmod +x it,
 ## it will be your new best friend
 ##
-## for help on how to use it run:
+## to run wifir at boot, you can do:
+##  if [ -z "$(grep wifir /etc/rc.d/rc.local)" ]; then
+##    echo >> /etc/rc.d/rc.local
+##    echo "if [ -x /sbin/wifir ]; then" >> /etc/rc.d/rc.local
+##    echo "  /sbin/wifir" >> /etc/rc.d/rc.local
+##    echo "fi" >> /etc/rc.d/rc.local
+##    echo >> /etc/rc.d/rc.local
+##  fi
+##
+## for help on how to use it, run:
 ##   wifir -h
 ##
 
@@ -81,8 +90,8 @@ wpa_wifir_connect_bot () {
   echo
 }
 
+## make a place to store confs
 mkdir -p /etc/wifir/
-
 
 ## give it some character
 echo "           _    __   _       "
@@ -115,9 +124,10 @@ elif [ "${1}" = "-h" ]; then
   echo "would connect you to 'foo', and store the"
   echo "configuration for foo in '/etc/wifir/foo.conf'."
   echo
-  echo "If you have previously used wifir, you may"
-  echo "just run \`wifir\`, and it will attempt to connect"
-  echo "to any stored configurations in '/etc/wifir/'."
+  echo "If you have previously ran wifir, you may run"
+  echo "\`wifir\` (with no arguments), and it will"
+  echo "connect to any stored configurations in"
+  echo "'/etc/wifir/', that are in range."
   echo
   echo "You may also specify a network by name,"
   echo "if the configuration is already stored, \`wifir\`"
