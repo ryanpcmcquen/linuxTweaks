@@ -1,4 +1,6 @@
 #!/bin/sh
+## wifir v1.0.0 by ryanpcmcquen
+##
 ## wifir, an easy way to WPA
 ## pronounced wifi-er
 ##
@@ -93,7 +95,9 @@ echo "                             "
 if [ -z "${1}" ]; then
   ## attempt to connect to any previously stored configurations
   for NETWORK in `find /etc/wifir/ -name *.conf`; do
-    wpa_wifir_connect_bot ${NETWORK}
+    if [ "`iwlist ${WIFIRMACHINE} scan | grep $(basename $(echo ${NETWORK} | sed 's/\.conf//g'))`" ]; then
+      wpa_wifir_connect_bot ${NETWORK}
+    fi
   done
 elif [ "${1}" = "-h" ]; then
   echo
