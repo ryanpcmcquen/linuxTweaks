@@ -1,5 +1,5 @@
 #!/bin/sh
-## wifir v1.0.0 by ryanpcmcquen
+## wifir v1.0.1 by ryanpcmcquen
 ##
 ## wifir, an easy way to WPA
 ## pronounced wifi-er
@@ -91,10 +91,13 @@ echo " \ V  V / | | |  _| | | | '_|"
 echo "  \_/\_/  |_| |_|   |_| |_|  "
 echo "                             "
 
+## we must have an interface!
+ifconfig ${WIFIRMACHINE} up
 
 if [ -z "${1}" ]; then
   ## attempt to connect to any previously stored configurations
   for NETWORK in `find /etc/wifir/ -name *.conf`; do
+    ## check if network is in range
     if [ "`iwlist ${WIFIRMACHINE} scan | grep $(basename $(echo ${NETWORK} | sed 's/\.conf//g'))`" ]; then
       wpa_wifir_connect_bot ${NETWORK}
     fi
