@@ -1,5 +1,0 @@
-#!/bin/sh
-## rc launcher for wifir
-if [ -x /sbin/wifir ]; then
-  /sbin/wifir
-fi
