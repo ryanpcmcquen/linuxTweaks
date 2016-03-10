@@ -1,6 +1,6 @@
 #!/bin/bash
 ## run as a normal user:
-## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.ubuntu1404Setup.sh -P ~/; bash ~/.ubuntu1404Setup.sh
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.ubuntu_LTS_Setup.sh -P ~/; bash ~/.ubuntu_LTS_Setup.sh
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
@@ -11,7 +11,7 @@ if [ -z "$(cat ~/.bash_aliases | grep 'alias apt')" ]; then
   echo "alias apti='sudo apt-get install -y '" >> ~/.bash_aliases
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome build-essential zlib1g-dev libsndfile1-dev libsdl1.2-dev"
+ESSENTIALPKGS="curl wget git vim vim-gnome build-essential"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
@@ -31,6 +31,11 @@ if [ `which unity` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.unitySetup.sh -P ~/; bash ~/.unitySetup.sh
 fi
 
+## only run gnome 3 setup if unity is not installed
+if [ ! `which unity` ] && [ `which gnome-shell` ]; then
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
+fi
+
 ## configure kde if present (kubuntu)
 if [ `which startkde` ]; then
   curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | bash
@@ -45,11 +50,6 @@ if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]
     sudo sh -c 'echo >> /etc/profile.d/vimDefault'
   fi
 fi
-
-## restart unity so all our settings take effect
-##if [ "$(pgrep unity)" ]; then
-  ##unity --replace
-##fi
 
 echo
 echo "    .--. "
