@@ -2,6 +2,8 @@
 ## run as a normal user:
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.ubuntu_LTS_Setup.sh -P ~/; bash ~/.ubuntu_LTS_Setup.sh
 
+## tested on 14.04 and 16.04
+
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 if [ -z "$(cat ~/.bash_aliases | grep 'alias apt')" ]; then
@@ -11,7 +13,7 @@ if [ -z "$(cat ~/.bash_aliases | grep 'alias apt')" ]; then
   echo "alias apti='sudo apt-get install -y '" >> ~/.bash_aliases
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome build-essential"
+ESSENTIALPKGS="curl wget git vim vim-gnome build-essential lftp httrack"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
