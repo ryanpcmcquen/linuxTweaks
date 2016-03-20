@@ -1,5 +1,4 @@
 #!/bin/sh
 ## thanks to Bas King
 DATE_TIME_MS=$(date +%F__%H-%M-%S-%3N)
-cp "$1" $HOME/Pictures/screenshot_${DATE_TIME_MS}.png
-rm "$1"
+mv "$1" $HOME/Pictures/screenshot_${DATE_TIME_MS}.png
