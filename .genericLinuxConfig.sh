@@ -17,7 +17,10 @@ fi
 
 ## make ssh less annoying
 if [ -z "$(grep 'SSH_AUTH_SOCK' /etc/profile)" ]; then
-  if [ ! -e /etc/profile.d/START_SSH_AGENT ]; then
+  if [ -z "`which sudo`" ]; then
+    echo "You do not have sudo, you may run this as root:"
+    echo "##echo >> /etc/profile.d/START_SSH_AGENT; echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile.d/START_SSH_AGENT; echo '  eval `ssh-agent`' >> /etc/profile.d/START_SSH_AGENT; echo '  ssh-add' >> /etc/profile.d/START_SSH_AGENT; echo 'fi' >> /etc/profile.d/START_SSH_AGENT; echo >> /etc/profile.d/START_SSH_AGENT"
+  elif [ ! -e /etc/profile.d/START_SSH_AGENT ]; then
     sudo sh -c "echo >> /etc/profile.d/START_SSH_AGENT"
     sudo sh -c "echo 'if [ -z \"\$SSH_AUTH_SOCK\" ]; then' >> /etc/profile.d/START_SSH_AGENT"
     sudo sh -c "echo '  eval \`ssh-agent\`' >> /etc/profile.d/START_SSH_AGENT"
@@ -26,6 +29,9 @@ if [ -z "$(grep 'SSH_AUTH_SOCK' /etc/profile)" ]; then
     sudo sh -c "echo >> /etc/profile.d/START_SSH_AGENT"
   fi
 fi
+
+## copy this version if you do not have sudo
+##echo >> /etc/profile.d/START_SSH_AGENT; echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile.d/START_SSH_AGENT; echo '  eval `ssh-agent`' >> /etc/profile.d/START_SSH_AGENT; echo '  ssh-add' >> /etc/profile.d/START_SSH_AGENT; echo 'fi' >> /etc/profile.d/START_SSH_AGENT; echo >> /etc/profile.d/START_SSH_AGENT
 
 ## start the ssh-agent so we can clone away without
 ## entering a passphrase several times
