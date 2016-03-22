@@ -12,11 +12,19 @@ gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH command 'gnome-terminal'
 gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH binding '<Control><Alt>t'
 gsettings set $KEYS_SCHEMA custom-keybindings "[\"$CUSTOM_PATH\"]"
 
+echo
+echo "****************************"
+echo "DETERMINING GSETTINGS PATHS:"
+echo
 ## depending on the version of gnome this can vary
 gsettings get org.gnome.desktop.peripherals.keyboard repeat \
   && INPUT_DEVICES_PATH=org.gnome.desktop.peripherals
 gsettings get org.gnome.settings-daemon.peripherals.keyboard repeat \
   && INPUT_DEVICES_PATH=org.gnome.settings-daemon.peripherals
+echo
+echo "PATH DETERMINED."
+echo "****************************"
+echo
 
 ## make the keyboard crazy fast
 gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat true
