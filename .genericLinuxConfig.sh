@@ -67,7 +67,9 @@ if [ -e $HOME/.bashrc ]; then
     echo "Enjoy your new PATH goodies!"
     echo
   else
+    echo
     echo "You already have the PATH goodies!"
+    echo
   fi
 else
   echo
