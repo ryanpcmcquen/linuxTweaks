@@ -27,7 +27,7 @@ sudo apt-get update
 sudo apt-get install -y google-chrome-beta
 
 ## retrieve git and vim settings
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
+curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
 
 if [ `which unity` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.unitySetup.sh -P ~/; bash ~/.unitySetup.sh
