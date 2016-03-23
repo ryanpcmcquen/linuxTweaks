@@ -1,7 +1,7 @@
 #!/bin/sh
 ## as normal or root user
 
-# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
 
 
 GITCONF="https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitconfig"
