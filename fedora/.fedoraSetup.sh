@@ -8,7 +8,7 @@ sudo dnf -y upgrade || sudo yum -y update
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup | bash
 
 ## retrieve git and vim settings
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
+curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
 
 ## pretty sure the first few are included, but it can't hurt
 ESSENTIALPKGS="curl wget make git vim vim-X11 gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel"
