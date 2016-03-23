@@ -26,7 +26,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 ## get vimrc, and set up git config
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitVimNORMALorROOT.sh | sh
+curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
 
 ## NOW INCLUDED IN ~/.vimrc
 ## set up my vim theme
