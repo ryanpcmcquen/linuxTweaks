@@ -43,6 +43,11 @@ if [ `which startkde` ]; then
   curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | bash
 fi
 
+## mate!
+if [ `which mate-panel` ]; then
+  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh | bash
+fi
+
 ## set vim as the default editor
 if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
   if [ ! -e /etc/profile.d/vimDefault ]; then
