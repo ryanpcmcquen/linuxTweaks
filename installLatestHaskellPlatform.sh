@@ -13,3 +13,10 @@ tar xf ~/HASKELL_TEMP/haskell-platform-*.tar.* -C ~/HASKELL_TEMP/
 
 cd ~/HASKELL_TEMP/
 ./install-haskell-platform.sh
+
+## Fix the missing libtinfo
+if [ -d /usr/lib64 ]; then
+  ln -sf /usr/lib64/libncurses.so.5 $(find /usr/local/haskell/ -type d -name rts | head -1)/libtinfo.so.5
+else
+  ln -sf /usr/lib/libncurses.so.5 $(find /usr/local/haskell/ -type d -name rts | head -1)/libtinfo.so.5
+fi
