@@ -130,6 +130,9 @@ if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
   if [ -z "$(grep 'BackgroundDarkness\=0.800000' ~/.config/xfce4/terminal/terminalrc)" ]; then
     sed -i.bak 's@BackgroundDarkness\=.*@BackgroundDarkness\=0.800000@g' ~/.config/xfce4/terminal/terminalrc
   fi
+  if [ -z "$(grep 'ColorCursor\=#000080000000' ~/.config/xfce4/terminal/terminalrc)" ]; then
+    sed -i.bak 's@ColorCursor\=.*@ColorCursor\=#000080000000@g' ~/.config/xfce4/terminal/terminalrc
+  fi
 else
   mkdir -pv ~/.config/xfce4/terminal/
   echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
@@ -137,6 +140,6 @@ else
   echo "MiscDefaultGeometry=120x40" >> ~/.config/xfce4/terminal/terminalrc
   echo "BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT" >> ~/.config/xfce4/terminal/terminalrc
   echo "BackgroundDarkness=0.800000" >> ~/.config/xfce4/terminal/terminalrc
+  echo "ColorCursor=#000080000000" >> ~/.config/xfce4/terminal/terminalrc
 fi
-
 
