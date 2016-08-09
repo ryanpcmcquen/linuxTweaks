@@ -27,6 +27,10 @@ if [ -z "$(grep 'xbacklight -dec' ~/.fluxbox/keys)" ]; then
   echo "233 :Exec xbacklight -inc 10" >> ~/.fluxbox/keys
 fi
 
+if [ -z "$(grep 'Exec import' ~/.fluxbox/keys)" ]; then
+  echo 'Print :Exec import screenshot_$(date +%F__%H-%M-%S-%3N).png' >> ~/.fluxbox/keys
+fi
+
 sed -i.bak 's@^# idesk &@\
 if [ -x /etc/rc.d/rc.networkmanager ]; then \
   nm-applet \&\
