@@ -42,8 +42,8 @@ if [ -e $HOME/.bashrc ]; then
   ## make ssh less annoying
   if [ -z "$(grep 'SSH_AUTH_SOCK' ${BASHFILE})" ]; then
     echo >> ~/${BASHFILE}
-    echo 'if [ -z \"\$SSH_AUTH_SOCK\" ]; then' >> ~/${BASHFILE}
-    echo '  eval \`ssh-agent\`' >> ~/${BASHFILE}
+    echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> ~/${BASHFILE}
+    echo '  eval `ssh-agent`' >> ~/${BASHFILE}
     echo '  ssh-add' >> ~/${BASHFILE}
     echo 'fi' >> ~/${BASHFILE}
     echo >> ~/${BASHFILE}
