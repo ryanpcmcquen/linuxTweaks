@@ -21,13 +21,13 @@ sed -i.bak 's@^160 :Exec amixer sset.*@121 :Exec pamixer -t\
 160 :Exec pamixer -t@g' ~/.fluxbox/keys
 
 ## fix brightness keys
-if [ -z "$(grep 'xbacklight -dec' ~/.fluxbox/keys)" ]; then
+if [ -z "$(grep '232 :Exec' ~/.fluxbox/keys)" ]; then
   echo >> ~/.fluxbox/keys
   echo "232 :Exec xbacklight -dec 10" >> ~/.fluxbox/keys
   echo "233 :Exec xbacklight -inc 10" >> ~/.fluxbox/keys
 fi
 
-if [ -z "$(grep 'Exec import' ~/.fluxbox/keys)" ]; then
+if [ -z "$(grep 'Print :Exec' ~/.fluxbox/keys)" ]; then
   echo 'Print :Exec import screenshot_$(date +%F__%H-%M-%S-%3N).png' >> ~/.fluxbox/keys
 fi
 
