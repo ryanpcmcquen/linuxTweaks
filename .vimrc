@@ -2,12 +2,12 @@
 set nocompatible
 
 ""
-"" in '$ ~/' & '# ~/' run:
+"" In '$ ~/' & '# ~/' run:
 ""
 ""  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
 
-"" set default font size on gui
+"" Set default font size on gui:
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Monospace\ 10
@@ -23,72 +23,74 @@ if has("gui_running")
   set lines=40 columns=130
 endif
 
-"" set 2 spaces for tab globally & make indenting sane
-"" ... note that 'set paste' destroys indentation
+"" Set 2 spaces for tab globally & make indenting sane.
+"" ... note that 'set paste' destroys indentation.
 ""
-"" also, setting 'tabstop' is probelmatic, it only affects
+"" Also, setting 'tabstop' is probelmatic, it only affects
 "" how vim renders tabs, but it will still insert a tab
 "" character, you can see this by outputting the file
-"" with `cat` or a similar tool
+"" with `cat` or a similar tool.
 ""
-"" long story short, if you want *only* spaces,
-"" only set softtabstop
+"" Long story short, if you want *only* spaces,
+"" only set 'softtabstop'.
 set softtabstop=2 shiftwidth=2 smarttab expandtab autoindent
 
 "" utf-8!
 set encoding=utf-8 fileencoding=utf-8
 
-"" show line numbers and wrap code
+"" Show line numbers and wrap code:
 set number wrap
 
-"" clear out the cruft
+"" Clear out the cruft:
 set nobackup nowritebackup noswapfile noundofile
 
-"" make searching easy, and case insensitive
+"" Make searching easy, and case insensitive:
 set ignorecase smartcase incsearch hlsearch
 
-"" gives you a little jazzy info on the bottom
+"" Gives you a little jazzy info on the bottom:
 set title ruler
 
-"" turn on the wildmenu, get wild!
+"" Turn on the wildmenu, get wild!
 set wildmenu
 
-"" always show mode so you know what is up
+"" Always show mode so you know what is up:
 set showmode
 
-"" unsets "last search pattern" register by hitting return
+"" Unsets "last search pattern" register by hitting return.
 nnoremap <CR> :noh<CR><CR>
 
-"" nifty shortcut for middle of line instead of middle of screen
+"" Nifty shortcut for middle of line instead of middle of screen:
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
 if &term =~ '256color'
-  "" render properly when in 256-color tmux
+  "" Render properly when in 256-color tmux:
   set t_ut=
 endif
 
-"" display filename in vim
+"" Display filename in vim:
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
-"" make vim use the system clipboard
+"" Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
 
-"" delete to the blackhole register,
-"" keeps you from pasting deleted text
+"" Delete to the blackhole register,
+"" keeps you from pasting deleted text:
 nnoremap <Leader>d "_d
 vnoremap <Leader>d "_d
 
-"" enable mouse usage
-set mouse=a
+"" Disable mouse usage.
+"" If I wanted to use the mouse, I wouldn't have learned vim!
+set mouse=
 
-"" i just include my theme below,
+"" I just include my theme below,
 "" rather than having to download
-"" anything else  ;^)
+"" anything else.  ;^)
 syntax on
 
 
 ""
-"" my vim theme (v0.1.5)
+"" My vim theme:
+"" (v0.1.5)
 "" https://github.com/ryanpcmcquen/true-monochrome_vim
 ""
 
@@ -178,14 +180,14 @@ hi Pmenu           guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=bl
 hi String          guifg=#FFFFFF    guibg=#000000    ctermfg=white    ctermbg=black    gui=NONE         cterm=NONE
 
 ""
-"" end of my stuff
+"" End of my stuff.
 ""
 
 
 ""
-"" fixes pasting in vim, so paste mode is automatically set when you
-"" paste and then turned off after paste (even works in tmux!)
-"" this is the full plugin from:
+"" Fixes pasting in vim, so paste mode is automatically set when you
+"" paste and then turned off after paste (even works in tmux!).
+"" This is the full plugin from:
 "" https://github.com/ConradIrwin/vim-bracketed-paste
 "" (v20160216)
 ""
