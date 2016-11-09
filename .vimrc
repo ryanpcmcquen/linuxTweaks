@@ -130,7 +130,7 @@ cmap <f28> <nop>
 cmap <f29> <nop>
 
 ""
-"" End of vim-bracketed-paste
+"" End of vim-bracketed-paste.
 ""
 
 
@@ -805,5 +805,5 @@ delf s:grey_number
 
 
 ""
-"" fin
+"" FIN
 ""
