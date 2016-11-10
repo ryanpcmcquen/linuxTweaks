@@ -6,11 +6,17 @@
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
-if [ -z "$(cat ~/.bash_aliases | grep 'alias apt')" ]; then
+if [ -z "$(grep 'alias apt' ~/.bash_aliases)" ]; then
   echo "## my aliases" >> ~/.bash_aliases
   echo "alias aptu='sudo apt-get update && sudo apt-get dist-upgrade -y'" >> ~/.bash_aliases
   echo "alias aptc='sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y'" >> ~/.bash_aliases
   echo "alias apti='sudo apt-get install -y '" >> ~/.bash_aliases
+fi
+
+if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
+  echo 'if [ "$DISPLAY" ]; then' >> ~/.bashrc
+  echo '  export TERM=xterm-256color' >> ~/.bashrc
+  echo 'fi' >> ~/.bashrc
 fi
 
 ESSENTIALPKGS="curl wget git vim vim-gnome build-essential lftp httrack"
