@@ -1,0 +1,21 @@
+#!/bin/sh
+
+ESSENTIALS="build-essential curl git wget"
+## Add this one when it shows up in the repo:
+## libsdl1.2-dev
+
+sudo apt-get update && sudo apt-get dist-upgrade -y
+sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
+
+sudo apt-get install $ESSENTIALS
+
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
+sh ~/.genericLinuxConfig.sh
+
+## Haskell!
+curl -sSL https://get.haskellstack.org/ | sh
+## Reset to haskell-vim-now's settings:
+ln -sf ~/.config/haskell-vim-now/.vimrc ~/
+ln -sf ~/.config/haskell-vim-now/.vim ~/
+curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
+bash /tmp/haskell-vim-now.sh
