@@ -24,3 +24,6 @@ bash /tmp/haskell-vim-now.sh
 
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/
 bash /tmp/installLatestTextadept.sh
+
+## Sets up some nice defaults for Mate, including a fast key repeat.
+curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh | sh
