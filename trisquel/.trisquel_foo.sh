@@ -1,5 +1,7 @@
 #!/bin/sh
 
+## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/; bash ~/.trisquel_foo.sh
+
 ESSENTIALS="build-essential curl git wget"
 ## Add this one when it shows up in the repo:
 ## libsdl1.2-dev
