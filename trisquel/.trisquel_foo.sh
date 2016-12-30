@@ -21,3 +21,6 @@ ln -sf ~/.config/haskell-vim-now/.vimrc ~/
 ln -sf ~/.config/haskell-vim-now/.vim ~/
 curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
 bash /tmp/haskell-vim-now.sh
+
+wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/
+bash /tmp/installLatestTextadept.sh
