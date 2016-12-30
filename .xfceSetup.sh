@@ -55,8 +55,8 @@ xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_T
 xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-Finger_Scrolling -t int -s 1 -t int -s 1
 
 ## become the flash
-xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 150
-xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s 80
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 110
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s 110
 
 ## enable font anti-aliasing
 xfconf-query -n -c xsettings -p /Xft/Antialias -t int -s 1
