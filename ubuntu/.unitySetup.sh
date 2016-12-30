@@ -13,12 +13,12 @@ gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
 ## Make the keyboard blazingly fast (old versions):
 gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat true
-gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 150
-gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 80
+gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 110
+gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 110
 ## Make the keyboard blazingly fast (new versions):
 gsettings set org.gnome.desktop.peripherals.keyboard repeat true
-gsettings set org.gnome.desktop.peripherals.keyboard delay 150
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 80
+gsettings set org.gnome.desktop.peripherals.keyboard delay 110
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 110
 ## Touchpad settings (old versions):
 gsettings set org.gnome.settings-daemon.peripherals.touchpad scroll-method 'two-finger-scrolling'
 gsettings set org.gnome.settings-daemon.peripherals.touchpad horiz-scroll-enabled true
