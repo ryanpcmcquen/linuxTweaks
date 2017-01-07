@@ -1,7 +1,7 @@
 #!/bin/sh
 
 GITNAME="Ryan P.C. McQuen"
-GITEMAIL="ryan.q@linux.com"
+GITEMAIL="ryanpcmcquen@member.fsf.org"
 ## git config
 git config --global user.name "$GITNAME"
 git config --global user.email "$GITEMAIL"
