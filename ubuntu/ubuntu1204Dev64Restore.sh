@@ -25,7 +25,7 @@ sudo apt-get update && sudo apt-get install skype ubuntu-restricted-extras libre
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
 git config --global user.name "Ryan P.C. McQuen"
-git config --global user.email "ryan.q@linux.com"
+git config --global user.email "ryanpcmcquen@member.fsf.org"
 git config --global credential.helper cache
 
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BB901940
