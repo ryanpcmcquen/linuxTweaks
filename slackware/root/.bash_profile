@@ -53,7 +53,6 @@ spru() {
 slu() {
   slackpkg update gpg && \
   slackpkg update && \
-  slackpkg install-new && \
   slackpkg upgrade-all && \
   slackpkg clean-system
 }
