@@ -10,14 +10,18 @@ set nocompatible
 "" Set 2 spaces for tab globally & make indenting sane.
 "" ... note that 'set paste' destroys indentation.
 ""
-"" Also, setting 'tabstop' is probelmatic, it only affects
+"" Also, setting 'tabstop' is probelmatic, it affects
 "" how vim renders tabs, but it will still insert a tab
-"" character, you can see this by outputting the file
-"" with `cat` or a similar tool.
+"" character in files that contain tabs, you can see this
+"" by outputting the file with `cat` or a similar tool.
 ""
 "" Long story short, if you want *only* spaces,
 "" only set 'softtabstop'.
 set softtabstop=2 shiftwidth=2 smarttab expandtab autoindent
+
+"" Allow the user to insert an actual tab with:
+""   Shift + Tab
+inoremap <S-Tab> <C-V><Tab>
 
 "" utf-8!
 set encoding=utf-8 fileencoding=utf-8
