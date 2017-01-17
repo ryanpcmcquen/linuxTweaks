@@ -47,11 +47,11 @@ fi
 ## Grab kernel page to get version numbers:
 wget https://linux-libre.fsfla.org/pub/linux-libre/releases/ -O ~/linux-libre-release-page.html
 
-grep 'gnu' linux-libre-release-page.html | tail -1 | sed 's/.*href//g' | cut -d'-' -f1 | cut -d'"' -f2 \
+grep 'gnu' ~/linux-libre-release-page.html | tail -1 | sed 's/.*href//g' | cut -d'-' -f1 | cut -d'"' -f2 \
   > ~/latestLibreKernelVersion
 
 ## Set VERSION:
-export STABLELIBREKERNEL=${STABLELIBREKERNEL="$(tr -d '\n\r' < ~/latestLibreKernelVersion)"} 
+export VERSION=${VERSION="$(tr -d '\n\r' < ~/latestLibreKernelVersion)"} 
 
 
 ## Clean up.
