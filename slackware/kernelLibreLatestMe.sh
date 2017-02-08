@@ -44,18 +44,21 @@ EOF
   exit 1
 fi
 
-## Grab kernel page to get version numbers:
-wget https://linux-libre.fsfla.org/pub/linux-libre/releases/ -O ~/linux-libre-release-page.html
+if [ -z "$1" ]; then
+  ## Grab kernel page to get version numbers:
+  wget https://linux-libre.fsfla.org/pub/linux-libre/releases/ -O ~/linux-libre-release-page.html
 
-grep 'gnu' ~/linux-libre-release-page.html | tail -1 | sed 's/.*href//g' | cut -d'-' -f1 | cut -d'"' -f2 \
-  > ~/latestLibreKernelVersion
+  grep 'gnu' ~/linux-libre-release-page.html | tail -1 | sed 's/.*href="//g' | sed 's/-gnu.*//g' \
+    > ~/latestLibreKernelVersion
 
-## Set VERSION:
-export VERSION=${VERSION="$(tr -d '\n\r' < ~/latestLibreKernelVersion)"} 
+  ## Set VERSION:
+  export VERSION=${VERSION="$(tr -d '\n\r' < ~/latestLibreKernelVersion)"}
 
-
-## Clean up.
-rm -v ~/linux-libre-release-page.html
+  ## Clean up.
+  rm -v ~/linux-libre-release-page.html
+else
+  export VERSION=${VERSION=$1}
+fi
 
 echo
 echo "-_-****************-_-"
