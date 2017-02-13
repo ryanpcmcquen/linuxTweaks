@@ -1,5 +1,7 @@
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default tab-stop-list (number-sequence 4 20000 4))
+(setq-default
+    indent-tabs-mode nil
+    tab-width 4
+    tab-stop-list (number-sequence 4 20000 4)
+    linum-format "%d "
+    )
 (global-linum-mode 1)
-(setq-default linum-format "%d ")
