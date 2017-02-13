@@ -2,3 +2,4 @@
 (setq-default tab-width 4)
 (setq-default tab-stop-list (number-sequence 4 20000 4))
 (global-linum-mode 1)
+(setq-default linum-format "%d ")
