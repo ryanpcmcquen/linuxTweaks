@@ -1,31 +1,27 @@
 #!/bin/sh
-## run as a normal user:
+## Run as a normal user:
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/.fedoraSetup.sh -P ~/; sh ~/.fedoraSetup.sh
 
-## always good to start with an update
+## Always good to start with an update.
 sudo dnf -y upgrade || sudo yum -y update
 
+## Sets up some nice Gnome defaults.
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup | bash
 
-## retrieve git and vim settings
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
+## Sets up: Git, Vim, Emacs, SSH and some nice environment goodies.
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
+sh ~/.genericLinuxConfig.sh
 
-## pretty sure the first few are included, but it can't hurt
-ESSENTIALPKGS="curl wget make git vim vim-X11 gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel"
+## Pretty sure the first few are included, but it can't hurt.
+ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel"
 
-## if dnf fails, the system is probably older
+## If dnf fails, the system is probably older.
 sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
 
-## google chrome
-if [ "`uname -m`" = "x86_64" ]; then
-  wget -N https://dl.google.com/linux/direct/google-chrome-beta_current_x86_64.rpm -P ~/Downloads/
-  sudo dnf -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm \
-    || sudo yum -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm
-else
-  wget -N https://dl.google.com/linux/direct/google-chrome-beta_current_i386.rpm -P ~/Downloads/
-  sudo dnf -y install ~/Downloads/google-chrome-beta_current_i386.rpm \
-    || sudo yum -y install ~/Downloads/google-chrome-beta_current_i386.rpm
-fi
+## Google chrome:
+wget -N https://dl.google.com/linux/direct/google-chrome-beta_current_x86_64.rpm -P ~/Downloads/
+sudo dnf -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm \
+  || sudo yum -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm
 
 echo
 echo "    .--. "
@@ -38,4 +34,3 @@ echo "\___)=(___/ "
 echo
 echo "A reboot may be necessary."
 echo
-
