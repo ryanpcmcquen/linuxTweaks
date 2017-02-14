@@ -1,6 +1,7 @@
 #!/bin/sh
 ## Sets up ssh stuff, some bash goodies,
-## and a vimrc w/ theme, should work on any linux distro.
+## and a vimrc, should work on any linux distro.
+## Also Emacs.
 
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
 
@@ -27,6 +28,9 @@ fi
 
 ## Get vimrc, and set up git config:
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
+
+## Emacs!
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs -P ~/
 
 if [ -e $HOME/.bashrc ]; then
   if [ -e $HOME/.bash_profile ]; then
