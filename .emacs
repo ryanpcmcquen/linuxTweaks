@@ -7,5 +7,5 @@
         `((".*" . ,temporary-file-directory))
     auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t))
-    )
+)
 (global-linum-mode 1)
