@@ -1,7 +1,7 @@
 (setq-default
     indent-tabs-mode nil
     tab-width 4
-    tab-stop-list (quote (4))
+    tab-stop-list (quote (4 8))
     linum-format "%d "
     backup-directory-alist
         `((".*" . ,temporary-file-directory))
