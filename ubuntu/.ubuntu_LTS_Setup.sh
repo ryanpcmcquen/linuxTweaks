@@ -19,7 +19,7 @@ if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
   echo 'fi' >> ~/.bashrc
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome build-essential libssl-dev lftp httrack"
+ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp httrack"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
@@ -92,6 +92,9 @@ if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]
     sudo sh -c 'echo >> /etc/profile.d/vimDefault'
   fi
 fi
+
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
+sh ~/.genericLinuxConfig.sh
 
 echo
 echo "    .--. "
