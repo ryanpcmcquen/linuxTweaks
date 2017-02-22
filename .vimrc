@@ -86,9 +86,8 @@ syntax on
 "" paste and then turned off after paste (even works in tmux!).
 "" This is the full plugin from:
 "" https://github.com/ConradIrwin/vim-bracketed-paste
-"" (v20160216)
+"" (v20170222)
 ""
-
 
 " Code from:
 " http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x
@@ -106,7 +105,7 @@ if !exists("g:bracketed_paste_tmux_wrap")
 endif
 
 function! WrapForTmux(s)
-  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX') || system('tmux -V')[5] >= '2'
+  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
     return a:s
   endif
 
@@ -136,7 +135,6 @@ cmap <f29> <nop>
 ""
 "" End of vim-bracketed-paste.
 ""
-
 
 " Vim color file
 "
