@@ -1,12 +1,12 @@
 #!/bin/bash
 ## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup | bash
 
-## thanks to @fmuellner
-## variables for gsettings
+## Thanks to @fmuellner.
+## Variables for gsettings:
 KEYS_SCHEMA=org.gnome.settings-daemon.plugins.media-keys
 CUSTOM_SCHEMA=${KEYS_SCHEMA}.custom-keybinding
 CUSTOM_PATH=/${CUSTOM_SCHEMA//.//}s/custom0/
-## set the terminal shortcut to ctrl+alt+t
+## Set the terminal shortcut to Ctrl+Alt+T:
 gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH name 'Terminal'
 gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH command 'gnome-terminal'
 gsettings set $CUSTOM_SCHEMA:$CUSTOM_PATH binding '<Control><Alt>t'
@@ -16,21 +16,22 @@ echo
 echo "****************************"
 echo "DETERMINING GSETTINGS PATHS:"
 echo
-## depending on the version of gnome this can vary
-gsettings get org.gnome.desktop.peripherals.keyboard repeat \
-  && INPUT_DEVICES_PATH=org.gnome.desktop.peripherals
-gsettings get org.gnome.settings-daemon.peripherals.keyboard repeat \
-  && INPUT_DEVICES_PATH=org.gnome.settings-daemon.peripherals
+## Depending on the version of gnome this can vary:
+if [ "$(gsettings get org.gnome.desktop.peripherals.keyboard repeat)" ]; then
+  INPUT_DEVICES_PATH=org.gnome.desktop.peripherals
+elif [ "$(gsettings get org.gnome.settings-daemon.peripherals.keyboard repeat)" ]; then
+  INPUT_DEVICES_PATH=org.gnome.settings-daemon.peripherals
+fi
 echo
 echo "PATH DETERMINED."
 echo "****************************"
 echo
 
-## make the keyboard crazy fast
+## Make the keyboard crazy fast:
 gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat true
 gsettings set ${INPUT_DEVICES_PATH}.keyboard delay 110
 gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat-interval 110
-## sensible touchpad defaults [these may already be set, but it cannot hurt]
+## Sensible touchpad defaults [these may already be set, but it cannot hurt]:
 gsettings set ${INPUT_DEVICES_PATH}.touchpad scroll-method 'two-finger-scrolling'
 gsettings set ${INPUT_DEVICES_PATH}.touchpad horiz-scroll-enabled true
 gsettings set ${INPUT_DEVICES_PATH}.touchpad tap-to-click false
