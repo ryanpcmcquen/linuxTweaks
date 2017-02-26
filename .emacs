@@ -20,6 +20,7 @@
     jde-basic-offset 4
     jde-tab-width 4
     js-indent-level 4
+    lisp-indent-offset 4
     lua-indent-level 4
     php-indent-offset 4
     py-indent-offset 4
