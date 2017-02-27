@@ -35,6 +35,7 @@ t)
     py-indent-offset 4
     python-indent-offset 4
     r-indent-level 4
+    sgml-basic-offset 4
     sgml-indent-level 4
     sh-basic-offset 4
     sh-tab-width 4
