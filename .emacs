@@ -13,6 +13,7 @@ t)
     tab-indent-level 4
 
     ;; A global option would be phenomenal.
+    c-basic-indent 4
     c-basic-offset 4
     c-indent-level 4
     cperl-indent-level 4
