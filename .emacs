@@ -31,7 +31,7 @@ t)
     lisp-indent-offset 4
     lua-indent-level 4
     perl-indent-level 4
-    php-indent-offset 4
+    php-mode-coding-style 'Default
     py-indent-offset 4
     python-indent-offset 4
     r-indent-level 4
