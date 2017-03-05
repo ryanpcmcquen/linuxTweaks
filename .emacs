@@ -53,6 +53,10 @@ t)
 
 (global-linum-mode 1)
 
+;; Make initial Emacs frame larger:
+(add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(height . 50))
+
 (custom-set-variables
     '(package-selected-packages (quote (php-mode org)))
 )
