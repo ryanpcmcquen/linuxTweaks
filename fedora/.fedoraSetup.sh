@@ -6,7 +6,19 @@
 sudo dnf -y upgrade || sudo yum -y update
 
 ## Sets up some nice Gnome defaults.
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup | bash
+if [ `which gnome-shell` ]; then
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
+fi
+
+## Configure KDE if present:
+if [ `which startkde` ]; then
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
+fi
+
+## Mate!
+if [ `which mate-panel` ]; then
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
+fi
 
 ## Sets up: Git, Vim, Emacs, SSH and some nice environment goodies.
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
