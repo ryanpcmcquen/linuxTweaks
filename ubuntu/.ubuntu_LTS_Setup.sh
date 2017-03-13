@@ -39,19 +39,19 @@ if [ `which unity` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.unitySetup.sh -P ~/; bash ~/.unitySetup.sh
 fi
 
-## Only run gnome 3 setup if unity is not installed.
+## Only run Gnome 3 setup if Unity is not installed.
 if [ ! `which unity` ] && [ `which gnome-shell` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
 fi
 
-## Configure kde if present (Kubuntu):
+## Configure KDE if present (Kubuntu):
 if [ `which startkde` ]; then
-  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/kdeSetup.sh | bash
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
 fi
 
 ## Mate!
 if [ `which mate-panel` ]; then
-  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh | bash
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
 fi
 
 ## nvm:
