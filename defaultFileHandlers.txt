@@ -1,8 +1,8 @@
-change the default for certain files (in my case, change from gedit to sublime text for files)
+Change the default for certain files (in my case, change from gedit to Emacs for files).
 
-hop in to these two files:
-/usr/share/applications/defaults.list - the system defaults list
-~/.local/share/applications/mimeapps.list - the user's personal desktop session defaults list
+Hop in to these two files:
+/usr/share/applications/defaults.list - The system defaults list.
+~/.local/share/applications/mimeapps.list - The user's personal desktop session defaults list.
 
-change anything that is gedit (or whatever the default text editor depending on DE)
-  to your pick (in my case sublime_text.desktop)
+Change anything that is gedit (or whatever the default text editor depending on DE),
+to your pick (in my case emacs.desktop).
