@@ -41,7 +41,7 @@ gsettings set org.mate.pluma insert-spaces true
 gsettings set org.mate.pluma tabs-size 4
 
 ## Terminal settings:
-gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ default-size-columns 140
+gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ default-size-columns 100
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ default-size-rows 40
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ use-custom-default-size true
 gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ scrollback-unlimited true
