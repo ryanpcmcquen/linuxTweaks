@@ -1,9 +1,3 @@
-(require 'package)
-(add-to-list 'package-archives
-    '("melpa-stable" . "https://stable.melpa.org/packages/")
-t)
-(package-initialize)
-
 (setq-default
     indent-tabs-mode nil
     tab-width 4
@@ -31,7 +25,6 @@ t)
     lisp-indent-offset 4
     lua-indent-level 4
     perl-indent-level 4
-    php-mode-coding-style 'Default
     py-indent-offset 4
     python-indent-offset 4
     r-indent-level 4
@@ -56,9 +49,4 @@ t)
 ;; Make initial Emacs frame larger:
 (add-to-list 'default-frame-alist '(width . 100))
 (add-to-list 'default-frame-alist '(height . 50))
-
-(custom-set-variables
-    '(package-selected-packages (quote (php-mode org)))
-)
-(custom-set-faces)
 
