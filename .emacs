@@ -40,6 +40,9 @@
         `((".*" . ,temporary-file-directory))
     auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t))
+
+    ;; Highlight code blocks in Org mode.
+    org-src-fontify-natively t
 )
 
 (electric-indent-mode 1)
