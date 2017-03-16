@@ -2,7 +2,7 @@
 
 ##  curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh | sh
 
-## determine kde version and configure based on that
+## Determine kde version and configure based on that.
 if [ "`which kwriteconfig5`" ]; then
   KWRITECONF=kwriteconfig5
   HOTKEYS="$HOME/.config/khotkeysrc"
@@ -15,19 +15,19 @@ else
   KDEVER=4
 fi
 
-## kwallet is annoying, and also makes connecting
-## to wireless networks take multiple attempts -- no thanks
+## Kwallet is annoying, and also makes connecting
+## to wireless networks take multiple attempts -- no thanks.
 $KWRITECONF --file kwalletrc --group Wallet --key "Enabled" false
 $KWRITECONF --file kwalletrc --group Wallet --key "First Use" false
 
-## set keyboard repeat/delay to blazingly fast
+## Set keyboard repeat/delay to be blazingly fast.
 $KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatDelay" 110
 $KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatRate" 110.00
 
-## make kde faster, effects are for people who have leisure time
+## Make kde faster, effects are for people who have leisure time.
 $KWRITECONF --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
-## just using more defaults in my old age
+## Just using more defaults in my old age.
 #$KWRITECONF --file kdeglobals --group "General" --key "desktopFont" "Terminus,9,-1,5,50,0,0,0,0,0"
 #$KWRITECONF --file kdeglobals --group "General" --key "fixed" "Terminus,9,-1,5,50,0,0,0,0,0"
 #$KWRITECONF --file kdeglobals --group "General" --key "font" "Terminus,9,-1,5,50,0,0,0,0,0"
@@ -39,15 +39,15 @@ $KWRITECONF --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEf
 #$KWRITECONF --file kdeglobals --group "WM" --key "activeFont" "Terminus,9,-1,5,50,0,0,0,0,0"
 #$KWRITECONF --file plasma-desktop-appletsrc --group "General" --key "fontTime" "Terminus,9,-1,5,50,0,0,0,0,0"
 
-## minimalist splash
+## Minimalist splash.
 $KWRITECONF --file startupconfig --group "ksplashrc KSplash Theme Default" --key "ksplashrc_ksplash_theme" Minimalistic
 
-## note that the theme depends on the engine setting,
-## it will not function otherwise
+## Note that the theme depends on the engine setting,
+## it will not function otherwise.
 $KWRITECONF --file ksplashrc --group "KSplash" --key "Engine" KSplashQML
 $KWRITECONF --file ksplashrc --group "KSplash" --key "Theme" Minimalistic
 
-## mostly make kwin faster, but also add wobbly windows
+## Mostly make kwin faster, but also add wobbly windows.
 $KWRITECONF --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMouse
 $KWRITECONF --file kwinrc --group "Windows" --key "AutoRaise" true
 $KWRITECONF --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
@@ -58,39 +58,39 @@ $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" tru
 $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
 $KWRITECONF --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
 $KWRITECONF --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
-## actually disable compositing, i know this renders wobbly windows useless
+## Actually disable compositing, I know this renders wobbly windows useless.
 $KWRITECONF --file kwinrc --group "Compositing" --key "Enabled" false
 
-## give less notifications
+## Give less notifications.
 $KWRITECONF --file ksmserverrc --group "General" --key "confirmLogout" false
 $KWRITECONF --file ksmserverrc --group "General" --key "shutdownType" 1
 $KWRITECONF --file ksmserverrc --group "General" --key "loginMode" default
 
-## make the kate editor a little nicer for me
+## Make the kate editor a little nicer for me:
 $KWRITECONF --file katerc --group "TipOfDay" --key "RunOnStart" false
 $KWRITECONF --file katerc --group "General" --key "Show Full Path in Title" true
 $KWRITECONF --file katerc --group "Kate Document Defaults" --key "Encoding" UTF-8
 $KWRITECONF --file katerc --group "Kate Document Defaults" --key "ReplaceTabsDyn" true
-$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Tab Handling" 2
-$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Tab Width" 2
-$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Word Wrap" true
-$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Indentation Width" 2
+$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Tab Handling" 4
+$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Tab Width" 4
+$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Indentation Width" 4
+$KWRITECONF --file katerc --group "Kate Document Defaults" --key "Word Wrap" false
 $KWRITECONF --file katerc --group "Kate Document Defaults" --key "Newline At EOF" true
 $KWRITECONF --file katerc --group "Kate Part Defaults" --key "Fallback Encoding" UTF-8
 
-## turns on example shortcuts, including: konsole = ctrl + alt + t
+## Turns on example shortcuts, including: Konsole = Ctrl + Alt + T
 sed -i.bak 's/Enabled=false/Enabled=true/g' $HOTKEYS
-## make folder view the default
+## Make folder view the default.
 sed -i.bak 's/plugin=desktop/plugin=folderview/g' $PLASMADESK
 
-## make the power settings a little more sane
+## Make the power settings a little more sane.
 $KWRITECONF --file powermanagementprofilesrc --group "AC" --group "DimDisplay" --key "idleTime" 600000
 $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "DimDisplay" --key "idleTime" 600000
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "DimDisplay" --key "idleTime" 600000
 $KWRITECONF --file powermanagementprofilesrc --group "AC" --group "DPMSControl" --key "idleTime" 600
 $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "DPMSControl" --key "idleTime" 600
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "DPMSControl" --key "idleTime" 600
-## i don't like forcing session suspension, let the user decide this
+## I do not like forcing session suspension, let the user decide this.
 ##$KWRITECONF --file powermanagementprofilesrc --group "AC" --group "SuspendSession" --key "idleTime" 600000
 ##$KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "SuspendSession" --key "idleTime" 600000
 ##$KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "SuspendSession" --key "idleTime" 600000
@@ -98,12 +98,12 @@ $KWRITECONF --file powermanagementprofilesrc --group "AC" --group "BrightnessCon
 $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "BrightnessControl" --key "value" 100
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
 
-## disable compositing, as it breaks some things ... and i am not fancy
+## Disable compositing, as it breaks some things ... and i am not fancy.
 if [ "`qdbus org.kde.kwin /KWin org.kde.KWin.compositingActive`" = true ]; then
   qdbus org.kde.kwin /KWin org.kde.KWin.toggleCompositing
 fi
 
-## restart services so that new settings take effect
+## Restart services so that new settings take effect.
 if [ "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
   qdbus org.kde.kded /kded unloadModule powerdevil
   qdbus org.kde.keyboard /modules/khotkeys reread_configuration
