@@ -7,7 +7,7 @@
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 if [ -z "$(grep 'alias apt' ~/.bash_aliases)" ]; then
-  echo "## my aliases" >> ~/.bash_aliases
+  echo "## My aliases:" >> ~/.bash_aliases
   echo "alias aptu='sudo apt-get update && sudo apt-get dist-upgrade -y'" >> ~/.bash_aliases
   echo "alias aptc='sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y'" >> ~/.bash_aliases
   echo "alias apti='sudo apt-get install -y '" >> ~/.bash_aliases
@@ -54,8 +54,15 @@ if [ `which mate-panel` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
 fi
 
+## Pantheon (Elementary OS)!
+if [ `which pantheon-greeter` ]; then
+  gsettings set org.gnome.desktop.peripherals.keyboard repeat true
+  gsettings set org.gnome.desktop.peripherals.keyboard repeat 100
+  gsettings set org.gnome.desktop.peripherals.keyboard delay 100
+fi
+
 ## nvm:
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 ## Haskell!
 curl -sSL https://get.haskellstack.org/ | sh
