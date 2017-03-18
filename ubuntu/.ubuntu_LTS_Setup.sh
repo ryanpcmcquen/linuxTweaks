@@ -7,6 +7,7 @@
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 if [ -z "$(grep 'alias apt' ~/.bash_aliases)" ]; then
+  echo >> ~/.bash_aliases
   echo "## My aliases:" >> ~/.bash_aliases
   echo "alias aptu='sudo apt-get update && sudo apt-get dist-upgrade -y'" >> ~/.bash_aliases
   echo "alias aptc='sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y'" >> ~/.bash_aliases
@@ -14,6 +15,7 @@ if [ -z "$(grep 'alias apt' ~/.bash_aliases)" ]; then
 fi
 
 if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
+  echo >> ~/.bashrc
   echo 'if [ "$DISPLAY" ]; then' >> ~/.bashrc
   echo '  export TERM=xterm-256color' >> ~/.bashrc
   echo 'fi' >> ~/.bashrc
