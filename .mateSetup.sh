@@ -14,7 +14,7 @@ gsettings set org.mate.peripherals-touchpad tap-to-click false
 
 ## This makes you look cool:
 gsettings set org.mate.peripherals-keyboard delay 110
-gsettings set org.mate.peripherals-keyboard rate 110
+gsettings set org.mate.peripherals-keyboard rate 100
 
 ## Focus follows mouse!
 gsettings set org.mate.Marco.general side-by-side-tiling true
