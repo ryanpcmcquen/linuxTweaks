@@ -21,18 +21,9 @@ if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
   echo 'fi' >> ~/.bashrc
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp httrack"
+ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp httrack chromium-browser"
 
 sudo apt-get install -y $ESSENTIALPKGS
-
-## Properly add the Google Chrome repo, and install the beta:
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-## Check for this so we don't keep adding the same line on re-runs:
-if [ -z "$(find /etc/apt/sources.list.d/ -name 'google-*')" ]; then
-  sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/google-chrome-beta.list -P /etc/apt/sources.list.d/
-fi
-sudo apt-get update
-sudo apt-get install -y google-chrome-beta
 
 ## Retrieve git and vim settings:
 curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
