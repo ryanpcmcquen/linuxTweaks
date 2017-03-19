@@ -25,15 +25,10 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gener
 sh ~/.genericLinuxConfig.sh
 
 ## Pretty sure the first few are included, but it can't hurt.
-ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel"
+ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel chromium"
 
 ## If dnf fails, the system is probably older.
 sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
-
-## Google chrome:
-wget -N https://dl.google.com/linux/direct/google-chrome-beta_current_x86_64.rpm -P ~/Downloads/
-sudo dnf -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm \
-  || sudo yum -y install ~/Downloads/google-chrome-beta_current_x86_64.rpm
 
 echo
 echo "    .--. "
