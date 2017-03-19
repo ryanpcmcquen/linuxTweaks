@@ -30,7 +30,7 @@ echo
 ## Make the keyboard crazy fast:
 gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat true
 gsettings set ${INPUT_DEVICES_PATH}.keyboard delay 110
-gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat-interval 110
+gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat-interval 100
 ## Sensible touchpad defaults [these may already be set, but it cannot hurt]:
 gsettings set ${INPUT_DEVICES_PATH}.touchpad scroll-method 'two-finger-scrolling'
 gsettings set ${INPUT_DEVICES_PATH}.touchpad horiz-scroll-enabled true
