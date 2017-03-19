@@ -60,7 +60,7 @@ fi
 if [ `which pantheon-greeter` ]; then
   gsettings set org.gnome.desktop.peripherals.keyboard repeat true
   gsettings set org.gnome.desktop.peripherals.keyboard repeat 100
-  gsettings set org.gnome.desktop.peripherals.keyboard delay 100
+  gsettings set org.gnome.desktop.peripherals.keyboard delay 110
 fi
 
 ## nvm:
