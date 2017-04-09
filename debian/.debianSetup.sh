@@ -2,9 +2,10 @@
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/.debianSetup.sh -P ~/; bash ~/.debianSetup.sh
 ## Basically just Gnome and Git/Vim/Emacs stuff.
 
-## Uncomment if you set up `sudo`:
-#sudo apt-get update && sudo apt-get dist-upgrade -y
-#sudo apt-get install git curl build-essential vim emacs
+if [ "`which sudo`" ]; then
+  sudo apt-get update && sudo apt-get dist-upgrade -y
+  sudo apt-get install git curl build-essential vim emacs
+fi
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
 
