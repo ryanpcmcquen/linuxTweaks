@@ -1,18 +1,33 @@
-#!/bin/sh
+#!/bin/bash
 
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/; bash ~/.trisquel_foo.sh
 
-ESSENTIALS="build-essential curl git wget"
+ESSENTIALS="build-essential curl git wget emacs"
 ## Add this one when it shows up in the repo:
 ## libsdl1.2-dev
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
-sudo apt-get install $ESSENTIALS
+sudo apt-get install -y $ESSENTIALS
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
 sh ~/.genericLinuxConfig.sh
+
+## Powerline fonts:
+powerline_install() {
+  cd ~/powerline-fonts/
+  git pull
+  ~/powerline-fonts/install.sh
+}
+
+if [ -d ~/powerline-fonts/ ]; then
+  powerline_install
+else
+  git clone https://github.com/powerline/fonts.git ~/powerline-fonts/
+  powerline_install
+fi
+cd
 
 ## Haskell!
 curl -sSL https://get.haskellstack.org/ | sh
