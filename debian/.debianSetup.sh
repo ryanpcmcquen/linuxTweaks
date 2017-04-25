@@ -22,8 +22,8 @@ if [ `which mate-panel` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
 fi
 
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh -P ~/; bash ~/.gitVimNORMALorROOT.sh
+## Allow remote extensions to run in Chromium.
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/chromium/enable-remote-extensions -P /etc/chromium.d/
 
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs -P ~/
-
+## Set up ssh, Vim, Emacs and more.
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
