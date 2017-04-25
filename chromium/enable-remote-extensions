@@ -1,0 +1,2 @@
+# Goes in /etc/chromium.d/:
+export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --enable-remote-extensions"
