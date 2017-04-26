@@ -16,15 +16,15 @@ sh ~/.genericLinuxConfig.sh
 
 ## Powerline fonts:
 powerline_install() {
-  cd ~/powerline-fonts/
+  cd ~/.powerline-fonts/
   git pull
-  ~/powerline-fonts/install.sh
+  ~/.powerline-fonts/install.sh
 }
 
-if [ -d ~/powerline-fonts/ ]; then
+if [ -d ~/.powerline-fonts/ ]; then
   powerline_install
 else
-  git clone https://github.com/powerline/fonts.git ~/powerline-fonts/
+  git clone https://github.com/powerline/fonts.git ~/.powerline-fonts/
   powerline_install
 fi
 cd
