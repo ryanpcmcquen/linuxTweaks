@@ -2,9 +2,7 @@
 
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/; bash ~/.trisquel_foo.sh
 
-ESSENTIALS="build-essential curl wget exuberant-ctags git vim emacs chromium-browser"
-## Add this one when it shows up in the repo:
-## libsdl1.2-dev
+ESSENTIALS="build-essential curl wget git vim emacs chromium-browser exuberant-ctags zlib1g-dev libsndfile1-dev libsdl1.2-dev"
 
 sudo add-apt-repository -y ppa:canonical-chromium-builds/stage
 sudo apt-get update && sudo apt-get dist-upgrade -y
