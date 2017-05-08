@@ -2,10 +2,11 @@
 
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/; bash ~/.trisquel_foo.sh
 
-ESSENTIALS="build-essential curl git wget emacs"
+ESSENTIALS="build-essential curl git wget vim emacs chromium-browser"
 ## Add this one when it shows up in the repo:
 ## libsdl1.2-dev
 
+sudo add-apt-repository -y ppa:canonical-chromium-builds/stage
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
