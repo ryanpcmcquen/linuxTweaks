@@ -2,7 +2,7 @@
 
 ## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/; bash ~/.trisquel_foo.sh
 
-ESSENTIALS="build-essential curl git wget vim emacs chromium-browser"
+ESSENTIALS="build-essential curl wget exuberant-ctags git vim emacs chromium-browser"
 ## Add this one when it shows up in the repo:
 ## libsdl1.2-dev
 
