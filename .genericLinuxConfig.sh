@@ -11,9 +11,9 @@ cd
 if [ ! -d ~/.ssh/ ]; then
   git clone https://ryanpcmcquen@bitbucket.org/ryanpcmcquen/.ssh.git
   chmod 700 .ssh/
-  chmod 600 .ssh/*
-  chmod 644 .ssh/id_rsa.pub
-  chmod 644 .ssh/known_hosts
+  chmod 400 .ssh/*
+  chmod 444 .ssh/id_rsa.pub
+  chmod 444 .ssh/known_hosts
 fi
 
 ## Copy this version if you do not have sudo:
