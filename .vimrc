@@ -20,8 +20,8 @@ set nocompatible
 set softtabstop=2 shiftwidth=2 smarttab expandtab autoindent
 
 "" Allow the user to insert an actual tab with:
-""   Shift + Tab
-inoremap <S-Tab> <C-V><Tab>
+""   Ctrl + T
+inoremap <C-T> <C-V><Tab>
 
 "" utf-8!
 set encoding=utf-8 fileencoding=utf-8
@@ -41,7 +41,7 @@ set title ruler
 "" Turn on the wildmenu, get wild!
 set wildmenu
 
-"" Always show mode so you know what is up:
+"" Always show the mode, so you know what is up:
 set showmode
 
 "" Unsets "last search pattern" register by hitting return.
