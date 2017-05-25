@@ -61,6 +61,7 @@ if [ -e $HOME/.bashrc ]; then
     echo >> ~/${BASHFILE}
     echo '## Add ~/bin/ to PATH only if it exists, and is not already in $PATH:' >> ~/${BASHFILE}
     echo '[ -d $HOME/bin/ ] && [ -z "$(echo $PATH | grep $HOME)" ] && PATH=$HOME/bin:"$PATH"' >> ~/${BASHFILE}
+    echo 'PATH=$HOME/.local/bin:"$PATH"' >> ~/${BASHFILE}
     echo >> ~/${BASHFILE}
     echo
     echo "Enjoy your new PATH goodies!"
