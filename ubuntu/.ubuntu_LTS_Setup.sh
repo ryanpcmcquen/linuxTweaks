@@ -21,7 +21,7 @@ if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
   echo 'fi' >> ~/.bashrc
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp httrack chromium-browser exuberant-ctags"
+ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp httrack chromium-browser exuberant-ctags python3-pip"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
