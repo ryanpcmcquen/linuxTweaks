@@ -7,17 +7,12 @@ set nocompatible
 ""  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
 
-"" Set 2 spaces for tab globally & make indenting sane.
-"" ... note that 'set paste' destroys indentation.
+"" Set 2 spaces globally & make indenting sane.
+"" ... Note that 'set paste' destroys indentation.
 ""
-"" Also, setting 'tabstop' is probelmatic, it affects
-"" how vim renders tabs, but it will still insert a tab
-"" character in files that contain tabs, you can see this
-"" by outputting the file with `cat` or a similar tool.
-""
-"" Long story short, if you want *only* spaces,
-"" only set 'softtabstop'.
-set softtabstop=2 shiftwidth=2 smarttab expandtab autoindent
+"" We could also set `tabstop`, but let's
+"" keep tabs 'natural'.
+set softtabstop=2 shiftwidth=2 expandtab autoindent
 
 "" Allow the user to insert an actual tab with:
 ""   Ctrl + T
