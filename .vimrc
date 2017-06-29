@@ -7,12 +7,12 @@ set nocompatible
 ""  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 ""
 
-"" Set 2 spaces globally & make indenting sane.
+"" Set 4 spaces globally & make indenting sane.
 "" ... Note that 'set paste' destroys indentation.
 ""
 "" We could also set `tabstop`, but let's
 "" keep tabs 'natural'.
-set softtabstop=2 shiftwidth=2 expandtab autoindent
+set softtabstop=4 shiftwidth=4 expandtab autoindent
 
 "" Allow the user to insert an actual tab with:
 ""   Ctrl + T
