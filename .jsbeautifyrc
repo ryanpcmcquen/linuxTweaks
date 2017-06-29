@@ -1,6 +1,6 @@
 {
-  "indent_size": 4,
-  "indent_with_tabs": false,
-  "jslint_happy": true,
-  "wrap_line_length": 120
+    "indent_size": 4,
+    "indent_with_tabs": false,
+    "jslint_happy": true,
+    "wrap_line_length": 120
 }
