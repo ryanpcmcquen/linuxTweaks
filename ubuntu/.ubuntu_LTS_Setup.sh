@@ -25,9 +25,6 @@ ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp
 
 sudo apt-get install -y $ESSENTIALPKGS
 
-## Retrieve git and vim settings:
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNORMALorROOT.sh | sh
-
 if [ `which unity` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.unitySetup.sh -P ~/; bash ~/.unitySetup.sh
 fi
