@@ -76,12 +76,12 @@ fi
 cd
 
 ## Link back to haskell-vim-now settings in case they were overwritten:
-ln -sf ~/.config/haskell-vim-now/.vimrc ~/
-ln -sf ~/.config/haskell-vim-now/.vim ~/
+#ln -sf ~/.config/haskell-vim-now/.vimrc ~/
+#ln -sf ~/.config/haskell-vim-now/.vim ~/
 
 ## Haskell-vim-now!
-curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
-bash /tmp/haskell-vim-now.sh
+#curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
+#bash /tmp/haskell-vim-now.sh
 
 ## Set vim as the default editor:
 if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
