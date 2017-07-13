@@ -81,7 +81,8 @@ syntax on
 "" paste and then turned off after paste (even works in tmux!).
 "" This is the full plugin from:
 "" https://github.com/ConradIrwin/vim-bracketed-paste
-"" (v20170222)
+"" (v20170614-pull33)
+"" https://github.com/ConradIrwin/vim-bracketed-paste/pull/33
 ""
 
 " Code from:
@@ -95,23 +96,8 @@ syntax on
 " Docs on mapping fast escape codes in vim
 " http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
 
-if !exists("g:bracketed_paste_tmux_wrap")
-  let g:bracketed_paste_tmux_wrap = 1
-endif
-
-function! WrapForTmux(s)
-  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
-    return a:s
-  endif
-
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
-
-let &t_ti .= WrapForTmux("\<Esc>[?2004h")
-let &t_te .= WrapForTmux("\<Esc>[?2004l")
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
 
 function! XTermPasteBegin(ret)
   set pastetoggle=<f29>
