@@ -46,8 +46,8 @@ nnoremap <CR> :noh<CR><CR>
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
 if &term =~ '256color'
-  "" Render properly when in 256-color tmux:
-  set t_ut=
+    "" Render properly when in 256-color tmux:
+    set t_ut=
 endif
 
 "" Display filename in vim:
