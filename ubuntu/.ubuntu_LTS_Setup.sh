@@ -21,7 +21,13 @@ if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
     echo 'fi' >> ~/.bashrc
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential gcc make xorg-dev libx11-dev libxrandr-dev syslinux-utils libssl-dev lftp httrack chromium-browser exuberant-ctags python3-pip"
+ESSENTIALPKGS="\
+curl wget git vim vim-gnome \
+emacs build-essential gcc make \
+xorg-dev libx11-dev libxrandr-dev \
+syslinux-utils libssl-dev lftp httrack \
+chromium-browser exuberant-ctags python3-pip \
+jpegoptim optipng pngquant gifsicle exiv2"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
@@ -56,6 +62,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
 
 # Haskell!
 curl -sSL https://get.haskellstack.org/ | sh
+
+# Imgult!
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
 
 # Powerline fonts:
 powerline_install() {
