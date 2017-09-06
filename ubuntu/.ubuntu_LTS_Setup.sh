@@ -21,7 +21,7 @@ if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
     echo 'fi' >> ~/.bashrc
 fi
 
-ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential libssl-dev lftp httrack chromium-browser exuberant-ctags python3-pip"
+ESSENTIALPKGS="curl wget git vim vim-gnome emacs build-essential gcc make xorg-dev libx11-dev libxrandr-dev syslinux-utils libssl-dev lftp httrack chromium-browser exuberant-ctags python3-pip"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
@@ -69,6 +69,11 @@ if [ -d ~/.powerline-fonts/ ]; then
 else
     git clone https://github.com/powerline/fonts.git ~/.powerline-fonts/
     powerline_install
+fi
+if [ ! -d ~/.iris/ ]; then
+    git clone https://github.com/danielng01/iris-floss.git
+    cd ~/.iris/
+    make
 fi
 cd
 
