@@ -84,6 +84,7 @@ if [ ! -d ~/.iris/ ]; then
     git clone https://github.com/danielng01/iris-floss.git .iris
     cd ~/.iris/
     make
+    sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
 fi
 cd
 
