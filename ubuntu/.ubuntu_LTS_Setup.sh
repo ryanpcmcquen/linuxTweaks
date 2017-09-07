@@ -79,8 +79,9 @@ else
     git clone https://github.com/powerline/fonts.git ~/.powerline-fonts/
     powerline_install
 fi
+cd
 if [ ! -d ~/.iris/ ]; then
-    git clone https://github.com/danielng01/iris-floss.git
+    git clone https://github.com/danielng01/iris-floss.git .iris
     cd ~/.iris/
     make
 fi
