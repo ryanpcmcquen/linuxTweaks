@@ -27,7 +27,8 @@ emacs build-essential gcc make \
 xorg-dev libx11-dev libxrandr-dev \
 syslinux-utils libssl-dev lftp httrack \
 chromium-browser exuberant-ctags python3-pip \
-jpegoptim optipng pngquant gifsicle exiv2"
+jpegoptim optipng pngquant gifsicle exiv2 \
+vlc scite"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
@@ -87,6 +88,9 @@ if [ ! -d ~/.iris/ ]; then
     sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
 fi
 cd
+
+# SciTE configuration:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
     && bash /tmp/installLatestTextadept.sh
