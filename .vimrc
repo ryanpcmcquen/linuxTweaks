@@ -1,79 +1,84 @@
 
 set nocompatible
 
-""
-"" In '$ ~/' & '# ~/' run:
-""
-""  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
-""
+"
+" In '$ ~/' & '# ~/' run:
+"
+"     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
+"
 
-"" Set 4 spaces globally & make indenting sane.
-"" ... Note that 'set paste' destroys indentation.
-""
-"" We could also set `tabstop`, but let's
-"" keep tabs 'natural'.
+" Set 4 spaces globally & make indenting sane.
+" ... Note that 'set paste' destroys indentation.
+"
+" We could also set `tabstop`, but let's
+" keep tabs 'natural'.
 set softtabstop=4 shiftwidth=4 expandtab autoindent
 
-"" Allow the user to insert an actual tab with:
-""   Ctrl + T
+" Allow the user to insert an actual tab with:
+"     Ctrl + T
 inoremap <C-T> <C-V><Tab>
 
-"" utf-8!
+" utf-8!
 set encoding=utf-8 fileencoding=utf-8
 
-"" Show line numbers and wrap code:
+" Show line numbers and wrap code:
 set number wrap
 
-"" Clear out the cruft:
+" Clear out the cruft:
 set nobackup nowritebackup noswapfile noundofile
 
-"" Make searching easy, and case insensitive:
+" Make searching easy, and case insensitive:
 set ignorecase smartcase incsearch hlsearch
 
-"" Gives you a little jazzy info on the bottom:
+" Gives you a little jazzy info on the bottom:
 set title ruler
 
-"" Turn on the wildmenu, get wild!
+" Turn on the wildmenu, get wild!
 set wildmenu
 
-"" Always show the mode, so you know what is up:
+" Always show the mode, so you know what is up:
 set showmode
 
-"" Unsets "last search pattern" register by hitting return.
+" Unsets "last search pattern" register by hitting return.
 nnoremap <CR> :noh<CR><CR>
 
-"" Nifty shortcut for middle of line instead of middle of screen:
+" Nifty shortcut for middle of line instead of middle of screen:
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
 if &term =~ '256color'
-    "" Render properly when in 256-color tmux:
+    " Render properly when in 256-color tmux:
     set t_ut=
 endif
 
-"" Display filename in vim:
+" Display filename in vim:
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
-"" Make vim use the system clipboard:
+" Make vim use the system clipboard:
 set clipboard^=unnamed,unnamedplus
 
-"" Delete to the blackhole register,
-"" keeps you from pasting deleted text:
+" Delete to the blackhole register,
+" keeps you from pasting deleted text:
 nnoremap <Leader>d "_d
 vnoremap <Leader>d "_d
 
-"" Disable mouse usage.
-"" If I wanted to use the mouse, I wouldn't have learned vim!
+" Disable mouse usage.
+" If I wanted to use the mouse, I wouldn't have learned vim!
 set mouse=
 
-"" I just include my theme below,
-"" rather than having to download
-"" anything else.  ;^)
+" I just include my theme below,
+" rather than having to download
+" anything else.  ;^)
 syntax on
 
+" Pick up PICO-8 files:
+augroup filetypedetect
+    au BufRead,BufNewFile *.p8 setfiletype lua
+augroup END
 
-""
-"" End of my stuff.
-""
+
+"
+" End of my stuff.
+"
 
 "
 " Start of `fix-vim-pasting`.
@@ -768,6 +773,6 @@ delf s:grey_level
 delf s:grey_number
 " }}}
 
-""
-"" FIN
-""
+"
+" FIN
+"
