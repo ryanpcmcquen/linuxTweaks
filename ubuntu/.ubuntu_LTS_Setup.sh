@@ -65,10 +65,14 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
 curl -sSL https://get.haskellstack.org/ | sh
 
 # Imgult!
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult \
+    && sudo install -m755 imgult /usr/local/bin/ \
+    && rm imgult
 
 # Killr!
-wget -N https://gist.githubusercontent.com/ryanpcmcquen/7f6b8e1d4f9af71070a0ec59576d4d5b/raw/killr.sh -P ~/killr && sudo install -m755 ~/killr /usr/local/bin/; rm ~/killr
+wget -N https://gist.githubusercontent.com/ryanpcmcquen/7f6b8e1d4f9af71070a0ec59576d4d5b/raw/killr -P ~/ \
+    && sudo install -m755 ~/killr /usr/local/bin/ \
+    && rm ~/killr
 
 # Powerline fonts:
 powerline_install() {
