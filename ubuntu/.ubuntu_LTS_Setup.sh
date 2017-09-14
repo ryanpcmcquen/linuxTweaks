@@ -51,6 +51,11 @@ if [ `which mate-panel` ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
 fi
 
+# Xfce!
+if [ `which startxfce4` ]; then
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.xfceSetup.sh -P ~/; bash ~/.xfceSetup.sh
+fi
+
 # Pantheon (Elementary OS)!
 if [ `which pantheon-greeter` ]; then
     gsettings set org.gnome.desktop.peripherals.keyboard repeat true
