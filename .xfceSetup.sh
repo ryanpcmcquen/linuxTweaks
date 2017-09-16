@@ -2,45 +2,47 @@
 
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.xfceSetup.sh | sh
 
-# Thanks to @bfanning.
-# Only one panel!
-xfconf-query -n -a -c xfce4-panel -p /panels -t int -s 0
-# This has to match the number of plugins below:
-xfconf-query --create --channel xfce4-panel --property /panels/panel-0/plugin-ids \
-  --type int --type int --type int --type int --type int --type int --type int \
-  --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7
-xfconf-query -n -c xfce4-panel -p /panels/panel-0/length -t int -s 100
-xfconf-query -n -c xfce4-panel -p /panels/panel-0/size -t int -s 32
-xfconf-query -n -c xfce4-panel -p /panels/panel-0/position -t string -s "p=6;x=0;y=0"
-xfconf-query -n -c xfce4-panel -p /panels/panel-0/position-locked -t bool -s true
+if [ ! `which xfce4-popup-whiskermenu` ]; then
+    # Thanks to @bfanning.
+    # Only one panel!
+    xfconf-query -n -a -c xfce4-panel -p /panels -t int -s 0
+    # This has to match the number of plugins below:
+    xfconf-query --create --channel xfce4-panel --property /panels/panel-0/plugin-ids \
+      --type int --type int --type int --type int --type int --type int --type int \
+      --set 1 --set 2 --set 3 --set 4 --set 5 --set 6 --set 7
+    xfconf-query -n -c xfce4-panel -p /panels/panel-0/length -t int -s 100
+    xfconf-query -n -c xfce4-panel -p /panels/panel-0/size -t int -s 32
+    xfconf-query -n -c xfce4-panel -p /panels/panel-0/position -t string -s "p=6;x=0;y=0"
+    xfconf-query -n -c xfce4-panel -p /panels/panel-0/position-locked -t bool -s true
 
-# Pretty much xfce defaults:
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-1 -t string -s applicationsmenu
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-2 -t string -s tasklist
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-3 -t string -s separator
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-4 -t string -s pager
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-5 -t string -s clock
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-6 -t string -s systray
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-7 -t string -s pulseaudio
+    # Pretty much xfce defaults:
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-1 -t string -s applicationsmenu
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-2 -t string -s tasklist
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-3 -t string -s separator
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-4 -t string -s pager
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-5 -t string -s clock
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-6 -t string -s systray
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-7 -t string -s pulseaudio
 
-# Make the top panel beautiful.
-# Applications menu:
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/show-button-title -t bool -s false
-# Separator:
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/style -t int -s 0
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/expand -t bool -s true
-# Window/task list:
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-2/show-labels -t bool -s false
-# Workspace pager,
-# I call this the "Theodore Ts'o" layout:
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/rows -t int -s 3
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/miniature-view -t bool -s true
-xfconf-query -n -c xfwm4 -p /general/workspace_count -t int -s 9
-# Clock (fuzzy mode):
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-5/show-frame -t bool -s false
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-5/mode -t int -s 3
-# Systray:
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-6/show-frame -t bool -s false
+    # Make the top panel beautiful.
+    # Applications menu:
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/show-button-title -t bool -s false
+    # Separator:
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/style -t int -s 0
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-3/expand -t bool -s true
+    # Window/task list:
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-2/show-labels -t bool -s false
+    # Workspace pager,
+    # I call this the "Theodore Ts'o" layout:
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/rows -t int -s 3
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-4/miniature-view -t bool -s true
+    xfconf-query -n -c xfwm4 -p /general/workspace_count -t int -s 9
+    # Clock (fuzzy mode):
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-5/show-frame -t bool -s false
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-5/mode -t int -s 3
+    # Systray:
+    xfconf-query -n -c xfce4-panel -p /plugins/plugin-6/show-frame -t bool -s false
+fi
 
 # Make window management awesome:
 xfconf-query -n -c xfwm4 -p /general/snap_to_border -t bool -s true
