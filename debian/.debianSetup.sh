@@ -3,8 +3,8 @@
 # Basically just Gnome and Git/Vim/Emacs stuff.
 # Make sure your user has `sudo` rights!
 
-# Check if user has `sudo`, otherwise just exit.
-if [ -z "`sudo -n -v 2>&1`" ]; then
+# Check if user is part of group `sudo`, otherwise just exit.
+if [ "`groups ${USER} | grep sudo`" ]; then
     AWESOMESTUFF="\
         git curl wget build-essential gcc make xorg-dev \
         libx11-dev libxrandr-dev vim emacs chromium jpegoptim \
