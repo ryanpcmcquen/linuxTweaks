@@ -5,8 +5,14 @@
 
 # Check if user has `sudo`, otherwise just exit.
 if [ -z "`sudo -n -v 2>&1`" ]; then
+    AWESOMESTUFF="\
+        git curl wget build-essential gcc make xorg-dev \
+        libx11-dev libxrandr-dev vim emacs chromium jpegoptim \
+        optipng pngquant gifsicle exiv2 \
+    "
+
     sudo apt-get update && sudo apt-get dist-upgrade -y
-    sudo apt-get install -y git curl build-essential vim emacs chromium
+    sudo apt-get install -y "${AWESOMESTUFF}"
 
     # Gnome 3 setup!
     if [ `which gnome-shell` ]; then
