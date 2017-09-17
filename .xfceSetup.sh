@@ -64,7 +64,7 @@ xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s 100
 xfconf-query -n -c xsettings -p /Xft/Antialias -t int -s 1
 
 # I love terminus!
-xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 14"
+#xfconf-query -n -c xsettings -p /Gtk/FontName -t string -s "Terminus 14"
 
 # We need the terminal quickly!
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -s /usr/bin/xfce4-terminal
@@ -126,9 +126,9 @@ fi
 
 # Make the terminal groovier:
 if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
-    if [ -z "$(grep 'FontName\=Terminus\ 14' ~/.config/xfce4/terminal/terminalrc)" ]; then
-        sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 14@g' ~/.config/xfce4/terminal/terminalrc
-    fi
+    #if [ -z "$(grep 'FontName\=Terminus\ 14' ~/.config/xfce4/terminal/terminalrc)" ]; then
+    #    sed -i.bak 's@FontName\=.*@FontName\=Terminus\ 14@g' ~/.config/xfce4/terminal/terminalrc
+    #fi
     if [ -z "$(grep 'MiscDefaultGeometry\=120x40' ~/.config/xfce4/terminal/terminalrc)" ]; then
         sed -i.bak 's@MiscDefaultGeometry\=.*@MiscDefaultGeometry\=120x40@g' ~/.config/xfce4/terminal/terminalrc
     fi
@@ -144,7 +144,7 @@ if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
 else
     mkdir -pv ~/.config/xfce4/terminal/
     echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
-    echo "FontName=Terminus 14" >> ~/.config/xfce4/terminal/terminalrc
+    #echo "FontName=Terminus 14" >> ~/.config/xfce4/terminal/terminalrc
     echo "MiscDefaultGeometry=120x40" >> ~/.config/xfce4/terminal/terminalrc
     echo "BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT" >> ~/.config/xfce4/terminal/terminalrc
     echo "BackgroundDarkness=0.800000" >> ~/.config/xfce4/terminal/terminalrc
