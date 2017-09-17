@@ -12,7 +12,7 @@ if [ -z "`sudo -n -v 2>&1`" ]; then
     "
 
     sudo apt-get update && sudo apt-get dist-upgrade -y
-    sudo apt-get install -y "${AWESOMESTUFF}"
+    sudo apt-get install -y ${AWESOMESTUFF}
 
     # Gnome 3 setup!
     if [ `which gnome-shell` ]; then
