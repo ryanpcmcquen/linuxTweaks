@@ -55,6 +55,7 @@ xfconf-query -n -c xfwm4 -p /general/click_to_focus -t bool -s false
 xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge_Scrolling -t int -s 0 -t int -s 0 -t int -s 0
 xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Tap_Action -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0 -t int -s 0
 xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Two-Finger_Scrolling -t int -s 1 -t int -s 1
+xfconf-query -n -c pointers -p /Elan_Touchpad/Properties/Tap_Enable -s 1
 
 # Become the flash:
 xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 110
