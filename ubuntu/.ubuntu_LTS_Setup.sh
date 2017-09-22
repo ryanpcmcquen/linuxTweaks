@@ -28,7 +28,7 @@ xorg-dev libx11-dev libxrandr-dev \
 syslinux-utils libssl-dev lftp httrack \
 chromium-browser exuberant-ctags python3-pip \
 jpegoptim optipng pngquant gifsicle exiv2 \
-vlc scite xfonts-terminus"
+vlc scite xfonts-terminus exfat-fuse exfat-utils"
 
 sudo apt-get install -y $ESSENTIALPKGS
 
