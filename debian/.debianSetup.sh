@@ -9,6 +9,7 @@ if [ "`groups ${USER} | grep sudo`" ]; then
         git curl wget build-essential gcc make xorg-dev \
         libx11-dev libxrandr-dev vim emacs chromium jpegoptim \
         optipng pngquant gifsicle exiv2 \
+        exfat-fuse exfat-utils \
     "
 
     sudo apt-get update && sudo apt-get dist-upgrade -y
