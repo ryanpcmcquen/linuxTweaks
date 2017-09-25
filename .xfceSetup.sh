@@ -101,8 +101,8 @@ xfconf-query -n -c xfce4-session -p /general/SaveOnExit -t bool -s false
 xfconf-query -n -c xfce4-session -p /splash/Engine -t string -s mice
 
 # Ooh, the power!
-xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -t int -s 1
-xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -t int -s 1
+# xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -t int -s 1
+# xfconf-query -n -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -t int -s 1
 
 # Set the keyboard for GalliumOS to use the
 # search key, rather than right alt, for 'Overlay'.
