@@ -110,20 +110,20 @@ if [ "`grep -i gallium /etc/os-release`" ]; then
     xfconf-query -c keyboard-layout -p /Default/XkbModel -s chromebook_m
 fi
 
-# Disable screensaver ...
-# This command does not work, but it looks good:
-xfconf-query -n -c xfce4-session -p /startup/screensaver/enabled -t bool -s false
-# This is what actually disables the screensaver:
-mkdir -pv ~/.config/autostart/
-cat <<EOT > $HOME/.config/autostart/xscreensaver.desktop
-[Desktop Entry]
-Hidden=true
-EOT
+# # Disable screensaver ...
+# # This command does not work, but it looks good:
+# xfconf-query -n -c xfce4-session -p /startup/screensaver/enabled -t bool -s false
+# # This is what actually disables the screensaver:
+# mkdir -pv ~/.config/autostart/
+# cat <<EOT > $HOME/.config/autostart/xscreensaver.desktop
+# [Desktop Entry]
+# Hidden=true
+# EOT
 
-# And we'll kill it for the current session as well.
-if [ "`which xscreensaver-command`" ]; then
-    xscreensaver-command -exit
-fi
+# # And we'll kill it for the current session as well.
+# if [ "`which xscreensaver-command`" ]; then
+#     xscreensaver-command -exit
+# fi
 
 # Make the terminal groovier:
 if [ -e ~/.config/xfce4/terminal/terminalrc ]; then
