@@ -25,10 +25,25 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gener
 sh ~/.genericLinuxConfig.sh
 
 ## Pretty sure the first few are included, but it can't hurt.
-ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ clang kernel-headers kernel-devel zlib-devel libsndfile-devel SDL-devel chromium"
+ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ \
+clang libXrandr-devel kernel-headers kernel-devel zlib-devel \
+libsndfile-devel SDL-devel scite"
 
 ## If dnf fails, the system is probably older.
 sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
+
+cd
+if [ ! -d ~/.iris/ ]; then
+    git clone https://github.com/danielng01/iris-floss.git .iris
+    cd ~/.iris/
+    make
+    sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
+fi
+cd
+
+# SciTE configuration:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
+
 
 echo
 echo "    .--. "
