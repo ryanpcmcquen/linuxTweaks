@@ -1,35 +1,36 @@
 #!/bin/sh
-## Run as a normal user:
-## wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/.fedoraSetup.sh -P ~/; sh ~/.fedoraSetup.sh
+# Run as a normal user:
+# wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/.fedoraSetup.sh -P ~/; sh ~/.fedoraSetup.sh
 
-## Always good to start with an update.
+# Always good to start with an update.
 sudo dnf -y upgrade || sudo yum -y update
 
-## Sets up some nice Gnome defaults.
+# Sets up some nice Gnome defaults.
 if [ `which gnome-shell` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
 fi
 
-## Configure KDE if present:
+# Configure KDE if present:
 if [ `which startkde` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
 fi
 
-## Mate!
+# Mate!
 if [ `which mate-panel` ]; then
   wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
 fi
 
-## Sets up: Git, Vim, Emacs, SSH and some nice environment goodies.
+# Sets up: Git, Vim, Emacs, SSH and some nice environment goodies.
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
 sh ~/.genericLinuxConfig.sh
 
-## Pretty sure the first few are included, but it can't hurt.
+# Pretty sure the first few are included, but it can't hurt.
 ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ \
 clang libXrandr-devel kernel-headers kernel-devel zlib-devel \
-libsndfile-devel SDL-devel scite"
+libsndfile-devel SDL-devel scite jpegoptim optipng pngquant \
+gifsicle exiv2"
 
-## If dnf fails, the system is probably older.
+# If dnf fails, the system is probably older.
 sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
 
 cd
@@ -44,6 +45,8 @@ cd
 # SciTE configuration:
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
+# Imgult:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
 
 echo
 echo "    .--. "
