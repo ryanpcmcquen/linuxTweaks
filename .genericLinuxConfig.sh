@@ -8,8 +8,8 @@
 
 ## My ssh key:
 cd
-if [ ! -d ~/.ssh/ ]; then
-  git clone https://ryanpcmcquen@bitbucket.org/ryanpcmcquen/.ssh.git
+if [ ! -d ~/.ssh/ ] && [ "`which run_keybase`" ]; then
+  git clone keybase://private/rpcm/.ssh
   chmod 700 .ssh/
   chmod 400 .ssh/*
   chmod 444 .ssh/id_rsa.pub
