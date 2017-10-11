@@ -7,17 +7,23 @@ sudo dnf -y upgrade || sudo yum -y update
 
 # Sets up some nice Gnome defaults.
 if [ `which gnome-shell` ]; then
-  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup -P ~/; bash ~/.gnome3Setup
 fi
 
 # Configure KDE if present:
 if [ `which startkde` ]; then
-  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
 fi
 
 # Mate!
 if [ `which mate-panel` ]; then
-  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
+fi
+
+# Keybase!
+if [ -z "`which run_keybase`" ]; then
+    sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm
+    run_keybase
 fi
 
 # Sets up: Git, Vim, Emacs, SSH and some nice environment goodies.
