@@ -111,6 +111,16 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTE
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
     && bash /tmp/installLatestTextadept.sh
 
+cd
+if [ -z "`which run_keybase`" ]; then
+    curl -O https://prerelease.keybase.io/keybase_amd64.deb
+    sudo dpkg -i keybase_amd64.deb
+    sudo apt-get install -f
+    rm keybase_amd64.deb
+    run_keybase
+fi
+cd
+
 # Link back to haskell-vim-now settings in case they were overwritten:
 #ln -sf ~/.config/haskell-vim-now/.vimrc ~/
 #ln -sf ~/.config/haskell-vim-now/.vim ~/
