@@ -33,7 +33,7 @@ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNO
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs -P ~/
 
 # U2F:
-wget -N https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules -P /etc/udev/rules.d/
+sudo wget -N https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules -P /etc/udev/rules.d/
 
 if [ -e $HOME/.bashrc ]; then
     if [ -e $HOME/.bash_profile ]; then
