@@ -115,7 +115,7 @@ cd
 if [ -z "`which run_keybase`" ]; then
     curl -O https://prerelease.keybase.io/keybase_amd64.deb
     sudo dpkg -i keybase_amd64.deb
-    sudo apt-get install -f
+    sudo apt-get install -y -f
     rm keybase_amd64.deb
     run_keybase
 fi
