@@ -141,7 +141,7 @@ fi
 
 # Add 'Chromebook' keyboard layout.
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.add_chromebook_keyboard_layout.sh -P ~/
-bash ~/.add_chromebook_keyboard_layout.sh
+sudo bash ~/.add_chromebook_keyboard_layout.sh
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
 sh ~/.genericLinuxConfig.sh
