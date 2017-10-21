@@ -21,7 +21,7 @@ $KWRITECONF --file kwalletrc --group Wallet --key "Enabled" false
 $KWRITECONF --file kwalletrc --group Wallet --key "First Use" false
 
 ## Set keyboard repeat/delay to be blazingly fast.
-$KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatDelay" 110
+$KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatDelay" 120
 $KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatRate" 100.00
 
 ## Make kde faster, effects are for people who have leisure time.
