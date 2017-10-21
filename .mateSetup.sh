@@ -13,7 +13,7 @@ gsettings set org.mate.peripherals-touchpad horiz-scroll-enabled true
 gsettings set org.mate.peripherals-touchpad tap-to-click false
 
 ## This makes you look cool:
-gsettings set org.mate.peripherals-keyboard delay 110
+gsettings set org.mate.peripherals-keyboard delay 120
 gsettings set org.mate.peripherals-keyboard rate 100
 
 ## Focus follows mouse!
