@@ -58,7 +58,7 @@ xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_T
 xfconf-query -n -c pointers -p /Elan_Touchpad/Properties/Tap_Enable -s 0
 
 # Become the flash:
-xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 110
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 120
 xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s 100
 
 # Enable font anti-aliasing:
