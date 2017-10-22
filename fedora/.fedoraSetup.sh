@@ -48,6 +48,10 @@ if [ ! -d ~/.iris/ ]; then
 fi
 cd
 
+# Add 'Chromebook' keyboard layout.
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.add_chromebook_keyboard_layout.sh -P ~/
+sudo bash ~/.add_chromebook_keyboard_layout.sh
+
 # SciTE configuration:
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
