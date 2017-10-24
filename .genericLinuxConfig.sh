@@ -45,8 +45,8 @@ if [ -e $HOME/.bashrc ]; then
     if [ -z "$(grep 'SSH_AUTH_SOCK' ${BASHFILE})" ]; then
         echo >> ~/${BASHFILE}
         echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> ~/${BASHFILE}
-        echo '  eval `ssh-agent`' >> ~/${BASHFILE}
-        echo '  ssh-add' >> ~/${BASHFILE}
+        echo '    eval `ssh-agent`' >> ~/${BASHFILE}
+        echo '    ssh-add' >> ~/${BASHFILE}
         echo 'fi' >> ~/${BASHFILE}
         echo >> ~/${BASHFILE}
     fi
@@ -54,12 +54,12 @@ if [ -e $HOME/.bashrc ]; then
         echo >> ~/${BASHFILE}
         echo '# Extend path with any /opt/ programs:' >> ~/${BASHFILE}
         echo 'for DIR in /opt/*/bin' >> ~/${BASHFILE}
-        echo '  do PATH="$DIR:$PATH"' >> ~/${BASHFILE}
+        echo '    do PATH="$DIR:$PATH"' >> ~/${BASHFILE}
         echo 'done' >> ~/${BASHFILE}
         echo >> ~/${BASHFILE}
         echo '# Extend path with any /usr/local/ stuff, like Heroku:' >> ~/${BASHFILE}
         echo 'for DIR in /usr/local/*/bin' >> ~/${BASHFILE}
-        echo '  do PATH="$DIR:$PATH"' >> ~/${BASHFILE}
+        echo '    do PATH="$DIR:$PATH"' >> ~/${BASHFILE}
         echo 'done' >> ~/${BASHFILE}
         echo >> ~/${BASHFILE}
         echo '# Add ~/bin/ to PATH only if it exists, and is not already in $PATH:' >> ~/${BASHFILE}
@@ -77,7 +77,7 @@ if [ -e $HOME/.bashrc ]; then
 else
     echo
     echo "You have no .bashrc or .bash_profile, make one like so:"
-    echo "  touch ~/.bashrc"
+    echo "    touch ~/.bashrc"
     echo
     exit 1
 fi
