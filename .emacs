@@ -1,4 +1,5 @@
 (setq-default
+    tab-always-indent 'complete
     indent-tabs-mode nil
     tab-width 4
     default-tab-width 4
