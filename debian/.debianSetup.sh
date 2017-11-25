@@ -53,12 +53,24 @@ if [ "`groups ${USER} | grep sudo`" ]; then
     wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
         && bash /tmp/installLatestTextadept.sh
 
+    # Iris:
     cd
     if [ ! -d ~/.iris/ ]; then
         git clone https://github.com/danielng01/iris-floss.git .iris
         cd ~/.iris/
         make
         sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
+    fi
+    cd
+
+    # Keybase:
+    cd
+    if [ -z "`which run_keybase`" ]; then
+        curl -O https://prerelease.keybase.io/keybase_amd64.deb
+        sudo dpkg -i keybase_amd64.deb
+        sudo apt-get install -y -f
+        rm keybase_amd64.deb
+        run_keybase
     fi
     cd
 
