@@ -72,6 +72,9 @@ if [ "`groups ${USER} | grep sudo`" ]; then
         fi
     fi
 
+    # Fix headphone audio:
+    sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
+
     # Set up ssh, Vim, Emacs and more.
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
 else
