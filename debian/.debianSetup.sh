@@ -9,7 +9,7 @@ if [ "`groups ${USER} | grep sudo`" ]; then
         git curl wget build-essential gcc make xorg-dev \
         libx11-dev libxrandr-dev vim emacs texlive-latex-extra \
         chromium jpegoptim optipng pngquant gifsicle exiv2 \
-        exfat-fuse exfat-utils \
+        exfat-fuse exfat-utils scite \
     "
 
     sudo apt-get update && sudo apt-get dist-upgrade -y
@@ -82,6 +82,9 @@ if [ "`groups ${USER} | grep sudo`" ]; then
             sudo sh -c 'echo "export VISUAL=vim" >> /etc/profile.d/vimDefault'
             sudo sh -c 'echo >> /etc/profile.d/vimDefault'
         fi
+    fi
+    if [ "`which vim.basic`" ]; then
+        sudo update-alternatives --set editor $(which vim.basic)
     fi
 
     # Add 'Chromebook' keyboard layout.
