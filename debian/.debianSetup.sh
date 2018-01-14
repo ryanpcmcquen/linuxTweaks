@@ -6,10 +6,11 @@
 # Check if user is part of group `sudo`, otherwise just exit.
 if [ "`groups ${USER} | grep sudo`" ]; then
     AWESOMESTUFF="\
-        git curl wget build-essential gcc make xorg-dev \
-        libx11-dev libxrandr-dev vim emacs texlive-latex-extra \
-        chromium jpegoptim optipng pngquant gifsicle exiv2 \
-        exfat-fuse exfat-utils scite vlc libjpeg-turbo-progs \
+        build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
+        exuberant-ctags g++ gcc gifsicle git gnupg jpegoptim libc6-dev libffi-dev \
+        libgmp-dev libjpeg-turbo-progs libsdl1.2-dev libsndfile1-dev libx11-dev \
+        libxrandr-dev make optipng pngquant scite syslinux-utils texlive-latex-extra \
+        vim vlc wget xorg-dev xz-utils zlib1g-dev \
     "
 
     sudo apt-get update && sudo apt-get dist-upgrade -y
