@@ -10,8 +10,8 @@ ESSENTIALS="\
     build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
     exuberant-ctags g++ gcc gifsicle git gnupg jpegoptim libc6-dev libffi-dev \
     libgmp-dev libjpeg-turbo-progs libsdl1.2-dev libsndfile1-dev libx11-dev \
-    libxrandr-dev make optipng pngquant scite texlive-latex-extra vim vlc \
-    wget xorg-dev xz-utils zlib1g-dev \
+    libxrandr-dev make optipng pngquant scite syslinux-utils texlive-latex-extra \
+    vim vlc wget xorg-dev xz-utils zlib1g-dev \
 "
 
 sudo add-apt-repository -y ppa:canonical-chromium-builds/stage
