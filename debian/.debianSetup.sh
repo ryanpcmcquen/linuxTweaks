@@ -1,12 +1,12 @@
 #!/bin/bash
-# wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/.debianSetup.sh -P ~/; bash ~/.debianSetup.sh
+# wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/.debianSetup.sh -P ~/ && bash ~/.debianSetup.sh
 # Basically just Gnome and Git/Vim/Emacs stuff.
 # Make sure your user has `sudo` rights!
 
 # Check if user is part of group `sudo`, otherwise just exit.
 if [ "`groups ${USER} | grep sudo`" ]; then
     AWESOMESTUFF="\
-        build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
+        audacity build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
         exuberant-ctags g++ gcc gifsicle git gnupg jpegoptim libc6-dev libffi-dev \
         libgmp-dev libjpeg-turbo-progs libsdl1.2-dev libsndfile1-dev libx11-dev \
         libxrandr-dev make optipng pngquant scite syslinux-utils texlive-latex-extra \
