@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/; bash ~/.trisquel_foo.sh
+# wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/trisquel/.trisquel_foo.sh -P ~/ && bash ~/.trisquel_foo.sh
 
 #####################
 # Installing stuff. #
@@ -89,11 +89,11 @@ wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e5
 
 # Add 'Chromebook' keyboard layout.
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.add_chromebook_keyboard_layout.sh -P ~/
-sudo bash ~/.add_chromebook_keyboard_layout.sh
+    && sudo bash ~/.add_chromebook_keyboard_layout.sh
 
 # A whole bunch of configuration goodies:
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/
-sh ~/.genericLinuxConfig.sh
+    && sh ~/.genericLinuxConfig.sh
 
 # Fix headphone audio:
 sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
@@ -102,7 +102,8 @@ sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/a
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
 # Sets up some nice defaults for Mate, including a fast key repeat.
-curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh | sh
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/
+    && bash ~/.mateSetup.sh
 
 # Set the default editor:
 if [ "`which vim.basic`" ]; then
