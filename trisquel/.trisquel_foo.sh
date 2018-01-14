@@ -7,7 +7,7 @@
 #####################
 
 ESSENTIALS="\
-    build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
+    audacity build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
     exuberant-ctags g++ gcc gifsicle git gnupg jpegoptim libc6-dev libffi-dev \
     libgmp-dev libjpeg-turbo-progs libsdl1.2-dev libsndfile1-dev libx11-dev \
     libxrandr-dev make optipng pngquant scite syslinux-utils texlive-latex-extra \
