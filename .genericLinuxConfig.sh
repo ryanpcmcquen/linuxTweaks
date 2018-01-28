@@ -5,16 +5,23 @@
 
 # wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
 
+# PGP:
+if [ ! -d ~/pgp/ ]; then
+    cd
+    git clone keybase://private/rpcm/pgp ~/pgp
+    cd
+fi
+
 # SSH:
-cd
 if [ ! -d ~/.ssh/ ] && [ "`which run_keybase`" ]; then
+    cd
     git clone keybase://private/rpcm/ssh ~/.ssh
     chmod 700 ~/.ssh/
     chmod 400 ~/.ssh/*
     chmod 444 ~/.ssh/id_rsa.pub
     chmod 644 ~/.ssh/known_hosts
+    cd
 fi
-cd
 
 # Copy this version if you do not have sudo:
 #echo >> /etc/profile.d/START_SSH_AGENT; echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile.d/START_SSH_AGENT; echo '  eval `ssh-agent`' >> /etc/profile.d/START_SSH_AGENT; echo '  ssh-add' >> /etc/profile.d/START_SSH_AGENT; echo 'fi' >> /etc/profile.d/START_SSH_AGENT; echo >> /etc/profile.d/START_SSH_AGENT
