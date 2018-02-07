@@ -96,7 +96,7 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gener
     && sh ~/.genericLinuxConfig.sh
 
 # Fix headphone audio:
-sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
+#sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
 
 # SciTE configuration:
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
