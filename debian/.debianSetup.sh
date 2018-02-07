@@ -93,7 +93,7 @@ if [ "`groups ${USER} | grep sudo`" ]; then
     sudo bash ~/.add_chromebook_keyboard_layout.sh
 
     # Fix headphone audio:
-    sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
+    #sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
 
     # Set up ssh, Vim, Emacs and more.
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
