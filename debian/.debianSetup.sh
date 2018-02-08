@@ -5,6 +5,7 @@
 
 # Check if user is part of group `sudo`, otherwise just exit.
 if [ "`groups ${USER} | grep sudo`" ]; then
+    # Get list of packages to install:
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/._SWEETPKGS_ -P ~/
     . ~/._SWEETPKGS_
 
