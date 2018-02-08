@@ -13,16 +13,11 @@ if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
     echo 'fi' >> ~/.bashrc
 fi
 
-ESSENTIALPKGS="\
-    audacity build-essential chromium-browser curl emacs exfat-fuse exfat-utils \
-    exiv2 exuberant-ctags g++ gcc gifsicle git gnupg httrack jpegoptim lftp \
-    libc6-dev libffi-dev libgmp-dev libjpeg-turbo-progs libsdl1.2-dev \
-    libsndfile1-dev libssl-dev libx11-dev libxrandr-dev make optipng pngquant \
-    python3-pip redshift scite syslinux-utils texlive-latex-extra vim vlc wget \
-    xfonts-terminus xorg-dev xz-utils zlib1g-dev \
-"
+# Get list of packages to install:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/._SWEETPKGS_ -P ~/
+. ~/._SWEETPKGS_
 
-sudo apt-get install -y $ESSENTIALPKGS
+sudo apt-get install -y ${SWEETPKGS}
 
 #################################
 ##### Desktop environments. #####
