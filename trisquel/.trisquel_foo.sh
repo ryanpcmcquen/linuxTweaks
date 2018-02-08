@@ -6,19 +6,15 @@
 # Installing stuff. #
 #####################
 
-ESSENTIALS="\
-    audacity build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
-    exuberant-ctags g++ gcc gifsicle git gnupg jpegoptim libc6-dev libffi-dev \
-    libgmp-dev libjpeg-turbo-progs libsdl1.2-dev libsndfile1-dev libx11-dev \
-    libxrandr-dev make optipng pngquant scite syslinux-utils texlive-latex-extra \
-    vim vlc wget xorg-dev xz-utils zlib1g-dev \
-"
+# Get list of packages to install:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/._SWEETPKGS_ -P ~/
+. ~/._SWEETPKGS_
 
 sudo add-apt-repository -y ppa:canonical-chromium-builds/stage
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
-sudo apt-get install -y $ESSENTIALS
+sudo apt-get install -y ${SWEETPKGS}
 
 # Haskell!
 curl -sSL https://get.haskellstack.org/ | sh
