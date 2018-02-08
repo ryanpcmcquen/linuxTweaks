@@ -5,16 +5,11 @@
 
 # Check if user is part of group `sudo`, otherwise just exit.
 if [ "`groups ${USER} | grep sudo`" ]; then
-    AWESOMESTUFF="\
-        audacity build-essential chromium-browser curl emacs exfat-fuse exfat-utils exiv2 \
-        exuberant-ctags g++ gcc gifsicle git gnupg jpegoptim libc6-dev libffi-dev \
-        libgmp-dev libjpeg-turbo-progs libsdl1.2-dev libsndfile1-dev libx11-dev \
-        libxrandr-dev make optipng pngquant scite syslinux-utils texlive-latex-extra \
-        vim vlc wget xorg-dev xz-utils zlib1g-dev \
-    "
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/._SWEETPKGS_ -P ~/
+    . ~/._SWEETPKGS_
 
     sudo apt-get update && sudo apt-get dist-upgrade -y
-    sudo apt-get install -y ${AWESOMESTUFF}
+    sudo apt-get install -y ${SWEETPKGS}
 
     # Gnome 3 setup!
     if [ `which gnome-shell` ]; then
