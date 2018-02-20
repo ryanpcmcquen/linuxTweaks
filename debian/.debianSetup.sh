@@ -91,6 +91,10 @@ if [ "`groups ${USER} | grep sudo`" ]; then
     # Fix headphone audio:
     #sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
 
+    # Libre wireless dongle drivers:
+    sudo wget -N https://www.thinkpenguin.com/files/ath9k_firmware_free-version/htc_9271.fw -P /lib/firmware
+    sudo wget -N https://www.thinkpenguin.com/files/ath9k_firmware_free-version/htc_7010.fw -P /lib/firmware
+
     # Set up ssh, Vim, Emacs and more.
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
 else
