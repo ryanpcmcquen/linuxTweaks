@@ -4,8 +4,10 @@
 ## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh | sh
 
 ## Make caja open stuff:
-xdg-mime default caja-folder-handler.desktop inode/directory
-xdg-mime default caja-folder-handler.desktop application/x-directory
+if [ -d ~/.local/share/applications/ ]; then
+    xdg-mime default caja-folder-handler.desktop inode/directory
+    xdg-mime default caja-folder-handler.desktop application/x-directory
+fi
 
 ## These should be defaults, but who am I?
 gsettings set org.mate.peripherals-touchpad scroll-method 2
