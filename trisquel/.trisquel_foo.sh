@@ -12,11 +12,12 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian
 
 sudo add-apt-repository -y ppa:canonical-chromium-builds/stage
 sudo add-apt-repository -y ppa:mozillateam/firefox-next
+sudo add-apt-repository -y ppa:mozillateam/thunderbird-next
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
 sudo apt-get install -y ${SWEETPKGS}
-sudo apt-get install -y chromium-browser firefox
+sudo apt-get install -y chromium-browser firefox thunderbird
 
 # Haskell!
 curl -sSL https://get.haskellstack.org/ | sh
