@@ -7,7 +7,7 @@ sudo dnf -y upgrade || sudo yum -y update
 
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
-    clang curl emacs exiv2 gcc gcc-c++ gifsicle git \
+    clang curl ddccontrol emacs exiv2 gcc gcc-c++ gifsicle git \
     jpegoptim kernel-headers kernel-devel libsndfile-devel \
     libXrandr-devel make optipng pngquant scite SDL-devel \
     vim wget zlib-devel \
