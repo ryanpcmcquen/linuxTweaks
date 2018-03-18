@@ -5,11 +5,13 @@
 # Always good to start with an update.
 sudo dnf -y upgrade || sudo yum -y update
 
-# Pretty sure the first few are included, but it can't hurt.
-ESSENTIALPKGS="curl wget make git vim vim-X11 emacs gcc gcc-c++ \
-clang libXrandr-devel kernel-headers kernel-devel zlib-devel \
-libsndfile-devel SDL-devel scite jpegoptim optipng pngquant \
-gifsicle exiv2"
+# Pretty sure some are included, but it can't hurt.
+ESSENTIALPKGS="\
+    clang curl emacs exiv2 gcc gcc-c++ gifsicle git \
+    jpegoptim kernel-headers kernel-devel libsndfile-devel \
+    libXrandr-devel make optipng pngquant scite SDL-devel \
+    vim wget zlib-devel \
+"
 
 # If dnf fails, the system is probably older.
 sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
