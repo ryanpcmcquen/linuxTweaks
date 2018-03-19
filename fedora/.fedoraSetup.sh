@@ -7,10 +7,10 @@ sudo dnf -y upgrade || sudo yum -y update
 
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
-    clang curl ddccontrol emacs exiv2 gcc gcc-c++ gifsicle git \
-    jpegoptim kernel-headers kernel-devel libsndfile-devel \
-    libXrandr-devel make optipng pngquant scite SDL-devel \
-    vim wget zlib-devel \
+    clang curl ddccontrol emacs exiv2 firefox gcc gcc-c++ \
+    gifsicle git jpegoptim kernel-headers kernel-devel \
+    libsndfile-devel libXrandr-devel make optipng pngquant \
+    thunderbird scite SDL-devel vim wget zlib-devel \
 "
 
 # If dnf fails, the system is probably older.
