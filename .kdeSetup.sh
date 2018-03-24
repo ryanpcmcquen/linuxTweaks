@@ -53,9 +53,9 @@ $KWRITECONF --file kwinrc --group "Windows" --key "AutoRaise" true
 $KWRITECONF --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
 $KWRITECONF --file kwinrc --group "Windows" --key "DelayFocusInterval" 500
 $KWRITECONF --file kwinrc --group "Windows" --key "FocusStealingPreventionLevel" 2
-$KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
-$KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
-$KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
+#$KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
+#$KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
+#$KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
 $KWRITECONF --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
 #$KWRITECONF --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
 # Actually disable compositing, I know this renders wobbly windows useless.
