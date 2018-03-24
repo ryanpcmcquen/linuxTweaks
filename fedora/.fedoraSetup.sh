@@ -33,7 +33,8 @@ fi
 
 # Keybase!
 if [ -z "`which run_keybase`" ]; then
-    sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm
+    sudo dnf -y install https://prerelease.keybase.io/keybase_amd64.rpm \
+        || sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
     run_keybase
 fi
 
