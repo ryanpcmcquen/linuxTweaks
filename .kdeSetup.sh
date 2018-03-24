@@ -25,7 +25,7 @@ $KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatDelay" 120
 $KWRITECONF --file kcminputrc --group "Keyboard" --key "RepeatRate" 100.00
 
 # Make kde faster, effects are for people who have leisure time.
-$KWRITECONF --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
+#$KWRITECONF --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
 # Just using more defaults in my old age.
 #$KWRITECONF --file kdeglobals --group "General" --key "desktopFont" "Terminus,9,-1,5,50,0,0,0,0,0"
@@ -57,9 +57,9 @@ $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEna
 $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
 $KWRITECONF --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
 $KWRITECONF --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
-$KWRITECONF --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
+#$KWRITECONF --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
 # Actually disable compositing, I know this renders wobbly windows useless.
-$KWRITECONF --file kwinrc --group "Compositing" --key "Enabled" false
+#$KWRITECONF --file kwinrc --group "Compositing" --key "Enabled" false
 
 # Give less notifications.
 $KWRITECONF --file ksmserverrc --group "General" --key "confirmLogout" false
@@ -99,9 +99,9 @@ $KWRITECONF --file powermanagementprofilesrc --group "Battery" --group "Brightne
 $KWRITECONF --file powermanagementprofilesrc --group "LowBattery" --group "BrightnessControl" --key "value" 80
 
 # Disable compositing, as it breaks some things ... and I am not fancy.
-if [ "`qdbus org.kde.kwin /KWin org.kde.KWin.compositingActive`" = true ]; then
-    qdbus org.kde.kwin /KWin org.kde.KWin.toggleCompositing
-fi
+#if [ "`qdbus org.kde.kwin /KWin org.kde.KWin.compositingActive`" = true ]; then
+#    qdbus org.kde.kwin /KWin org.kde.KWin.toggleCompositing
+#fi
 
 # Restart services so that new settings take effect.
 if [ "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
