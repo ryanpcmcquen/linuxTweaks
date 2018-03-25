@@ -3,11 +3,16 @@
 # wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/.fedoraSetup.sh -P ~/; sh ~/.fedoraSetup.sh
 
 # Grab the RPM Fusion free repo, because it has awesome stuff.
-sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+if [ "`which dnf`" ]; then
+    sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    PKGDUDE="dnf"
+else
     sudo yum -y localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+    PKGDUDE="yum"
+fi
 
-# Always good to start with an update.
-sudo dnf -y upgrade || sudo yum -y update
+# Always good to start with an upgrade.
+sudo ${PKGDUDE} -y upgrade
 
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
@@ -17,8 +22,7 @@ ESSENTIALPKGS="\
     pngquant thunderbird scite SDL-devel vim wget zlib-devel \
 "
 
-# If dnf fails, the system is probably older.
-sudo dnf -y install $ESSENTIALPKGS || sudo yum -y install $ESSENTIALPKGS
+sudo ${PKGDUDE} -y install $ESSENTIALPKGS
 
 # Sets up some nice Gnome defaults.
 if [ `which gnome-shell` ]; then
@@ -37,8 +41,7 @@ fi
 
 # Keybase!
 if [ -z "`which run_keybase`" ]; then
-    sudo dnf -y install https://prerelease.keybase.io/keybase_amd64.rpm \
-        || sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
+    sudo ${PKGDUDE} -y install https://prerelease.keybase.io/keybase_amd64.rpm
     run_keybase
 fi
 
