@@ -2,15 +2,19 @@
 # Run as a normal user:
 # wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/fedora/.fedoraSetup.sh -P ~/; sh ~/.fedoraSetup.sh
 
+# Grab the RPM Fusion free repo, because it has awesome stuff.
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    sudo yum -y localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+
 # Always good to start with an update.
 sudo dnf -y upgrade || sudo yum -y update
 
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
-    clang curl ddccontrol emacs exiv2 firefox gcc gcc-c++ \
-    gifsicle git jpegoptim kernel-headers kernel-devel \
-    libsndfile-devel libXrandr-devel make optipng pngquant \
-    thunderbird scite SDL-devel vim wget zlib-devel \
+    audacity-freeworld clang curl ddccontrol emacs exfat-utils exiv2 firefox \
+    fuse-exfat gcc gcc-c++ gifsicle git jpegoptim kernel-headers \
+    kernel-devel libsndfile-devel libXrandr-devel make optipng \
+    pngquant thunderbird scite SDL-devel vim wget zlib-devel \
 "
 
 # If dnf fails, the system is probably older.
