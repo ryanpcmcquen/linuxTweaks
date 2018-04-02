@@ -16,10 +16,11 @@ sudo ${PKGDUDE} -y upgrade
 
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
-    audacity-freeworld clang curl ddccontrol emacs exfat-utils exiv2 firefox \
-    fuse-exfat gcc gcc-c++ gifsicle git jpegoptim kernel-headers \
-    kernel-devel libsndfile-devel libXrandr-devel make optipng \
-    pngquant thunderbird scite SDL-devel vim wget zlib-devel \
+    audacity-freeworld clang curl ddccontrol emacs exfat-utils exiv2 \
+    firefox fuse-exfat gcc gcc-c++ gifsicle git jpegoptim kernel-headers \
+    kernel-devel libsndfile-devel libXrandr-devel make optipng pngquant \
+    texlive-collection-latexextra thunderbird scite SDL-devel vim \
+    wget zlib-devel \
 "
 
 sudo ${PKGDUDE} -y install $ESSENTIALPKGS
