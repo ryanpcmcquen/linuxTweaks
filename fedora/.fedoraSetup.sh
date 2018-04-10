@@ -75,11 +75,15 @@ sudo bash ~/.add_chromebook_keyboard_layout.sh
 # Fix headphone audio:
 #sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
 
+# Imgult:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
+
 # SciTE configuration:
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
-# Imgult:
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/imgult; sudo install -m755 imgult /usr/local/bin/; rm imgult
+# Textadept:
+wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
+    && bash /tmp/installLatestTextadept.sh
 
 echo
 echo "    .--. "
