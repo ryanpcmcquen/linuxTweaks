@@ -73,6 +73,9 @@ xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t
 # Screenshots for all!
 # Grab my screenshot save script:
 # https://github.com/ryanpcmcquen/linuxTweaks/blob/master/xfceScreenshotSaver
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/xfceScreenshotSaver \
+  -P /usr/local/bin/
+chmod 755 /usr/local/bin/xfceScreenshotSaver
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/Print" -t string -s "xfce4-screenshooter -f -m -o xfceScreenshotSaver"
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>Print" -t string -s "xfce4-screenshooter -w -m -o xfceScreenshotSaver"
 xfconf-query -n -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary>Print" -t string -s "xfce4-screenshooter -r -m -o xfceScreenshotSaver"
