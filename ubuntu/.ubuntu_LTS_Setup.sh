@@ -2,7 +2,7 @@
 # Run as a normal user:
 # wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.ubuntu_LTS_Setup.sh -P ~/; bash ~/.ubuntu_LTS_Setup.sh
 
-# Tested on 14.04 and 16.04.
+# Tested on 14.04, 16.04, and 18.04.
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
