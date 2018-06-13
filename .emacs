@@ -49,3 +49,7 @@
 (electric-indent-mode 1)
 
 (global-linum-mode 1)
+
+(custom-set-variables
+    '(inhibit-startup-screen t)
+)
