@@ -10,7 +10,7 @@ if [ "`groups ${USER} | grep sudo`" ]; then
     . ~/._SWEETPKGS_
 
     sudo apt-get update && sudo apt-get dist-upgrade -y
-    sudo apt-get install -y ${SWEETPKGS}
+    sudo apt-get install -y --allow-change-held-packages ${SWEETPKGS}
 
     # Gnome 3 setup!
     if [ `which gnome-shell` ]; then
