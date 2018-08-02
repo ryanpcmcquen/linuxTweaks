@@ -16,7 +16,7 @@ sudo apt-get install curl build-essential linux-headers-amd64 git htop dos2unix 
 ## sudo apt-get install fglrx-driver
 
 
-git config --global user.name "Ryan P.C. McQuen"
+git config --global user.name "Ryan P. C. McQuen"
 git config --global user.email "ryanpcmcquen@member.fsf.org"
 git config --global credential.helper cache
 
