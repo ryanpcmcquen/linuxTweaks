@@ -1,6 +1,6 @@
 ##### upstream: https://wiki.archlinux.org/index.php/User:Ryanpcmcquen/Quick_install_command_set_for_Arch_Linux_%28goes_to_startx%29
 
-## Quick install command set for Arch Linux by Ryan P.C. McQuen
+## Quick install command set for Arch Linux by Ryan P. C. McQuen
 
 KNOW YOUR SYSTEM! This works on my 64-bit & 32-bit system.
 
