@@ -383,7 +383,7 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Ryan P.C. McQuen";
+    real_name = "Ryan P. C. McQuen";
     user_name = "ryanpcmcquen";
     nick = "ryanpcmcquen";
   };
