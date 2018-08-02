@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Script to automate kernel compilation
-# Ryan P.C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
+# Ryan P. C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
 #
 ################################
 ### TO INSTALL/USE (MAKE SURE YOU ARE ROOT!):
@@ -34,7 +34,7 @@
 # Slightly modified by Willy Sudiarto Raharjo <willysr@gmail.com>
 #
 ##
-## even further m0dz by Ryan P.C. McQuen  ;-)
+## even further m0dz by Ryan P. C. McQuen  ;-)
 ## with lots of help from Thorn Inurcide
 ##
 if [ ! $UID = 0 ]; then
