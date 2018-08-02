@@ -20,7 +20,7 @@
 # sent when the Search key is released (this is a little strange,
 # and I'm not sure why this happens).
 #
-# MODIFIED by Ryan P.C. McQuen to be a standalone script on 2017.10.16.
+# MODIFIED by Ryan P. C. McQuen to be a standalone script on 2017.10.16.
 #
 # Original is here:
 # https://raw.githubusercontent.com/dnschneid/crouton/master/targets/keyboard
