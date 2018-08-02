@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GITNAME="Ryan P.C. McQuen"
+GITNAME="Ryan P. C. McQuen"
 GITEMAIL="ryanpcmcquen@member.fsf.org"
 ## git config
 git config --global user.name "$GITNAME"
