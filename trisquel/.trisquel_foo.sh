@@ -32,16 +32,6 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/im
     && sudo install -m755 imgult /usr/local/bin/ \
     && rm imgult
 
-# Iris:
-cd
-if [ ! -d ~/.iris/ ]; then
-    git clone https://github.com/danielng01/iris-floss.git .iris
-    cd ~/.iris/
-    make
-    sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
-fi
-cd
-
 # Keybase:
 cd
 if [ -z "`which run_keybase`" ]; then
@@ -50,6 +40,20 @@ if [ -z "`which run_keybase`" ]; then
     sudo apt-get install -y -f
     rm keybase_amd64.deb
     run_keybase
+fi
+cd
+
+# A whole bunch of configuration goodies:
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/ \
+    && sh ~/.genericLinuxConfig.sh
+
+# Iris:
+cd
+if [ ! -d ~/.iris/ ]; then
+    git clone https://github.com/danielng01/iris-floss.git .iris
+    cd ~/.iris/
+    make
+    sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
 fi
 cd
 
@@ -89,10 +93,6 @@ wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e5
 # Add 'Chromebook' keyboard layout.
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.add_chromebook_keyboard_layout.sh -P ~/ \
     && sudo bash ~/.add_chromebook_keyboard_layout.sh
-
-# A whole bunch of configuration goodies:
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/ \
-    && sh ~/.genericLinuxConfig.sh
 
 # Fix headphone audio:
 #sudo wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/alsa-base.conf -P /etc/modprobe.d/
