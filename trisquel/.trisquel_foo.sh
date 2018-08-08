@@ -10,9 +10,9 @@
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/._SWEETPKGS_ -P ~/
 . ~/._SWEETPKGS_
 
-sudo add-apt-repository -y ppa:canonical-chromium-builds/stage
-sudo add-apt-repository -y ppa:mozillateam/firefox-next
-sudo add-apt-repository -y ppa:mozillateam/thunderbird-next
+sudo add-apt-repository -y "ppa:canonical-chromium-builds/stage"
+sudo add-apt-repository -y "ppa:mozillateam/firefox-next"
+sudo add-apt-repository -y "ppa:mozillateam/thunderbird-next"
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
