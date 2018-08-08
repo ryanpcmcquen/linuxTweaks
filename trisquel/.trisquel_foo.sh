@@ -47,16 +47,6 @@ cd
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/ \
     && sh ~/.genericLinuxConfig.sh
 
-# Iris:
-cd
-if [ ! -d ~/.iris/ ]; then
-    git clone https://github.com/danielng01/iris-floss.git .iris
-    cd ~/.iris/
-    make
-    sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
-fi
-cd
-
 # Killr!
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/7f6b8e1d4f9af71070a0ec59576d4d5b/raw/killr -P ~/ \
     && sudo install -m755 ~/killr /usr/local/bin/ \
