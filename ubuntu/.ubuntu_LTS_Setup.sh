@@ -72,16 +72,6 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/im
     && sudo install -m755 imgult /usr/local/bin/ \
     && rm imgult
 
-# Iris:
-if [ ! -d ~/.iris/ ]; then
-    cd
-    git clone https://github.com/danielng01/iris-floss.git .iris
-    cd ~/.iris/
-    make
-    sudo ln -sf ~/.iris/iris-floss /usr/local/bin/
-    cd
-fi
-
 # Keybase:
 if [ -z "`which run_keybase`" ]; then
     cd
