@@ -1,0 +1,40 @@
+{
+    "editor.fontFamily": "'IBM Plex Mono', NovaMono, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 17,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.tabCompletion": true,
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{
+            "scope": [
+                "comment",
+                "constant",
+                "entity.other.attribute-name",
+                "keyword",
+                "storage",
+                "variable.language"
+            ],
+            "settings": {
+                "fontStyle": "italic"
+            }
+        }]
+    },
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "javascript.updateImportsOnFileMove.enabled": "always"
+    "prettier.disableLanguages": ["vue", "jsp"],
+    "prettier.eslintIntegration": true,
+    "prettier.arrowParens": "always",
+    "prettier.printWidth": 100,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
+}
