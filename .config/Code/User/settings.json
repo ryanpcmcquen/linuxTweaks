@@ -1,7 +1,7 @@
 {
     "editor.fontFamily": "'IBM Plex Mono', NovaMono, monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 17,
+    "editor.fontSize": 20,
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.renderControlCharacters": true,
