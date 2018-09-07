@@ -9,19 +9,29 @@
     "editor.tabCompletion": true,
     "editor.tabSize": 4,
     "editor.tokenColorCustomizations": {
-        "textMateRules": [{
-            "scope": [
-                "comment",
-                "constant",
-                "entity.other.attribute-name",
-                "keyword",
-                "storage",
-                "variable.language"
-            ],
-            "settings": {
-                "fontStyle": "italic"
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "constant",
+                    "entity.other.attribute-name",
+                    "keyword",
+                    "storage",
+                    "variable.language"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    "keyword.operator"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
             }
-        }]
+        ]
     },
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
@@ -36,5 +46,6 @@
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "typescript.validate.enable": false
 }
