@@ -36,6 +36,7 @@
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.validate.enable": false,
     "prettier.disableLanguages": ["vue", "jsp"],
     "prettier.eslintIntegration": true,
     "prettier.arrowParens": "always",
