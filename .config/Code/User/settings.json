@@ -45,9 +45,10 @@
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
-    "window.zoomLevel": 0,
-    "workbench.startupEditor": "newUntitledFile",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "typescript.validate.enable": false
+    "typescript.validate.enable": false,
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.settings.editor": "json"
 }
