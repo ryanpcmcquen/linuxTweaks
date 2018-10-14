@@ -23,7 +23,7 @@ ESSENTIALPKGS="\
     wget zlib-devel \
 "
 
-sudo ${PKGDUDE} -y install $ESSENTIALPKGS
+sudo ${PKGDUDE} -y --allowerasing install $ESSENTIALPKGS
 
 # Sets up some nice Gnome defaults.
 if [ `which gnome-shell` ]; then
