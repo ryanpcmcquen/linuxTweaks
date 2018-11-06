@@ -5,10 +5,8 @@
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,
     "fallback_encoding": "UTF-8",
-    "ignored_packages":
-    [
-        "Vintage"
-    ],
+    "font_face": "IBM Plex Mono",
+    "font_size": 16,
     "margin": 4,
     "show_encoding": true,
     "show_full_path": true,
