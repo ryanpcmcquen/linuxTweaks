@@ -42,7 +42,7 @@ fi
 if [ `which pantheon-greeter` ]; then
     gsettings set org.gnome.desktop.peripherals.keyboard repeat true
     gsettings set org.gnome.desktop.peripherals.keyboard repeat 100
-    gsettings set org.gnome.desktop.peripherals.keyboard delay 120
+    gsettings set org.gnome.desktop.peripherals.keyboard delay 140
 fi
 
 # Xfce!
