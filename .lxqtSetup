@@ -1,6 +1,7 @@
 #!/bin/sh
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.lxqtSetup | sh
 
-CONFIG='~/.config/lxqt/session.conf'
+CONFIG='${HOME}/.config/lxqt/session.conf'
 TEMP='/tmp/__LXQT_SESSION__.conf'
 
 if [ "$(grep '\[Keyboard\]' ${CONFIG})" ]; then
