@@ -1,0 +1,26 @@
+#!/bin/sh
+
+CONFIG='~/.config/lxqt/session.conf'
+TEMP='/tmp/__LXQT_SESSION__.conf'
+
+if [ "$(grep '\[Keyboard\]' ${CONFIG})" ]; then
+    # Grab block of text starting with '[Keyboard]' and store it in a separate file:
+    sed -n '/\[Keyboard\]/,/^$/p' ${CONFIG} > ${TEMP}
+
+    # Replace delay and interval with my preferred settings:
+    sed -i 's/delay=.*/delay=140/' ${TEMP}
+    sed -i 's/interval=.*/interval=100/' ${TEMP}
+
+    # Delete 'Keyboard' section from original config:
+    sed -i '/\[Keyboard\]/,/^$/d' ${CONFIG}
+
+    # Put new config into original file:
+    echo >> ${CONFIG}
+    cat ${TEMP}
+else
+    echo >> ${CONFIG}
+    echo '[Keyboard]' >> ${CONFIG}
+    echo 'delay=140' >> ${CONFIG}
+    echo 'interval=100' >> ${CONFIG}
+    echo >> ${CONFIG}
+fi
