@@ -33,6 +33,11 @@ if [ `which startkde` ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
 fi
 
+# Configure LXQt if present:
+if [ -e ${HOME}/.config/lxqt/session.conf ]; then
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.lxqtSetup -P ~/; bash ~/.lxqtSetup
+fi
+
 # Mate!
 if [ `which mate-panel` ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh -P ~/; bash ~/.mateSetup.sh
