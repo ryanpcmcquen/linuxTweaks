@@ -17,7 +17,7 @@ if [ "$(grep '\[Keyboard\]' ${CONFIG})" ]; then
 
     # Put new config into original file:
     echo >> ${CONFIG}
-    cat ${TEMP}
+    cat ${TEMP} >> ${CONFIG}
 else
     echo >> ${CONFIG}
     echo '[Keyboard]' >> ${CONFIG}
