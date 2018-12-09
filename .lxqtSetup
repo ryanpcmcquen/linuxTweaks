@@ -25,3 +25,9 @@ else
     echo 'interval=100' >> ${CONFIG}
     echo >> ${CONFIG}
 fi
+
+# Squeeze blank lines, since our process
+# can create a few extra ones. This keeps
+# the file tidy.
+cat -s ${CONFIG} > ${TEMP}
+cat ${TEMP} > ${CONFIG}
