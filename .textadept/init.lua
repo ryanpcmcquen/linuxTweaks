@@ -1,10 +1,15 @@
 -- 4 spaces FTW!
 buffer.tab_width = 4
 buffer.use_tabs = false
+
+-- Turn on line wrapping:
+buffer.wrap_mode = buffer.WRAP_WORD
+
 -- Increase font size for GUI:
 buffer:set_theme(
     'light',
     {
+        font = 'IBM Plex Mono',
         fontsize = 18
     }
 )
