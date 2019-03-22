@@ -24,5 +24,5 @@ keys.asleft = buffer.word_left_extend
 keys.asright = buffer.word_right_extend
 
 -- Increase the line number margin width:
-local width = 4 * buffer:text_width(buffer.STYLE_LINENUMBER, '20')
+local width = 4 * buffer:text_width(buffer.STYLE_LINENUMBER, '14')
 buffer.margin_width_n[0] = width + (not CURSES and 4 or 0)
