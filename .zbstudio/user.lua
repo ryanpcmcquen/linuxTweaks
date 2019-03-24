@@ -7,3 +7,14 @@ output.fontsize = 18
 editor.fontname = "IBM Plex Mono"
 editor.fontsize = 16
 editor.tabwidth = 4
+
+package {
+    onEditorPreSave = function(self, editor)
+        ide:GetMainFrame():ProcessEvent(
+            wx.wxCommandEvent(
+                wx.wxEVT_COMMAND_MENU_SELECTED,
+                ID.REINDENT
+            )
+        )
+    end,
+}
