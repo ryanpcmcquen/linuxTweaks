@@ -29,7 +29,7 @@ events.connect(
     function()
         if type(buffer.line_count) == 'number' then
             local lineCountLength = tostring(buffer.line_count):len()
-            local width = (lineCountLength + 1) * 12
+            local width = (lineCountLength + 2) * 12
             buffer.margin_width_n[0] = width + (not CURSES and 4 or 0)
         end
     end
