@@ -5,6 +5,15 @@ buffer.use_tabs = false
 -- Turn on line wrapping:
 buffer.wrap_mode = buffer.WRAP_WORD
 
+-- https://foicica.com/textadept/api.html#textadept.editing.auto_pairs
+-- Do not automatically generate pairs
+-- for certain characters
+-- (', ", (, [, {).
+textadept.editing.auto_pairs = nil
+
+-- Trim trailing whitespace:
+textadept.editing.strip_trailing_spaces = true
+
 -- Increase font size for GUI:
 buffer:set_theme(
     'light',
