@@ -19,7 +19,7 @@ buffer:set_theme(
     'light',
     {
         font = 'IBM Plex Mono',
-        fontsize = 18
+        fontsize = 16
     }
 )
 -- Interpret PICO-8 files as Lua.
@@ -31,15 +31,3 @@ textadept.file_types.extensions.p8 = 'lua'
 -- makes no sense.
 keys.asleft = buffer.word_left_extend
 keys.asright = buffer.word_right_extend
-
--- Increase the line number margin width, relatively:
-events.connect(
-    events.FILE_OPENED,
-    function()
-        if type(buffer.line_count) == 'number' then
-            local lineCountLength = tostring(buffer.line_count):len()
-            local width = (lineCountLength + 2) * 12
-            buffer.margin_width_n[0] = width + (not CURSES and 4 or 0)
-        end
-    end
-)
