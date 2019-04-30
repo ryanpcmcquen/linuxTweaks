@@ -87,6 +87,8 @@ events.connect(
             return textadept.editing.filter_through(
                 prettier .. '--stdin'
             )
+        else
+            return
         end
     end
 )
