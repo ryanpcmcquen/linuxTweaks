@@ -19,7 +19,7 @@ buffer:set_theme(
     'light',
     {
         font = 'IBM Plex Mono',
-        fontsize = 16
+        fontsize = 15
     }
 )
 -- Interpret PICO-8 files as Lua.
