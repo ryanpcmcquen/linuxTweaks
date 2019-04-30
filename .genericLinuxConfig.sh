@@ -42,6 +42,16 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs
 # U2F:
 sudo wget -N https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules -P /etc/udev/rules.d/
 
+# IBM Plex fonts:
+wget -N \
+    $(curl https://api.github.com/repos/IBM/plex/releases/latest | grep TrueType | grep browser_download | cut -d \" -f 4) \
+    -P /tmp/
+if [ -e /tmp/TrueType.zip ]; then
+    unzip -o /tmp/TrueType.zip -d /tmp/
+    sudo cp -R /tmp/TrueType/* /usr/share/fonts/truetype/
+    rm -rf /tmp/TrueType*
+fi
+
 if [ -e $HOME/.bashrc ]; then
     if [ -e $HOME/.bash_profile ]; then
         BASHFILE=".bash_profile"
