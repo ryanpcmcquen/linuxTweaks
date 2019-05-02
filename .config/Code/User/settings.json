@@ -50,6 +50,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.settings.editor": "json",
     "vscode_custom_css.imports": [
+        "file:///home/ry/.vscode/extensions/robbowen.synthwave-vscode-0.0.6/synthwave84.css",
         "file:///Users/ry/.vscode/extensions/robbowen.synthwave-vscode-0.0.6/synthwave84.css"
     ],
     "workbench.colorTheme": "SynthWave '84"
