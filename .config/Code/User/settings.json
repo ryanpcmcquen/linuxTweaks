@@ -7,7 +7,7 @@
     "editor.insertSpaces": true,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
     "editor.tabSize": 4,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -25,9 +25,7 @@
                 }
             },
             {
-                "scope": [
-                    "keyword.operator"
-                ],
+                "scope": ["keyword.operator"],
                 "settings": {
                     "fontStyle": ""
                 }
@@ -41,7 +39,6 @@
     "prettier.disableLanguages": ["vue", "jsp"],
     "prettier.eslintIntegration": true,
     "prettier.arrowParens": "always",
-    "prettier.printWidth": 100,
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
@@ -51,5 +48,9 @@
     "typescript.validate.enable": false,
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.settings.editor": "json"
+    "workbench.settings.editor": "json",
+    "vscode_custom_css.imports": [
+        "file:///Users/ry/.vscode/extensions/robbowen.synthwave-vscode-0.0.6/synthwave84.css"
+    ],
+    "workbench.colorTheme": "SynthWave '84"
 }
