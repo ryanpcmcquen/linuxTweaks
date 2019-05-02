@@ -1,0 +1,40 @@
+[
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "cmd+=",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "cmd+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "cmd+0",
+        "command": "editor.action.fontZoomReset"
+    }
+]
