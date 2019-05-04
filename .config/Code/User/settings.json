@@ -36,9 +36,9 @@
     "files.trimTrailingWhitespace": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "javascript.validate.enable": false,
+    "prettier.arrowParens": "always",
     "prettier.disableLanguages": ["vue", "jsp"],
     "prettier.eslintIntegration": true,
-    "prettier.arrowParens": "always",
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
@@ -46,12 +46,14 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "typescript.validate.enable": false,
-    "window.zoomLevel": 0,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.settings.editor": "json",
     "vscode_custom_css.imports": [
         "file:///home/ry/.vscode/extensions/robbowen.synthwave-vscode-0.0.6/synthwave84.css",
         "file:///Users/ry/.vscode/extensions/robbowen.synthwave-vscode-0.0.6/synthwave84.css"
     ],
-    "workbench.colorTheme": "SynthWave '84"
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "SynthWave '84",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.settings.editor": "json",
+    "workbench.startupEditor": "newUntitledFile"
 }
