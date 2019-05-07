@@ -6,6 +6,10 @@ set nocompatible
 "
 "     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc -P ~/
 "
+" Or:
+"
+"     curl -o ~/.vimrc https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.vimrc
+"
 
 " Set 4 spaces globally & make indenting sane.
 " ... Note that 'set paste' destroys indentation.
