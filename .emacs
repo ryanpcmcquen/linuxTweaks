@@ -48,7 +48,11 @@
 
 (electric-indent-mode 1)
 
-(global-linum-mode 1)
+;; No line numbers, as they take
+;; away from the immersion and
+;; can occasionally hurt
+;; performance.
+(global-linum-mode 0)
 
 (custom-set-variables
     '(inhibit-startup-screen t)
