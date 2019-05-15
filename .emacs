@@ -36,7 +36,7 @@
     xml-basic-offset 4
     xml-tab-width 4
 
-    linum-format "%d "
+    ;; Do not clutter the world with temp files.
     backup-directory-alist
         `((".*" . ,temporary-file-directory))
     auto-save-file-name-transforms
@@ -46,6 +46,7 @@
     org-src-fontify-natively t
 )
 
+;; Automatially indent on newlines and such.
 (electric-indent-mode 1)
 
 ;; No line numbers, as they take
@@ -54,10 +55,21 @@
 ;; performance.
 (global-linum-mode 0)
 
+;; Start somewhere sane, rather
+;; than the directory where
+;; emacs lives.
+(setq default-directory "~/")
+
+;; Show matching parens.
+(show-paren-mode 1)
+
 (custom-set-variables
     '(inhibit-startup-screen t)
+    '(initial-frame-alist (quote
+        ((fullscreen . maximized))
+        )
+    )
 )
-
 
 ;;; zenburn-theme.el --- A low contrast color theme for Emacs.
 
