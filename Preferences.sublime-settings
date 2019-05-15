@@ -6,12 +6,16 @@
     "ensure_newline_at_eof_on_save": true,
     "fallback_encoding": "UTF-8",
     "font_face": "IBM Plex Mono",
-    "font_size": 16,
+    "font_size": 17,
     "margin": 4,
     "show_encoding": true,
     "show_full_path": true,
     "show_line_endings": true,
     "tab_size": 4,
     "translate_tabs_to_spaces": true,
-    "trim_trailing_white_space_on_save": true
+    "trim_trailing_white_space_on_save": true,
+    "ClangFormat": {
+        "format_on_save": true,
+        "style": "WebKit"
+    }
 }
