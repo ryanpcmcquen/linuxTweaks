@@ -46,6 +46,9 @@
     org-src-fontify-natively t
 )
 
+;; Show matching parens.
+(show-paren-mode 1)
+
 ;; Automatially indent on newlines and such.
 (electric-indent-mode 1)
 
@@ -60,8 +63,8 @@
 ;; emacs lives.
 (setq default-directory "~/")
 
-;; Show matching parens.
-(show-paren-mode 1)
+;; Increase default font size.
+(set-face-attribute 'default nil :height 150)
 
 (custom-set-variables
     '(inhibit-startup-screen t)
