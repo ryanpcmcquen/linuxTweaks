@@ -1,4 +1,16 @@
 {
+    "ClangFormat":
+    {
+        "format_on_save": true,
+        "languages": [
+            "C",
+            "C++",
+            "C++11",
+            "Objective-C",
+            "Objective-C++"
+        ],
+        "style": "WebKit"
+    },
     "always_show_minimap_viewport": true,
     "auto_complete_commit_on_tab": true,
     "default_encoding": "UTF-8",
@@ -7,15 +19,15 @@
     "fallback_encoding": "UTF-8",
     "font_face": "IBM Plex Mono",
     "font_size": 17,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
     "margin": 4,
     "show_encoding": true,
     "show_full_path": true,
     "show_line_endings": true,
     "tab_size": 4,
     "translate_tabs_to_spaces": true,
-    "trim_trailing_white_space_on_save": true,
-    "ClangFormat": {
-        "format_on_save": true,
-        "style": "WebKit"
-    }
+    "trim_trailing_white_space_on_save": true
 }
