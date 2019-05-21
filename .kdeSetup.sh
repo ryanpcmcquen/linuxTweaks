@@ -27,6 +27,9 @@ ${KWRITECONF} --file kwalletrc --group Wallet --key "First Use" false
 ${KWRITECONF} --file kcminputrc --group "Keyboard" --key "RepeatDelay" ${KEY_REPEAT_DELAY}
 ${KWRITECONF} --file kcminputrc --group "Keyboard" --key "RepeatRate" ${KEY_REPEAT_RATE}
 
+# Caps Lock as Ctrl! Try it, you'll like it.
+${KWRITECONF} --file kxkbrc --group "Layout" --key "Options" ",caps:ctrl_modifier"
+
 # Make kde faster, effects are for people who have leisure time.
 #${KWRITECONF} --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
 
