@@ -1,6 +1,9 @@
 #!/bin/bash
 ## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gnome3Setup | bash
 
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY_REPEAT_SETTINGS__ -P ~/
+. ~/.__KEY_REPEAT_SETTINGS__
+
 ## Thanks to @fmuellner.
 ## Variables for gsettings:
 KEYS_SCHEMA=org.gnome.settings-daemon.plugins.media-keys
@@ -29,8 +32,8 @@ echo
 
 ## Make the keyboard crazy fast:
 gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat true
-gsettings set ${INPUT_DEVICES_PATH}.keyboard delay 140
-gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat-interval 100
+gsettings set ${INPUT_DEVICES_PATH}.keyboard delay ${KEY_REPEAT_DELAY}
+gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat-interval ${KEY_REPEAT_RATE}
 ## Sensible touchpad defaults [these may already be set, but it cannot hurt]:
 gsettings set ${INPUT_DEVICES_PATH}.touchpad scroll-method 'two-finger-scrolling'
 gsettings set ${INPUT_DEVICES_PATH}.touchpad horiz-scroll-enabled true
