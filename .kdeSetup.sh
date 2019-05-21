@@ -28,6 +28,7 @@ ${KWRITECONF} --file kcminputrc --group "Keyboard" --key "RepeatDelay" ${KEY_REP
 ${KWRITECONF} --file kcminputrc --group "Keyboard" --key "RepeatRate" ${KEY_REPEAT_RATE}
 
 # Caps Lock as Ctrl! Try it, you'll like it.
+${KWRITECONF} --file kxkbrc --group "Layout" --key "ResetOldOptions" true
 ${KWRITECONF} --file kxkbrc --group "Layout" --key "Options" ",caps:ctrl_modifier"
 
 # Make kde faster, effects are for people who have leisure time.
