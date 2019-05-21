@@ -4,6 +4,9 @@
 
 # Tested on 14.04, 16.04, and 18.04.
 
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY_REPEAT_SETTINGS__ -P ~/
+. ~/.__KEY_REPEAT_SETTINGS__
+
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
@@ -45,9 +48,9 @@ fi
 
 # Pantheon (Elementary OS)!
 if [ `which pantheon-greeter` ]; then
+    gsettings set org.gnome.desktop.peripherals.keyboard delay ${KEY_REPEAT_DELAY}
     gsettings set org.gnome.desktop.peripherals.keyboard repeat true
-    gsettings set org.gnome.desktop.peripherals.keyboard repeat 100
-    gsettings set org.gnome.desktop.peripherals.keyboard delay 140
+    gsettings set org.gnome.desktop.peripherals.keyboard repeat ${KEY_REPEAT_RATE}
 fi
 
 # Xfce!
