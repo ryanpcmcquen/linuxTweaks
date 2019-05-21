@@ -3,6 +3,9 @@
 
 ## curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.mateSetup.sh | sh
 
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY_REPEAT_SETTINGS__ -P ~/
+. ~/.__KEY_REPEAT_SETTINGS__
+
 ## Make caja open stuff:
 if [ -d ~/.local/share/applications/ ]; then
     xdg-mime default caja-folder-handler.desktop inode/directory
@@ -15,8 +18,8 @@ gsettings set org.mate.peripherals-touchpad horiz-scroll-enabled true
 gsettings set org.mate.peripherals-touchpad tap-to-click false
 
 ## This makes you look cool:
-gsettings set org.mate.peripherals-keyboard delay 140
-gsettings set org.mate.peripherals-keyboard rate 100
+gsettings set org.mate.peripherals-keyboard delay ${KEY_REPEAT_DELAY}
+gsettings set org.mate.peripherals-keyboard rate ${KEY_REPEAT_RATE}
 
 ## Focus follows mouse!
 gsettings set org.mate.Marco.general side-by-side-tiling true
@@ -35,10 +38,10 @@ gsettings set org.mate.background show-desktop-icons true
 ## Set up pluma to be even nicer:
 gsettings set org.mate.pluma auto-indent true
 gsettings set org.mate.pluma bracket-matching true
-# gsettings set org.mate.pluma display-line-numbers true
+gsettings set org.mate.pluma display-line-numbers false
 gsettings set org.mate.pluma display-right-margin true
 gsettings set org.mate.pluma highlight-current-line true
-gsettings set org.mate.pluma editor-font "Monospace 10"
+#gsettings set org.mate.pluma editor-font "Monospace 10"
 gsettings set org.mate.pluma insert-spaces true
 gsettings set org.mate.pluma tabs-size 4
 
