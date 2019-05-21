@@ -2,6 +2,9 @@
 
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.xfceSetup.sh | sh
 
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY_REPEAT_SETTINGS__ -P ~/
+. ~/.__KEY_REPEAT_SETTINGS__
+
 # if [ ! `which xfce4-popup-whiskermenu` ]; then
 #     # Thanks to @bfanning.
 #     # Only one panel!
@@ -58,8 +61,8 @@ xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_T
 xfconf-query -n -c pointers -p /Elan_Touchpad/Properties/Tap_Enable -s 0
 
 # Become the flash:
-xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s 140
-xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s 100
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Delay -t int -s ${KEY_REPEAT_DELAY}
+xfconf-query -n -c keyboards -p /Default/KeyRepeat/Rate -t int -s ${KEY_REPEAT_RATE}
 
 # Enable font anti-aliasing:
 xfconf-query -n -c xsettings -p /Xft/Antialias -t int -s 1
