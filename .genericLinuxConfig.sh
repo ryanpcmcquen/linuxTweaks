@@ -41,10 +41,10 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs
 
 # Sublime Text!
 SUBLIME_TEXT_CONFIG_DIR=~/.config/sublime-text-3/Packages/User
-if [ -d ${SUBLIME_TEXT_CONFIG_DIR} ]; then
-    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-keymap -P ${SUBLIME_TEXT_CONFIG_DIR}
-    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-mousemap -P ${SUBLIME_TEXT_CONFIG_DIR}
-    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Preferences.sublime-settings -P ${SUBLIME_TEXT_CONFIG_DIR}
+if [ -d "${SUBLIME_TEXT_CONFIG_DIR}" ]; then
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-keymap -P "${SUBLIME_TEXT_CONFIG_DIR}"
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-mousemap -P "${SUBLIME_TEXT_CONFIG_DIR}"
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Preferences.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
 fi
 
 # U2F:
