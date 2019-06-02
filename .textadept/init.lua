@@ -2,6 +2,12 @@
 buffer.tab_width = 4
 buffer.use_tabs = false
 
+
+
+events.connect(events.VIEW_NEW, function() 
+buffer.margin_width_n[0] = 0 
+end) 
+
 -- Turn on line wrapping:
 buffer.wrap_mode = buffer.WRAP_WORD
 
