@@ -8,8 +8,8 @@ events.connect(events.VIEW_NEW, function()
 buffer.margin_width_n[0] = 0 
 end) 
 
--- Turn on line wrapping:
-buffer.wrap_mode = buffer.WRAP_WORD
+-- Turn off line wrapping:
+buffer.wrap_mode = buffer.WRAP_NONE
 
 -- https://foicica.com/textadept/api.html#textadept.editing.auto_pairs
 -- Do not automatically generate pairs
