@@ -3,10 +3,13 @@ buffer.tab_width = 4
 buffer.use_tabs = false
 
 
-
-events.connect(events.VIEW_NEW, function() 
-buffer.margin_width_n[0] = 0 
-end) 
+-- Do not show line numbers.
+events.connect(
+    events.VIEW_NEW,
+    function()
+        buffer.margin_width_n[0] = 0
+    end
+)
 
 -- Turn off line wrapping:
 buffer.wrap_mode = buffer.WRAP_NONE
