@@ -9,6 +9,12 @@ events.connect(
         buffer.margin_width_n[0] = 0
     end
 )
+events.connect(
+    events.FILE_OPENED,
+    function()
+        buffer.margin_width_n[0] = 0
+    end
+)
 
 -- Turn off line wrapping:
 buffer.wrap_mode = buffer.WRAP_NONE
