@@ -12,7 +12,7 @@
     "ensure_newline_at_eof_on_save": true,
     "fallback_encoding": "UTF-8",
     "font_face": "IBM Plex Mono",
-    "font_size": 14,
+    "font_size": 13,
     "ignored_packages": ["Vintage"],
     "js_prettier": {
         "auto_format_on_save": true,
