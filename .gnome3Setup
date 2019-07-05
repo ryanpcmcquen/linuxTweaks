@@ -38,3 +38,8 @@ gsettings set ${INPUT_DEVICES_PATH}.keyboard repeat-interval ${KEY_REPEAT_RATE}
 gsettings set ${INPUT_DEVICES_PATH}.touchpad scroll-method 'two-finger-scrolling'
 gsettings set ${INPUT_DEVICES_PATH}.touchpad horiz-scroll-enabled true
 gsettings set ${INPUT_DEVICES_PATH}.touchpad tap-to-click false
+
+# Map Caps Lock to Ctrl.
+XKB_OPTIONS="$(gsettings get org.gnome.desktop.input-sources xkb-options)"
+[ "$(echo ${XKB_OPTIONS} | grep -v '\[\]')" ] && gsettings set org.gnome.desktop.input-sources xkb-options "$(echo ${XKB_OPTIONS} | sed "s/\[\]/['caps:ctrl_modifier']/")"
+[ "$(echo ${XKB_OPTIONS} | grep -v 'caps:ctrl_modifier')" ] && gsettings set org.gnome.desktop.input-sources xkb-options "$(echo ${XKB_OPTIONS} | sed "s/\]/, 'caps:ctrl_modifier']/")"
