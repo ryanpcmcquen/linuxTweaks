@@ -19,8 +19,7 @@ ESSENTIALPKGS="\
     audacity-freeworld clang curl @development-tools emacs exfat-utils exiv2 \
     firefox fuse-exfat gcc gcc-c++ gifsicle git jpegoptim kernel-headers \
     kernel-devel make optipng pngquant texlive-collection-latexextra \
-    thunderbird scite vim \
-    wget \
+    thunderbird vim wget \
 "
 
 sudo ${PKGDUDE} -y --allowerasing install $ESSENTIALPKGS
