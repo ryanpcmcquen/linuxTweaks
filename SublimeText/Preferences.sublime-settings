@@ -7,7 +7,7 @@
     "always_show_minimap_viewport": false,
     "auto_complete_commit_on_tab": true,
     "block_caret": true,
-    "color_scheme": "Packages/User/witness.sublime-color-scheme",
+    "color_scheme": "Packages/User/Witness.sublime-color-scheme",
     "default_encoding": "UTF-8",
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,
