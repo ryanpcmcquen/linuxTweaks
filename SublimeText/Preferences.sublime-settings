@@ -6,7 +6,8 @@
     },
     "always_show_minimap_viewport": false,
     "auto_complete_commit_on_tab": true,
-    "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+    "block_caret": true,
+    "color_scheme": "Packages/User/witness.sublime-color-scheme",
     "default_encoding": "UTF-8",
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,
@@ -29,7 +30,7 @@
     "show_full_path": true,
     "show_line_endings": true,
     "tab_size": 4,
-    "theme": "Spacegray Oceanic.sublime-theme",
+    "theme": "Adaptive.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
     "word_wrap": false
