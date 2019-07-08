@@ -95,6 +95,6 @@
 (set-cursor-color "lightgreen")
 (set-background-color "#072626")
 
-(set-face-attribute 'default nil :font "Consolas")
+;(set-face-attribute 'default nil :font "Consolas")
 (set-face-foreground 'font-lock-builtin-face "lightgreen")
 
