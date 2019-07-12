@@ -8,7 +8,7 @@
         "command": "prev_view"
     },
     {
-        "keys": ["alt+`"],
+        "keys": ["alt+t"],
         "command": "toggle_terminus_panel"
     }
 ]
