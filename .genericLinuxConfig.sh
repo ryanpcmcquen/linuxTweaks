@@ -51,6 +51,21 @@ fi
 # U2F:
 sudo wget -N https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules -P /etc/udev/rules.d/
 
+# Map Caps lock to Ctrl!
+#
+# Note about the option chosen here:
+#
+# caps:ctrl_modifier and ctrl:nocaps are defined in
+# symbols/capslock and symbols/ctrl respectively.
+#
+# Looking at their definition it seems that ctrl_modifier
+# will make Caps a Control modifier but still send the
+# Caps_Lock keysym. Whereas nocaps has Caps send the
+# actual Control_L keysym.
+#
+# Source: https://www.reddit.com/r/commandline/comments/4gusjx/setxkbmap_whats_the_difference_between_capsctrl/d2lvni3/
+sudo sed -i 's/XKBOPTIONS=.*/XKBOPTIONS="ctrl:nocaps"/g' /etc/default/keyboard
+
 # IBM Plex fonts:
 wget -N \
     $(curl https://api.github.com/repos/IBM/plex/releases/latest | grep TrueType | grep browser_download | cut -d \" -f 4) \
