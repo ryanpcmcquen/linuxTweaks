@@ -29,7 +29,7 @@ ${KWRITECONF} --file kcminputrc --group "Keyboard" --key "RepeatRate" ${KEY_REPE
 
 # Caps Lock as Ctrl! Try it, you'll like it.
 ${KWRITECONF} --file kxkbrc --group "Layout" --key "ResetOldOptions" true
-${KWRITECONF} --file kxkbrc --group "Layout" --key "Options" ",caps:ctrl_modifier"
+${KWRITECONF} --file kxkbrc --group "Layout" --key "Options" "ctrl:nocaps"
 
 # Make kde faster, effects are for people who have leisure time.
 ${KWRITECONF} --file kdeglobals --group "KDE-Global GUI Settings" --key "GraphicEffectsLevel" 0
