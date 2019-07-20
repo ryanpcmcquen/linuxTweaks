@@ -56,21 +56,6 @@ wget -N https://gist.githubusercontent.com/ryanpcmcquen/7f6b8e1d4f9af71070a0ec59
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/a57201e1c8cb31bda6bce9104092725a/raw/password -P ~/ \
     && chmod +x ~/password
 
-# Powerline fonts:
-powerline_install() {
-    cd ~/.powerline-fonts/
-    git pull
-    ~/.powerline-fonts/install.sh
-}
-
-if [ -d ~/.powerline-fonts/ ]; then
-    powerline_install
-else
-    git clone https://github.com/powerline/fonts.git ~/.powerline-fonts/
-    powerline_install
-fi
-cd
-
 # Textadept:
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
     && bash /tmp/installLatestTextadept.sh
