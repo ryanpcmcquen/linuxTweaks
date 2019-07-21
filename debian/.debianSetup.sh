@@ -47,8 +47,7 @@ if [ "`groups ${USER} | grep sudo`" ]; then
     # SciTE configuration:
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
-    wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
-        && bash /tmp/installLatestTextadept.sh
+    wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/.installLatestTextadept.sh -P ~/
 
     # Keybase:
     cd
