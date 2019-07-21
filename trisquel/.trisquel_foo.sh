@@ -57,8 +57,7 @@ wget -N https://gist.githubusercontent.com/ryanpcmcquen/a57201e1c8cb31bda6bce910
     && chmod +x ~/password
 
 # Textadept:
-wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
-    && bash /tmp/installLatestTextadept.sh
+wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/.installLatestTextadept.sh -P ~/
 
 
 ######################
