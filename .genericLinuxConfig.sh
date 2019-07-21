@@ -40,6 +40,8 @@ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNO
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs -P ~/
 
 # Sublime Text!
+wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.installSublimeStuff.sh -P ~/
+bash ~/.installSublimeStuff.sh
 SUBLIME_TEXT_CONFIG_DIR=~/.config/sublime-text-3/Packages/User
 if [ -d "${SUBLIME_TEXT_CONFIG_DIR}" ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/sublime_witness/master/Witness.sublime-color-scheme -P "${SUBLIME_TEXT_CONFIG_DIR}"
