@@ -68,8 +68,7 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/image-ultimator/master/im
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
 # Textadept:
-wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/installLatestTextadept.sh -P /tmp/ \
-    && bash /tmp/installLatestTextadept.sh
+wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/.installLatestTextadept.sh -P ~/
 
 echo
 echo "    .--. "
