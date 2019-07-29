@@ -6,6 +6,7 @@
     },
     "always_show_minimap_viewport": false,
     "auto_complete_commit_on_tab": true,
+    "auto_match_enabled": false,
     "block_caret": true,
     "color_scheme": "Packages/User/Witness.sublime-color-scheme",
     "default_encoding": "UTF-8",
