@@ -51,6 +51,11 @@ if [ `which pantheon-greeter` ]; then
     gsettings set org.gnome.desktop.peripherals.keyboard delay ${KEY_REPEAT_DELAY}
     gsettings set org.gnome.desktop.peripherals.keyboard repeat true
     gsettings set org.gnome.desktop.peripherals.keyboard repeat ${KEY_REPEAT_RATE}
+    
+    # Map Caps Lock to Ctrl.
+    XKB_OPTIONS="$(gsettings get org.gnome.desktop.input-sources xkb-options)"
+    [ "$(echo ${XKB_OPTIONS} | grep -v '\[\]')" ] && gsettings set org.gnome.desktop.input-sources xkb-options "$(echo ${XKB_OPTIONS} | sed "s/\[\]/['ctrl:nocaps']/")"
+    [ "$(echo ${XKB_OPTIONS} | grep -v 'ctrl:nocaps')" ] && gsettings set org.gnome.desktop.input-sources xkb-options "$(echo ${XKB_OPTIONS} | sed "s/\]/, 'ctrl:nocaps']/")"
 fi
 
 # Xfce!
