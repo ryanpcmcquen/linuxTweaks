@@ -47,7 +47,7 @@ if [ `which mate-panel` ]; then
 fi
 
 # Pantheon (Elementary OS)!
-if [ `which pantheon-greeter` ]; then
+if [ `which pantheon-greeter` ] || [ `which io.elementary.greeter` ] || [ `which pantheon-mail` ]; then
     gsettings set org.gnome.desktop.peripherals.keyboard delay ${KEY_REPEAT_DELAY}
     gsettings set org.gnome.desktop.peripherals.keyboard repeat true
     gsettings set org.gnome.desktop.peripherals.keyboard repeat ${KEY_REPEAT_RATE}
