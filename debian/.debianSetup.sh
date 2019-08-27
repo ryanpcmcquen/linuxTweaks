@@ -35,11 +35,6 @@ if [ "`groups ${USER} | grep sudo`" ]; then
         && sudo install -m755 imgult /usr/local/bin/ \
         && rm imgult
 
-    # Killr!
-    wget -N https://gist.githubusercontent.com/ryanpcmcquen/7f6b8e1d4f9af71070a0ec59576d4d5b/raw/killr -P ~/ \
-        && sudo install -m755 ~/killr /usr/local/bin/ \
-        && rm ~/killr
-
     # Local password generator:
     wget -N https://gist.githubusercontent.com/ryanpcmcquen/a57201e1c8cb31bda6bce9104092725a/raw/password -P ~/ \
         && chmod +x ~/password
