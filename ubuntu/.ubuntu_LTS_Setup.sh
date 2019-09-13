@@ -72,7 +72,7 @@ fi
 #################################
 
 # Haskell!
-curl -sSL https://get.haskellstack.org/ | sh
+#curl -sSL https://get.haskellstack.org/ | sh
 # Link back to haskell-vim-now settings in case they were overwritten:
 #ln -sf ~/.config/haskell-vim-now/.vimrc ~/
 #ln -sf ~/.config/haskell-vim-now/.vim ~/
