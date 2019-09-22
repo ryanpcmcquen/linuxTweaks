@@ -30,6 +30,32 @@
     "show_encoding": true,
     "show_full_path": true,
     "show_line_endings": true,
+    "syntax_docset_map": {
+        "C": ["c", "glib", "gl2", "gl3", "gl4", "manpages", "sdl"],
+        "C99": ["c", "glib", "gl2", "gl3", "gl4", "manpages", "sdl"],
+        "C++": [
+            "cpp",
+            "net",
+            "boost",
+            "qt",
+            "cvcpp",
+            "cocos2dx",
+            "c",
+            "manpages",
+            "sdl"
+        ],
+        "C++11": [
+            "cpp",
+            "net",
+            "boost",
+            "qt",
+            "cvcpp",
+            "cocos2dx",
+            "c",
+            "manpages",
+            "sdl"
+        ]
+    },
     "tab_size": 4,
     "theme": "Adaptive.sublime-theme",
     "translate_tabs_to_spaces": true,
