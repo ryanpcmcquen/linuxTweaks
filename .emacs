@@ -44,6 +44,8 @@
 
     ;; Highlight code blocks in Org mode.
     org-src-fontify-natively t
+
+    line-spacing 2
 )
 
 ;; Show matching parens.
