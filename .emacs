@@ -70,9 +70,9 @@
     '(inhibit-startup-screen t)
 )
 
-; Jon Blow's Emacs color scheme:
-; https://www.twitch.tv/naysayer88/clip/SpoopyEphemeralClipzTriHard
-; https://pastebin.com/5tTEjWjL
+;; Jon Blow's Emacs color scheme:
+;; https://www.twitch.tv/naysayer88/clip/SpoopyEphemeralClipzTriHard
+;; https://pastebin.com/5tTEjWjL
 
 (custom-set-faces
     ;; custom-set-faces was added by Custom.
@@ -102,9 +102,9 @@
 (global-font-lock-mode 1)
 (set-cursor-color "lightgreen")
 (set-background-color "#072626")
-;(global-set-key [C-return] 'save-buffer)
+;;(global-set-key [C-return] 'save-buffer)
 
-;(set-face-attribute 'default nil :font "Anonymous Pro-14")
-;(set-face-attribute 'default nil :font "Consolas-174")
+;;(set-face-attribute 'default nil :font "Anonymous Pro-14")
+;;(set-face-attribute 'default nil :font "Consolas-174")
 
 (set-face-foreground 'font-lock-builtin-face "lightgreen")
