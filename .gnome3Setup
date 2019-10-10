@@ -18,14 +18,14 @@ gsettings set $KEYS_SCHEMA custom-keybindings "[\"$CUSTOM_PATH\"]"
 echo
 echo "****************************"
 echo "DETERMINING GSETTINGS PATHS:"
-echo
+echo "..."
 ## Depending on the version of gnome this can vary:
 if [ "$(gsettings get org.gnome.desktop.peripherals.keyboard repeat)" ]; then
   INPUT_DEVICES_PATH=org.gnome.desktop.peripherals
 elif [ "$(gsettings get org.gnome.settings-daemon.peripherals.keyboard repeat)" ]; then
   INPUT_DEVICES_PATH=org.gnome.settings-daemon.peripherals
 fi
-echo
+echo "..."
 echo "PATH DETERMINED."
 echo "****************************"
 echo
