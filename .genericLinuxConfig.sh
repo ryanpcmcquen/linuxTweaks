@@ -6,14 +6,14 @@
 # wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/; sh ~/.genericLinuxConfig.sh
 
 # PGP:
-if [ ! -d ~/pgp/ ]; then
+if [ ! -d ~/pgp/ ] && [ "`which keybase`" ]; then
     cd
     git clone keybase://private/rpcm/pgp ~/pgp
     cd
 fi
 
 # SSH:
-if [ ! -d ~/.ssh/ ] && [ "`which run_keybase`" ]; then
+if [ ! -d ~/.ssh/ ] && [ "`which keybase`" ]; then
     cd
     git clone keybase://private/rpcm/ssh ~/.ssh
     chmod 700 ~/.ssh/
