@@ -20,7 +20,7 @@
         "auto_format_on_save": true,
         "prettier_options": {
             "arrowParens": "always",
-            "semi": false,
+            "semi": true,
             "singleQuote": true,
             "tabWidth": 4
         }
