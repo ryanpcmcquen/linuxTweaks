@@ -52,7 +52,7 @@ keys.asright = buffer.word_right_extend
 --[[
 JavaScript:
 --]]
-prettier = '/usr/local/bin/node /usr/local/bin/prettier --tab-width 4 --single-quote --no-semi --arrow-parens always --parser babel '
+prettier = '/usr/local/bin/node /usr/local/bin/prettier --tab-width 4 --single-quote --arrow-parens always --parser babel '
 
 -- Format JavaScript with the 'Compile' command.
 textadept.run.compile_commands.javascript = prettier .. '--write "%f"'
