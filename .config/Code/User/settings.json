@@ -39,7 +39,7 @@
     "prettier.arrowParens": "always",
     "prettier.disableLanguages": ["vue", "jsp"],
     "prettier.eslintIntegration": true,
-    "prettier.semi": false,
+    "prettier.semi": true,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
