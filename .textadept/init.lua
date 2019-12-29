@@ -28,7 +28,6 @@ textadept.editing.auto_pairs = nil
 -- Trim trailing whitespace:
 textadept.editing.strip_trailing_spaces = true
 
--- Increase font size for GUI:
 buffer:set_theme(
     'light',
     {
