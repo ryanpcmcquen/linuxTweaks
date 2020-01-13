@@ -2,15 +2,15 @@
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.restoreFluxbox.sh | sh
 
 
-if [ "`find /var/log/packages/ -name tinyterm-*`" ]; then
-  ## tinyterm
-  sed -i.bak 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
-  /g' ~/.fluxbox/keys
-else
-  ## uxterm
-  sed -i.bak 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
-  /g' ~/.fluxbox/keys
-fi
+# if [ "`find /var/log/packages/ -name tinyterm-*`" ]; then
+#   ## tinyterm
+#   sed -i.bak 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec tinyterm\
+#   /g' ~/.fluxbox/keys
+# else
+#   ## uxterm
+#   sed -i.bak 's/^Mod1 F1 :Exec xterm/Mod1 F1 :Exec uxterm -rv -geometry 130x30\
+#   /g' ~/.fluxbox/keys
+# fi
 
 ## add additional audio keys, verify with xev
 sed -i.bak 's@^176 :Exec amixer sset.*@123 :Exec pamixer -i 5\
