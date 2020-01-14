@@ -72,4 +72,4 @@ alias ex='TERM=xterm elvis'
 ## across multiple terminals
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-export PS1='\u@\w:\$(parse_git_branch)\$ '
+export PS1='\u@\w:$(parse_git_branch)\$ '
