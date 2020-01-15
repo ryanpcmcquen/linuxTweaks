@@ -1,0 +1,12 @@
+{
+    "bootstrapped": true,
+    "in_process_packages": [],
+    "installed_packages": [
+        "Clang Format",
+        "EasyClangComplete",
+        "Function Name Display",
+        "Package Control",
+        "Persistent Status Bar Line Number",
+        "Witness color scheme"
+    ]
+}
