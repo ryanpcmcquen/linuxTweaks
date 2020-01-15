@@ -24,7 +24,7 @@ if [ ! -d ~/.ssh/ ] && [ "`which keybase`" ]; then
 fi
 
 # Copy this version if you do not have sudo:
-#echo >> /etc/profile.d/START_SSH_AGENT; echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile.d/START_SSH_AGENT; echo '  eval `ssh-agent`' >> /etc/profile.d/START_SSH_AGENT; echo '  ssh-add' >> /etc/profile.d/START_SSH_AGENT; echo 'fi' >> /etc/profile.d/START_SSH_AGENT; echo >> /etc/profile.d/START_SSH_AGENT
+#echo >> /etc/profile.d/START_SSH_AGENT; echo 'if [ -z "$SSH_AUTH_SOCK" ]; then' >> /etc/profile.d/START_SSH_AGENT; echo '    eval `ssh-agent`' >> /etc/profile.d/START_SSH_AGENT; echo '    ssh-add' >> /etc/profile.d/START_SSH_AGENT; echo 'fi' >> /etc/profile.d/START_SSH_AGENT; echo >> /etc/profile.d/START_SSH_AGENT
 
 # Start the ssh-agent so we can clone away without
 # entering a passphrase several times:
