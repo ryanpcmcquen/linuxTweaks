@@ -52,6 +52,10 @@ if [ -d "${SUBLIME_TEXT_CONFIG_DIR}" ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-mousemap -P "${SUBLIME_TEXT_CONFIG_DIR}"
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/orgmode.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Preferences.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
+    # If we haven't installed Package Control yet, get some of my faves:
+    if [ ! -e "${SUBLIME_TEXT_CONFIG_DIR}/Package Control.sublime-settings" ]; then
+        wget -N "https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Package Control.sublime-settings" -P "${SUBLIME_TEXT_CONFIG_DIR}"
+    fi
 fi
 
 # U2F:
