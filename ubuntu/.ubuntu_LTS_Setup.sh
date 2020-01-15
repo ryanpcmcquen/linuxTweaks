@@ -32,7 +32,7 @@ if [ ! `which unity` ] && [ `which gnome-shell` ]; then
 fi
 
 # Configure KDE if present (Kubuntu):
-if [ `which startkde` ]; then
+if [ `which startkde` ] || [ `which kwin` ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
 fi
 
@@ -51,7 +51,7 @@ if [ `which pantheon-greeter` ] || [ `which io.elementary.greeter` ] || [ `which
     gsettings set org.gnome.desktop.peripherals.keyboard delay ${KEY_REPEAT_DELAY}
     gsettings set org.gnome.desktop.peripherals.keyboard repeat true
     gsettings set org.gnome.desktop.peripherals.keyboard repeat ${KEY_REPEAT_RATE}
-    
+
     # Map Caps Lock to Ctrl.
     XKB_OPTIONS="$(gsettings get org.gnome.desktop.input-sources xkb-options)"
     [ "$(echo ${XKB_OPTIONS} | grep -v '\[\]')" ] && gsettings set org.gnome.desktop.input-sources xkb-options "$(echo ${XKB_OPTIONS} | sed "s/\[\]/['ctrl:nocaps']/")"
@@ -144,4 +144,3 @@ echo "\___)=(___/ "
 echo
 echo "A reboot may be necessary."
 echo
-
