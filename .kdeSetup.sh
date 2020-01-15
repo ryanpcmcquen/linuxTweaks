@@ -20,8 +20,8 @@ fi
 
 # Kwallet is annoying, and also makes connecting
 # to wireless networks take multiple attempts -- no thanks.
-${KWRITECONF} --file kwalletrc --group Wallet --key "Enabled" false
-${KWRITECONF} --file kwalletrc --group Wallet --key "First Use" false
+# ${KWRITECONF} --file kwalletrc --group Wallet --key "Enabled" false
+# ${KWRITECONF} --file kwalletrc --group Wallet --key "First Use" false
 
 # Set keyboard repeat/delay to be blazingly fast.
 ${KWRITECONF} --file kcminputrc --group "Keyboard" --key "RepeatDelay" ${KEY_REPEAT_DELAY}
@@ -65,7 +65,6 @@ ${KWRITECONF} --file kwinrc --group "Windows" --key "FocusStealingPreventionLeve
 #${KWRITECONF} --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
 ${KWRITECONF} --file kwinrc --group "Compositing" --key "UnredirectFullscreen" true
 #${KWRITECONF} --file kwinrc --group "Compositing" --key "AnimationSpeed" 1
-# Actually disable compositing, I know this renders wobbly windows useless.
 ${KWRITECONF} --file kwinrc --group "Compositing" --key "Enabled" true
 
 # Give less notifications.
