@@ -109,16 +109,18 @@ ${KWRITECONF} --file katerc --group "Kate Part Defaults" --key "Fallback Encodin
 #    qdbus org.kde.kwin /KWin org.kde.KWin.toggleCompositing
 #fi
 
+# This only seems to apply to old versions:
+#
 # Restart services so that new settings take effect.
-if [ "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
-    qdbus org.kde.kded /kded unloadModule powerdevil
-    qdbus org.kde.keyboard /modules/khotkeys reread_configuration
-    qdbus org.kde.kded /kbuildsycoca recreate
-    qdbus org.kde.kded /kded reconfigure
-    qdbus org.kde.plasma-desktop /MainApplication reparseConfiguration
-    qdbus org.kde.kwin /KWin reconfigure
-    qdbus org.kde.kded /kded loadModule powerdevil
-fi
+# if [ "$(env | grep XDG_CURRENT_DESKTOP=KDE)" ]; then
+#     qdbus org.kde.kded /kded unloadModule powerdevil
+#     qdbus org.kde.keyboard /modules/khotkeys reread_configuration
+#     qdbus org.kde.kded /kbuildsycoca recreate
+#     qdbus org.kde.kded /kded reconfigure
+#     qdbus org.kde.plasma-desktop /MainApplication reparseConfiguration
+#     qdbus org.kde.kwin /KWin reconfigure
+#     qdbus org.kde.kded /kded loadModule powerdevil
+# fi
 
 echo
 echo "This scipt detected that you are using KDE $KDEVER."
