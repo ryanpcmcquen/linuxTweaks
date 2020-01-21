@@ -30,7 +30,7 @@ if [ `which gnome-shell` ]; then
 fi
 
 # Configure KDE if present:
-if [ `which startkde` ]; then
+if [ `which startkde` ] || [ `which kwin` ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.kdeSetup.sh -P ~/; bash ~/.kdeSetup.sh
 fi
 
