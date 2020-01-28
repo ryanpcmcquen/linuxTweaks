@@ -46,7 +46,21 @@
     org-src-fontify-natively t
 
     line-spacing 2
+
+    ;; Start somewhere sane, rather
+    ;; than the directory where
+    ;; emacs lives.
+    default-directory "~/code"
+
+    ;; Ido settings:
+    ido-enable-flex-matching t
+    ido-everywhere t
+
 )
+
+;; Enable ido.
+;; https://masteringemacs.org/article/introduction-to-ido-mode
+(ido-mode 1)
 
 ;; Show matching parens.
 (show-paren-mode 1)
@@ -59,11 +73,6 @@
 ;; can occasionally hurt
 ;; performance.
 (global-linum-mode 0)
-
-;; Start somewhere sane, rather
-;; than the directory where
-;; emacs lives.
-(setq default-directory "~/")
 
 ;; Increase default font size.
 ;(set-face-attribute 'default nil :height 125)
