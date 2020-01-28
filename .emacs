@@ -47,11 +47,6 @@
 
     line-spacing 2
 
-    ;; Start somewhere sane, rather
-    ;; than the directory where
-    ;; emacs lives.
-    default-directory "~/code"
-
     ;; Ido settings:
     ido-enable-flex-matching t
     ido-everywhere t
@@ -61,6 +56,16 @@
 ;; Enable ido.
 ;; https://masteringemacs.org/article/introduction-to-ido-mode
 (ido-mode 1)
+
+;; Start somewhere sane, rather
+;; than the directory where
+;; emacs lives. This seems
+;; incompatible with
+;; setq-default.
+(setq default-directory "~/code")
+
+;; Disable the toolbar.
+(tool-bar-mode -1)
 
 ;; Show matching parens.
 (show-paren-mode 1)
