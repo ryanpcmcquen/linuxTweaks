@@ -66,7 +66,7 @@
 (setq default-directory "~/")
 
 ;; Increase default font size.
-(set-face-attribute 'default nil :height 125)
+;(set-face-attribute 'default nil :height 125)
 
 (custom-set-variables
     '(inhibit-startup-screen t)
