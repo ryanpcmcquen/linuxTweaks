@@ -7,6 +7,7 @@
 
 STABLE=${STABLE:-no}
 REINSTALL=${REINSTALL:-no}
+UPDATE=${UPDATE:-yes}
 
 if [ ! $UID = 0 ]; then
   cat << EOF
@@ -56,18 +57,18 @@ install_latest_pkg_compat() {
   ls -t --color=never /tmp/$PACKAGE-*_bbsb.txz | head -1 | xargs -i upgradepkg --reinstall --install-new {}
 }
 
-if [ "$REINSTALL" = "no" ]; then
+if [ "$UPDATE" = "yes" -a "$REINSTALL" = "no" ]; then
   cd
   git clone https://github.com/WhiteWolf1776/Bumblebee-SlackBuilds.git
   cd Bumblebee-SlackBuilds/
 fi
 
-if [ "$STABLE" = "yes" ]; then
+if [ "$UPDATE" = "yes" -a "$STABLE" = "yes" ]; then
   git checkout 14.1
 fi
 
 ## in case there are updates ;-)
-if [ "$REINSTALL" = "yes" ]; then
+if [ "$UPDATE" = "yes" -a "$REINSTALL" = "yes" ]; then
   git pull
 fi
 
@@ -85,6 +86,7 @@ install_latest_pkg bumblebee
 install_latest_pkg bbswitch
 
 install_latest_pkg_compat primus
+install_latest_pkg_compat primus_vk
 
 cd ../nouveau-blacklist/
 upgradepkg --reinstall xf86-video-nouveau-blacklist-noarch-1.txz
@@ -122,7 +124,9 @@ fi
 chmod 755 /etc/rc.d/rc.local
 chmod 755 /etc/rc.d/rc.local_shutdown
 
-wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh -P ~/Bumblebee-SlackBuilds
+if [ "$UPDATE" = "yes" ]; then
+  wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh -P ~/Bumblebee-SlackBuilds
+fi
 
 echo
 echo "+===========================================+"
