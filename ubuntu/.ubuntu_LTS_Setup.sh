@@ -2,7 +2,7 @@
 # Run as a normal user:
 # wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/ubuntu/.ubuntu_LTS_Setup.sh -P ~/; bash ~/.ubuntu_LTS_Setup.sh
 
-# Tested on 14.04, 16.04, and 18.04.
+# Tested on 14.04, 16.04, 18.04, and 20.04.
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY_REPEAT_SETTINGS__ -P ~/
 . ~/.__KEY_REPEAT_SETTINGS__
