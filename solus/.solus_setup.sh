@@ -8,9 +8,9 @@ sudo eopkg install -y \
     cloc emacs fuse git keybase linux-lts llvm llvm-clang openssh \
     sdl2-devel sdl2-image-devel sdl2-mixer-devel sdl2-ttf-devel
 sudo usermod -aG fuse $(whoami)
-snap refresh
-snap install sublime-text --classic
-snap install sublime-merge --classic
+sudo snap refresh
+sudo snap install sublime-text --classic
+sudo snap install sublime-merge --classic
 
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.genericLinuxConfig.sh -P ~/ && \
     bash ~/.genericLinuxConfig.sh
