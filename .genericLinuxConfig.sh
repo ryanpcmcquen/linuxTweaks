@@ -39,9 +39,15 @@ curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitVimNO
 # Emacs!
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.emacs -P ~/
 
-# Sublime Text!
+# Sublime!
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.installSublimeStuff.sh -P ~/
 bash ~/.installSublimeStuff.sh
+
+SUBLIME_MERGE_CONFIG_DIR=~/.config/sublime-merge/Packages/User
+if [ -d "${SUBLIME_MERGE_CONFIG_DIR}" ]; then
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeMerge/Preferences.sublime-settings -P "${SUBLIME_MERGE_CONFIG_DIR}"
+fi
+
 SUBLIME_TEXT_CONFIG_DIR=~/.config/sublime-text-3/Packages/User
 if [ -d "${SUBLIME_TEXT_CONFIG_DIR}" ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/sublime_witness/master/Witness.sublime-color-scheme -P "${SUBLIME_TEXT_CONFIG_DIR}"
