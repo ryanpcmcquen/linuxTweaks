@@ -7,6 +7,36 @@
     "always_show_minimap_viewport": false,
     "auto_complete_commit_on_tab": true,
     "auto_match_enabled": false,
+
+    "binary_file_patterns": [
+        "*.jpg",
+        "*.jpeg",
+        "*.png",
+        "*.gif",
+        "*.ttf",
+        "*.tga",
+        "*.dds",
+        "*.ico",
+        "*.eot",
+        "*.pdf",
+        "*.swf",
+        "*.jar",
+        "*.zip",
+        "*.csv",
+        "*.gz",
+        "*.lock.*",
+        "*.log.*",
+        "*.map",
+        "*.sql",
+        "*.tar.*",
+        "*.xz",
+        "*.yaml.*",
+
+        ".vs/**",
+        "node_modules/**",
+        "vendor/**"
+    ],
+
     "block_caret": true,
     "color_scheme": "Packages/User/Witness.sublime-color-scheme",
     "default_encoding": "UTF-8",
@@ -16,6 +46,22 @@
     "font_face": "IBM Plex Mono",
     "font_size": 11,
     "ignored_packages": ["Vintage"],
+
+    "index_exclude_patterns": [
+        "*.lock",
+        "*.log",
+        "*.csv",
+        "*.gz",
+        "*.json",
+        "*.sql",
+        "*.tar.*",
+        "*.xz",
+
+        ".vs/**",
+        "node_modules/**",
+        "vendor/**"
+    ],
+
     "js_prettier": {
         "auto_format_on_save": true,
         "prettier_options": {
