@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Script to automate kernel compilation
-# Ryan P. C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
+# Ryan P. C. McQuen | Everett, WA
 #
 ################################
 ### TO INSTALL/USE (MAKE SURE YOU ARE ROOT!):
