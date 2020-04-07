@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/gitSetup | sh
+
 GITNAME="Ryan McQuen"
 GITEMAIL="rpcm@linux.com"
 ## git config
