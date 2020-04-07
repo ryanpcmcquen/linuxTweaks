@@ -9,3 +9,4 @@
 [core]
 	pager = less -r
 	autocrlf = false
+	eol = lf
