@@ -1,11 +1,13 @@
 #!/bin/sh
 
-GITNAME="Ryan P. C. McQuen"
-GITEMAIL="ryanpcmcquen@member.fsf.org"
+GITNAME="Ryan McQuen"
+GITEMAIL="rpcm@linux.com"
 ## git config
 git config --global user.name "$GITNAME"
 git config --global user.email "$GITEMAIL"
 git config --global credential.helper 'cache --timeout=3600'
 git config --global push.default simple
 git config --global core.pager "less -r"
+git config --global core.autocrlf false
+git config --global core.eol lf
 
