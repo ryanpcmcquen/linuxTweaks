@@ -1,7 +1,7 @@
 #!/bin/sh
 ## run as root
 
-# Ryan P. C. McQuen | Everett, WA | ryanpcmcquen@member.fsf.org
+# Ryan P. C. McQuen | Everett, WA
 
 # curl https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/slackware/crazybee.sh | sh
 
