@@ -1,10 +1,11 @@
 # wget https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.gitconfig -P ~/
 [user]
-	name = Ryan P. C. McQuen
-	email = ryanpcmcquen@member.fsf.org
+	name = Ryan McQuen
+	email = rpcm@linux.com
 [credential]
 	helper = cache --timeout=3600
 [push]
 	default = simple
 [core]
 	pager = less -r
+	autocrlf = false
