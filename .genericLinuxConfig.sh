@@ -19,6 +19,7 @@ if [ ! -d ~/.ssh/ ] && [ "`which keybase`" ]; then
     chmod 700 ~/.ssh/
     chmod 400 ~/.ssh/*
     chmod 444 ~/.ssh/id_rsa.pub
+    chmod 600 ~/.ssh/config
     chmod 644 ~/.ssh/known_hosts
     cd
 fi
