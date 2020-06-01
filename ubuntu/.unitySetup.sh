@@ -10,7 +10,7 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 32
 ## Focus follows mouse!
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ click-to-focus false
+# gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ click-to-focus false
 ## 3x3 workspaces:
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
