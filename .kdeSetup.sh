@@ -55,11 +55,11 @@ ${KWRITECONF} --file kdeglobals --group "KDE-Global GUI Settings" --key "Graphic
 #${KWRITECONF} --file ksplashrc --group "KSplash" --key "Theme" Minimalistic
 
 # Mostly make kwin faster, but also add wobbly windows.
-${KWRITECONF} --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMouse
-${KWRITECONF} --file kwinrc --group "Windows" --key "AutoRaise" true
-${KWRITECONF} --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
-${KWRITECONF} --file kwinrc --group "Windows" --key "DelayFocusInterval" 500
-${KWRITECONF} --file kwinrc --group "Windows" --key "FocusStealingPreventionLevel" 2
+# ${KWRITECONF} --file kwinrc --group "Windows" --key "FocusPolicy" FocusFollowsMouse
+# ${KWRITECONF} --file kwinrc --group "Windows" --key "AutoRaise" true
+# ${KWRITECONF} --file kwinrc --group "Windows" --key "AutoRaiseInterval" 500
+# ${KWRITECONF} --file kwinrc --group "Windows" --key "DelayFocusInterval" 500
+# ${KWRITECONF} --file kwinrc --group "Windows" --key "FocusStealingPreventionLevel" 2
 #${KWRITECONF} --file kwinrc --group "Plugins" --key "kwin4_effect_wobblywindowsEnabled" true
 #${KWRITECONF} --file kwinrc --group "Plugins" --key "kwin4_effect_cubeEnabled" true
 #${KWRITECONF} --file kwinrc --group "Plugins" --key "kwin4_effect_cubeslideEnabled" true
