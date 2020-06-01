@@ -50,14 +50,14 @@ if [ -z "$(grep workspaceNames ~/.fluxbox/init)" ]; then
   echo "session.screen0.workspaceNames: 1,2,3,4," >> ~/.fluxbox/init
   echo "session.screen0.toolbar.widthPercent: 50" >> ~/.fluxbox/init
   echo "session.screen0.workspacewarping: false" >> ~/.fluxbox/init
-  echo "session.screen0.focusModel:	MouseFocus" >> ~/.fluxbox/init
-  echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
+#   echo "session.screen0.focusModel:	MouseFocus" >> ~/.fluxbox/init
+#   echo "session.autoRaiseDelay: 500" >> ~/.fluxbox/init
 else
   sed -i.bak "s@session.screen0.workspaceNames:.*@session.screen0.workspaceNames: 1,2,3,4,@g" ~/.fluxbox/init
   sed -i.bak "s@session.screen0.toolbar.widthPercent:.*@session.screen0.toolbar.widthPercent: 50@g" ~/.fluxbox/init
   sed -i.bak "s@session.screen0.workspacewarping:.*@session.screen0.workspacewarping: false@g" ~/.fluxbox/init
-  sed -i.bak "s@session.screen0.focusModel:.*@session.screen0.focusModel:	MouseFocus@g" ~/.fluxbox/init
-  sed -i.bak "s@session.autoRaiseDelay:.*@session.autoRaiseDelay: 500@g" ~/.fluxbox/init
+#   sed -i.bak "s@session.screen0.focusModel:.*@session.screen0.focusModel:	MouseFocus@g" ~/.fluxbox/init
+#   sed -i.bak "s@session.autoRaiseDelay:.*@session.autoRaiseDelay: 500@g" ~/.fluxbox/init
 fi
 
 if [ -d "/usr/share/fluxbox/styles/Stealthy" ]; then
