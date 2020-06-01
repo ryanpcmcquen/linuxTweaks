@@ -52,7 +52,9 @@ xfconf-query -n -c xfwm4 -p /general/snap_to_border -t bool -s true
 xfconf-query -n -c xfwm4 -p /general/snap_to_windows -t bool -s true
 xfconf-query -n -c xfwm4 -p /general/wrap_windows -t bool -s false
 xfconf-query -n -c xfwm4 -p /general/wrap_workspaces -t bool -s false
-xfconf-query -n -c xfwm4 -p /general/click_to_focus -t bool -s false
+
+# Focus follows mouse:
+# xfconf-query -n -c xfwm4 -p /general/click_to_focus -t bool -s false
 
 # Make the touchpad awesome:
 xfconf-query -n -c pointers -p /SynPS2_Synaptics_TouchPad/Properties/Synaptics_Edge_Scrolling -t int -s 0 -t int -s 0 -t int -s 0
