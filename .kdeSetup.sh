@@ -122,6 +122,8 @@ ${KWRITECONF} --file katerc --group "Kate Part Defaults" --key "Fallback Encodin
 #     qdbus org.kde.kded /kded loadModule powerdevil
 # fi
 
+[ -e /usr/bin/ssh-add ] && ln -sf /usr/bin/ssh-add ~/.config/autostart-scripts/
+
 echo
 echo "This scipt detected that you are using KDE $KDEVER."
 echo "If this is not correct, please file an issue at: "
