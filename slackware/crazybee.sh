@@ -89,7 +89,9 @@ install_latest_pkg_compat primus
 install_latest_pkg_compat primus_vk
 
 cd ../nouveau-blacklist/
-upgradepkg --reinstall xf86-video-nouveau-blacklist-noarch-1.txz
+removepkg xf86-video-nouveau-blacklist-noarch-1.txz
+ls -t --color=never xf86-video-nouveau-blacklist-*noarch-[0-9]*.txz | \
+    head -1 | xargs -i upgradepkg --install-new --reinstall {}
 if [ -z "$(grep xf86-video-nouveau /etc/slackpkg/blacklist)" ]; then
   echo xf86-video-nouveau >> /etc/slackpkg/blacklist
 fi
