@@ -80,7 +80,7 @@
 (global-linum-mode 0)
 
 ;; Increase default font size.
-;(set-face-attribute 'default nil :height 125)
+(set-face-attribute 'default nil :height 175)
 
 (custom-set-variables
     '(inhibit-startup-screen t)
