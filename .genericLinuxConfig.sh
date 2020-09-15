@@ -87,11 +87,13 @@ sudo sed -i 's/XKBOPTIONS=.*/XKBOPTIONS="ctrl:nocaps"/g' /etc/default/keyboard
 wget -N \
     $(curl https://api.github.com/repos/IBM/plex/releases/latest | grep TrueType | grep browser_download | cut -d \" -f 4) \
     -P /tmp/
+
+IBM_PLEX_DIR_NAME=ibm_plex_mono
 if [ -e /tmp/TrueType.zip ]; then
-    mkdir -p /tmp/ibm_plex_mono/
-    unzip -o /tmp/TrueType.zip -d /tmp/ibm_plex_mono/
-    sudo cp -R /tmp/ibm_plex_mono/TrueType/* /usr/share/fonts/truetype/
-    rm -rf /tmp/ibm_plex_mono/
+    mkdir -p /tmp/${IBM_PLEX_DIR_NAME}/
+    unzip -o /tmp/TrueType.zip -d /tmp/${IBM_PLEX_DIR_NAME}/
+    sudo cp -R /tmp/${IBM_PLEX_DIR_NAME}/TrueType/* /usr/share/fonts/truetype/
+    rm -rf /tmp/${IBM_PLEX_DIR_NAME}/
 fi
 
 # JetBrains Mono:
@@ -99,12 +101,26 @@ wget -N \
     $(curl https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep browser_download | cut -d \" -f 4) \
     -P /tmp/
 
+JET_BRAINS_DIR_NAME=jet_brains_mono
 JET_BRAINS_MONO_ARCHIVE="$(find /tmp/ -maxdepth 1 -iname 'JetBrainsMono-*.zip')"
 if [ "$(echo ${JET_BRAINS_MONO_ARCHIVE})" ]; then
-    mkdir -p /tmp/jet_brains_mono/
-    unzip -o "${JET_BRAINS_MONO_ARCHIVE}" -d /tmp/jet_brains_mono/
-    sudo cp -R /tmp/jet_brains_mono/ttf/* /usr/share/fonts/truetype/
-    rm -rf /tmp/jet_brains_mono/
+    mkdir -p /tmp/${JET_BRAINS_DIR_NAME}/
+    unzip -o "${JET_BRAINS_MONO_ARCHIVE}" -d /tmp/${JET_BRAINS_DIR_NAME}/
+    sudo cp -R /tmp/${JET_BRAINS_DIR_NAME}/ttf/* /usr/share/fonts/truetype/
+    rm -rf /tmp/${JET_BRAINS_DIR_NAME}/
+fi
+
+# Office Code Pro:
+wget -N \
+    $(curl https://api.github.com/repos/nathco/Office-Code-Pro/releases/latest | grep zipball_url | cut -d \" -f 4) \
+    -O /tmp/office_code_pro.zip
+
+OFFICE_CODE_PRO_DIR_NAME=office_code_pro
+if [ -e /tmp/office_code_pro.zip ]; then
+    mkdir -p /tmp/${OFFICE_CODE_PRO_DIR_NAME}/
+    unzip -o /tmp/office_code_pro.zip -d /tmp/${OFFICE_CODE_PRO_DIR_NAME}/
+    find /tmp/office_code_pro -type d -name 'TTF' -exec sudo cp -R {} /usr/share/fonts/truetype/ \;
+    rm -rf /tmp/${OFFICE_CODE_PRO_DIR_NAME}/
 fi
 
 if [ -e $HOME/.bashrc ]; then
