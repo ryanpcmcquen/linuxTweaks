@@ -88,9 +88,23 @@ wget -N \
     $(curl https://api.github.com/repos/IBM/plex/releases/latest | grep TrueType | grep browser_download | cut -d \" -f 4) \
     -P /tmp/
 if [ -e /tmp/TrueType.zip ]; then
-    unzip -o /tmp/TrueType.zip -d /tmp/
-    sudo cp -R /tmp/TrueType/* /usr/share/fonts/truetype/
-    rm -rf /tmp/TrueType*
+    mkdir -p /tmp/ibm_plex_mono/
+    unzip -o /tmp/TrueType.zip -d /tmp/ibm_plex_mono/
+    sudo cp -R /tmp/ibm_plex_mono/TrueType/* /usr/share/fonts/truetype/
+    rm -rf /tmp/ibm_plex_mono/
+fi
+
+# JetBrains Mono:
+wget -N \
+    $(curl https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep browser_download | cut -d \" -f 4) \
+    -P /tmp/
+
+JET_BRAINS_MONO_ARCHIVE="$(find /tmp/ -maxdepth 1 -iname 'JetBrainsMono-*.zip')"
+if [ "$(echo ${JET_BRAINS_MONO_ARCHIVE})" ]; then
+    mkdir -p /tmp/jet_brains_mono/
+    unzip -o "${JET_BRAINS_MONO_ARCHIVE}" -d /tmp/jet_brains_mono/
+    sudo cp -R /tmp/jet_brains_mono/ttf/* /usr/share/fonts/truetype/
+    rm -rf /tmp/jet_brains_mono/
 fi
 
 if [ -e $HOME/.bashrc ]; then
