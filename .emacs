@@ -65,7 +65,8 @@
 (setq default-directory "~/code")
 
 ;; Disable the toolbar.
-(tool-bar-mode -1)
+(if window-system
+    (tool-bar-mode -1))
 
 ;; Show matching parens.
 (show-paren-mode 1)
