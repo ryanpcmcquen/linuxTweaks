@@ -37,10 +37,10 @@
     xml-tab-width 4
 
     ;; Do not clutter the world with temp files.
-    backup-directory-alist
-        `((".*" . ,temporary-file-directory))
-    auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t))
+    ;; backup-directory-alist
+    ;;     `((".*" . ,temporary-file-directory))
+    ;; auto-save-file-name-transforms
+    ;;     `((".*" ,temporary-file-directory t))
 
     ;; Highlight code blocks in Org mode.
     org-src-fontify-natively t
