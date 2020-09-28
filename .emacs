@@ -36,7 +36,10 @@
     xml-basic-offset 4
     xml-tab-width 4
 
-    ;; Do not clutter the world with temp files.
+    ;; This disables all the temp file writing
+    ;; that Emacs does, but it can break
+    ;; some syncing apps and or cause
+    ;; file loss. :^(
     ;; backup-directory-alist
     ;;     `((".*" . ,temporary-file-directory))
     ;; auto-save-file-name-transforms
