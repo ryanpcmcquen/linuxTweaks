@@ -108,6 +108,8 @@ endfunction
 " End of `fix-vim-pasting`.
 "
 
+set background=light
+
 """"""""""""""""""
 " Vim color file "
 """"""""""""""""""
