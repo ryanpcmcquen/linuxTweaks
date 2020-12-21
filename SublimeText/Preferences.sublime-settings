@@ -54,6 +54,7 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
+		"JavaScript",
 		"Vintage"
 	],
 	"index_exclude_patterns":
