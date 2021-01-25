@@ -57,6 +57,7 @@ if [ -d "${SUBLIME_TEXT_CONFIG_DIR}" ]; then
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/C++.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-keymap -P "${SUBLIME_TEXT_CONFIG_DIR}"
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Default.sublime-mousemap -P "${SUBLIME_TEXT_CONFIG_DIR}"
+    wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Doxy.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/orgmode.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/SublimeText/Preferences.sublime-settings -P "${SUBLIME_TEXT_CONFIG_DIR}"
     # If we haven't installed Package Control yet, get some of my faves:
