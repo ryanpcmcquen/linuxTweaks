@@ -38,7 +38,7 @@
 
     ;; This disables all the temp file writing
     ;; that Emacs does, but it can break
-    ;; some syncing apps and or cause
+    ;; some syncing apps and/or cause
     ;; file loss. :^(
     ;; backup-directory-alist
     ;;     `((".*" . ,temporary-file-directory))
