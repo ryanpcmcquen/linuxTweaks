@@ -12,7 +12,7 @@
 		],
 		"style": "WebKit"
 	},
-	"always_show_minimap_viewport": false,
+	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
 	"auto_match_enabled": false,
 	"binary_file_patterns":
@@ -48,10 +48,11 @@
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
 	"draw_indent_guides": false,
+	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fallback_encoding": "UTF-8",
 	"font_face": "Office Code Pro D",
-	"font_size": 11,
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"JavaScript",
@@ -87,6 +88,7 @@
 	"show_encoding": true,
 	"show_full_path": true,
 	"show_line_endings": true,
+	"show_minimap": false,
 	"syntax_docset_map":
 	{
 		"C":
