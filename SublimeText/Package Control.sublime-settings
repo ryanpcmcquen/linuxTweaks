@@ -14,6 +14,7 @@
 		"EditorConfig",
 		"FileDiffs",
 		"Function Name Display",
+		"JSON Key-Value",
 		"JsPrettier",
 		"LSP",
 		"LSP-typescript",
@@ -25,6 +26,7 @@
 		"SendToPasteBin",
 		"Terminus",
 		"TodoTxt Syntax",
+		"TypeScript Syntax",
 		"Witness color scheme"
 	]
 }
