@@ -6,7 +6,6 @@
 	"installed_packages":
 	[
 		"AutoPEP8",
-		"Babel",
 		"Clang Format",
 		"DashDoc",
 		"DoxyDoxygen",
@@ -14,7 +13,6 @@
 		"EditorConfig",
 		"FileDiffs",
 		"Function Name Display",
-		"JSON Key-Value",
 		"JsPrettier",
 		"LSP",
 		"LSP-typescript",
@@ -24,9 +22,7 @@
 		"Persistent Status Bar Line Number",
 		"Remember Minimap Setting",
 		"SendToPasteBin",
-		"Terminus",
 		"TodoTxt Syntax",
-		"TypeScript Syntax",
 		"Witness color scheme"
 	]
 }
