@@ -10,7 +10,7 @@
 			"Objective-C",
 			"Objective-C++"
 		],
-		"style": "WebKit"
+		"style": "WebKit",
 	},
 	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
@@ -33,7 +33,6 @@
 		"*.gz",
 		"*.lock.*",
 		"*.log.*",
-		"*.map",
 		"*.tar.*",
 		"*.xz",
 		".vs/**",
@@ -52,12 +51,11 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"index_exclude_patterns":
 	[
 		"*.lock",
-		"*.log",
 		"*.gz",
 		"*.tar.*",
 		"*.xz",
@@ -72,8 +70,8 @@
 		{
 			"arrowParens": "always",
 			"semi": true,
-			"tabWidth": 4
-		}
+			"tabWidth": 4,
+		},
 	},
 	"line_numbers": false,
 	"margin": 0,
@@ -126,12 +124,12 @@
 			"gl4",
 			"manpages",
 			"sdl"
-		]
+		],
 	},
 	"tab_size": 4,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": "all",
 	"trim_only_modified_white_space": false,
-	"word_wrap": false
+	"word_wrap": false,
 }
