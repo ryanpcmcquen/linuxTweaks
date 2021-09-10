@@ -1,5 +1,6 @@
 {
     "draw_centered": true,
     "font_size": 22,
-    "wrap_width": 64
+    "margin": 0,
+    "wrap_width": 70
 }
