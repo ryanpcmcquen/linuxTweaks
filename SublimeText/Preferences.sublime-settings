@@ -74,7 +74,6 @@
 		},
 	},
 	"line_numbers": false,
-	"margin": 0,
 	"show_encoding": true,
 	"show_full_path": true,
 	"show_line_endings": true,
@@ -131,5 +130,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": "all",
 	"trim_only_modified_white_space": false,
-	"word_wrap": false,
+	"word_wrap": "auto",
 }
