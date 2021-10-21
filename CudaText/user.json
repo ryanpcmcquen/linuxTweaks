@@ -1,0 +1,33 @@
+{
+    //[Text/Tabulations]
+    //Tab-char width
+    "tab_size": 4,
+
+    //Tab key inserts spaces, instead of tab-char
+    "tab_spaces": true,
+
+    //How to compose whitespaces for auto-indented lines (on Enter)
+    //  0: indent (maybe mixed spaces/tabs) like in previous line
+    //  1: by spaces only
+    //  2: by tabs+spaces
+    //  3: by tabs only
+    //  4: by spaces up to "(" last non-closed bracket in previous line
+    "indent_kind": 1,
+
+    //Indentation for Indent/Unindent commands
+    //  N>0: indent is N spaces
+    //  N<0: indent is abs(N) tabs
+    //  N=0: indent is from options "tab_size" and "tab_spaces"
+    "indent_size": 4,
+
+    //[File/Saving]
+    //On saving file: delete spaces at lines ends
+    "saving_trim_spaces": true,
+
+    //On saving file: force end-of-line chars at file end (if not entered)
+    "saving_force_final_eol": true,
+
+    //[Ui]
+    //Show full file path in the window title
+    "ui_title_path": true
+}
