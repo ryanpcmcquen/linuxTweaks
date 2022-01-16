@@ -56,17 +56,17 @@ if [ "`groups ${USER} | grep sudo`" ]; then
     cd
 
     # Set vim as the default editor:
-    if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
-        if [ ! -e /etc/profile.d/vimDefault ]; then
-            sudo sh -c 'echo >> /etc/profile.d/vimDefault'
-            sudo sh -c 'echo "export EDITOR=vim" >> /etc/profile.d/vimDefault'
-            sudo sh -c 'echo "export VISUAL=vim" >> /etc/profile.d/vimDefault'
-            sudo sh -c 'echo >> /etc/profile.d/vimDefault'
-        fi
-    fi
-    if [ "`which vim.basic`" ]; then
-        sudo update-alternatives --set editor $(which vim.basic)
-    fi
+    #if [ -z "$(grep -r 'EDITOR' /etc/profile.d/ && grep -r 'EDITOR' /etc/profile)" ]; then
+    #    if [ ! -e /etc/profile.d/vimDefault ]; then
+    #        sudo sh -c 'echo >> /etc/profile.d/vimDefault'
+    #        sudo sh -c 'echo "export EDITOR=vim" >> /etc/profile.d/vimDefault'
+    #        sudo sh -c 'echo "export VISUAL=vim" >> /etc/profile.d/vimDefault'
+    #        sudo sh -c 'echo >> /etc/profile.d/vimDefault'
+    #    fi
+    #fi
+    #if [ "`which vim.basic`" ]; then
+    #    sudo update-alternatives --set editor $(which vim.basic)
+    #fi
 
     # Add 'Chromebook' keyboard layout.
     wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.add_chromebook_keyboard_layout.sh -P ~/
