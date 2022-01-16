@@ -4,6 +4,6 @@ SWEETPKGS="\
     jpegoptim lftp libclang-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev \
     libsdl2-ttf-dev make optipng pngquant python3-pip scite \
     software-properties-common syslinux-utils \
-    texlive-latex-extra thunderbird vim vlc \
+    texlive-latex-extra vim vlc \
     wget xz-utils \
 "
