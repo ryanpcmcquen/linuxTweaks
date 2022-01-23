@@ -14,7 +14,7 @@ sudo add-apt-repository -y "ppa:mozillateam/ppa"
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove -y
 
-sudo apt-get install -y "${SWEETPKGS}"
+sudo apt-get install -y ${SWEETPKGS}
 sudo apt-get install -y firefox-esr
 
 # Haskell!
