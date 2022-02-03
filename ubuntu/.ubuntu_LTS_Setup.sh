@@ -100,9 +100,6 @@ fi
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/a57201e1c8cb31bda6bce9104092725a/raw/password -P ~/ \
     && chmod +x ~/password
 
-# nvm:
-curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-
 # Textadept:
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/.installLatestTextadept.sh -P ~/
 
