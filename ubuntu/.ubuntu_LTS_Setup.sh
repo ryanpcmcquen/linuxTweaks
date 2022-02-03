@@ -9,12 +9,12 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.__KEY
 
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
-if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
-    echo >> ~/.bashrc
-    echo 'if [ "$DISPLAY" ]; then' >> ~/.bashrc
-    echo '    export TERM=xterm-256color' >> ~/.bashrc
-    echo 'fi' >> ~/.bashrc
-fi
+# if [ -z "$(grep 'xterm-256color' ~/.bashrc)" ]; then
+#     echo >> ~/.bashrc
+#     echo 'if [ "$DISPLAY" ]; then' >> ~/.bashrc
+#     echo '    export TERM=xterm-256color' >> ~/.bashrc
+#     echo 'fi' >> ~/.bashrc
+# fi
 
 # Get list of packages to install:
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/debian/._SWEETPKGS_ -P ~/
@@ -126,9 +126,9 @@ sudo wget -N https://www.thinkpenguin.com/files/ath9k_firmware_free-version/htc_
 wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTEUser.properties -P ~/
 
 # Set vim as the default editor:
-if [ "`which vim.basic`" ]; then
-    sudo update-alternatives --set editor $(which vim.basic)
-fi
+# if [ "`which vim.basic`" ]; then
+#     sudo update-alternatives --set editor $(which vim.basic)
+# fi
 
 echo
 echo "    .--. "
