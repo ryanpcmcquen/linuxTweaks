@@ -41,7 +41,7 @@ gsettings set org.mate.pluma auto-indent true
 gsettings set org.mate.pluma bracket-matching true
 gsettings set org.mate.pluma display-line-numbers false
 gsettings set org.mate.pluma display-right-margin true
-gsettings set org.mate.pluma highlight-current-line true
+gsettings set org.mate.pluma highlight-current-line false
 #gsettings set org.mate.pluma editor-font "Monospace 10"
 gsettings set org.mate.pluma insert-spaces true
 gsettings set org.mate.pluma tabs-size 4
