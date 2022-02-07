@@ -5,5 +5,5 @@ SWEETPKGS="\
     libsdl2-ttf-dev make optipng pngquant python3-dev python3-gpg scite \
     software-properties-common syslinux-utils \
     texlive-latex-extra vim vlc \
-    wget xz-utils \
+    wget xz-utils zenity \
 "
