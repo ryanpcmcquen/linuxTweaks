@@ -28,12 +28,10 @@ textadept.editing.auto_pairs = nil
 -- Trim trailing whitespace:
 textadept.editing.strip_trailing_spaces = true
 
-buffer:set_theme(
-    'light',
-    {
-        font = 'IBM Plex Mono'
-    }
-)
+-- if not CURSES then
+--     view:set_theme('light')
+-- end
+
 -- Interpret PICO-8 files as Lua.
 textadept.file_types.extensions.p8 = 'lua'
 
