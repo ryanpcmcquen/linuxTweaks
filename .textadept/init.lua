@@ -16,8 +16,8 @@ events.connect(
     end
 )
 
--- Turn off line wrapping:
-buffer.wrap_mode = buffer.WRAP_NONE
+-- Turn on line wrapping, but only by whitespace, not that fancy stuff.
+buffer.wrap_mode = buffer.WRAP_WHITESPACE
 
 -- https://foicica.com/textadept/api.html#textadept.editing.auto_pairs
 -- Do not automatically generate pairs
@@ -54,6 +54,7 @@ prettier = '/usr/local/bin/node /usr/local/bin/prettier --tab-width 4 --single-q
 -- Format JavaScript with the 'Compile' command.
 textadept.run.compile_commands.javascript = prettier .. '--write "%f"'
 
+--[[
 -- Format JavaScript before save:
 events.connect(
     events.FILE_BEFORE_SAVE,
@@ -67,3 +68,4 @@ events.connect(
         end
     end
 )
+--]]
