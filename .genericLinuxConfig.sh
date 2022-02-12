@@ -85,31 +85,31 @@ sudo wget -N https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.
 sudo sed -i 's/XKBOPTIONS=.*/XKBOPTIONS="ctrl:nocaps"/g' /etc/default/keyboard
 
 # IBM Plex fonts:
-wget -N \
-    $(curl https://api.github.com/repos/IBM/plex/releases/latest | grep TrueType | grep browser_download | cut -d \" -f 4) \
-    -P /tmp/
+# wget -N \
+#     $(curl https://api.github.com/repos/IBM/plex/releases/latest | grep TrueType | grep browser_download | cut -d \" -f 4) \
+#     -P /tmp/
 
-IBM_PLEX_DIR_NAME=ibm_plex_mono
-if [ -e /tmp/TrueType.zip ]; then
-    mkdir -p /tmp/${IBM_PLEX_DIR_NAME}/
-    unzip -o /tmp/TrueType.zip -d /tmp/${IBM_PLEX_DIR_NAME}/
-    sudo cp -R /tmp/${IBM_PLEX_DIR_NAME}/TrueType/* /usr/share/fonts/truetype/
-    rm -rf /tmp/${IBM_PLEX_DIR_NAME}/
-fi
+# IBM_PLEX_DIR_NAME=ibm_plex_mono
+# if [ -e /tmp/TrueType.zip ]; then
+#     mkdir -p /tmp/${IBM_PLEX_DIR_NAME}/
+#     unzip -o /tmp/TrueType.zip -d /tmp/${IBM_PLEX_DIR_NAME}/
+#     sudo cp -R /tmp/${IBM_PLEX_DIR_NAME}/TrueType/* /usr/share/fonts/truetype/
+#     rm -rf /tmp/${IBM_PLEX_DIR_NAME}/
+# fi
 
 # JetBrains Mono:
-wget -N \
-    $(curl https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep browser_download | cut -d \" -f 4) \
-    -P /tmp/
+# wget -N \
+#     $(curl https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep browser_download | cut -d \" -f 4) \
+#     -P /tmp/
 
-JET_BRAINS_DIR_NAME=jet_brains_mono
-JET_BRAINS_MONO_ARCHIVE="$(find /tmp/ -maxdepth 1 -iname 'JetBrainsMono-*.zip')"
-if [ "$(echo ${JET_BRAINS_MONO_ARCHIVE})" ]; then
-    mkdir -p /tmp/${JET_BRAINS_DIR_NAME}/
-    unzip -o "${JET_BRAINS_MONO_ARCHIVE}" -d /tmp/${JET_BRAINS_DIR_NAME}/
-    sudo cp -R /tmp/${JET_BRAINS_DIR_NAME}/ttf/* /usr/share/fonts/truetype/
-    rm -rf /tmp/${JET_BRAINS_DIR_NAME}/
-fi
+# JET_BRAINS_DIR_NAME=jet_brains_mono
+# JET_BRAINS_MONO_ARCHIVE="$(find /tmp/ -maxdepth 1 -iname 'JetBrainsMono-*.zip')"
+# if [ "$(echo ${JET_BRAINS_MONO_ARCHIVE})" ]; then
+#     mkdir -p /tmp/${JET_BRAINS_DIR_NAME}/
+#     unzip -o "${JET_BRAINS_MONO_ARCHIVE}" -d /tmp/${JET_BRAINS_DIR_NAME}/
+#     sudo cp -R /tmp/${JET_BRAINS_DIR_NAME}/ttf/* /usr/share/fonts/truetype/
+#     rm -rf /tmp/${JET_BRAINS_DIR_NAME}/
+# fi
 
 # Office Code Pro:
 wget -N \
