@@ -1,6 +1,5 @@
 {
     "editor.find.seedSearchStringFromSelection": false,
-    "editor.fontFamily": "'IBM Plex Mono', NovaMono, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
     "editor.formatOnSave": true,
