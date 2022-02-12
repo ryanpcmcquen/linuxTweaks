@@ -48,6 +48,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"fallback_encoding": "UTF-8",
 	"font_face": "Office Code Pro D",
+	"font_options": ["no_liga", "no_clig", "no_calt"],
 	"font_size": 14,
 	"ignored_packages":
 	[
