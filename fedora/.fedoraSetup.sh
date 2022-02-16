@@ -4,10 +4,12 @@
 
 # Grab the RPM Fusion free repo, because it has awesome stuff.
 if [ "`which dnf`" ]; then
-    sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf -y install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     PKGDUDE="dnf"
 else
     sudo yum -y localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+    sudo yum -y localinstall --nogpgcheck https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
     PKGDUDE="yum"
 fi
 
@@ -16,12 +18,10 @@ sudo ${PKGDUDE} -y upgrade
 
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
-    audacity-freeworld clang-devel cloc curl @development-tools emacs exfat-utils exiv2 \
-    firefox fuse-exfat gcc gcc-c++ gifsicle git jpegoptim kernel-headers \
-    kernel-devel make optipng pngquant SDL2-devel SDL2_image-devel \
-    SDL2_mixer-devel SDL2_ttf-devel \
-    texlive-collection-latexextra \
-    thunderbird vim wget \
+    clang-devel cloc curl @development-tools dosfstools emacs exfat-utils exiv2 firefox \
+    fuse-exfat gifsicle git jpegoptim kernel-headers kernel-devel make optipng \
+    pngquant SDL2-devel SDL2_image-devel SDL2_mixer-devel SDL2_ttf-devel \
+    texlive-collection-latexextra vim wget \
 "
 
 sudo ${PKGDUDE} -y --allowerasing install $ESSENTIALPKGS
@@ -71,6 +71,7 @@ wget -N https://raw.githubusercontent.com/ryanpcmcquen/linuxTweaks/master/.SciTE
 
 # Textadept:
 wget -N https://gist.githubusercontent.com/ryanpcmcquen/655cb3cc60f9d064738903e59504a5fd/raw/.installLatestTextadept.sh -P ~/
+bash ~/.installLatestTextadept.sh
 
 echo
 echo "    .--. "
