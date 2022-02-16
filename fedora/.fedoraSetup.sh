@@ -19,7 +19,7 @@ sudo ${PKGDUDE} -y upgrade
 # Pretty sure some are included, but it can't hurt.
 ESSENTIALPKGS="\
     audacity-freeworld clang-devel cloc curl @development-tools dosfstools emacs exfat-utils exiv2 \
-    firefox fuse-exfat gifsicle git jpegoptim kernel-headers kernel-devel make optipng \
+    ffmpeg firefox fuse-exfat gifsicle git jpegoptim kernel-headers kernel-devel make optipng \
     pngquant SDL2-devel SDL2_image-devel SDL2_mixer-devel SDL2_ttf-devel \
     stellarium texlive-collection-latexextra vim vlc wget \
 "
