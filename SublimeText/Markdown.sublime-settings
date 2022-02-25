@@ -2,5 +2,6 @@
     "draw_centered": true,
     "font_size": 22,
     "margin": 0,
+    "word_wrap": "auto",
     "wrap_width": 70
 }
