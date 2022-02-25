@@ -1,8 +1,8 @@
 SWEETPKGS="\
     apt-transport-https audacity build-essential clang clang-format cloc curl dosfstools emacs \
-    exfat-fuse exfat-utils exiv2 exuberant-ctags g++ gcc gifsicle git gnupg httrack \
-    jpegoptim lftp libclang-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev \
-    libsdl2-ttf-dev make optipng pngquant python3-dev python3-gpg scite \
-    software-properties-common syslinux-utils texlive-latex-extra vim \
+    exfat-fuse exfat-utils exiv2 exuberant-ctags gifsicle git gnupg httrack jpegoptim lftp \
+    libclang-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
+    make optipng pngquant python3-gpg scite software-properties-common \
+    syslinux-utils texlive-latex-extra vim \
     vlc wget xz-utils zenity \
 "
