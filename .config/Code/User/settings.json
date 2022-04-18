@@ -39,7 +39,6 @@
     "prettier.disableLanguages": ["vue", "jsp"],
     "prettier.eslintIntegration": true,
     "prettier.semi": true,
-    "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
     "telemetry.enableCrashReporter": false,
