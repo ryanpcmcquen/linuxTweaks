@@ -40,7 +40,6 @@
 		"vendor/**"
 	],
 	"block_caret": true,
-	"color_scheme": "Packages/User/Witness.sublime-color-scheme",
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
 	"draw_indent_guides": false,
@@ -49,7 +48,7 @@
 	"fallback_encoding": "UTF-8",
 	"font_face": "Office Code Pro D",
 	"font_options": ["no_liga", "no_clig", "no_calt"],
-	"font_size": 14,
+	"font_size": 16,
 	"ignored_packages":
 	[
 		"Vintage",
@@ -131,5 +130,6 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": "all",
 	"trim_only_modified_white_space": false,
-	"word_wrap": false,
+	"word_wrap": "auto",
+	"color_scheme": "Witness.sublime-color-scheme",
 }
