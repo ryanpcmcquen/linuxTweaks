@@ -10,3 +10,5 @@
 	pager = less -r
 	autocrlf = false
 	eol = lf
+[pull]
+	rebase = false
