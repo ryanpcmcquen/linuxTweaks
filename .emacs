@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq-default
     tab-always-indent 'complete
     indent-tabs-mode nil
@@ -81,7 +83,8 @@
 ;; away from the immersion and
 ;; can occasionally hurt
 ;; performance.
-(global-linum-mode 0)
+;;(global-linum-mode 0)
+(global-display-line-numbers-mode 0)
 
 ;; Increase the default font size.
 (set-face-attribute 'default nil :height 135)
